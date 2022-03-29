@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Inline::C#so_name
+is_singleton: false
+name: so_name
+params: ()
+visibility: protected

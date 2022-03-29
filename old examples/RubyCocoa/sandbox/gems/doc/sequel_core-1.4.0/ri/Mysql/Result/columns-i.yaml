@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mysql::Result#columns
+is_singleton: false
+name: columns
+params: (with_table = nil)
+visibility: public

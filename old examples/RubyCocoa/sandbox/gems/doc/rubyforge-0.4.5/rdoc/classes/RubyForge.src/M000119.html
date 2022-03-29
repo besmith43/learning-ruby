@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>create_package (RubyForge)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rubyforge.rb, line 174</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_package</span>(<span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">package_name</span>)
+    <span class="ruby-identifier">page</span> = <span class="ruby-value str">&quot;/frs/admin/index.php&quot;</span>
+
+    <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;group&quot;</span>, <span class="ruby-identifier">group_id</span>
+    <span class="ruby-identifier">is_private</span> = <span class="ruby-ivar">@userconfig</span>[<span class="ruby-value str">&quot;is_private&quot;</span>]
+    <span class="ruby-identifier">is_public</span> = <span class="ruby-identifier">is_private</span> <span class="ruby-value">? </span><span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-identifier">form</span> = {
+      <span class="ruby-value str">&quot;func&quot;</span>         =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;add_package&quot;</span>,
+      <span class="ruby-value str">&quot;group_id&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>,
+      <span class="ruby-value str">&quot;package_name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">package_name</span>,
+      <span class="ruby-value str">&quot;is_public&quot;</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">is_public</span>,
+      <span class="ruby-value str">&quot;submit&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Create This Package&quot;</span>,
+    }
+
+    <span class="ruby-identifier">run</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">form</span>
+
+    <span class="ruby-identifier">group_name</span> = <span class="ruby-ivar">@autoconfig</span>[<span class="ruby-value str">&quot;group_ids&quot;</span>].<span class="ruby-identifier">invert</span>[<span class="ruby-identifier">group_id</span>]
+    <span class="ruby-identifier">scrape_project</span>(<span class="ruby-identifier">group_name</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

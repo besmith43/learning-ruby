@@ -1,0 +1,444 @@
+------------------------------------------------------------------------
+r82 | ged | 2005-07-13 19:09:21 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+- Ignored html directory.
+
+------------------------------------------------------------------------
+r81 | ged | 2005-07-13 18:35:45 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+- Merged changes from project-utils.
+
+------------------------------------------------------------------------
+r80 | ged | 2005-07-13 17:04:50 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+Initial checkin. Fixes #3.
+
+------------------------------------------------------------------------
+r79 | ged | 2005-07-13 16:18:54 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+- Set svn:keyword
+
+------------------------------------------------------------------------
+r78 | ged | 2005-07-13 15:58:43 -0400 (Wed, 13 Jul 2005) | 5 lines
+
+- Fixed up subversion constants
+- Merged contributions from Francis Hwang <sera@fhwang.net>
+  (#camel_case_to_english, #english_to_camel_case, #proper_noun). Closes #2
+- Set svn:keyword
+
+------------------------------------------------------------------------
+r77 | ged | 2005-07-13 08:46:29 -0400 (Wed, 13 Jul 2005) | 3 lines
+
+- Added Subversion constants
+- Cleaned up comments for language proxy class.
+
+------------------------------------------------------------------------
+r76 | ged | 2005-07-13 08:43:53 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r75 | ged | 2005-07-13 08:42:30 -0400 (Wed, 13 Jul 2005) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r74 | deveiant | 2004-05-08 15:15:04 -0400 (Sat, 08 May 2004) | 2 lines
+
+- Added compatibility with Aoki-san's install.rb. Kind of.
+
+------------------------------------------------------------------------
+r73 | deveiant | 2004-05-08 15:07:51 -0400 (Sat, 08 May 2004) | 2 lines
+
+- Bugfix: Linkparser should start out missing by default.
+
+------------------------------------------------------------------------
+r72 | deveiant | 2004-05-08 15:07:09 -0400 (Sat, 08 May 2004) | 3 lines
+
+- Fixed to work even if it's not in the cwd. Thanks to batsman on
+  irc://irc.freenode.net/#ruby-lang for reporting this.
+
+------------------------------------------------------------------------
+r68 | deveiant | 2003-10-09 09:24:25 -0400 (Thu, 09 Oct 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r67 | deveiant | 2003-10-09 09:23:09 -0400 (Thu, 09 Oct 2003) | 4 lines
+
+- Updated requirements list
+
+- Removed unnecessary readline require
+
+------------------------------------------------------------------------
+r66 | deveiant | 2003-10-09 09:21:48 -0400 (Thu, 09 Oct 2003) | 3 lines
+
+- Fixed requirements/optional libraries (Thanks to Yuri Leikind
+  <y.leikind@sam-solutions.net> for bringing this to my attention).
+
+------------------------------------------------------------------------
+r65 | deveiant | 2003-10-09 09:20:50 -0400 (Thu, 09 Oct 2003) | 6 lines
+
+- Wildcarded everything under lib/ so new additions don't have to be explicitly
+  listed.
+
+- Added README.english (Thanks to Yuri Leikind <y.leikind@sam-solutions.net> for
+  bringing this to my attention).
+
+------------------------------------------------------------------------
+r64 | deveiant | 2003-09-14 07:28:02 -0400 (Sun, 14 Sep 2003) | 7 lines
+
+- Calls to #synset no longer trap parse errors. This was done for two reasons:
+
+  1. If the WordNet doesn't load, WordNet::ParseError is an undefined constant,
+     so the function fails with a semi-ambiguous error message.
+
+  2. The user of the library might wish to handle the parse failure herself.
+
+------------------------------------------------------------------------
+r63 | deveiant | 2003-09-14 07:20:51 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Added redist/ to $LOAD_PATH.
+
+------------------------------------------------------------------------
+r62 | deveiant | 2003-09-14 07:15:57 -0400 (Sun, 14 Sep 2003) | 4 lines
+
+- Added synopsis of use to the comment header.
+
+- Added reminder to finish documenting the auto-generated code.
+
+------------------------------------------------------------------------
+r61 | deveiant | 2003-09-14 07:15:33 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Added synopsis of use to the comment header.
+
+------------------------------------------------------------------------
+r60 | deveiant | 2003-09-14 07:15:18 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Added README.english
+
+------------------------------------------------------------------------
+r59 | deveiant | 2003-09-14 07:15:05 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Fixed screwed-up code resulting from broken paste.
+
+------------------------------------------------------------------------
+r58 | deveiant | 2003-09-14 07:14:28 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Added mention of README.english.
+
+------------------------------------------------------------------------
+r57 | deveiant | 2003-09-14 06:47:12 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Removed redundant mention of the WordNet module from the comment header.
+
+------------------------------------------------------------------------
+r56 | deveiant | 2003-09-14 06:45:01 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Fixed the comment header some more.
+
+------------------------------------------------------------------------
+r55 | deveiant | 2003-09-14 06:39:04 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Now installs the stuff in redist/ too.
+
+------------------------------------------------------------------------
+r54 | deveiant | 2003-09-14 06:36:00 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Changed pattern for the redist directory to catch any .rb files.
+
+------------------------------------------------------------------------
+r53 | deveiant | 2003-09-14 06:35:32 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+- Fixed names of constants to reduce the chances of collision.
+
+------------------------------------------------------------------------
+r52 | deveiant | 2003-09-14 06:33:01 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+Initial checkin from version 0.01 of CrossCase.
+
+------------------------------------------------------------------------
+r51 | deveiant | 2003-09-14 06:30:38 -0400 (Sun, 14 Sep 2003) | 3 lines
+
+- Changed parsing of non-sentences to expect errors in accordance with changes
+  to the API of the LinkParser integration.
+
+------------------------------------------------------------------------
+r50 | deveiant | 2003-09-14 06:24:58 -0400 (Sun, 14 Sep 2003) | 3 lines
+
+- Added CrossCase require/include to provide under_barred aliasing for camelCase
+  functions.
+
+------------------------------------------------------------------------
+r49 | deveiant | 2003-09-14 06:24:06 -0400 (Sun, 14 Sep 2003) | 4 lines
+
+- Added Martin to the Authors list.
+
+- Updated optional list.
+
+------------------------------------------------------------------------
+r48 | deveiant | 2003-09-14 06:23:19 -0400 (Sun, 14 Sep 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r47 | deveiant | 2003-09-14 05:29:15 -0400 (Sun, 14 Sep 2003) | 13 lines
+
+- Touched up the file description a bit.
+
+- @lp_error now intitialized: bug spotted by Martin Chase.
+
+- Calls to #linkParse no longer trap parse errors. This was done for two
+  reasons:
+
+  1. If the LinkParser module doesn't load, LinkParser::ParseError is an
+     undefined constant, so the function fails with a semi-ambiguous error
+     message.
+
+  2. The user of the library might wish to handle the parse failure herself.
+
+------------------------------------------------------------------------
+r46 | deveiant | 2003-09-11 01:04:55 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+Checkpoint commit
+
+------------------------------------------------------------------------
+r45 | deveiant | 2003-09-11 01:04:04 -0400 (Thu, 11 Sep 2003) | 4 lines
+
+- Added test for functional interface to auto-generated code.
+
+- Removed tests of the 'use' function into their own test case.
+
+------------------------------------------------------------------------
+r44 | deveiant | 2003-09-11 01:03:12 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Added test for functional interface to auto-generated code.
+
+------------------------------------------------------------------------
+r43 | deveiant | 2003-09-11 01:02:32 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r42 | deveiant | 2003-09-11 01:02:04 -0400 (Thu, 11 Sep 2003) | 6 lines
+
+- Fixed require block at the top.
+
+- Changed name of intermediate class to reflect change in linguistics.rb.
+
+- Fixed 1.8 complaint.
+
+------------------------------------------------------------------------
+r41 | deveiant | 2003-09-11 01:00:56 -0400 (Thu, 11 Sep 2003) | 4 lines
+
+- Added a dummy test so if the tests for optional modules can't be run (because
+  the modules on which they depend aren't installed), it doesn't count as a
+  failure because there were no tests.
+
+------------------------------------------------------------------------
+r40 | deveiant | 2003-09-11 00:59:51 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Fixed leftover comment from copy.
+
+------------------------------------------------------------------------
+r39 | deveiant | 2003-09-11 00:57:46 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Fixed typo.
+
+------------------------------------------------------------------------
+r38 | deveiant | 2003-09-11 00:57:27 -0400 (Thu, 11 Sep 2003) | 7 lines
+
+- Removed some more code for the aborted attempt to make the module
+  1.6-compatible.
+
+- Added requires for new extensions 'wordnet', 'linkparser', and 'infinitive'.
+
+- Updated docs in the header, though they're not yet ready for release.
+
+------------------------------------------------------------------------
+r37 | deveiant | 2003-09-11 00:55:11 -0400 (Thu, 11 Sep 2003) | 10 lines
+
+- Changed name of "inflector" class to "languageProxy" to better fit what it
+  does.
+
+- Added support for transparent delegator proxy methods.
+
+- Added support for MyClass::extend( Linguistics ) and class MyClass; include
+  Linguistics; end.
+
+- Modified code in #load_language to minimize the number of requires.
+
+------------------------------------------------------------------------
+r36 | deveiant | 2003-09-11 00:52:32 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Added :installProxy config to the #use call.
+
+------------------------------------------------------------------------
+r35 | deveiant | 2003-09-11 00:52:03 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r34 | deveiant | 2003-09-11 00:51:41 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Added example output.
+
+------------------------------------------------------------------------
+r33 | deveiant | 2003-09-11 00:51:26 -0400 (Thu, 11 Sep 2003) | 3 lines
+
+- Reworked to be more generically useful, and support parsing of options from
+  CATALOG file.
+
+------------------------------------------------------------------------
+r32 | deveiant | 2003-09-11 00:50:49 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Added rdoc-option header.
+
+------------------------------------------------------------------------
+r31 | deveiant | 2003-09-11 00:50:13 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Brought up-to-date with canonical source.
+
+------------------------------------------------------------------------
+r30 | deveiant | 2003-09-11 00:49:45 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Removed finished items.
+
+------------------------------------------------------------------------
+r29 | deveiant | 2003-09-11 00:48:46 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Beginnings of update for new release. Still needs more work before release.
+
+------------------------------------------------------------------------
+r28 | deveiant | 2003-09-11 00:48:06 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+- Added ChangeLog.
+
+------------------------------------------------------------------------
+r27 | deveiant | 2003-09-11 00:25:23 -0400 (Thu, 11 Sep 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r26 | deveiant | 2003-09-09 23:48:46 -0400 (Tue, 09 Sep 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r25 | stillflame | 2003-09-09 15:29:15 -0400 (Tue, 09 Sep 2003) | 2 lines
+
+initial import
+
+------------------------------------------------------------------------
+r24 | deveiant | 2003-08-26 06:35:16 -0400 (Tue, 26 Aug 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r23 | deveiant | 2003-07-10 20:36:40 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+- Added a Range#step 1.6 compat function.
+
+------------------------------------------------------------------------
+r22 | deveiant | 2003-07-10 20:20:10 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+- 1.6 fixes.
+
+------------------------------------------------------------------------
+r21 | deveiant | 2003-07-10 20:13:54 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+- More 1.6ish fixes.
+
+------------------------------------------------------------------------
+r20 | deveiant | 2003-07-10 19:52:36 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+Made module_methods out of the backend functions to support including linguistic methods again.
+
+------------------------------------------------------------------------
+r19 | deveiant | 2003-07-10 19:45:26 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+- Fixed use of Hash#merge! (1.8 feature)
+
+------------------------------------------------------------------------
+r18 | deveiant | 2003-07-10 19:38:24 -0400 (Thu, 10 Jul 2003) | 2 lines
+
+- Fixed usage of Hash#merge (a 1.8 feature).
+
+------------------------------------------------------------------------
+r17 | deveiant | 2003-07-09 20:00:00 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Removed unneccessary require of test/unit/mock.
+
+------------------------------------------------------------------------
+r16 | deveiant | 2003-07-09 19:24:42 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r15 | deveiant | 2003-07-09 17:45:36 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r14 | deveiant | 2003-07-09 16:39:59 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Explicitly listed linguistics.rb so it gets documented first.
+
+------------------------------------------------------------------------
+r13 | deveiant | 2003-07-09 16:39:25 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Commented out rdoc-selection code, as it doesn't work.
+
+------------------------------------------------------------------------
+r12 | deveiant | 2003-07-09 16:38:14 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Fleshed out instructions for use and addition.
+
+------------------------------------------------------------------------
+r11 | deveiant | 2003-07-09 16:37:06 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- RDoc fixes
+
+------------------------------------------------------------------------
+r10 | deveiant | 2003-07-09 16:35:29 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Made some RDoc fixes
+
+------------------------------------------------------------------------
+r9 | deveiant | 2003-07-09 15:30:42 -0400 (Wed, 09 Jul 2003) | 4 lines
+
+- Added array-wrapping to allow single classes in the :classes config argument.
+
+- Wrapped the code that adds the inflector method in a test for the method's existance to avoid constantly redefining it for classes which already have it.
+
+------------------------------------------------------------------------
+r8 | deveiant | 2003-07-09 15:16:21 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Moved Array extension to the bottom of the file to avoid confusion, and turned on :nodoc: for it.
+
+------------------------------------------------------------------------
+r7 | deveiant | 2003-07-09 14:24:13 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+- Moved into the en/ directory to separate language-specific tests from general tests.
+
+------------------------------------------------------------------------
+r6 | deveiant | 2003-07-09 12:15:20 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Fixed project-grokking expression
+
+------------------------------------------------------------------------
+r5 | deveiant | 2003-07-09 12:13:52 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Initial checkin.
+
+------------------------------------------------------------------------
+r4 | deveiant | 2003-07-09 11:54:43 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Initial checkin
+
+------------------------------------------------------------------------
+r1 | deveiant | 2003-07-09 10:49:57 -0400 (Wed, 09 Jul 2003) | 2 lines
+
+Initial revision
+
+------------------------------------------------------------------------

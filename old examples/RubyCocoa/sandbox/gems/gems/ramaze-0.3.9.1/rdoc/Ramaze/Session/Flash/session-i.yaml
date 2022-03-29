@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Session.current or {}
+full_name: Ramaze::Session::Flash#session
+is_singleton: false
+name: session
+params: ()
+visibility: private

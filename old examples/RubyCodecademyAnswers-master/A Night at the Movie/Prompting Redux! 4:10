@@ -1,0 +1,11 @@
+movies = { titanic: 4 }
+
+puts "title please"
+title = gets.chomp
+
+puts "rating of the movie please"
+rating = gets.chomp
+
+movies[title] = rating
+
+

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQLite::Database#temp_store=
+is_singleton: false
+name: temp_store=
+params: (value)
+visibility: public

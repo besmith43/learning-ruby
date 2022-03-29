@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: provides an call/answer mechanism, this is useful for example in a login-system.
+- !ruby/struct:SM::Flow::P 
+  body: It is basically good to redirect temporarly somewhere else without forgetting where you come from and offering a nice way to get back to the last urls.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::P 
+  body: class AuthController &lt; Controller
+- !ruby/struct:SM::Flow::VERB 
+  body: "  helper :stack\n\n  def login pass\n    if pass == 'password'\n      session[:logged_in] = true\n      answer if inside_stack?\n      redirect '/'\n    else\n      &quot;failed&quot;\n    end\n  end\n\n  def logged_in?\n    !!session[:logged_in]\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+- !ruby/struct:SM::Flow::P 
+  body: class ImportantController &lt; Controller
+- !ruby/struct:SM::Flow::VERB 
+  body: "  helper :stack\n\n  def secret_information\n    call :login unless logged_in?\n    &quot;Agent X is assigned to fight the RubyNinjas&quot;\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+constants: []
+
+full_name: Ramaze::Helper::Stack
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: answer
+- !ruby/object:RI::MethodSummary 
+  name: answer
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: inside_stack?
+- !ruby/object:RI::MethodSummary 
+  name: inside_stack?
+name: Stack
+superclass: 

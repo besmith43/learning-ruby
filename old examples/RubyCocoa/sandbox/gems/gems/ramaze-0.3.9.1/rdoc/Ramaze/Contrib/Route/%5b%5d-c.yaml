@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Contrib::Route::[]
+is_singleton: true
+name: "[]"
+params: (key)
+visibility: public

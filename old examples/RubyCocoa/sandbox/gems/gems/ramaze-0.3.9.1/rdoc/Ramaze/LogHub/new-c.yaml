@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes a list of instances or classes (which will be initialized) and that are added to @loggers. All messages are then sent to each member.
+full_name: Ramaze::LogHub::new
+is_singleton: true
+name: new
+params: (*loggers)
+visibility: public

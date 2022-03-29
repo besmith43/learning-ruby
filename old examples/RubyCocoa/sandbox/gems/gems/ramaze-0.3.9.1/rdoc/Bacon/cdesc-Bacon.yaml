@@ -1,0 +1,69 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: summary_on_exit
+- !ruby/object:RI::MethodSummary 
+  name: summary_on_exit
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Copyright (C) 2007, 2008 Christian Neukirchen &lt;purl.org/net/chneukirchen&gt;
+- !ruby/struct:SM::Flow::P 
+  body: Bacon is freely distributable under the terms of an MIT-style license. See COPYING or http://www.opensource.org/licenses/mit-license.php.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "\"0.9\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Counter
+  value: Hash.new(0)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ErrorLog
+  value: "\"\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Shared
+  value: "Hash.new { |_, name|     raise NameError, \"no such context: #{name.inspect}\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RestrictName
+  value: //  unless defined? RestrictName
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RestrictContext
+  value: //  unless defined? RestrictContext
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "\"0.9\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Counter
+  value: Hash.new(0)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ErrorLog
+  value: "\"\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Shared
+  value: "Hash.new { |_, name|     raise NameError, \"no such context: #{name.inspect}\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RestrictName
+  value: //  unless defined? RestrictName
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RestrictContext
+  value: //  unless defined? RestrictContext
+full_name: Bacon
+includes: []
+
+instance_methods: []
+
+name: Bacon
+superclass: 

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Database#primary_key_for_table
+is_singleton: false
+name: primary_key_for_table
+params: (conn, table)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new attr_accessor like method-pair.
+full_name: Ramaze::GlobalStruct#create_member
+is_singleton: false
+name: create_member
+params: (key, value = nil)
+visibility: public

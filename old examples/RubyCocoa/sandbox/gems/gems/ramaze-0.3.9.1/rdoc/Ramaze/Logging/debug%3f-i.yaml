@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: stub for WEBrick
+full_name: Ramaze::Logging#debug?
+is_singleton: false
+name: debug?
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds linker flags to the link command line. No preprocessing is done, so you must have all your dashes and everything.
+full_name: Inline::C#add_link_flags
+is_singleton: false
+name: add_link_flags
+params: (*flags)
+visibility: public

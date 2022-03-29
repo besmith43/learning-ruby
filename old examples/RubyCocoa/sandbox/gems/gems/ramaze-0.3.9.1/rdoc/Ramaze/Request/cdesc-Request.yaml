@@ -1,0 +1,76 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The purpose of this class is to act as a simple wrapper for Rack::Request and provide some convinient methods for our own use.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOCAL
+  value: (ipv4 + ipv6).map{|a| IPAddr.new(a)} unless defined?(LOCAL)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOCAL
+  value: (ipv4 + ipv6).map{|a| IPAddr.new(a)} unless defined?(LOCAL)
+full_name: Ramaze::Request
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: http_vars
+- !ruby/object:RI::MethodSummary 
+  name: http_vars
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: ip
+- !ruby/object:RI::MethodSummary 
+  name: ip
+- !ruby/object:RI::MethodSummary 
+  name: local_net?
+- !ruby/object:RI::MethodSummary 
+  name: local_net?
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: params
+- !ruby/object:RI::MethodSummary 
+  name: params
+- !ruby/object:RI::MethodSummary 
+  name: pretty_print
+- !ruby/object:RI::MethodSummary 
+  name: pretty_print
+- !ruby/object:RI::MethodSummary 
+  name: rack_params
+- !ruby/object:RI::MethodSummary 
+  name: request_uri
+- !ruby/object:RI::MethodSummary 
+  name: request_uri
+- !ruby/object:RI::MethodSummary 
+  name: subset
+- !ruby/object:RI::MethodSummary 
+  name: subset
+- !ruby/object:RI::MethodSummary 
+  name: to_ivs
+- !ruby/object:RI::MethodSummary 
+  name: to_ivs
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Request
+superclass: "::Rack::Request"

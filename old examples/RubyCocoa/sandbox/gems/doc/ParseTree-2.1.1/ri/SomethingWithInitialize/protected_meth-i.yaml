@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SomethingWithInitialize#protected_meth
+is_singleton: false
+name: protected_meth
+params: ()
+visibility: protected

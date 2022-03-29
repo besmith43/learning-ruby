@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: member?
+- !ruby/object:RI::AliasName 
+  name: key?
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the array's key set contains the given key.
+full_name: ArrayKeys::KeyAccess#has_key?
+is_singleton: false
+name: has_key?
+params: (k)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overwrite to add actions after a file is Kernel::load-ed unsuccessfully, by default we output an error-message with the exception.
+full_name: Ramaze::SourceReloadHooks#after_safe_load_failed
+is_singleton: false
+name: after_safe_load_failed
+params: (file, error)
+visibility: public

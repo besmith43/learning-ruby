@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse_tree (ParseTree)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/parse_tree.rb, line 97</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_tree</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">klasses</span>)
+    <span class="ruby-identifier">result</span> = []
+    <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">klassname</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-value str">''</span> <span class="ruby-comment cmt"># HACK klass.name should never be nil</span>
+                                   <span class="ruby-comment cmt"># Tempfile's DelegateClass(File) seems to</span>
+                                   <span class="ruby-comment cmt"># cause this</span>
+      <span class="ruby-identifier">klassname</span> = <span class="ruby-node">&quot;UnnamedClass_#{klass.object_id}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">klassname</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">klassname</span> = <span class="ruby-identifier">klassname</span>.<span class="ruby-identifier">to_sym</span>
+
+      <span class="ruby-identifier">code</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Class</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword kw">then</span>
+               <span class="ruby-identifier">sc</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">superclass</span>
+               <span class="ruby-identifier">sc_name</span> = ((<span class="ruby-identifier">sc</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span>) <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;nil&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">intern</span>
+               [<span class="ruby-identifier">:class</span>, <span class="ruby-identifier">klassname</span>, [<span class="ruby-identifier">:const</span>, <span class="ruby-identifier">sc_name</span>]]
+             <span class="ruby-keyword kw">else</span>
+               [<span class="ruby-identifier">:module</span>, <span class="ruby-identifier">klassname</span>]
+             <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">method_names</span> = []
+      <span class="ruby-identifier">method_names</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_methods</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-identifier">method_names</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">private_instance_methods</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-comment cmt"># protected methods are included in instance_methods, go figure!</span>
+
+      <span class="ruby-identifier">method_names</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">r</span> = <span class="ruby-identifier">parse_tree_for_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_sym</span>)
+        <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">modules</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mod</span><span class="ruby-operator">|</span> <span class="ruby-comment cmt"># TODO: add a test for this damnit</span>
+        <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">r</span> = <span class="ruby-identifier">parse_tree_for_method</span>(<span class="ruby-identifier">mod</span>, <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_sym</span>)
+          <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">singleton_methods</span>(<span class="ruby-keyword kw">false</span>).<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">parse_tree_for_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-keyword kw">true</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

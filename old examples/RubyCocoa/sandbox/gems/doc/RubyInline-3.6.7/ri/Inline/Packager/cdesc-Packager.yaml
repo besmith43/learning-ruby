@@ -1,0 +1,47 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: inline_dir
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: libs_copied
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: summary
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: version
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RAKEFILE_TEMPLATE
+  value: "'%[require \"rake\"\\nrequire \"rake/gempackagetask\"\\n\\nsummary = #{summary.inspect}\\n\\nif summary.empty? then\\n  STDERR.puts \"*************************************\"\\n  STDERR.puts \"*** Summary not filled in, SHAME! ***\"\\n  STDERR.puts \"*************************************\"\\nend\\n\\nspec = Gem::Specification.new do |s|\\n  s.name = #{name.inspect}\\n  s.version = #{version.inspect}\\n  s.summary = summary\\n\\n  s.has_rdoc = false\\n  s.files = #{gem_libs.inspect}\\n  s.add_dependency \"RubyInline\", \">= 3.3.0\"\\n  s.require_path = \"lib\"\\nend\\n\\ndesc \"Builds a gem with #{name} in it\"\\nRake::GemPackageTask.new spec do |pkg|\\n  pkg.need_zip = false\\n  pkg.need_tar = false\\nend\\n]'"
+full_name: Inline::Packager
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build_gem
+- !ruby/object:RI::MethodSummary 
+  name: copy_libs
+- !ruby/object:RI::MethodSummary 
+  name: gem_libs
+- !ruby/object:RI::MethodSummary 
+  name: generate_rakefile
+- !ruby/object:RI::MethodSummary 
+  name: package
+name: Packager
+superclass: Object

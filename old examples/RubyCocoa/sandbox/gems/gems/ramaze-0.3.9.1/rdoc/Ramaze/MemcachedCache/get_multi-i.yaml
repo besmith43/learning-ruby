@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: out of some reason MemCache sometimes doesn't respond to get_multi, have to investigate this further.
+- !ruby/struct:SM::Flow::P 
+  body: for now, i'll just use the dumbed down version and ask it whether it implements this functionality or not.
+full_name: Ramaze::MemcachedCache#get_multi
+is_singleton: false
+name: get_multi
+params: (*keys)
+visibility: public

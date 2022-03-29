@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: relays all the methods to the @hash and updates the session_cache in Session.current.sessions if anything changes.
+full_name: Ramaze::Session::Hash#method_missing
+is_singleton: false
+name: method_missing
+params: (*args, &block)
+visibility: public

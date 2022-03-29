@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Default element of FILTER. The default handler that tries to find the best match for the given path in terms of Controller/method/template and given arguments. If a match is found it will be cached for further use.
+full_name: Ramaze::Controller::default
+is_singleton: true
+name: default
+params: (path)
+visibility: public

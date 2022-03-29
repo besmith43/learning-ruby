@@ -1,0 +1,7 @@
+..
+.
+class_name_check_test.rb
+uncorrectable_name_check_test.rb
+key_name_check_test.rb
+variable_name_check_test.rb
+method_name_check_test.rb

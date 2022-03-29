@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Namespace for templating.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMPILED
+  value: "{} unless defined?(COMPILED)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Place register_engine puts the class and extensions for templating engines
+  name: ENGINES
+  value: "{} unless defined?(ENGINES)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AVAILABLE_ENGINES
+  value: "%w[ Amrita2 Builder Erubis Haml Liquid Markaby Nagoro None RedCloth Remarkably Sass XSLT Tenjin Tagz ]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMPILED
+  value: "{} unless defined?(COMPILED)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Place register_engine puts the class and extensions for templating engines
+  name: ENGINES
+  value: "{} unless defined?(ENGINES)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AVAILABLE_ENGINES
+  value: "%w[ Amrita2 Builder Erubis Haml Liquid Markaby Nagoro None RedCloth Remarkably Sass XSLT Tenjin Tagz ]"
+full_name: Ramaze::Template
+includes: []
+
+instance_methods: []
+
+name: Template
+superclass: 

@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Give it a path with character to split at and one to join the crumbs with. It will generate a list of links that act as pointers to previous pages on this path.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  breadcrumbs('/path/to/somewhere')\n\n  # results in this, newlines added for readability:\n\n  &lt;a href=&quot;/path&quot;&gt;path&lt;/a&gt;/\n  &lt;a href=&quot;/path/to&quot;&gt;to&lt;/a&gt;/\n  &lt;a href=&quot;/path/to/somewhere&quot;&gt;somewhere&lt;/a&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: Optionally a href prefix can be specified which generate link names a above, but with the prefix prepended to the href path.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  breadcrumbs('/path/to/somewhere', '/', '/', '/mycontroller/action')\n\n  # results in this, newlines added for readability:\n\n  &lt;a href=&quot;/mycontroller/action/path&quot;&gt;path&lt;/a&gt;/\n  &lt;a href=&quot;/mycontroller/action/path/to&quot;&gt;to&lt;/a&gt;/\n  &lt;a href=&quot;/mycontroller/action/path/to/somewhere&quot;&gt;somewhere&lt;/a&gt;\n"
+full_name: Ramaze::Helper::Link#breadcrumbs
+is_singleton: false
+name: breadcrumbs
+params: (path, split = '/', join = '/', href_prefix = '')
+visibility: private

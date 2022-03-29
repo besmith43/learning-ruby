@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Bacon::TestUnitOutput::TapOutput::Context#after
+is_singleton: false
+name: after
+params: (&block)
+visibility: public

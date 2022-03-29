@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: LiteralString is used to represent literal SQL expressions. An LiteralString is copied verbatim into an SQL statement. Instances of LiteralString can be created by calling String#expr.
+constants: []
+
+full_name: Sequel::LiteralString
+includes: []
+
+instance_methods: []
+
+name: LiteralString
+superclass: "::String"

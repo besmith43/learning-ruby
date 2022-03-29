@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extensions for Kernel
+constants: []
+
+full_name: Kernel
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: __DIR__
+- !ruby/object:RI::MethodSummary 
+  name: __DIR__
+- !ruby/object:RI::MethodSummary 
+  name: acquire
+- !ruby/object:RI::MethodSummary 
+  name: acquire
+- !ruby/object:RI::MethodSummary 
+  name: aquire
+- !ruby/object:RI::MethodSummary 
+  name: aquire
+- !ruby/object:RI::MethodSummary 
+  name: constant
+- !ruby/object:RI::MethodSummary 
+  name: constant
+- !ruby/object:RI::MethodSummary 
+  name: pretty_inspect
+- !ruby/object:RI::MethodSummary 
+  name: pretty_inspect
+name: Kernel
+superclass: 

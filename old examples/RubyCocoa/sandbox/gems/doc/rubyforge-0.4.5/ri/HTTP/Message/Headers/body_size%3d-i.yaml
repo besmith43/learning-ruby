@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: body_size == nil means that the body is_a? IO
+full_name: HTTP::Message::Headers#body_size=
+is_singleton: false
+name: body_size=
+params: (body_size)
+visibility: public

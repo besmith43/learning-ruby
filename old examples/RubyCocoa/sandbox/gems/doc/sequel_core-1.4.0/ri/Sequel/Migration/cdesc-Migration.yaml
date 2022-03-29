@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: apply
+- !ruby/object:RI::MethodSummary 
+  name: descendants
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The Migration class describes a database migration that can be reversed. The migration looks very similar to ActiveRecord (Rails) migrations, e.g.:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class CreateSessions &lt; Sequel::Migration\n    def up\n      create_table :sessions do\n        primary_key :id\n        varchar   :session_id, :size =&gt; 32, :unique =&gt; true\n        timestamp :created_at\n        text      :data\n      end\n    end\n\n    def down\n      execute 'DROP TABLE sessions'\n    end\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "To apply a migration to a database, you can invoke the #apply with the target database instance and the direction :up or :down, e.g.:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB = Sequel.open ('sqlite:///mydb')\n  CreateSessions.apply(DB, :up)\n"
+constants: []
+
+full_name: Sequel::Migration
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: down
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: up
+name: Migration
+superclass: Object

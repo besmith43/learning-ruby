@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Uses R with Controller.current as first element.
+full_name: Ramaze::Helper::Link#Rs
+is_singleton: false
+name: Rs
+params: (*atoms)
+visibility: private

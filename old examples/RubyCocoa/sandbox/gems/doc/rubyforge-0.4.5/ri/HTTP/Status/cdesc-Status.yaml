@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: redirect?
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OK
+  value: "200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MOVED_PERMANENTLY
+  value: "301"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FOUND
+  value: "302"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SEE_OTHER
+  value: "303"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TEMPORARY_REDIRECT
+  value: MOVED_TEMPORARILY = 307
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BAD_REQUEST
+  value: "400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INTERNAL
+  value: "500"
+full_name: HTTP::Status
+includes: []
+
+instance_methods: []
+
+name: Status
+superclass: 

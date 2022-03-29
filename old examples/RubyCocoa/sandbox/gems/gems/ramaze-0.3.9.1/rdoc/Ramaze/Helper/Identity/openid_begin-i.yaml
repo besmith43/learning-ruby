@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: We land here from the openid_login_form and if we can find a matching OpenID server we redirect the user to it, the browser will return to openid_complete when the authentication is complete.
+full_name: Ramaze::Helper::Identity#openid_begin
+is_singleton: false
+name: openid_begin
+params: ()
+visibility: public

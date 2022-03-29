@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Simplistic render, rerouting to Controller.handle(*args)
+full_name: Ramaze::Controller#render
+is_singleton: false
+name: render
+params: (*args)
+visibility: private

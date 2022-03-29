@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: merge!
+- !ruby/object:RI::AliasName 
+  name: merge!
+block_params: 
+comment: 
+full_name: Ramaze::Dictionary#update
+is_singleton: false
+name: update
+params: ( hsh2 )
+visibility: public

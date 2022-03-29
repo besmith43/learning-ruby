@@ -1,0 +1,119 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: charset
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: charset
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: filename
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: filename
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: last_modified
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: last_modified
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: little_endian
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: little_endian
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: nplurals
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: nplurals
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: path
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: path
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: plural
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: plural
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: open
+- !ruby/object:RI::MethodSummary 
+  name: open
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Header
+  value: Struct.new(:magic,                       :revision,                       :nstrings,                       :orig_table_offset,                       :translated_table_offset,                       :hash_table_size,                       :hash_table_offset)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_BIG_ENDIAN
+  value: "\"\\x95\\x04\\x12\\xde\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_LITTLE_ENDIAN
+  value: "\"\\xde\\x12\\x04\\x95\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Header
+  value: Struct.new(:magic,                       :revision,                       :nstrings,                       :orig_table_offset,                       :translated_table_offset,                       :hash_table_size,                       :hash_table_offset)
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_BIG_ENDIAN
+  value: "\"\\x95\\x04\\x12\\xde\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_LITTLE_ENDIAN
+  value: "\"\\xde\\x12\\x04\\x95\""
+full_name: MOFile
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load_from_file
+- !ruby/object:RI::MethodSummary 
+  name: load_from_file
+- !ruby/object:RI::MethodSummary 
+  name: load_from_stream
+- !ruby/object:RI::MethodSummary 
+  name: load_from_stream
+- !ruby/object:RI::MethodSummary 
+  name: set_comment
+- !ruby/object:RI::MethodSummary 
+  name: set_comment
+- !ruby/object:RI::MethodSummary 
+  name: update!
+- !ruby/object:RI::MethodSummary 
+  name: update!
+name: MOFile
+superclass: Hash

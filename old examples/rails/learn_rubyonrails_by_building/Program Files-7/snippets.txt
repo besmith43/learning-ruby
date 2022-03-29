@@ -1,0 +1,47 @@
+-----PART 1 -----
+
+# Create Category Model
+rails g model category name:string
+
+# Run Migration
+rake db:migrate
+
+# Create Book Model
+rails generate model Book 
+title:string 
+category_id:integer 
+author_id:integer
+publisher_id:integer
+isbn:string 
+price:string
+buy:string
+publication:date 
+excerpt:text 
+format:string 
+pages:integer 
+
+# Run Migration
+rake db:migrate
+
+# Create Author Model
+rails g model author first_name:string last_name:string
+
+# Run Migration
+rake db:migrate
+
+# Create Publisher Model
+rails g model publisher name:string
+
+# Run Migration
+rake db:migrate
+
+# Console Commands
+category = Category.all
+category = Category.new(:name => 'Ruby on Rails')
+category.save
+category = Category.create(:name => 'Ruby on Rails')
+category = Category.create(:name => 'PHP')
+
+
+
+---- PART 2 ----

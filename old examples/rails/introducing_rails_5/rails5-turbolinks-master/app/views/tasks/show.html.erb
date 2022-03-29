@@ -1,0 +1,4 @@
+<h3> Task </h3>
+<p>task: <%= @task.name %></p>
+<p>completed? <%= @task.status %></p>
+<p>created: <%= time_ago_in_words(@task.created_at) %> ago </p>

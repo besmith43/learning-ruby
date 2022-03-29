@@ -1,0 +1,51 @@
+require 'rubygems'
+require 'rake'
+require 'rake/testtask'
+
+task :default => [:test]
+
+desc "Run tests."
+task "test" do
+  run_in('sandbox/test')
+  run_in('notifications/test')
+  run_in('rubycocoa-oddities/test')
+  run_in('key-value/tests')
+  run_in('fenestra/table-two-buttons-start/test')
+  run_in('fenestra/table-two-buttons-end/test')
+  run_in('fenestra/table-radio-buttons/test')
+  run_in('fenestra/table-formatter/test')
+  run_in('fenestra/table-chooser-start/test')
+  run_in('fenestra/table-chooser-end/test')
+  run_in('fenestra/table-drag-start/test')
+  run_in('fenestra/table-drag-end/test')
+  run_in('fenestra/fit-and-finish/test')
+end
+
+# Rake doesn't return exit status, so have to kludge around that.
+
+def run_in(where)
+  unless File.directory?(where)
+    puts "Test setup FAILURE: #{where} is not a directory."
+    exit 1
+  end
+  did_succeed = system("cd #{where}; rake 2>&1 | tee #{log_for(where)}")
+  
+  unless did_succeed
+    puts "Test FAILURE in #{where}."
+    exit 1
+  end
+  log_check(where, 'rake aborted')
+end 
+
+def log_for(where)
+  "../" * (where.count('/')+1) + 'test-run-log'
+end
+
+def log_check(where, errmsg)
+  puts "Checking for '#{errmsg}' failure with no return status."
+  system("grep -q '#{errmsg}' test-run-log")
+  if $? == 0
+    puts "TEST FAILURE in #{where}."
+    exit 1
+  end
+end

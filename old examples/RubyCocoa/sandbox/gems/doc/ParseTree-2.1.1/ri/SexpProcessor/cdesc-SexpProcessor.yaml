@@ -1,0 +1,94 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Automatically shifts off the Sexp type before handing the Sexp to process_&lt;type&gt;
+  name: auto_shift_type
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return a stack of contexts. Most recent node is first.
+  name: context
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A Hash of Sexp types and Regexp.
+  - !ruby/struct:SM::Flow::P 
+    body: "Print a debug message if the Sexp type matches the Hash key and the Sexp's #inspect output matches the Regexp."
+  name: debug
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A default method to call if a process_&lt;type&gt; method is not found for the Sexp type.
+  name: default_method
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Expected result class
+  name: expected
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Raise an exception if the Sexp is not empty after processing
+  name: require_empty
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Raise an exception if no process_&lt;type&gt; method is found for a Sexp.
+  name: strict
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: An array that specifies node types that are unsupported by this processor. SexpProcessor will raise UnsupportedNodeError if you try to process one of those node types.
+  name: unsupported
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Emit a warning when the method in #default_method is called."
+  name: warn_on_default
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: SexpProcessor provides a uniform interface to process Sexps.
+- !ruby/struct:SM::Flow::P 
+  body: In order to create your own SexpProcessor subclass you'll need to call super in the initialize method, then set any of the Sexp flags you want to be different from the defaults.
+- !ruby/struct:SM::Flow::P 
+  body: "SexpProcessor uses a Sexp's type to determine which process method to call in the subclass. For Sexp <tt>s(:lit, 1)</tt> SexpProcessor will call #process_lit, if it is defined."
+- !ruby/struct:SM::Flow::P 
+  body: You can also specify a default method to call for any Sexp types without a process_&lt;type&gt; method or use the default processor provided to skip over them.
+- !ruby/struct:SM::Flow::P 
+  body: "Here is a simple example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MyProcessor &lt; SexpProcessor\n    def initialize\n      super\n      self.strict = false\n    end\n\n    def process_lit(exp)\n      val = exp.shift\n      return val\n    end\n  end\n"
+constants: []
+
+full_name: SexpProcessor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: assert_empty
+- !ruby/object:RI::MethodSummary 
+  name: assert_type
+- !ruby/object:RI::MethodSummary 
+  name: on_error_in
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process_dummy
+- !ruby/object:RI::MethodSummary 
+  name: rewrite
+name: SexpProcessor
+superclass: Object

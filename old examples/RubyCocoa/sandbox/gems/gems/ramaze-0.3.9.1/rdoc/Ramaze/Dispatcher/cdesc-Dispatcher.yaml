@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dispatch
+- !ruby/object:RI::MethodSummary 
+  name: dispatch
+- !ruby/object:RI::MethodSummary 
+  name: dispatch_to
+- !ruby/object:RI::MethodSummary 
+  name: dispatch_to
+- !ruby/object:RI::MethodSummary 
+  name: filter
+- !ruby/object:RI::MethodSummary 
+  name: filter
+- !ruby/object:RI::MethodSummary 
+  name: general_dispatch
+- !ruby/object:RI::MethodSummary 
+  name: general_dispatch
+- !ruby/object:RI::MethodSummary 
+  name: handle
+- !ruby/object:RI::MethodSummary 
+  name: handle
+- !ruby/object:RI::MethodSummary 
+  name: shielded_dispatch
+- !ruby/object:RI::MethodSummary 
+  name: shielded_dispatch
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Dispatcher receives requests from adapters and sets up the proper environment to process them and respond.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: requests are passed to every
+  name: FILTER
+  value: "[ Dispatcher::File, Dispatcher::Action ] unless defined?(FILTER)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: requests are passed to every
+  name: FILTER
+  value: "[ Dispatcher::File, Dispatcher::Action ] unless defined?(FILTER)"
+full_name: Ramaze::Dispatcher
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+instance_methods: []
+
+name: Dispatcher
+superclass: 

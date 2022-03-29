@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQLite::Dataset#insert_sql
+is_singleton: false
+name: insert_sql
+params: (*values)
+visibility: public

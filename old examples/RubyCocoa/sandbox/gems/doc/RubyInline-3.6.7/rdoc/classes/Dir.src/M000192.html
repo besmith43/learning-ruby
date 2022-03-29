@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>assert_secure (Dir)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/inline.rb, line 747</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">assert_secure</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">mode</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">mode</span>
+    <span class="ruby-keyword kw">unless</span> ((<span class="ruby-identifier">mode</span> <span class="ruby-operator">%</span> <span class="ruby-value">01000</span>) <span class="ruby-operator">&amp;</span> <span class="ruby-value">0022</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$TESTING</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">SecurityError</span>, <span class="ruby-node">&quot;Directory #{path} is insecure&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;#{path} is insecure (#{'%o' % mode}). It may not be group or world writable. Exiting.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+    <span class="ruby-comment cmt"># If it ain't there, it's certainly secure</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

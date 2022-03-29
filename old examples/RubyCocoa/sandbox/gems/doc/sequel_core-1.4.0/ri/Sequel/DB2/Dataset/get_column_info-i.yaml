@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::DB2::Dataset#get_column_info
+is_singleton: false
+name: get_column_info
+params: (sth)
+visibility: public

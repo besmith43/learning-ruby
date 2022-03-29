@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: startup
+comment: 
+constants: []
+
+full_name: Ramaze::Contrib::Route
+includes: []
+
+instance_methods: []
+
+name: Route
+superclass: Object

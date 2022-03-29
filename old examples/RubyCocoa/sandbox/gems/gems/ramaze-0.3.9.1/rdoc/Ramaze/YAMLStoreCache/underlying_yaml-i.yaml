@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Loads @file into memory via YAML::load_file
+full_name: Ramaze::YAMLStoreCache#underlying_yaml
+is_singleton: false
+name: underlying_yaml
+params: ()
+visibility: public

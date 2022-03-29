@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: column_sizes
+- !ruby/object:RI::MethodSummary 
+  name: data_line
+- !ruby/object:RI::MethodSummary 
+  name: format_cell
+- !ruby/object:RI::MethodSummary 
+  name: header_line
+- !ruby/object:RI::MethodSummary 
+  name: print
+- !ruby/object:RI::MethodSummary 
+  name: records_columns
+- !ruby/object:RI::MethodSummary 
+  name: separator_line
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Prints nice-looking plain-text tables +--+-------+ |id|name | |--+-------| |1 |fasdfas| |2 |test | +--+-------+
+constants: []
+
+full_name: Sequel::PrettyTable
+includes: []
+
+instance_methods: []
+
+name: PrettyTable
+superclass: 

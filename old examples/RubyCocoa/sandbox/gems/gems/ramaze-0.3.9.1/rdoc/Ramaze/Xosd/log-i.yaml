@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: pushes all messages it gets on the QUEUE for further processing.
+full_name: Ramaze::Xosd#log
+is_singleton: false
+name: log
+params: (tag, *messages)
+visibility: public

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>rewrite_rescue (Ruby2Ruby)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ruby2ruby.rb, line 957</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rewrite_rescue</span> <span class="ruby-identifier">exp</span>
+    <span class="ruby-identifier">exp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:begin</span>, <span class="ruby-identifier">exp</span>) <span class="ruby-keyword kw">if</span>
+      <span class="ruby-identifier">context</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:block</span> <span class="ruby-keyword kw">unless</span>
+      <span class="ruby-identifier">context</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:scope</span> <span class="ruby-keyword kw">and</span> [<span class="ruby-identifier">:defn</span>, <span class="ruby-identifier">:defs</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">context</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">exp</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

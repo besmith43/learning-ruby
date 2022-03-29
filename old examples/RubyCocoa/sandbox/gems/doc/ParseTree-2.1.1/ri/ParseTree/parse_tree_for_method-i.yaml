@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the parse tree for just one <tt>method</tt> of a class <tt>klass</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: "Format:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  [:defn, :name, :body]\n"
+full_name: ParseTree#parse_tree_for_method
+is_singleton: false
+name: parse_tree_for_method
+params: (klass, method, is_cls_meth=false)
+visibility: public

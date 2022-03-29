@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: columns=
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the key set for the array. Once a key set has been set for an array, it is extended with the KeyAccess API
+full_name: ArrayKeys::ArrayExtensions#keys=
+is_singleton: false
+name: keys=
+params: (keys)
+visibility: public

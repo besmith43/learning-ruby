@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: o
+- !ruby/object:RI::MethodSummary 
+  name: o
+- !ruby/object:RI::MethodSummary 
+  name: option_dsl
+- !ruby/object:RI::MethodSummary 
+  name: option_dsl
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: DSL for specifying Globap options before initializing Global
+constants: []
+
+full_name: Ramaze::GlobalDSL
+includes: []
+
+instance_methods: []
+
+name: GlobalDSL
+superclass: 

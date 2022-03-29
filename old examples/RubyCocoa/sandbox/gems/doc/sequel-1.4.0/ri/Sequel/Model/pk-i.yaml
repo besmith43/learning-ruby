@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Returns the primary key value identifying the model instance. If the model's primary key is changed (using #set_primary_key or #no_primary_key) this method is redefined accordingly."
+full_name: Sequel::Model#pk
+is_singleton: false
+name: pk
+params: ()
+visibility: public

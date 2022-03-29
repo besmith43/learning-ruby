@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  steps: 1
+  distance: 1.5
+  exercise: 1
+  sleep: 1.5
+  calories: 1
+
+two:
+  steps: 1
+  distance: 1.5
+  exercise: 1
+  sleep: 1.5
+  calories: 1

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This uses Global.inform_timestamp or a date in the format of
+- !ruby/struct:SM::Flow::VERB 
+  body: "  %Y-%m-%d %H:%M:%S\n  # =&gt; &quot;2007-01-19 21:09:32&quot;\n"
+full_name: Ramaze::Informer#timestamp
+is_singleton: false
+name: timestamp
+params: ()
+visibility: public

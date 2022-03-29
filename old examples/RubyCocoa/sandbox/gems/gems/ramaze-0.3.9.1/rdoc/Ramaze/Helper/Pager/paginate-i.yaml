@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper method that generates a collection of items and the associated pager object.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Example
+- !ruby/struct:SM::Flow::P 
+  body: items = [ 'item1', 'item2', ... ] entries, pager = paginate(items, :limit =&gt; 10)
+- !ruby/struct:SM::Flow::P 
+  body: "&lt;ul&gt; &lt;?r for entry in entries ?&gt;"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   &lt;li&gt;#{entry.to_link}&lt;/li&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "&lt;?r end ?&gt; &lt;/ul&gt; #{pager.navigation}"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Og Example
+- !ruby/struct:SM::Flow::P 
+  body: entries, pager = paginate(Article, :where =&gt; 'title LIKE..', :limit =&gt; 10)
+- !ruby/struct:SM::Flow::P 
+  body: or
+- !ruby/struct:SM::Flow::P 
+  body: entries, pager = paginate(article.comments, :limit =&gt; 10)
+full_name: Ramaze::Helper::Pager#paginate
+is_singleton: false
+name: paginate
+params: (items, options = {})
+visibility: public

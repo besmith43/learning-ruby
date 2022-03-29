@@ -1,0 +1,2 @@
+first_name = "Bb"
+gets.chomp = first_name

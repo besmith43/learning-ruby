@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Unmarshal cookie data to a hash and verify its integrity.
+full_name: Ramaze::Session::Hash#unmarshal
+is_singleton: false
+name: unmarshal
+params: (cookie)
+visibility: private

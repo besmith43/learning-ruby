@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Renders &lt;render src=&quot;/path&quot; [optional=&quot;option&quot;, ...]&gt; in place.
+- !ruby/struct:SM::Flow::P 
+  body: Other options than `src` will be transformed to session parameters for the rendered action to use.
+full_name: Ezamar::RenderPartial::transform
+is_singleton: true
+name: transform
+params: (template)
+visibility: public

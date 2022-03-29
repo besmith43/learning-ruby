@@ -1,0 +1,2 @@
+class WorkExperience < ApplicationRecord
+end

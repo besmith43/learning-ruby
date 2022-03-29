@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTPAccess2::Session -- manage http session with one site.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  One or more TCP sessions with the site may be created.\n  Only 1 TCP session is live at the same time.\n"
+constants: []
+
+full_name: Session
+includes: []
+
+instance_methods: []
+
+name: Session
+superclass: Object

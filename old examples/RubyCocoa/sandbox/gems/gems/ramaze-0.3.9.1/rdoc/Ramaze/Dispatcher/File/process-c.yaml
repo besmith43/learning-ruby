@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Entry point from Dispatcher::filter. searches for the file and builds a response with status 200 if found.
+full_name: Ramaze::Dispatcher::File::process
+is_singleton: true
+name: process
+params: (path)
+visibility: public

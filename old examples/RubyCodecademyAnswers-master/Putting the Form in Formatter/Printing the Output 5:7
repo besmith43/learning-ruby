@@ -1,0 +1,13 @@
+print "first_name?"
+gets.chomp = first_name
+
+print "last_name?"
+gets.chomp = last_name
+
+print "city"
+gets.chomp = city
+
+print "state"
+gets.chomp = state
+
+puts "#{first_name}", "#{last_name}", "#{city}.upcase", "#{state}.upcase"

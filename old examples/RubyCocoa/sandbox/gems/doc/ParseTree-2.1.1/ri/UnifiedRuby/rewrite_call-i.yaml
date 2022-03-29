@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UnifiedRuby#rewrite_call
+is_singleton: false
+name: rewrite_call
+params: (exp)
+visibility: public

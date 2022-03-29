@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Define a template_root for Controller, returns the current template_root if no argument is given. Runs every given path through Controller::check_path
+full_name: Ramaze::Controller::template_root
+is_singleton: true
+name: template_root
+params: (*args)
+visibility: public

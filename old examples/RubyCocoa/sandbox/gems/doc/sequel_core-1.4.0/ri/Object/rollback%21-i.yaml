@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Cancels the current transaction without an error:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB.tranaction do\n    ...\n    rollback! if failed_to_contact_client\n    ...\n  end\n"
+full_name: Object#rollback!
+is_singleton: false
+name: rollback!
+params: ()
+visibility: public

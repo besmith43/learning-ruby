@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Other edge cases:"
+full_name: Something#opt_args
+is_singleton: false
+name: opt_args
+params: (arg1, arg2 = 42, *args)
+visibility: public

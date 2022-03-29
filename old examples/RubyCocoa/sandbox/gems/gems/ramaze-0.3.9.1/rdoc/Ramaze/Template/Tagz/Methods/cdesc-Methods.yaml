@@ -1,0 +1,51 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Methods defines a host of methods useful inside the context of a view including print style methods that output content rather that printing to STDOUT
+constants: []
+
+full_name: Ramaze::Template::Tagz::Methods
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: "::Tagz"
+- !ruby/object:RI::IncludedModule 
+  name: "::Tagz"
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: __
+- !ruby/object:RI::MethodSummary 
+  name: __
+- !ruby/object:RI::MethodSummary 
+  name: concat
+- !ruby/object:RI::MethodSummary 
+  name: concat
+- !ruby/object:RI::MethodSummary 
+  name: eol
+- !ruby/object:RI::MethodSummary 
+  name: eol
+- !ruby/object:RI::MethodSummary 
+  name: p
+- !ruby/object:RI::MethodSummary 
+  name: p
+- !ruby/object:RI::MethodSummary 
+  name: pp
+- !ruby/object:RI::MethodSummary 
+  name: pp
+- !ruby/object:RI::MethodSummary 
+  name: print
+- !ruby/object:RI::MethodSummary 
+  name: print
+- !ruby/object:RI::MethodSummary 
+  name: puts
+- !ruby/object:RI::MethodSummary 
+  name: puts
+name: Methods
+superclass: 

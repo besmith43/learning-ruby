@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "TODO: think about flattening out to 1 resbody only"
+full_name: TestUnifiedRuby#test_rewrite_resbody
+is_singleton: false
+name: test_rewrite_resbody
+params: ()
+visibility: public

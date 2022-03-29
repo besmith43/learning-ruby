@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: rack_params
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wrapping Request#params to support a one-level hash notation. It doesn't support anything really fancy, so be conservative in its use.
+- !ruby/struct:SM::Flow::P 
+  body: "See if following provides something useful for us: http://redhanded.hobix.com/2006/01/25.html"
+- !ruby/struct:SM::Flow::P 
+  body: "Example Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " # Template:\n\n &lt;form action=&quot;/paste&quot;&gt;\n   &lt;input type=&quot;text&quot; name=&quot;paste[name]&quot; /&gt;\n   &lt;input type=&quot;text&quot; name=&quot;paste[syntax]&quot; /&gt;\n   &lt;input type=&quot;submit&quot; /&gt;\n &lt;/form&gt;\n\n # In your Controller:\n\n def paste\n   name, syntax = request['paste'].values_at('name', 'syntax')\n   paste = Paste.create_with(:name =&gt; name, :syntax =&gt; syntax)\n   redirect '/'\n end\n\n # Or, easier:\n\n def paste\n   paste = Paste.create_with(request['paste'])\n   redirect '/'\n end\n"
+full_name: Ramaze::Request#params
+is_singleton: false
+name: params
+params: ()
+visibility: public

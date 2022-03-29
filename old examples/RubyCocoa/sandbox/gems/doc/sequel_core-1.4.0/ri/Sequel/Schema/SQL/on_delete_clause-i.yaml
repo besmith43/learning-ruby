@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#on_delete_clause
+is_singleton: false
+name: on_delete_clause
+params: (action)
+visibility: public

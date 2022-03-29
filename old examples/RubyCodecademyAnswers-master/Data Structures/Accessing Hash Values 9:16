@@ -1,0 +1,5 @@
+pets = Hash.new
+pets = { "tt" => "cat" }
+
+puts pets["tt"]
+

@@ -1,0 +1,36 @@
+{
+  :header => {
+    :rtf => {:version => "1"@5},
+    :charset => "ansi"@7,
+    :deff => "\\deff0"@11,
+    :color_table => {
+      :colors => [
+        {
+          :red => {:int => "0"@33},
+          :green => {:int => "0"@40},
+          :blue => {:int => "0"@46}
+        },
+        {
+          :red => {:int => "255"@52},
+          :green => {:int => "0"@61},
+          :blue => {:int => "0"@67}
+        }
+      ]
+    }
+  },
+  :document => [
+    {:text => "This is some normal text, formatted in black."@71},
+    {:control_word => {:word => "line"@117, :delimiter => nil}},
+    {:text => "\n"@121},
+    {:control_word => {:word => "cf"@123, :delimiter => "2"@125}},
+    {:text => "\nThis is some more text, colored red."@126},
+    {:control_word => {:word => "line"@184, :delimiter => nil}},
+    {:text => "\n"@188},
+    {:control_word => {:word => "cf"@190, :delimiter => "1"@192}},
+    {:text => "\nFinally, back to the normal color, but is "@193},
+    {:control_word => {:word => "b"@251, :delimiter => " "@252}},
+    {:text => "bold"@253},
+    {:control_word => {:word => "b"@258, :delimiter => "0"@259}},
+    {:text => ".\n"@260}
+  ]
+}

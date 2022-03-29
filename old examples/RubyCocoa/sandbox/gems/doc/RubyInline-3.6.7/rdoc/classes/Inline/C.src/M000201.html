@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>generate (Inline::C)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/inline.rb, line 183</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">options</span>={})
+      <span class="ruby-identifier">options</span> = {<span class="ruby-identifier">:expand_types=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">options</span>} <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
+
+      <span class="ruby-identifier">expand_types</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:expand_types</span>]
+      <span class="ruby-identifier">singleton</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:singleton</span>]
+      <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">strip_comments</span>(<span class="ruby-identifier">src</span>)
+
+      <span class="ruby-identifier">signature</span> = <span class="ruby-identifier">parse_signature</span>(<span class="ruby-identifier">src</span>, <span class="ruby-operator">!</span><span class="ruby-identifier">expand_types</span>)
+      <span class="ruby-identifier">function_name</span> = <span class="ruby-identifier">signature</span>[<span class="ruby-value str">'name'</span>]
+      <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:method_name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">function_name</span>
+      <span class="ruby-identifier">return_type</span> = <span class="ruby-identifier">signature</span>[<span class="ruby-value str">'return'</span>]
+      <span class="ruby-identifier">arity</span> = <span class="ruby-identifier">signature</span>[<span class="ruby-value str">'arity'</span>]
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;too many arguments&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">MAGIC_ARITY_THRESHOLD</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">expand_types</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">prefix</span> = <span class="ruby-node">&quot;static VALUE #{function_name}(&quot;</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-constant">MAGIC_ARITY</span> <span class="ruby-keyword kw">then</span>
+          <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;int argc, VALUE *argv, VALUE self&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;VALUE self&quot;</span>
+          <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">signature</span>[<span class="ruby-value str">'args'</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;, VALUE _#{arg}&quot;</span>}.<span class="ruby-identifier">join</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;) {\n&quot;</span>
+        <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">signature</span>[<span class="ruby-value str">'args'</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+          <span class="ruby-node">&quot;  #{type} #{arg} = #{ruby2c(type)}(_#{arg});\n&quot;</span>
+        }.<span class="ruby-identifier">join</span>
+
+        <span class="ruby-comment cmt"># replace the function signature (hopefully) with new sig (prefix)</span>
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/[^;\/\&quot;\&gt;]+#{function_name}\s*\([^\{]+\{/</span>, <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">prefix</span>)
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/\A\n/</span>, <span class="ruby-value str">''</span>) <span class="ruby-comment cmt"># strip off the \n in front in case we added it</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">return_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;void&quot;</span> <span class="ruby-keyword kw">then</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;Couldn't find return statement for #{function_name}&quot;</span> <span class="ruby-keyword kw">unless</span>
+            <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/return/</span>
+          <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/return\s+([^\;\}]+)/</span>) <span class="ruby-keyword kw">do</span>
+            <span class="ruby-node">&quot;return #{c2ruby(return_type)}(#{$1})&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/\s*\}\s*\Z/</span>, <span class="ruby-value str">&quot;\nreturn Qnil;\n}&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">prefix</span> = <span class="ruby-node">&quot;static #{return_type} #{function_name}(&quot;</span>
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/[^;\/\&quot;\&gt;]+#{function_name}\s*\(/</span>, <span class="ruby-identifier">prefix</span>)
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/\A\n/</span>, <span class="ruby-value str">''</span>) <span class="ruby-comment cmt"># strip off the \n in front in case we added it</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">delta</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\A(static.*?\{)/</span><span class="ruby-identifier">m</span> <span class="ruby-keyword kw">then</span>
+                <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n/</span>).<span class="ruby-identifier">size</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;WAR\NING: Can't find signature in #{result.inspect}\n&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$TESTING</span>
+                <span class="ruby-value">0</span>
+              <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span> = <span class="ruby-identifier">caller</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/:/</span>)
+      <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;# line #{line.to_i + delta} \&quot;#{file}\&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">$TESTING</span>
+
+      <span class="ruby-ivar">@src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">result</span>
+      <span class="ruby-ivar">@sig</span>[<span class="ruby-identifier">function_name</span>] = [<span class="ruby-identifier">arity</span>,<span class="ruby-identifier">singleton</span>,<span class="ruby-identifier">method_name</span>]
+
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$TESTING</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

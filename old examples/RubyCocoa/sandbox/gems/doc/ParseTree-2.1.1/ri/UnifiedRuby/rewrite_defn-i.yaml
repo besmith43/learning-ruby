@@ -1,0 +1,36 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ":defn is one of the most complex of all the ASTs in ruby. We do one of 3 different translations:"
+- !ruby/struct:SM::Flow::P 
+  body: "1) From:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :name, s(:scope, s(:block, s(:args, ...), ...)))\n  s(:defn, :name, s(:bmethod, s(:masgn, s(:dasgn_curr, :args)), s(:block, ...)))\n  s(:defn, :name, s(:fbody, s(:bmethod, s(:masgn, s(:dasgn_curr, :splat)), s(:block, ...))))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :name, s(:args, ...), s(:scope, s:(block, ...)))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "2) From:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :writer=, s(:attrset, :@name))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :writer=, s(:args), s(:attrset, :@name))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "3) From:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :reader, s(:ivar, :@name))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  s(:defn, :reader, s(:args), s(:ivar, :@name))\n"
+full_name: UnifiedRuby#rewrite_defn
+is_singleton: false
+name: rewrite_defn
+params: (exp)
+visibility: public

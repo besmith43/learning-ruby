@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ParseTree::has_alloca
+is_singleton: true
+name: has_alloca
+params: ()
+visibility: public

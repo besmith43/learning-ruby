@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Deletes a value by its index.
+full_name: ArrayKeys::KeyAccess#delete_at
+is_singleton: false
+name: delete_at
+params: (idx)
+visibility: public

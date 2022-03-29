@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the parse tree for a string <tt>source</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: "Format:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  [[sexps] ... ]\n"
+full_name: ParseTree#parse_tree_for_string
+is_singleton: false
+name: parse_tree_for_string
+params: (source, filename = '(string)', line = 1)
+visibility: public

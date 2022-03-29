@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Only logs new errors with full backtrace, repeated errors are shown only with their message.
+full_name: Ramaze::Dispatcher::Error::log_error
+is_singleton: true
+name: log_error
+params: (error)
+visibility: public

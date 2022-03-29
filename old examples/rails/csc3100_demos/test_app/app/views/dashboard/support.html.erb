@@ -1,0 +1,45 @@
+<h1>Support Us</h1>
+
+
+<div class="container text-center">
+    <div class="row">
+        
+        <div class="col-md-6">
+            <h2>Supply Donations</h2>
+            <p>The Cookeville Putnam County Aminal Shelter is always in need of pet supplies, such as dog/cat food, cat liter, accident pads, and much more.</p>
+            
+            <h2>Alternate ways to donate</h2>
+            <%=  image_tag 'donatepawprint.png', style: "width:auto;height:auto;" %>
+            <!-- they have a token system operating the donations link, and the url that the site source shows simply directs me back to paypal's landing page -->
+        </div>
+        
+        <div class="col-md-6">
+            <h2>Volunteering</h2>
+            <ul class="support_ul">
+                <li>Directions</li>
+                <li>1. Download and fill out the Volunteer Application.</li>
+                <li>2. Download and fill out the Background Check form.</li>
+                <li>3. Upon having these documents filled out, you may bring them into the Animal Shelter.</li>
+                <br>
+                <li>This process may take up to 2 weeks to complete, but upon completion you will recieve an email about training sessions.</li>
+            </ul>
+            <ul class="support_ul">
+                <li>
+                    <%= link_to "Background Check", '/documents/Background check.pdf', { :style => 'color: #0015FF' } %>
+                </li>
+                <li>
+                    <%= link_to "Volunteer Application", '/documents/Volunteer Application.pdf', { :style => 'color: #0015FF' } %>
+                </li>
+                <li>
+                    <%= link_to "Liability Waiver", '/documents/Liability waiver.pdf', { :style => 'color: #0015FF' } %>
+                </li>
+                <li>
+                    <%= link_to "Liability Waiver (Minor)", '/documents/Liability waiver - Minor.pdf', { :style => 'color: #0015FF' } %>
+                </li>
+            </ul>
+            
+            <p>* Any form that requires a notary, please note that it should only be signed at the Animal Shelter.</p>
+        </div>
+        
+    </div>
+</div>

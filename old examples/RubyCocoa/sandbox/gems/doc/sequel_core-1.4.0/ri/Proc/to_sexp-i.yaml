@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "replacement for Proc#to_sexp as defined in ruby2ruby. see also: http://rubyforge.org/tracker/index.php?func=detail&amp;aid=18095&amp;group_id=1513&amp;atid=5921 The ruby2ruby implementation leaks memory, so we fix it."
+full_name: Proc#to_sexp
+is_singleton: false
+name: to_sexp
+params: ()
+visibility: public

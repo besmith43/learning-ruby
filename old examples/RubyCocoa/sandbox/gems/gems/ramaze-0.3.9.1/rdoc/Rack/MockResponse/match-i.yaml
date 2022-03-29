@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: /
+- !ruby/object:RI::AliasName 
+  name: search
+- !ruby/object:RI::AliasName 
+  name: /
+- !ruby/object:RI::AliasName 
+  name: search
+block_params: 
+comment: 
+full_name: Rack::MockResponse#match
+is_singleton: false
+name: match
+params: (xpath = '*')
+visibility: public

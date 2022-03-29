@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Returns a copy of the dataset with the where conditions changed. Raises if the dataset has been grouped. See also #filter."
+full_name: Sequel::Dataset::SQL#where
+is_singleton: false
+name: where
+params: (*cond, &block)
+visibility: public

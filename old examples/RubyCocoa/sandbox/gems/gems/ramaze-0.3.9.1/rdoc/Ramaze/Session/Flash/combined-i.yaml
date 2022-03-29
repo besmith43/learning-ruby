@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: combined key/value pairs of previous and current current keys overshadow the old ones.
+full_name: Ramaze::Session::Flash#combined
+is_singleton: false
+name: combined
+params: ()
+visibility: public

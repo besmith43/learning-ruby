@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "         Copyright (c) 2008 Michael Fellinger m.fellinger@gmail.com\n"
+- !ruby/struct:SM::Flow::P 
+  body: All files in this distribution are subject to the terms of the Ruby license.
+constants: []
+
+full_name: Array
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: put_after
+- !ruby/object:RI::MethodSummary 
+  name: put_after
+- !ruby/object:RI::MethodSummary 
+  name: put_before
+- !ruby/object:RI::MethodSummary 
+  name: put_before
+- !ruby/object:RI::MethodSummary 
+  name: put_within
+- !ruby/object:RI::MethodSummary 
+  name: put_within
+name: Array
+superclass: Object

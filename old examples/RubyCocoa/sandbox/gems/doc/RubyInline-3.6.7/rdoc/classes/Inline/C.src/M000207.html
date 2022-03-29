@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>build (Inline::C)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/inline.rb, line 318</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
+      <span class="ruby-identifier">so_name</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">so_name</span>
+      <span class="ruby-identifier">so_exists</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">so_name</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">so_exists</span> <span class="ruby-keyword kw">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">rb_file</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">so_name</span>) <span class="ruby-keyword kw">then</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-constant">Inline</span>.<span class="ruby-identifier">directory</span> <span class="ruby-keyword kw">then</span>
+          <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;NOTE: creating #{Inline.directory} for RubyInline&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+          <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-constant">Inline</span>.<span class="ruby-identifier">directory</span>, <span class="ruby-value">0700</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">src_name</span> = <span class="ruby-node">&quot;#{Inline.directory}/#{module_name}.c&quot;</span>
+        <span class="ruby-identifier">old_src_name</span> = <span class="ruby-node">&quot;#{src_name}.old&quot;</span>
+        <span class="ruby-identifier">should_compare</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">write_with_backup</span>(<span class="ruby-identifier">src_name</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@include_ruby_first</span>
+            <span class="ruby-ivar">@inc</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-value str">&quot;#include \&quot;ruby.h\&quot;&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-ivar">@inc</span>.<span class="ruby-identifier">push</span> <span class="ruby-value str">&quot;#include \&quot;ruby.h\&quot;&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@inc</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@src</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n\n&quot;</span>)
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#ifdef __cplusplus&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;extern \&quot;C\&quot; {&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#endif&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;  __declspec(dllexport)&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">WINDOZE</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  void Init_#{module_name}() {&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;    VALUE c = rb_cObject;&quot;</span>
+
+          <span class="ruby-comment cmt"># TODO: use rb_class2path</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@mod</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;::&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+            <span class="ruby-node">&quot;    c = rb_const_get_at(c,rb_intern(\&quot;#{n}\&quot;));&quot;</span>
+          }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+
+          <span class="ruby-ivar">@sig</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">arity</span>, <span class="ruby-identifier">singleton</span>, <span class="ruby-identifier">method_name</span> = <span class="ruby-ivar">@sig</span>[<span class="ruby-identifier">name</span>]
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">singleton</span> <span class="ruby-keyword kw">then</span>
+              <span class="ruby-identifier">io</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;    rb_define_singleton_method(c, \&quot;#{method_name}\&quot;, &quot;</span>
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">io</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;    rb_define_method(c, \&quot;#{method_name}\&quot;, &quot;</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>  <span class="ruby-node">&quot;(VALUE(*)(ANYARGS))#{name}, #{arity});&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@init_extra</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@init_extra</span>.<span class="ruby-identifier">empty?</span>
+
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;  }&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#ifdef __cplusplus&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;}&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;#endif&quot;</span>
+          <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-comment cmt"># recompile only if the files are different</span>
+        <span class="ruby-identifier">recompile</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">so_exists</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">should_compare</span> <span class="ruby-keyword kw">and</span>
+            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">compare_file</span>(<span class="ruby-identifier">old_src_name</span>, <span class="ruby-identifier">src_name</span>) <span class="ruby-keyword kw">then</span>
+          <span class="ruby-identifier">recompile</span> = <span class="ruby-keyword kw">false</span>
+
+          <span class="ruby-comment cmt"># Updates the timestamps on all the generated/compiled files.</span>
+          <span class="ruby-comment cmt"># Prevents us from entering this conditional unless the source</span>
+          <span class="ruby-comment cmt"># file changes again.</span>
+          <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-constant">File</span>.<span class="ruby-identifier">utime</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">t</span>, <span class="ruby-identifier">src_name</span>, <span class="ruby-identifier">old_src_name</span>, <span class="ruby-identifier">so_name</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recompile</span> <span class="ruby-keyword kw">then</span>
+
+          <span class="ruby-identifier">hdrdir</span> = <span class="ruby-node">%w(srcdir archdir rubyhdrdir)</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">dir</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-identifier">name</span>]
+          }.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">dir</span> <span class="ruby-keyword kw">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-value str">&quot;/ruby.h&quot;</span>)
+          } <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">abort</span> <span class="ruby-value str">&quot;ERROR: Can't find header dir for ruby. Exiting...&quot;</span>
+
+          <span class="ruby-identifier">flags</span> = <span class="ruby-ivar">@flags</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+          <span class="ruby-identifier">libs</span>  = <span class="ruby-ivar">@libs</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+
+          <span class="ruby-identifier">config_hdrdir</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value str">'1.9'</span> <span class="ruby-keyword kw">then</span>
+                            <span class="ruby-node">&quot;-I #{File.join hdrdir, RbConfig::CONFIG['arch']}&quot;</span>
+                          <span class="ruby-keyword kw">else</span>
+                            <span class="ruby-keyword kw">nil</span>
+                          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">cmd</span> = [ <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'LDSHARED'</span>],
+                  <span class="ruby-identifier">flags</span>,
+                  <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'CCDLFLAGS'</span>],
+                  <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'CFLAGS'</span>],
+                  <span class="ruby-value str">'-I'</span>, <span class="ruby-identifier">hdrdir</span>,
+                  <span class="ruby-identifier">config_hdrdir</span>,
+                  <span class="ruby-value str">'-I'</span>, <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'includedir'</span>],
+                  <span class="ruby-node">&quot;-L#{Config::CONFIG['libdir']}&quot;</span>,
+                  <span class="ruby-value str">'-o'</span>, <span class="ruby-identifier">so_name</span>.<span class="ruby-identifier">inspect</span>,
+                  <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">src_name</span>).<span class="ruby-identifier">inspect</span>,
+                  <span class="ruby-identifier">libs</span>,
+                  <span class="ruby-identifier">crap_for_windoze</span> ].<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+
+          <span class="ruby-comment cmt"># TODO: remove after osx 10.5.2</span>
+          <span class="ruby-identifier">cmd</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">' -flat_namespace -undefined suppress'</span> <span class="ruby-keyword kw">if</span>
+            <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/darwin9\.[01]/</span>
+          <span class="ruby-identifier">cmd</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; 2&gt; #{DEV_NULL}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$TESTING</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">$DEBUG</span>
+
+          <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Building #{so_name} with '#{cmd}'&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+          <span class="ruby-identifier">result</span> = <span class="ruby-node">`#{cmd}`</span>
+          <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Output:\n#{result}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$?</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span>
+            <span class="ruby-identifier">bad_src_name</span> = <span class="ruby-identifier">src_name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.bad&quot;</span>
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span> <span class="ruby-identifier">src_name</span>, <span class="ruby-identifier">bad_src_name</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">CompilationError</span>, <span class="ruby-node">&quot;error executing #{cmd}: #{$?}\nRenamed #{src_name} to #{bad_src_name}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-comment cmt"># NOTE: manifest embedding is only required when using VC8 ruby</span>
+          <span class="ruby-comment cmt"># build or compiler.</span>
+          <span class="ruby-comment cmt"># Errors from this point should be ignored if Config::CONFIG['arch']</span>
+          <span class="ruby-comment cmt"># (RUBY_PLATFORM) matches 'i386-mswin32_80'</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">WINDOZE</span> <span class="ruby-keyword kw">and</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/_80$/</span> <span class="ruby-keyword kw">then</span>
+            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-constant">Inline</span>.<span class="ruby-identifier">directory</span> <span class="ruby-keyword kw">do</span>
+              <span class="ruby-identifier">cmd</span> = <span class="ruby-value str">&quot;mt /manifest lib.so.manifest /outputresource:so.dll;#2&quot;</span>
+              <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Embedding manifest with '#{cmd}'&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+              <span class="ruby-identifier">result</span> = <span class="ruby-node">`#{cmd}`</span>
+              <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Output:\n#{result}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$?</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span>
+                <span class="ruby-identifier">raise</span> <span class="ruby-constant">CompilationError</span>, <span class="ruby-node">&quot;error executing #{cmd}: #{$?}&quot;</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;Built successfully&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+        <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{so_name} is up to date&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+      <span class="ruby-keyword kw">end</span> <span class="ruby-comment cmt"># unless (file is out of date)</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

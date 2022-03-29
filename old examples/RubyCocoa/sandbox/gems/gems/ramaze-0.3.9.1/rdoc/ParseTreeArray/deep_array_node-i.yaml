@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ParseTreeArray#deep_array_node
+is_singleton: false
+name: deep_array_node
+params: (type = nil)
+visibility: public

@@ -1,0 +1,13 @@
+// display the advertisement
+
+var advert = ''
+
+advert+='<a href="http://<%= env["HTTP_HOST"] %>/click/<%= @ad.id %>">';
+advert+='<img class="ad" alt="<%= @ad.title %>" src="http://<%= env["HTTP_HOST"] %>/ads/<%= @ad.filename %>" border="0" height="<%= @ad.height %>" width="<%= @ad.width %>" />';
+advert+='</a>';
+advert+='<p class="ads">';
+advert+='<%= @ad.content.gsub(/"/, '\"').gsub(/\//, '\/').gsub(/\n/, '\n') %>';
+advert+='</p>';
+advert+='';
+
+document.write(advert);

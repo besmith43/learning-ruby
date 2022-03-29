@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @reference.owner %>
+</p>
+
+<p>
+  <strong>Reference name:</strong>
+  <%= @reference.reference_name %>
+</p>
+
+<p>
+  <strong>Reference contact info:</strong>
+  <%= @reference.reference_contact_info %>
+</p>
+
+<%= link_to 'Edit', edit_reference_path(@reference) %> |
+<%= link_to 'Back', dashboard_references_path %>

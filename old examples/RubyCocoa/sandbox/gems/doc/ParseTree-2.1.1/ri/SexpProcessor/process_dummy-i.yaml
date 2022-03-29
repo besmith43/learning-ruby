@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A fairly generic processor for a dummy node. Dummy nodes are used when your processor is doing a complicated rewrite that replaces the current sexp with multiple sexps.
+- !ruby/struct:SM::Flow::P 
+  body: "Bogus Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  def process_something(exp)\n    return s(:dummy, process(exp), s(:extra, 42))\n  end\n"
+full_name: SexpProcessor#process_dummy
+is_singleton: false
+name: process_dummy
+params: (exp)
+visibility: public

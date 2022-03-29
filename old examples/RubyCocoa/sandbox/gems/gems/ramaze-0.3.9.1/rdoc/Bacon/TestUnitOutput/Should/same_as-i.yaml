@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #identical_to"
+full_name: Bacon::TestUnitOutput::Should#same_as
+is_singleton: false
+name: same_as
+params: (value)
+visibility: public

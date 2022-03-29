@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: u
+- !ruby/object:RI::AliasName 
+  name: u
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: shortcut for CGI.escape
+full_name: Ramaze::Helper::CGI#url_encode
+is_singleton: false
+name: url_encode
+params: (*args)
+visibility: public

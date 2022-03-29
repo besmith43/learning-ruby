@@ -1,0 +1,56 @@
+# Install LAMP Stack
+sudo apt-get install lamp-server^
+
+# Setup MySQL
+mysql -u root -p
+
+mysql> show databases;
+mysql> create database bookstore_development;
+mysql> create database bookstore_test;
+mysql> grant all on bookstore_development.* to 'bookstore'@'localhost' \
+mysql> grant all on bookstore_test.* to 'bookstore'@'localhost' \
+mysql> show databases;
+mysql> select host, user from mysql.user;
+mysql> SET PASSWORD FOR 'bookstore'@'localhost' = PASSWORD('bookstore');
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+
+# Install phpmyadmin
+sudo apt-get install phpmyadmin
+
+# Edit the apache config
+sudo nano /etc/apache2/apache2.conf
+-ServerName ubuntu
+Include /etc/phpmyadmin/apache.conf
+
+# Restart Apache
+sudo service apache2 restart
+
+# Important
+On your Terminal window go to Edit>Profile Preferences>Title and command, and check the box that says "Run command as a login shell". Restart your Terminal and try ruby -v and gem -v now. The versions should come up. If they don't then try re-installing them.
+
+# Install MySQL Gem Dependency
+sudo apt-get install libmysqlclient-dev
+
+# Install MySQL Gem
+gem install mysql2
+
+# Install RubyRacer
+gem install therubyracer
+
+# Install Dependency Library For TheRubyRacer
+gem install libv8 --version=3.11.8.3
+
+# Install ExecJS to Run JavaScript Code From Ruby
+gem install execjs
+
+# Generate Skeleton Files
+rails new bookstore
+
+bundle install
+
+# Add to Gemfile
+gem 'mysql2'
+gem 'therubyracer'
+
+bundle install

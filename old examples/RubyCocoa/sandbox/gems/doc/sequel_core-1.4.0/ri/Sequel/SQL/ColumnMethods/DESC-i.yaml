@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: DESC
+block_params: 
+comment: 
+full_name: Sequel::SQL::ColumnMethods#desc
+is_singleton: false
+name: desc
+params: ()
+visibility: public

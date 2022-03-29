@@ -1,0 +1,4 @@
+prime_array ||= []
+n = Integer if n <= 0
+n != integer unless n != 0 
+    

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#rename_table_sql
+is_singleton: false
+name: rename_table_sql
+params: (name, new_name)
+visibility: public

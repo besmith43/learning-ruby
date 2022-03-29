@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: processor
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_test
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: previous
+- !ruby/object:RI::MethodSummary 
+  name: testcase_order
+- !ruby/object:RI::MethodSummary 
+  name: testcases
+- !ruby/object:RI::MethodSummary 
+  name: unsupported_tests
+comment: 
+constants: []
+
+full_name: ParseTreeTestCase
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setup
+name: ParseTreeTestCase
+superclass: Test::Unit::TestCase

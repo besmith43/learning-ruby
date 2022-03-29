@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: TestCompositeSexpProcessor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: test_append
+- !ruby/object:RI::MethodSummary 
+  name: test_process_default
+- !ruby/object:RI::MethodSummary 
+  name: test_process_fake1
+- !ruby/object:RI::MethodSummary 
+  name: test_process_fake1_twice
+- !ruby/object:RI::MethodSummary 
+  name: test_processors
+name: TestCompositeSexpProcessor
+superclass: Test::Unit::TestCase

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "loads the #to_yaml"
+full_name: Ramaze::Store::Default#original
+is_singleton: false
+name: original
+params: ()
+visibility: public

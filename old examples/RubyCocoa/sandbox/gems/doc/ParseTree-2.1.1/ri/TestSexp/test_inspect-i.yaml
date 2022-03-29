@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexp#test_inspect
+is_singleton: false
+name: test_inspect
+params: ()
+visibility: public

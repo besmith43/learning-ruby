@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: To be used with Og queries.
+full_name: Ramaze::Pager#limit
+is_singleton: false
+name: limit
+params: ()
+visibility: public

@@ -1,0 +1,53 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MINUTE
+  value: "60"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HOUR
+  value: "3600"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DAY
+  value: "86400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WEEK
+  value: DAY * 7
+full_name: Assistance::TimeCalculations
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ago
+- !ruby/object:RI::MethodSummary 
+  name: before
+- !ruby/object:RI::MethodSummary 
+  name: day
+- !ruby/object:RI::MethodSummary 
+  name: days
+- !ruby/object:RI::MethodSummary 
+  name: from_now
+- !ruby/object:RI::MethodSummary 
+  name: hour
+- !ruby/object:RI::MethodSummary 
+  name: hours
+- !ruby/object:RI::MethodSummary 
+  name: minute
+- !ruby/object:RI::MethodSummary 
+  name: minutes
+- !ruby/object:RI::MethodSummary 
+  name: since
+- !ruby/object:RI::MethodSummary 
+  name: week
+- !ruby/object:RI::MethodSummary 
+  name: weeks
+name: TimeCalculations
+superclass: 

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: splits up the dispatch based on Global.shield
+full_name: Ramaze::Dispatcher::general_dispatch
+is_singleton: true
+name: general_dispatch
+params: (path)
+visibility: public

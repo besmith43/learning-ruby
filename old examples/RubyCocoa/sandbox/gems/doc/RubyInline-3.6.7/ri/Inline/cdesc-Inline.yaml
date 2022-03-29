@@ -1,0 +1,39 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: directory
+- !ruby/object:RI::MethodSummary 
+  name: rootdir
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Inline module is the top-level module used. It is responsible for instantiating the builder for the right language used, compilation/linking when needed, and loading the inlined code into the current namespace.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'3.6.7'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WINDOZE
+  value: /win(32|64)/ =~ RUBY_PLATFORM
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEV_NULL
+  value: "(WINDOZE ? 'nul'      : '/dev/null')"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RAKE
+  value: "(WINDOZE ? 'rake.bat' : 'rake')"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GEM
+  value: "(WINDOZE ? 'gem.bat'  : 'gem')"
+full_name: Inline
+includes: []
+
+instance_methods: []
+
+name: Inline
+superclass: 

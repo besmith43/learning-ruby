@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #uniq"
+full_name: Sequel::Dataset::SQL#distinct
+is_singleton: false
+name: distinct
+params: (*args)
+visibility: public

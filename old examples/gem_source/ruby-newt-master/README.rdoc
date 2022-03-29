@@ -1,0 +1,76 @@
+= newt
+
+* http://github.com/ericsperano/ruby-newt
+
+== DESCRIPTION:
+
+Ruby Bindings for the Newt Library
+
+== FEATURES/PROBLEMS:
+
+Code is originally from Noritsugu Nakamura and is available at:
+http://www2s.biglobe.ne.jp/~Nori/ruby/dist/ruby-newt-20020105.tar.gz
+
+I modified it to use RARRAY_LEN, RARRAY_PTR, StringValuePtr, etc.
+
+Still trying it to make it work for 1.9.x
+
+== SYNOPSIS:
+
+See http://github.com/ericsperano/ruby-newt/tree/master/examples for usage examples.
+
+== REQUIREMENTS:
+
+The Newt library and headers.
+
+=== Ubuntu
+
+  $ sudo apt-get install libnewt-dev
+
+=== Mac OS X
+
+  $ sudo port install libnewt
+
+Then, define these environment variables:
+  $ export LIBRARY_PATH="/opt/local/lib/"
+  $ export C_INCLUDE_PATH="/opt/local/include/" 
+
+For some reason, it does not always find the header so symlink it:
+  $ sudo ln -s /opt/local/include/newt.h  /usr/include/
+
+== INSTALL:
+
+=== RugyGems
+	
+  $ gem install newt
+
+=== Sources		
+
+  $ git clone git://github.com/ericsperano/ruby-newt
+  $ cd ruby-newt
+  $ sudo gem install newgem
+  $ rake gem
+  $ sudo gem install pkg/newt*gem
+
+== LICENSE:
+
+(The MIT License)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

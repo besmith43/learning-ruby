@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @skills_and_interest.owner %>
+</p>
+
+<p>
+  <strong>Skill name:</strong>
+  <%= @skills_and_interest.skill_name %>
+</p>
+
+<p>
+  <strong>Skill description:</strong>
+  <%= @skills_and_interest.skill_description %>
+</p>
+
+<%= link_to 'Edit', edit_skills_and_interest_path(@skills_and_interest) %> |
+<%= link_to 'Back', dashboard_skills_path %>

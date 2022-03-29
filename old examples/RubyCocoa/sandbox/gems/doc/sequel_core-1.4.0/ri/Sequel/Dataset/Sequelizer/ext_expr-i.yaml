@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Dataset::Sequelizer#ext_expr
+is_singleton: false
+name: ext_expr
+params: (*args)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Helper::Maruku#maruku
+is_singleton: false
+name: maruku
+params: (text)
+visibility: public

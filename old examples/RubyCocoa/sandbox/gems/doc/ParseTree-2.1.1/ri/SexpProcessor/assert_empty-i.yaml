@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SexpProcessor#assert_empty
+is_singleton: false
+name: assert_empty
+params: (meth, exp, exp_orig)
+visibility: public

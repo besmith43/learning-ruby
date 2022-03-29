@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: When Controller is subclassed the resulting class is placed in Global.controllers and a new trait :actions_cached is set on it.
+full_name: Ramaze::Controller::inherited
+is_singleton: true
+name: inherited
+params: (controller)
+visibility: public

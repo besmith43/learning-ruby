@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAX_COL_SIZE
+  value: "256"
+full_name: Sequel::DB2::Dataset
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: convert_type
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: get_column_info
+- !ruby/object:RI::MethodSummary 
+  name: hash_row
+- !ruby/object:RI::MethodSummary 
+  name: insert
+- !ruby/object:RI::MethodSummary 
+  name: literal
+- !ruby/object:RI::MethodSummary 
+  name: update
+name: Dataset
+superclass: Sequel::Dataset

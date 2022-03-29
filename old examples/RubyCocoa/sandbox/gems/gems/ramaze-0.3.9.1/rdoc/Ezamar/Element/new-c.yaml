@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "this will be called by #transform, passes along the stuff inside the tags for the element"
+full_name: Ezamar::Element::new
+is_singleton: true
+name: new
+params: (content)
+visibility: public

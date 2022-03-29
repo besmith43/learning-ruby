@@ -1,0 +1,96 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 78EE15F60F437C0700B209EE /* Fenestra */;
+		activeTarget = 8D1107260486CEB800E47090 /* Fenestra */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* Fenestra */,
+		);
+		codeSenseManager = 78EE15FE0F437C1900B209EE /* Code sense */;
+		executables = (
+			78EE15F60F437C0700B209EE /* Fenestra */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 260646701;
+			PBXWorkspaceStateSaveDate = 260646701;
+		};
+		sourceControlManager = 78EE15FD0F437C1900B209EE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4DE339F60D74FCDD00ADB6EE /* rb_main.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {829, 750}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 299}";
+			sepNavWindowFrame = "{{19, -5}, {888, 878}}";
+		};
+	};
+	78EE15F60F437C0700B209EE /* Fenestra */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Fenestra;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	78EE15FD0F437C1900B209EE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	78EE15FE0F437C1900B209EE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	8D1107260486CEB800E47090 /* Fenestra */ = {
+		activeExec = 0;
+		executables = (
+			78EE15F60F437C0700B209EE /* Fenestra */,
+		);
+	};
+}

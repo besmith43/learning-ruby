@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (klass, method)
+comment: 
+full_name: Method#with_class_and_method_name
+is_singleton: false
+name: with_class_and_method_name
+params: () {|klass, method| ...}
+visibility: public

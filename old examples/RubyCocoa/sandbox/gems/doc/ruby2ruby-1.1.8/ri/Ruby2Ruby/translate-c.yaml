@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby::translate
+is_singleton: true
+name: translate
+params: (klass_or_str, method = nil)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::Message::create_query_part_str
+is_singleton: true
+name: create_query_part_str
+params: (query)
+visibility: public

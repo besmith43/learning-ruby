@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the Sexp without the node_type.
+full_name: Sexp#sexp_body
+is_singleton: false
+name: sexp_body
+params: ()
+visibility: public

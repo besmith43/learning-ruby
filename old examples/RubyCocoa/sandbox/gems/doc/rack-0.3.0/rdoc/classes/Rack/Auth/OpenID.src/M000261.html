@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>call (Rack::Auth::OpenID)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rack/auth/openid.rb, line 58</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+        <span class="ruby-identifier">request</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">env</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">no_session</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">session</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:session_key</span>]]
+        <span class="ruby-identifier">resp</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-constant">GET</span>[<span class="ruby-value str">'openid.mode'</span>]
+                 <span class="ruby-identifier">finish</span> <span class="ruby-identifier">session</span>, <span class="ruby-identifier">request</span>.<span class="ruby-constant">GET</span>, <span class="ruby-identifier">env</span>
+               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">request</span>.<span class="ruby-constant">GET</span>[<span class="ruby-value str">'openid_url'</span>]
+                 <span class="ruby-identifier">check</span> <span class="ruby-identifier">session</span>, <span class="ruby-identifier">request</span>.<span class="ruby-constant">GET</span>[<span class="ruby-value str">'openid_url'</span>], <span class="ruby-identifier">env</span>
+               <span class="ruby-keyword kw">else</span>
+                 <span class="ruby-identifier">bad_request</span>
+               <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

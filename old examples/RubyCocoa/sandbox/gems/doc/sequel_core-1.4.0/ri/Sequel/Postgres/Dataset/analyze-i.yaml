@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Dataset#analyze
+is_singleton: false
+name: analyze
+params: (opts = nil)
+visibility: public

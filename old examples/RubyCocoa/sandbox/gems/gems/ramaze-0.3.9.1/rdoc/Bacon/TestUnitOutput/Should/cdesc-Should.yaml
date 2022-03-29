@@ -1,0 +1,61 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Bacon::TestUnitOutput::Should
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: a
+- !ruby/object:RI::MethodSummary 
+  name: a
+- !ruby/object:RI::MethodSummary 
+  name: an
+- !ruby/object:RI::MethodSummary 
+  name: an
+- !ruby/object:RI::MethodSummary 
+  name: be
+- !ruby/object:RI::MethodSummary 
+  name: be
+- !ruby/object:RI::MethodSummary 
+  name: equal
+- !ruby/object:RI::MethodSummary 
+  name: equal
+- !ruby/object:RI::MethodSummary 
+  name: flunk
+- !ruby/object:RI::MethodSummary 
+  name: flunk
+- !ruby/object:RI::MethodSummary 
+  name: identical_to
+- !ruby/object:RI::MethodSummary 
+  name: identical_to
+- !ruby/object:RI::MethodSummary 
+  name: match
+- !ruby/object:RI::MethodSummary 
+  name: match
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: not
+- !ruby/object:RI::MethodSummary 
+  name: not
+- !ruby/object:RI::MethodSummary 
+  name: same_as
+- !ruby/object:RI::MethodSummary 
+  name: same_as
+- !ruby/object:RI::MethodSummary 
+  name: satisfy
+- !ruby/object:RI::MethodSummary 
+  name: satisfy
+name: Should
+superclass: Object

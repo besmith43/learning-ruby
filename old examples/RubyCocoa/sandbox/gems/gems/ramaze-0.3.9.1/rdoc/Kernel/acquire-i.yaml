@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Require all .rb and .so files on the given globs, utilizes Dir::[].
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # Given following directory structure:\n  # src/foo.rb\n  # src/bar.so\n  # src/foo.yaml\n  # src/foobar/baz.rb\n  # src/foobar/README\n\n  # requires all files in 'src':\n  acquire 'src/*'\n\n  # requires all files in 'src' recursive:\n  acquire 'src/**/*'\n\n  # require 'src/foo.rb' and 'src/bar.so' and 'src/foobar/baz.rb'\n  acquire 'src/*', 'src/foobar/*'\n"
+full_name: Kernel#acquire
+is_singleton: false
+name: acquire
+params: (*globs)
+visibility: public

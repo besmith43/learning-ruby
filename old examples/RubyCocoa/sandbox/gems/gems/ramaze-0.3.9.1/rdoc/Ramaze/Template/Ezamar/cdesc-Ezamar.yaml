@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: compile
+- !ruby/object:RI::MethodSummary 
+  name: compile
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Is responsible for compiling a template using the Ezamar templating engine.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TRANSFORM_PIPELINE
+  value: "[ ::Ezamar::Element ]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TRANSFORM_PIPELINE
+  value: "[ ::Ezamar::Element ]"
+full_name: Ramaze::Template::Ezamar
+includes: []
+
+instance_methods: []
+
+name: Ezamar
+superclass: Template

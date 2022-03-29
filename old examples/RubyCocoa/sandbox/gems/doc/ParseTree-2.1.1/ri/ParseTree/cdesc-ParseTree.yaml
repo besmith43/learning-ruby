@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: has_alloca
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: translate
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ParseTree is a RubyInline-style extension that accesses and traverses the internal parse tree created by ruby.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Example\n    def blah\n      return 1 + 1\n    end\n  end\n\n  ParseTree.new.parse_tree(Example)\n  =&gt; [[:class, :Example, :Object,\n         [:defn,\n           &quot;blah&quot;,\n           [:scope,\n             [:block,\n               [:args],\n               [:return, [:call, [:lit, 1], &quot;+&quot;, [:array, [:lit, 1]]]]]]]]]\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'2.1.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NODE_NAMES
+  value: "[                 #  00                 :method, :fbody, :cfunc, :scope, :block,                 :if, :case, :when, :opt_n, :while,                 #  10                 :until, :iter, :for, :break, :next,                 :redo, :retry, :begin, :rescue, :resbody,                 #  20                 :ensure, :and, :or, :not, :masgn,                 :lasgn, :dasgn, :dasgn_curr, :gasgn, :iasgn,                 #  30                 :cdecl, :cvasgn, :cvdecl, :op_asgn1, :op_asgn2,                 :op_asgn_and, :op_asgn_or, :call, :fcall, :vcall,                 #  40                 :super, :zsuper, :array, :zarray, :hash,                 :return, :yield, :lvar, :dvar, :gvar,                 #  50                 :ivar, :const, :cvar, :nth_ref, :back_ref,                 :match, :match2, :match3, :lit, :str,                 #  60                 :dstr, :xstr, :dxstr, :evstr, :dregx,                 :dregx_once, :args, :argscat, :argspush, :splat,                 #  70                 :to_ary, :svalue, :block_arg, :block_pass, :defn,                 :defs, :alias, :valias, :undef, :class,                 #  80                 :module, :sclass, :colon2, :colon3, :cref,                 :dot2, :dot3, :flip2, :flip3, :attrset,                 #  90                 :self, :nil, :true, :false, :defined,                 #  95                 :newline, :postexe, :alloca, :dmethod, :bmethod,                 # 100                 :memo, :ifunc, :dsym, :attrasgn,                 :last"
+full_name: ParseTree
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: parse_tree
+- !ruby/object:RI::MethodSummary 
+  name: parse_tree_for_method
+- !ruby/object:RI::MethodSummary 
+  name: parse_tree_for_string
+- !ruby/object:RI::MethodSummary 
+  name: process
+name: ParseTree
+superclass: Object

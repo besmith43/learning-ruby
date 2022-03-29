@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: self
+comment: 
+full_name: Ramaze::Action#stack
+is_singleton: false
+name: stack
+params: () {|self| ...}
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Overrides the each method to pass the values through a filter. The filter receives as argument a hash containing the column values for the current record. The filter should return a value which is then passed to the iterating block. In order to elucidate, here's a contrived example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  dataset.set_row_proc {|h| h.merge(:xxx =&gt; 'yyy')}\n  dataset.first[:xxx] #=&gt; &quot;yyy&quot; # always!\n"
+full_name: Sequel::Dataset#set_row_proc
+is_singleton: false
+name: set_row_proc
+params: (&filter)
+visibility: public

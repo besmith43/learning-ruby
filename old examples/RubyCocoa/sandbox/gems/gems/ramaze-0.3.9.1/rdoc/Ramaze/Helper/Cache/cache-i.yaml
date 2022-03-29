@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class FooController &lt; Ramaze::Controller\n    helper :cache\n    cache :index, :map_of_the_internet\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: cache supports these options
+- !ruby/struct:SM::Flow::VERB 
+  body: "  [+:ttl+]  time-to-live in seconds\n  [+:key+]  proc that returns a key to store cache with\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class CacheController &lt; Ramaze::Controller\n    helper :cache\n\n    # for each distinct value of request['name']\n    # cache rendered output of name action for 60 seconds\n    cache :name, :key =&gt; lambda{ request['name'] }, :ttl =&gt; 60\n\n    def name\n      &quot;hi #{request['name']}&quot;\n    end\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: cache acts as a wrapper for value_cache if no args are given
+full_name: Ramaze::Helper::Cache#cache
+is_singleton: false
+name: cache
+params: (*args)
+visibility: public

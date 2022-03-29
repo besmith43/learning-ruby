@@ -1,0 +1,113 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FOR_UPDATE
+  value: "' FOR UPDATE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FOR_SHARE
+  value: "' FOR SHARE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXPLAIN
+  value: "'EXPLAIN '.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXPLAIN_ANALYZE
+  value: "'EXPLAIN ANALYZE '.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: QUERY_PLAN
+  value: "'QUERY PLAN'.to_sym"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOCK
+  value: "'LOCK TABLE %s IN %s MODE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_SHARE
+  value: "'ACCESS SHARE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ROW_SHARE
+  value: "'ROW SHARE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ROW_EXCLUSIVE
+  value: "'ROW EXCLUSIVE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SHARE_UPDATE_EXCLUSIVE
+  value: "'SHARE UPDATE EXCLUSIVE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SHARE
+  value: "'SHARE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SHARE_ROW_EXCLUSIVE
+  value: "'SHARE ROW EXCLUSIVE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EXCLUSIVE
+  value: "'EXCLUSIVE'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_EXCLUSIVE
+  value: "'ACCESS EXCLUSIVE'.freeze"
+full_name: Sequel::Postgres::Dataset
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: analyze
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_compile_converter
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_row_converter
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_transform_load
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_transform_save
+- !ruby/object:RI::MethodSummary 
+  name: compile_converter
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: explain
+- !ruby/object:RI::MethodSummary 
+  name: fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: for_share
+- !ruby/object:RI::MethodSummary 
+  name: for_update
+- !ruby/object:RI::MethodSummary 
+  name: full_text_search
+- !ruby/object:RI::MethodSummary 
+  name: insert
+- !ruby/object:RI::MethodSummary 
+  name: literal
+- !ruby/object:RI::MethodSummary 
+  name: lock
+- !ruby/object:RI::MethodSummary 
+  name: match_expr
+- !ruby/object:RI::MethodSummary 
+  name: multi_insert_sql
+- !ruby/object:RI::MethodSummary 
+  name: quote_column_ref
+- !ruby/object:RI::MethodSummary 
+  name: row_converter
+- !ruby/object:RI::MethodSummary 
+  name: select_sql
+- !ruby/object:RI::MethodSummary 
+  name: update
+name: Dataset
+superclass: Sequel::Dataset

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CPCAS</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand"> 	<%= link_to root_path, { :class => "navbar-brand"}  do %><%=  image_tag 'CPCASlogo.png', class: "logo" %><% end %></a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+					  <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Lost and Found<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<%= link_to "Lost Animal", { :controller => '/dashboard', :action => :lost_pets } %>
+								</li>
+								<li>
+									<%= link_to "Found Animal", { :controller => '/dashboard', :action => :found_pets } %>
+								</li>
+								<li>
+									<%= link_to "Post Lost Animal", { :controller => '/dashboard', :action => :lost_form } %>
+								</li>
+								<li>
+									<%= link_to "Post Found Animal", { :controller => '/dashboard', :action => :found_form } %>
+								</li>
+							</ul>
+					  </li>
+						<li>
+							<%= link_to "Adoptable Animals", { :controller => '/dashboard', :action => :adoptable } %>
+						</li>
+						<li>
+								<%= link_to "Resources", { :controller => '/dashboard', :action => :resources } %>
+						</li>
+						<li>
+							<%= link_to "Support Us", { :controller => '/dashboard', :action => :support } %>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+							<% if user_signed_in? %>
+							<li>
+							   <%= link_to "Account", edit_user_registration_path %>
+							</li>
+							<li>
+							   <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+							</li>
+							<% else %>
+							<li>
+							   <%= link_to "Login", new_user_session_path %>
+							</li>
+							<% end %>
+
+					</ul>
+				</div>
+
+			</nav>
+
+					<hr />
+
+		</div>
+	</div>
+</div>
+
+
+    <%= yield %>
+
+
+
+
+  </div>
+
+  <div class="container text-center">
+    <hr />
+  <div class="row" id="footer">
+      <div class="col-md-3" id="footerCol">
+        <ul class="nav nav-pills nav-stacked">
+          <li class= "footerCag">Cookeville Putnam County Animal Shelter</li>
+          <li class = "footerCag2">2650 Gainesboro Grade Road</li>
+          <li  class = "footerCag2">Cookeville TN 38501</li>
+          <li  class = "footerCag2">&#40;&#57;&#51;&#49;&#41;&#32;&#32;&#53;&#50;&#54;&#32;&#45;&#32;&#51;&#54;&#52;&#55;</li>
+        </ul>
+      </div>
+      <div class="col-md-3" id="footerCol">
+        <ul class="nav nav-pills nav-stacked">
+          <li  class = "footerCag2">Monday - Saturday    12:00pm - 6:00pm </li>
+          <li  class = "footerCag2">Closed on Sunday</li>
+          <li  class = "footerCag2">Closed First Monday of every month for Special Cleaning</li>
+
+        </ul>
+      </div>
+
+  </div>
+
+</div>
+  <br><br>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

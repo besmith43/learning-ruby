@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#put
+is_singleton: false
+name: put
+params: (uri, body = nil, extheader = {}, &block)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (self)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: batch-assignment of key/value from hash, yields self if a block is given.
+full_name: Ramaze::GlobalStruct#setup
+is_singleton: false
+name: setup
+params: (hash = {}) {|self| ...}
+visibility: public

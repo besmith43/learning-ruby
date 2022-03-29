@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Same as <tt>c_raw</tt>, but adds a class function.
+full_name: Inline::C#c_raw_singleton
+is_singleton: false
+name: c_raw_singleton
+params: (src, options = {})
+visibility: public

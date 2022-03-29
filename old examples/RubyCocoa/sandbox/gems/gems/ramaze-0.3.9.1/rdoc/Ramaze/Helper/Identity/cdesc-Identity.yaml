@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is called Identity to avoid collisions with the original openid.rb It provides a nice and simple way to provide and control access over the OpenID authentication model.
+constants: []
+
+full_name: Ramaze::Helper::Identity
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: openid_begin
+- !ruby/object:RI::MethodSummary 
+  name: openid_begin
+- !ruby/object:RI::MethodSummary 
+  name: openid_complete
+- !ruby/object:RI::MethodSummary 
+  name: openid_complete
+- !ruby/object:RI::MethodSummary 
+  name: openid_consumer
+- !ruby/object:RI::MethodSummary 
+  name: openid_consumer
+- !ruby/object:RI::MethodSummary 
+  name: openid_login_form
+- !ruby/object:RI::MethodSummary 
+  name: openid_login_form
+name: Identity
+superclass: 

@@ -1,0 +1,111 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Charset.
+  name: body_charset
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A milestone of body.
+  name: body_date
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Size of body.
+  name: body_size
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Content-type.
+  name: body_type
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Chunked or not.
+  name: chunked
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: HTTP version string in a HTTP header.
+  name: http_version
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: HTTP status reason phrase.
+  name: reason_phrase
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Request method.
+  name: request_method
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Requested URI.
+  name: request_uri
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: request_via_proxy
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: response_status_code
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTP::Message::Headers -- HTTP message header.
+- !ruby/struct:SM::Flow::P 
+  body: DESCRIPTION
+- !ruby/struct:SM::Flow::VERB 
+  body: "  A class that describes header part of HTTP message.\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: StatusCodeMap
+  value: "{       Status::OK => 'OK',       Status::MOVED_PERMANENTLY => 'Moved Permanently',       Status::FOUND => 'Found',       Status::SEE_OTHER => 'See Other',       Status::TEMPORARY_REDIRECT => 'Temporary Redirect',       Status::MOVED_TEMPORARILY => 'Temporary Redirect',       Status::BAD_REQUEST => 'Bad Request',       Status::INTERNAL => 'Internal Server Error',     }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CharsetMap
+  value: "{       'NONE' => 'us-ascii',       'EUC'  => 'euc-jp',       'SJIS' => 'shift_jis',       'UTF8' => 'utf-8',     }"
+full_name: HTTP::Message::Headers
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: body_size=
+- !ruby/object:RI::MethodSummary 
+  name: contenttype
+- !ruby/object:RI::MethodSummary 
+  name: contenttype=
+- !ruby/object:RI::MethodSummary 
+  name: dump
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: init_request
+- !ruby/object:RI::MethodSummary 
+  name: init_response
+- !ruby/object:RI::MethodSummary 
+  name: response_status_code=
+- !ruby/object:RI::MethodSummary 
+  name: set
+name: Headers
+superclass: Object

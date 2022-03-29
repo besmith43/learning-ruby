@@ -1,0 +1,69 @@
+#Comments with #
+#Commands with >
+#Messages run until a new command
+#Ignore line (works like a comment) with --
+#Ignore line-breaks(&)
+#>Begin and >End are necessary
+
+>Begin
+--
+>Message Start
+Awake reaper, the dark council begs for your help, so show us your true power.
+
+This land, Imperius, is ruled by the living. Their armies are large and strong, but your power is far beyond their &
+limits.
+
+I'll help you unlock your dormant power, and once it's done, we shall make each of them, bend to their knees, and obey &
+your will.
+--
+>Message Base
+Look at the northwest. Do you see the graves on the ground?. That's our base, and only inside it, you'll be able to &
+summon your minions.
+
+Enemies will try to reach your base, stay alert, because enemies inside your domains will slowly drain your energy. &
+The best idea, is to slaughter them all before they get inside.
+--
+>Message Summon
+It's time for you to learn how to summon minions.
+
+The summoning mode allows you to create all type of undead creatures at your orders, but you can only do it inside your &
+base. Summoning units costs energy, and corpses, both of them, are gained by killing enemies, (you can see your current energy &
+and corpses at the top of the screen)
+
+Start by summoning 1 skeleton, press the S key to enter the summoning mode, and left click the point where you want to summon &
+the unit.
+>Message Orders
+After summoning a unit, it'll be ready to serve you (a white rectangle around a unit indicates it is currently selected)
+
+Exit the summoning mode with S, and order your unit to walk around the land (by pressing the right mouse button)
+
+(If you left click anywhere on the land, the unit will no longer listen to your orders, however, you can control it back again &
+by clicking it with the left mouse button.)
+--
+>Message MoreSummoning
+Enemies are on their way to our base, but a single skeleton is no match for the enemy warriors.
+I'll give you enough energy and corpses to summon 2 more skeleton.
+
+(If you drag the left mouse button in summoning mode you'll be able to create multiple units)
+(If you drag the left mouse button outside summoning mode you'll be able to select multiple units)
+--
+>Message Enemies
+Now you have 3 skeletons to battle the enemy forces.
+Exit the summoning mode (S) and select the three of them (keep left click pressed and drag the mouse).
+
+Wait for the enemy to appear, and order them to attack (order them to move to the enemies position)
+(Units will fight automatically once they're close enough to an enemy unit)&
+>Message AlmostOver
+You were able to defeat the enemy warriors, but two of them are still on their way.
+With the energy and corpses you've gathered from the killed enemies, summon new skeletons and prepare for the final battle.
+
+(Press S to enter/exit summoning mode)
+(Skeletons cost 15 energy and 1 corpse)&
+>Message FinalBattle
+The enemies have arrived, select your skeletons and form them in a line to fight.
+
+(Left click+drag = Select)
+(Right click = Move)&
+>Message Victory
+CONGRATULATIONS. YOU HAVE CONQUERED THIS LAND.
+>End

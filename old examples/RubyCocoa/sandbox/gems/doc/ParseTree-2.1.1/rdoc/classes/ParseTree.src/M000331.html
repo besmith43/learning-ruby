@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse_tree_for_string (ParseTree)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/parse_tree.rb, line 160</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_tree_for_string</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">filename</span> = <span class="ruby-value str">'(string)'</span>, <span class="ruby-identifier">line</span> = <span class="ruby-value">1</span>)
+    <span class="ruby-identifier">old_verbose</span>, <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">$VERBOSE</span>, <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">parse_tree_for_str0</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword kw">ensure</span>
+    <span class="ruby-identifier">$VERBOSE</span> = <span class="ruby-identifier">old_verbose</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

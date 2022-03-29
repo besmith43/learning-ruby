@@ -1,0 +1,6 @@
+name = "Alice’s website"
+description = "Alice's personal blog"
+url = "http://alice.example.com/"
+public = "true"
+version = "24"
+

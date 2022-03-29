@@ -1,0 +1,315 @@
+.
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── app
+│   ├── assets
+│   │   ├── config
+│   │   │   └── manifest.js
+│   │   ├── images
+│   │   ├── javascripts
+│   │   │   ├── application.js
+│   │   │   ├── cable.js
+│   │   │   ├── channels
+│   │   │   ├── dashboard.coffee
+│   │   │   └── users.coffee
+│   │   └── stylesheets
+│   │       ├── application.css
+│   │       ├── dashboard.scss
+│   │       └── users.scss
+│   ├── channels
+│   │   └── application_cable
+│   │       ├── channel.rb
+│   │       └── connection.rb
+│   ├── controllers
+│   │   ├── application_controller.rb
+│   │   ├── concerns
+│   │   ├── dashboard_controller.rb
+│   │   └── users_controller.rb
+│   ├── helpers
+│   │   ├── application_helper.rb
+│   │   ├── dashboard_helper.rb
+│   │   ├── layout_helpers.rb
+│   │   └── users_helper.rb
+│   ├── jobs
+│   │   └── application_job.rb
+│   ├── mailers
+│   │   └── application_mailer.rb
+│   ├── models
+│   │   ├── application_record.rb
+│   │   ├── concerns
+│   │   └── user.rb
+│   └── views
+│       ├── dashboard
+│       │   ├── index.html.erb
+│       │   ├── page1.html.erb
+│       │   └── page2.html.erb
+│       ├── devise
+│       │   ├── confirmations
+│       │   │   └── new.html.erb
+│       │   ├── mailer
+│       │   │   ├── confirmation_instructions.html.erb
+│       │   │   ├── password_change.html.erb
+│       │   │   ├── reset_password_instructions.html.erb
+│       │   │   └── unlock_instructions.html.erb
+│       │   ├── menu
+│       │   ├── passwords
+│       │   │   ├── edit.html.erb
+│       │   │   └── new.html.erb
+│       │   ├── registrations
+│       │   │   ├── edit.html.erb
+│       │   │   └── new.html.erb
+│       │   ├── sessions
+│       │   │   └── new.html.erb
+│       │   ├── shared
+│       │   │   └── _links.html.erb
+│       │   └── unlocks
+│       │       └── new.html.erb
+│       ├── layouts
+│       │   ├── application.html.erb
+│       │   ├── mailer.html.erb
+│       │   └── mailer.text.erb
+│       └── users
+│           └── show.html.erb
+├── bin
+│   ├── bundle
+│   ├── rails
+│   ├── rake
+│   ├── setup
+│   └── update
+├── config
+│   ├── application.rb
+│   ├── boot.rb
+│   ├── cable.yml
+│   ├── database.yml
+│   ├── environment.rb
+│   ├── environments
+│   │   ├── development.rb
+│   │   ├── production.rb
+│   │   └── test.rb
+│   ├── initializers
+│   │   ├── application_controller_renderer.rb
+│   │   ├── assets.rb
+│   │   ├── backtrace_silencers.rb
+│   │   ├── cookies_serializer.rb
+│   │   ├── devise.rb
+│   │   ├── filter_parameter_logging.rb
+│   │   ├── inflections.rb
+│   │   ├── mime_types.rb
+│   │   ├── new_framework_defaults.rb
+│   │   ├── session_store.rb
+│   │   └── wrap_parameters.rb
+│   ├── locales
+│   │   ├── devise.en.yml
+│   │   └── en.yml
+│   ├── puma.rb
+│   ├── routes.rb
+│   └── secrets.yml
+├── config.ru
+├── db
+│   ├── migrate
+│   │   ├── 20170226220328_devise_create_users.rb
+│   │   └── 20170226220423_add_details_to_user.rb
+│   ├── schema.rb
+│   └── seeds.rb
+├── folder_structure.txt
+├── lib
+│   ├── assets
+│   └── tasks
+├── log
+│   └── development.log
+├── public
+│   ├── 404.html
+│   ├── 422.html
+│   ├── 500.html
+│   ├── apple-touch-icon-precomposed.png
+│   ├── apple-touch-icon.png
+│   ├── favicon.ico
+│   └── robots.txt
+├── tmp
+│   ├── cache
+│   │   └── assets
+│   │       └── sprockets
+│   │           └── v3.0
+│   │               ├── 1H
+│   │               │   └── 1Hpx8G2jsBRQ4R9AYMbt6S2XSq6fd_iMECsYin8IgGw.cache
+│   │               ├── 1e
+│   │               │   └── 1evhQlJXF0A3XIfDdG-Y1uosvpDlYShOnzzbkGygb6w.cache
+│   │               ├── 1k
+│   │               │   └── 1kYTUTRsu11Wd3FK2W_2fj96AcWqSk4lymh6MO3wpRs.cache
+│   │               ├── 2K
+│   │               │   └── 2K99Tlv_u3uYcFo5XcxJHjsDtHHd1miz-Tfsc-G1xWs.cache
+│   │               ├── 2P
+│   │               │   └── 2Pb9UKoGGHfWyeSq8uKmUElaPNVGi3N_qSmRq1GAwWQ.cache
+│   │               ├── 3U
+│   │               │   └── 3UMvykLRCDzi9QVbx4o4vql-Pm7D1zS7R_GS3Q8wm-w.cache
+│   │               ├── 4I
+│   │               │   └── 4IHc1X-UpUutMItG-ZJ3zvf2xdXwagIxxhlE5zkSUx0.cache
+│   │               ├── 6a
+│   │               │   └── 6aTI0c7nJYfPP8v_UFpdGTCa-Bw3kSnx1XHD2kCl_js.cache
+│   │               ├── 7T
+│   │               │   └── 7Tpowu_cCsLPLayoj9T_kgI_DVQVRcqay32XuX6qwAI.cache
+│   │               ├── 7U
+│   │               │   └── 7UQ8y5Cie1aaPQztUfQft-nv0oZkfFOI0sj2TH6qjg0.cache
+│   │               ├── 8-
+│   │               │   └── 8-p4q9AuxYrFa0dpDHbeEdkdIP08fEe4vGOq1m6RwOk.cache
+│   │               ├── 8_
+│   │               │   └── 8_uEgOAJJdtlAA5nhjWH6GGXh4dcSjYtHYPGxGWzBmg.cache
+│   │               ├── 95
+│   │               │   └── 95sHqwZDt1pydaM1lNC11ugl4AKQvj1XOk5rC5tdJiQ.cache
+│   │               ├── 9p
+│   │               │   └── 9p9KkomdXBebzeH_36Ky2C_5B3KvmnVUEJGfKn4xnBc.cache
+│   │               ├── A8
+│   │               │   └── A8tDspykz_-yGWTKqZacnIOykixXTe1KOrRqFs8X4qQ.cache
+│   │               ├── AW
+│   │               │   └── AWMCxkKKO7E_k5IEEXTucEPU0t3_85ddH6sWPlM-0n0.cache
+│   │               ├── B_
+│   │               │   └── B_VCD15SV6FwXRyHLRcYlhyVoqJ4BfmIOnoUoWI0zSo.cache
+│   │               ├── Bw
+│   │               │   └── BwnfwyCR7n07kj1OuW7B-x1XcVikkzujvzCu1nUw9Ps.cache
+│   │               ├── Bx
+│   │               │   └── BxKEwGCdjqWh_2UBfSRcstbgEffX2gO2DAeJXmN-mFw.cache
+│   │               ├── C9
+│   │               │   └── C9UFioYSxTlcqMnm7rMSHeS-KF71C8-PyS4zAsfY5-8.cache
+│   │               ├── CR
+│   │               │   └── CR7XSb0shE8SFAKag4LXdytMvcPVbSp3N83ymkW-OjY.cache
+│   │               ├── CX
+│   │               │   └── CX9Tkxfx9nbuZa9RUDtv-zWO5oGJrL7_kXkJxQHwsig.cache
+│   │               ├── EI
+│   │               │   └── EIHs5sscrdUMOj9gfIn1zH_1Yr9sM0UkW7DABUbq8r0.cache
+│   │               ├── Et
+│   │               │   └── EtnGcCu_FMXDwcxyynhZzc0KzldfI8HFCjiZqdZBZwk.cache
+│   │               ├── F4
+│   │               │   └── F48T6DoIchU50Qu7fE1gEXrv3_xYiZdffFwH0iOV2YY.cache
+│   │               ├── H6
+│   │               │   └── H6-CMZFHsL9iSWcFbWMm0jQ2CHbr-cbo6VvNGC56PlA.cache
+│   │               ├── IU
+│   │               │   └── IULN_0SbansoGaa0NbiGhRzETNxpgkZo8m5Nxyx97P8.cache
+│   │               ├── Iy
+│   │               │   └── Iy2uZ3exHY7cYh_k5cYYyIZq-otboS_4_Ctnzr0ltzk.cache
+│   │               ├── JO
+│   │               │   └── JOS7Vqz6rO5g9JaDTQpKLvO9dryq1tE6b1GNKzHCg9A.cache
+│   │               ├── JT
+│   │               │   └── JT7MO_lsx3_waT9NkI3eV-kkHkVJkqGlVtnUF6C_TvM.cache
+│   │               ├── LD
+│   │               │   └── LDN25U83MfkO9ZDYQ0wI6sRl5O6XciguDzITcaO-UUQ.cache
+│   │               ├── Le
+│   │               │   └── LecdJ-bdRFsX1-4a5MK7lDsfCnGbF8Igh1seNsCC_mI.cache
+│   │               ├── M7
+│   │               │   └── M7mO06uBlurCi8yCqs3T2bMER7LMjgLCP5-ghcoP3HU.cache
+│   │               ├── MF
+│   │               │   └── MFP2A3vSxrbpoZhFrJMdAxawVL2hsKjhIU2XvZOnbas.cache
+│   │               ├── Mb
+│   │               │   └── MbyjddQxUpcvLC_oTuRNfnZG-03-WvDa76NlLqh24B0.cache
+│   │               ├── NZ
+│   │               │   └── NZ5Suff0RzYsiKTi48PlYr6n5ydDAGlDdvQ0-rb1E1M.cache
+│   │               ├── O9
+│   │               │   └── O9TGNMs9XD4LTOVRND7cv7HhSPcDgrVdeH2SRL2bd4Y.cache
+│   │               ├── Oz
+│   │               │   └── OzsgghDEeNjqHk4Cywmr7pQ07riIvVPg0OhgK7WDZP8.cache
+│   │               ├── Pu
+│   │               │   └── Pu9Ou_Zm2daIxUUvOzprzdrB6AoWf0HvlLc1acdXkPY.cache
+│   │               ├── QZ
+│   │               │   └── QZGs2AUUh8Td0QEl3oZqXCWCWQpvR9gadNUM4OlRRL0.cache
+│   │               ├── Qw
+│   │               │   └── QwIaCUz37ZaQ8Vhu3T39pA0Fb7D9kraE9KKlufHkfW4.cache
+│   │               ├── S_
+│   │               │   └── S_qbebNVXMVhnsnsBePlfIJLLjHil-AlUuKhyRY0vaI.cache
+│   │               ├── Tv
+│   │               │   └── Tvr9JVhqyMpa3baBLyiqinvjWULti7egjT5jnXb4zbA.cache
+│   │               ├── Ue
+│   │               │   └── UeqENIdbjvb-FU6DXmRFUvKzJRE4b1RtS8ANq0HE4iY.cache
+│   │               ├── VZ
+│   │               │   └── VZgAIDGnX2I0krCbegYWdIxXSgMzvPnRyJ9jhHPLUWI.cache
+│   │               ├── We
+│   │               │   └── WepCyUbH5p_KmQpTMqvtJytv3pmKN5bUcCw4xYrnr-k.cache
+│   │               ├── Wv
+│   │               │   └── Wv7qGt09HTv8jaB94i__k9Me7wWDkXT_RauVZMikZ0o.cache
+│   │               ├── YK
+│   │               │   └── YKtoF5Cik8XGwZoaZIgagDPS0lY26ndeUEO0vknkkvo.cache
+│   │               ├── ZH
+│   │               │   └── ZH_nBkGTvw4l1qp9nF4qcqXvdrVuNdZT8QSUm1zMbN8.cache
+│   │               ├── Zv
+│   │               │   └── ZvCEW2ZyS-k4cHH7Gd8P2nKFE9Uh1VOrfR-1PYY2yz8.cache
+│   │               ├── _i
+│   │               │   └── _iT_TtLc9mDU-VeR3bvP4FjnFMn4X5nAft9HARp3zJ8.cache
+│   │               ├── bK
+│   │               │   └── bKHXOf6C5n9Jw2lTlHUre__KyXp4fOa2EV6Ur2rK8VM.cache
+│   │               ├── cz
+│   │               │   └── cz2FRVi3ljp5i1kiIxXJyH2yyh1Z7dX7k7TUmZfaiX8.cache
+│   │               ├── dv
+│   │               │   └── dvAD9ZqXUt98uyysPMAN7HQU0KUunjP_Gts9mwCpc9U.cache
+│   │               ├── e3
+│   │               │   └── e3SPlOA1pUr5fGvPezUHj5bkoa7Q9CmNAzo1wcvCVCg.cache
+│   │               ├── fA
+│   │               │   └── fAApISzmR0mQ-zEUbppj8x1cQXJ4dJywFNEfdeHfbV0.cache
+│   │               ├── gE
+│   │               │   └── gEDNTnq7rXvMgVglQWxbmazERe_MDl9Le_a6DsWX8UU.cache
+│   │               ├── iC
+│   │               │   └── iCT6ukqfMIZE5PR3NFL3y41eGbRvIIUfOmecrCPVin8.cache
+│   │               ├── id
+│   │               │   └── idYA8VmDUHimkOiXw5l97HDYw8DxVqcP4JPxPpWCtzk.cache
+│   │               ├── ij
+│   │               │   └── ij5wDqbq0OAmVXg71HSb04CdYFh_BtQ7md-3VuZDd9M.cache
+│   │               ├── jb
+│   │               │   └── jbW8h6OpJOl-uROyC26bg1phaJBtfk23EoNYMpcYeVE.cache
+│   │               ├── ji
+│   │               │   └── jin6pXCVNAJMOTl-3iOMdCHEOS0l_wk5g0KBbOilw-Y.cache
+│   │               ├── lc
+│   │               │   └── lckgR4sowFwxvJ6dO0n4gW4jfzbq_u7eIm1YVGL7kfI.cache
+│   │               ├── m8
+│   │               │   └── m8RV6Jib53pxfhAQaiTgUFJpfYn-raiX_ujaG-cnyP0.cache
+│   │               ├── nj
+│   │               │   └── nji-pOOSSECcQqHTc33kjGA_fcRbooRQl6qW70N72TM.cache
+│   │               ├── nm
+│   │               │   └── nmfuuWGzsZl-0ByUHLM5xVOO--ZDQAWZsbySFO_LRfQ.cache
+│   │               ├── oW
+│   │               │   └── oW9kiEzLzJReH19kStscimVBvQQi_reWNTXiyom4ipc.cache
+│   │               ├── oj
+│   │               │   └── ojU5aqWZiJjOQVS1DWkTWe-RU0fvPpgqRsGLb5UVeMc.cache
+│   │               ├── pK
+│   │               │   └── pKeK2YdfcQ2FpvoBrn39SdA18qdweLDn8_ssS4edABY.cache
+│   │               ├── s9
+│   │               │   └── s92UMH4OpxpOpwmD6IJEn170WWgnxeYhL24hKzdQ6Fw.cache
+│   │               ├── tI
+│   │               │   └── tICy4Wtapg4zkxr7zudP2gsHUMO2QoZctUnhgWtLDjI.cache
+│   │               ├── tK
+│   │               │   └── tKzYn912BUjA7xZhw4-20KbAWp7dYl1ecvTAvchmVkc.cache
+│   │               ├── ua
+│   │               │   └── uanWA8AWH6VcrCs1cgfDl7wf_6b4c-rWFp79DvEDTxY.cache
+│   │               ├── ut
+│   │               │   └── utrnV0AELR-bhl0CXSB9ZQoG1xvhT9OemKm_Sbwae34.cache
+│   │               ├── vC
+│   │               │   └── vCSSm-593oQsobX1OkTvo-Dt1d_eTbw08mACNcpYSLI.cache
+│   │               ├── v_
+│   │               │   └── v_1BFLQO05cf51wiFiur34JEjo2TT89HqIPrXY59glA.cache
+│   │               ├── wL
+│   │               │   └── wL7q7Lm15ARgZWtKO3L6u5x3ENfNi2MswaAE736AGpU.cache
+│   │               ├── wh
+│   │               │   └── whAYdqBtbsvgdrnUIHUMoalCA7MdZTBDT8epSPReZ9o.cache
+│   │               ├── x7
+│   │               │   └── x7PYh8DJvPykcEqpVab2vcY9-GFz-3cqtoMlRAu94Uc.cache
+│   │               ├── xO
+│   │               │   └── xOrme7ZCJZwpXyk60WaoGHN7qOttUi24O9RfD07ijX8.cache
+│   │               ├── xW
+│   │               │   └── xWhuP42BdtTxTbNCBXo79EgR0AEyELMiiuaE8ea7hiM.cache
+│   │               ├── yc
+│   │               │   └── ycjEqpQZK7t4NcBoqbpQ1PxOceIZF9wEvHZy9dsfUAE.cache
+│   │               ├── yr
+│   │               │   └── yrTzS3ui8xJgA7ANgNo6bUq8tmlcLU0q5AqX0ODTl58.cache
+│   │               ├── z3
+│   │               │   └── z3gt33Cb8ItcbkbuQSorDcCJCz_ywgKchUWAFCYw9UY.cache
+│   │               ├── z9
+│   │               │   └── z9ervcafbzHL0E-SOc6naKrHQWWgIxU_PCq4JhdJtg8.cache
+│   │               └── zV
+│   │                   └── zV8f7iHo4-XwthLcR-hZb3f6U957CWfkGaCP-m9P4yM.cache
+│   ├── pids
+│   ├── restart.txt
+│   └── sockets
+└── vendor
+    └── assets
+        ├── javascripts
+        └── stylesheets
+
+138 directories, 174 files

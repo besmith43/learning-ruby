@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: action for login, takes a password ( ?password=passwort or /login/passwort or via a form ) if no password given, shows a simple form to input it.
+full_name: Ramaze::Helper::Auth#login
+is_singleton: false
+name: login
+params: ()
+visibility: public

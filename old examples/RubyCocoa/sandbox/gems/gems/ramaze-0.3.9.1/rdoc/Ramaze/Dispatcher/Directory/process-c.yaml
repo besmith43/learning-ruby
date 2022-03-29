@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Entry point from Dispatcher::filter. Just a forwarder to build_listing, automatticly exiting if there is an error (defined by returning false in build_listing)
+full_name: Ramaze::Dispatcher::Directory::process
+is_singleton: true
+name: process
+params: (path)
+visibility: public

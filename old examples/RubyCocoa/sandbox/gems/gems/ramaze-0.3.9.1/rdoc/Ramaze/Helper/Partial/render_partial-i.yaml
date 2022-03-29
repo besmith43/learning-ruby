@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Renders a url 'inline'.
+- !ruby/struct:SM::Flow::P 
+  body: "url: normal URL, like you'd use for redirecting. options: optional, will be used as request parameters."
+full_name: Ramaze::Helper::Partial#render_partial
+is_singleton: false
+name: render_partial
+params: (url, options = {})
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Handle to current exception. Only works inside request/response cycle.
+full_name: Ramaze::Dispatcher::Error::current
+is_singleton: true
+name: current
+params: ()
+visibility: public

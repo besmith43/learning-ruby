@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #unindent!"
+full_name: String#ui!
+is_singleton: false
+name: ui!
+params: ()
+visibility: public

@@ -1,0 +1,2 @@
+Main-Class: swing_menubar
+Class-Path: jruby.jar jruby-stdlib-9.3.3.0.jar

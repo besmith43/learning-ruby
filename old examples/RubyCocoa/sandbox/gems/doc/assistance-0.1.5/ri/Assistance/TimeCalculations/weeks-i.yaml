@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: week
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts self from weeks to seconds
+full_name: Assistance::TimeCalculations#weeks
+is_singleton: false
+name: weeks
+params: ()
+visibility: public

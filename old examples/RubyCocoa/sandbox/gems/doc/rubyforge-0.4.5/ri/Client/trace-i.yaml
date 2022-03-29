@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#trace
+is_singleton: false
+name: trace
+params: (uri, query = nil, body = nil, extheader = {}, &block)
+visibility: public

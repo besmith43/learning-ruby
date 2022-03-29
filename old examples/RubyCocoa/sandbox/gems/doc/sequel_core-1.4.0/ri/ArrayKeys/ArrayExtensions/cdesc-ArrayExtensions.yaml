@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: keys
+  rw: R
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The ArrayExtensions module provides extensions for the Array class.
+constants: []
+
+full_name: ArrayKeys::ArrayExtensions
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: columns=
+- !ruby/object:RI::MethodSummary 
+  name: keys=
+name: ArrayExtensions
+superclass: 

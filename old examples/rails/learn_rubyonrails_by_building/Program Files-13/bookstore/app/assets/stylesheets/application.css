@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+	padding-top: 50px;
+	font-family:'Arial', sans-serif;
+	font-size:14px;
+	color:#666;
+	line-height:1.5em;
+}
+
+header{
+	background:#333;
+	color:#fff;
+	height:80px;
+	margin-bottom:20px;
+}
+
+footer{
+	background:#333;
+	color:#fff;
+	height:60px;
+	margin-top:20px;
+	text-align: center;
+	padding-top:20px;
+}
+
+#books-index {
+	text-align: center;
+
+}
+
+#books-index img{
+	width:100%;
+	padding:3px;
+	border:1px #ccc solid;
+}
+
+#books-index h3{
+	height:50px;
+}
+
+#books-index .btn{
+	display:block;
+	margin-top:20px;
+}
+
+#books-show h2{
+	background:#f4f4f4;
+	padding:10px;
+}
+
+.books-show-left{
+	float:left;
+	width:40%;
+}
+
+.books-show-right{
+	float:left;
+	width:60%;
+	margin-top:10px;
+}
+
+#books-show .btn{
+	margin:20px 0 0 70px;
+}

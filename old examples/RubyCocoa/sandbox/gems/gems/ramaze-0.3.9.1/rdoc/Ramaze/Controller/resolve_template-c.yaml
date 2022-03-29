@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Search the #template_paths for a fitting template for path. Only the first found possibility for the generated glob is returned."
+full_name: Ramaze::Controller::resolve_template
+is_singleton: true
+name: resolve_template
+params: (path)
+visibility: public

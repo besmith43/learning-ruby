@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Default url mappings are:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " a controller called Main is mapped on the root of the site: /\n a controller called Something is mapped on: /something\n"
+- !ruby/struct:SM::Flow::P 
+  body: If you want to override this, add a line like this inside the class
+- !ruby/struct:SM::Flow::VERB 
+  body: " map '/otherurl'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "this will force the controller to be mounted on: /otherurl"
+constants: []
+
+full_name: MainController
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: index
+- !ruby/object:RI::MethodSummary 
+  name: index
+- !ruby/object:RI::MethodSummary 
+  name: notemplate
+- !ruby/object:RI::MethodSummary 
+  name: notemplate
+name: MainController
+superclass: Ramaze::Controller

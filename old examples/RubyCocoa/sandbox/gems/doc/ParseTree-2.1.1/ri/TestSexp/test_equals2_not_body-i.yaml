@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexp#test_equals2_not_body
+is_singleton: false
+name: test_equals2_not_body
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Request#to_ivs
+is_singleton: false
+name: to_ivs
+params: (*args)
+visibility: public

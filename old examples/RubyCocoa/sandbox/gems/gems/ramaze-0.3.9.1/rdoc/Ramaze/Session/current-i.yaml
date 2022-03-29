@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: answers with the currently active session, which is set unless it is existing already, the session itself is an instance of SessionHash
+full_name: Ramaze::Session#current
+is_singleton: false
+name: current
+params: ()
+visibility: public

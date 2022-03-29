@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets session[:LOCALE] to one of the languages defined in the dictionary. It first tries to honor the browsers accepted languages and then falls back to the default language.
+full_name: Ramaze::Tool::Localize::set_session_locale
+is_singleton: true
+name: set_session_locale
+params: ()
+visibility: public

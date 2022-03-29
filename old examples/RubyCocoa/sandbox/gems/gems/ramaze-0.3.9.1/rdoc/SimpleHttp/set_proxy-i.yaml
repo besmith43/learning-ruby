@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set the proxy to use for the http request. Note that you don't need to set the proxy in case the `http_proxy` environment variable is set. To override previous proxy settings and connect directly, call `set_proxy nil`
+- !ruby/struct:SM::Flow::P 
+  body: "usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "        http = SimpleHttp.new &quot;www.example.com&quot;\n\n        http.set_proxy &quot;http://proxy:8000&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "or:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "        http.set_proxy(URI.parse(&quot;http://proxy:8000&quot;))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "or:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "        http.set_proxy 'proxy', '8000', 'my_user', 'secret'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "or:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "        http.set_proxy nil # to override previous proxy\n        settings and make the request directly.\n"
+full_name: SimpleHttp#set_proxy
+is_singleton: false
+name: set_proxy
+params: (proxy, port=nil, user=nil, pwd=nil)
+visibility: public

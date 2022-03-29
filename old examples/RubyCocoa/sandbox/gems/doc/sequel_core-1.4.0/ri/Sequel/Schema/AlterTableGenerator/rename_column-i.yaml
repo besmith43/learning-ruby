@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::AlterTableGenerator#rename_column
+is_singleton: false
+name: rename_column
+params: (name, new_name, opts = {})
+visibility: public

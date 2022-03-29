@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Initializes a model instance as an existing record. This constructor is used by Sequel to initialize model instances when fetching records.
+full_name: Sequel::Model::load
+is_singleton: true
+name: load
+params: (values)
+visibility: public

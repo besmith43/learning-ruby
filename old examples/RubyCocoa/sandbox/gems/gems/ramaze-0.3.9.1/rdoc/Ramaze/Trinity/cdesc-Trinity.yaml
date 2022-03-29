@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The module to be included into the Controller it basically just provides #request, #response and #session, each accessing Thread.current to retrieve the demanded object"
+constants: []
+
+full_name: Ramaze::Trinity
+includes: []
+
+instance_methods: []
+
+name: Trinity
+superclass: 

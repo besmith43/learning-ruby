@@ -1,0 +1,11 @@
+..
+.
+Gemfile
+power_assert.gemspec
+LEGAL
+lib
+bin
+Rakefile
+README.rdoc
+COPYING
+BSDL

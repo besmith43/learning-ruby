@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Template::Tagz::Methods#__
+is_singleton: false
+name: __
+params: (*a)
+visibility: private

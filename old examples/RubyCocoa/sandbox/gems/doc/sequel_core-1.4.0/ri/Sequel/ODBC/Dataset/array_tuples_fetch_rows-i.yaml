@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: array_tuples_make_row(r)}
+comment: 
+full_name: Sequel::ODBC::Dataset#array_tuples_fetch_rows
+is_singleton: false
+name: array_tuples_fetch_rows
+params: (sql, &block) {|array_tuples_make_row(r)}| ...}
+visibility: public

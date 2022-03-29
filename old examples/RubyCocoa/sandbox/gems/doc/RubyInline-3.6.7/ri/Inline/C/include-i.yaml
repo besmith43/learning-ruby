@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds an include to the top of the file. Don't forget to use quotes or angle brackets.
+full_name: Inline::C#include
+is_singleton: false
+name: include
+params: (header)
+visibility: public

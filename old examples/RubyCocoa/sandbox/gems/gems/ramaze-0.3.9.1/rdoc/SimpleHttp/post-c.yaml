@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Make a POST request to the provided URI.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     puts(SimpleHttp.post(&quot;www.example.com&quot;, &quot;query&quot;=&gt;&quot;my_query&quot;))\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Alternatively, you can post any sort of data, but will have to set the appriate content_type:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     SimpleHttp.post(&quot;http://www.example.com/&quot;, binary_data, &quot;img/png&quot;)\n"
+full_name: SimpleHttp::post
+is_singleton: true
+name: post
+params: (uri, query=nil, content_type='application/x-www-form-urlencoded')
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is similar to <tt><em>FILE</em></tt> and <tt><em>LINE</em></tt>, and returns a String representing the directory of the current file is. Unlike <tt><em>FILE</em></tt> the path returned is absolute.
+- !ruby/struct:SM::Flow::P 
+  body: This method is convenience for the
+- !ruby/struct:SM::Flow::VERB 
+  body: " File.expand_path(File.dirname(<em>FILE</em>))\n"
+- !ruby/struct:SM::Flow::P 
+  body: idiom.
+full_name: Kernel#__DIR__
+is_singleton: false
+name: __DIR__
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Resolve an absolute path in the application by passing it to each element of Ramaze::Controller::FILTER. If an element does not respond to call it will be sent to self instead, in either case with path as argument.
+full_name: Ramaze::Controller::resolve
+is_singleton: true
+name: resolve
+params: (path, routed = false)
+visibility: public

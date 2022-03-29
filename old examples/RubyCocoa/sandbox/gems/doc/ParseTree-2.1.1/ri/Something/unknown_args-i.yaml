@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Something#unknown_args
+is_singleton: false
+name: unknown_args
+params: (arg1, arg2)
+visibility: public

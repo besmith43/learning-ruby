@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Specifies that the the ruby.h header should be included <b>after</b> custom header(s) instead of before them.
+full_name: Inline::C#include_ruby_last
+is_singleton: false
+name: include_ruby_last
+params: ()
+visibility: public

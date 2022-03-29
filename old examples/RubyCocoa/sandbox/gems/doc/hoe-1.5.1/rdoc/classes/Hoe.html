@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Hoe</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Hoe</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/hoe_rb.html">
+                lib/hoe.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+hoe - a tool to help rake
+</p>
+<p>
+<a href="Hoe.html">Hoe</a> is a simple rake/rubygems helper for project
+Rakefiles. It generates all the usual tasks for projects including rdoc
+generation, testing, packaging, and deployment.
+</p>
+<h2>Using <a href="Hoe.html">Hoe</a></h2>
+<h3>Basics</h3>
+<p>
+Use this as a minimal starting point:
+</p>
+<pre>
+  require 'hoe'
+
+  Hoe.new(&quot;project_name&quot;, '1.0.0') do |p|
+    p.rubyforge_name = &quot;rf_project&quot;
+    # add other details here
+  end
+
+  # add other tasks here
+</pre>
+<h3>Tasks Provided:</h3>
+<table>
+<tr><td valign="top">announce:</td><td>Create news email file and post to rubyforge.
+
+</td></tr>
+<tr><td valign="top">audit:</td><td>Run ZenTest against the package.
+
+</td></tr>
+<tr><td valign="top">check_manifest:</td><td>Verify the manifest.
+
+</td></tr>
+<tr><td valign="top">clean:</td><td>Clean up all the extras.
+
+</td></tr>
+<tr><td valign="top">config_hoe:</td><td>Create a fresh ~/.hoerc file.
+
+</td></tr>
+<tr><td valign="top">debug_gem:</td><td>Show information about the gem.
+
+</td></tr>
+<tr><td valign="top">default:</td><td>Run the default tasks.
+
+</td></tr>
+<tr><td valign="top">docs:</td><td>Build the docs HTML Files
+
+</td></tr>
+<tr><td valign="top">email:</td><td>Generate email announcement file.
+
+</td></tr>
+<tr><td valign="top">gem:</td><td>Build the gem file hoe-1.5.0.gem
+
+</td></tr>
+<tr><td valign="top">generate_key:</td><td>Generate a key for signing your gems.
+
+</td></tr>
+<tr><td valign="top">install_gem:</td><td>Install the package as a gem.
+
+</td></tr>
+<tr><td valign="top">multi:</td><td>Run the test suite using multiruby.
+
+</td></tr>
+<tr><td valign="top">package:</td><td>Build all the packages
+
+</td></tr>
+<tr><td valign="top">post_blog:</td><td>Post announcement to blog.
+
+</td></tr>
+<tr><td valign="top">post_news:</td><td>Post announcement to rubyforge.
+
+</td></tr>
+<tr><td valign="top">publish_docs:</td><td>Publish RDoc to RubyForge.
+
+</td></tr>
+<tr><td valign="top">release:</td><td>Package and upload the release to rubyforge.
+
+</td></tr>
+<tr><td valign="top">ridocs:</td><td>Generate ri locally for testing.
+
+</td></tr>
+<tr><td valign="top">test:</td><td>Run the test suite.
+
+</td></tr>
+<tr><td valign="top">test_deps:</td><td>Show which test files fail when run alone.
+
+</td></tr>
+</table>
+<h3>Extra Configuration Options:</h3>
+<p>
+Run <tt>config_hoe</tt> to generate a new ~/.hoerc file. The file is a YAML
+formatted config file with the following settings:
+</p>
+<table>
+<tr><td valign="top">exclude:</td><td>A regular expression of files to exclude from <tt>check_manifest</tt>.
+
+</td></tr>
+<tr><td valign="top">publish_on_announce:</td><td>Run <tt>publish_docs</tt> when you run <tt>release</tt>.
+
+</td></tr>
+<tr><td valign="top">signing_key_file:</td><td>Signs your gems with this private key.
+
+</td></tr>
+<tr><td valign="top">signing_cert_file:</td><td>Signs your gem with this certificate.
+
+</td></tr>
+<tr><td valign="top">blogs:</td><td>An array of hashes of blog settings.
+
+</td></tr>
+</table>
+<p>
+Run <tt>config_hoe</tt> and see ~/.hoerc for examples.
+</p>
+<h3>Signing Gems:</h3>
+<p>
+Run the &#8216;generate_key&#8217; task. This will:
+</p>
+<ol>
+<li>Configure your ~/.hoerc.
+
+</li>
+<li>Generate a signing key and certificate.
+
+</li>
+<li>Install the private key and public certificate files into ~/.gem.
+
+</li>
+<li>Upload the certificate to RubyForge.
+
+</li>
+</ol>
+<p>
+<a href="Hoe.html">Hoe</a> will now generate signed gems when the package
+task is run. If you have multiple machines you build gems on, be sure to
+install your key and certificate on each machine.
+</p>
+<p>
+Keep your private key secret! Keep your private key safe!
+</p>
+<p>
+To make sure your gems are signed run:
+</p>
+<pre>
+  rake package; tar tf pkg/yourproject-1.2.3.gem
+</pre>
+<p>
+If your gem is signed you will see:
+</p>
+<pre>
+  data.tar.gz
+  data.tar.gz.sig
+  metadata.gz
+  metadata.gz.sig
+</pre>
+<h3>Platform awareness</h3>
+<p>
+<a href="Hoe.html">Hoe</a> allows bundling of pre-compiled extensions in
+the <tt>package</tt> task.
+</p>
+<p>
+To create a package for your current platform:
+</p>
+<pre>
+  rake package INLINE=1
+</pre>
+<p>
+This will force <a href="Hoe.html">Hoe</a> analize your <tt>Inline</tt>
+already compiled extensions and include them in your gem.
+</p>
+<p>
+If somehow you need to force a specific platform:
+</p>
+<pre>
+  rake package INLINE=1 FORCE_PLATFORM=mswin32
+</pre>
+<p>
+This will set the +Gem::Specification+ platform to the one indicated in
+<tt>FORCE_PLATFORM</tt> (instead of default Gem::Platform::CURRENT)
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000190">developer</a>&nbsp;&nbsp;
+      <a href="#M000191">paragraphs_of</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'1.5.1'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">PREFIX</td>
+          <td>=</td>
+          <td class="context-item-value">ENV['PREFIX'] || ruby_prefix</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Used to specify a custom install location (for rake install).
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RUBY_DEBUG</td>
+          <td>=</td>
+          <td class="context-item-value">ENV['RUBY_DEBUG']</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Used to add extra flags to RUBY_FLAGS.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">RUBY_FLAGS</td>
+          <td>=</td>
+          <td class="context-item-value">ENV['RUBY_FLAGS'] || default_ruby_flags</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Used to specify flags to ruby [has smart default].
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FILTER</td>
+          <td>=</td>
+          <td class="context-item-value">ENV['FILTER']</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Used to add flags to test_unit (e.g., -n test_borked).
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">author</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<b>Recommended</b>: The author(s) of the package. (can be array) Really.
+Set this or we&#8216;ll tease you.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">changes</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: A description of the release&#8216;s latest changes.
+Auto-populates.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">clean_globs</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: An array of file patterns to delete on clean.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">description</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: A description of the project. Auto-populates.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">description_sections</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: What sections from the readme to use for auto-description.
+Defaults to %w(description).
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">email</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<b>Recommended</b>: The author&#8216;s email address(es). (can be array)
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">extra_deps</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: An array of rubygem dependencies.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<b>MANDATORY</b>: The name of the release.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">need_tar</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: Should package create a tarball? [default: true]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">need_zip</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: Should package create a zipfile? [default: false]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">rdoc_pattern</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: A regexp to match documentation files against the manifest.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">remote_rdoc_dir</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: Name of RDoc destination directory on Rubyforge. [default:
+<tt>name</tt>]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">rsync_args</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: Flags for RDoc rsync. [default: &quot;-av &#8212;delete&quot;]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">rubyforge_name</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: The name of the rubyforge project. [default: name.downcase]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">spec_extras</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: A hash of extra values to set in the gemspec. Value may be a
+proc.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">summary</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: A short summary of the project. Auto-populates.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">summary_sentences</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: Number of sentences from description for summary. Defaults to 1.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">test_globs</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: An array of test file patterns [default: test/**/test_*.rb]
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">url</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Optional: The url(s) of the project. (can be array). Auto-populates.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">version</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<b>MANDATORY</b>: The version. Don&#8216;t hardcode! use a constant in the
+project.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="Hoe.src/M000190.html" target="Code" class="method-signature"
+            onclick="popupCode('Hoe.src/M000190.html');return false;">
+          <span class="method-name">developer</span><span class="method-args">(name, email)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <a href="Hoe.src/M000191.html" target="Code" class="method-signature"
+            onclick="popupCode('Hoe.src/M000191.html');return false;">
+          <span class="method-name">paragraphs_of</span><span class="method-args">(path, *paragraphs)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Reads a file at <tt>path</tt> and spits out an array of the
+<tt>paragraphs</tt> specified.
+</p>
+<pre>
+  changes = p.paragraphs_of('History.txt', 0..1).join(&quot;\n\n&quot;)
+  summary, *description = p.paragraphs_of('README.txt', 3, 3..8)
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+comment: 
+constants: []
+
+full_name: Ramaze::Helper::User
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: user
+- !ruby/object:RI::MethodSummary 
+  name: user
+name: User
+superclass: 

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Validation::ClassMethods#skip_superclass_validations
+is_singleton: false
+name: skip_superclass_validations
+params: ()
+visibility: public

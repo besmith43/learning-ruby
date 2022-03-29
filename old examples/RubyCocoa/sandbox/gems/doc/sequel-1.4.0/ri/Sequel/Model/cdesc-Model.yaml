@@ -1,0 +1,160 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: changed_columns
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: values
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cache_key_from_values
+- !ruby/object:RI::MethodSummary 
+  name: cache_store
+- !ruby/object:RI::MethodSummary 
+  name: cache_ttl
+- !ruby/object:RI::MethodSummary 
+  name: columns
+- !ruby/object:RI::MethodSummary 
+  name: create
+- !ruby/object:RI::MethodSummary 
+  name: create_table
+- !ruby/object:RI::MethodSummary 
+  name: create_table!
+- !ruby/object:RI::MethodSummary 
+  name: create_with_params
+- !ruby/object:RI::MethodSummary 
+  name: database_opened
+- !ruby/object:RI::MethodSummary 
+  name: dataset
+- !ruby/object:RI::MethodSummary 
+  name: db
+- !ruby/object:RI::MethodSummary 
+  name: db=
+- !ruby/object:RI::MethodSummary 
+  name: drop_table
+- !ruby/object:RI::MethodSummary 
+  name: has_hooks?
+- !ruby/object:RI::MethodSummary 
+  name: implicit_table_name
+- !ruby/object:RI::MethodSummary 
+  name: is
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: plugin_gem
+- !ruby/object:RI::MethodSummary 
+  name: plugin_module
+- !ruby/object:RI::MethodSummary 
+  name: primary_key
+- !ruby/object:RI::MethodSummary 
+  name: primary_key_hash
+- !ruby/object:RI::MethodSummary 
+  name: schema
+- !ruby/object:RI::MethodSummary 
+  name: serialize
+- !ruby/object:RI::MethodSummary 
+  name: set_cache
+- !ruby/object:RI::MethodSummary 
+  name: set_cache_ttl
+- !ruby/object:RI::MethodSummary 
+  name: set_dataset
+- !ruby/object:RI::MethodSummary 
+  name: set_primary_key
+- !ruby/object:RI::MethodSummary 
+  name: set_schema
+- !ruby/object:RI::MethodSummary 
+  name: table_exists?
+- !ruby/object:RI::MethodSummary 
+  name: table_name
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HOOKS
+  value: "[       :after_initialize,       :before_create,       :after_create,       :before_update,       :after_update,       :before_save,       :after_save,       :before_destroy,       :after_destroy"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Some fancy code generation here in order to define the hook class methods...
+  name: HOOK_METHOD_STR
+  value: "%Q{       def self.%s(method = nil, &block)         unless block           (raise SequelError, 'No hook method specified') unless method           block = proc {send method}         end         add_hook(%s, &block)       end     }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ATTR_RE
+  value: /^([a-zA-Z_]\w*)(=)?$/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: EQUAL_SIGN
+  value: "'='.freeze"
+full_name: Sequel::Model
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Validation
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: ===
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: cache_key
+- !ruby/object:RI::MethodSummary 
+  name: columns
+- !ruby/object:RI::MethodSummary 
+  name: dataset
+- !ruby/object:RI::MethodSummary 
+  name: db
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: destroy
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: exists?
+- !ruby/object:RI::MethodSummary 
+  name: id
+- !ruby/object:RI::MethodSummary 
+  name: keys
+- !ruby/object:RI::MethodSummary 
+  name: new?
+- !ruby/object:RI::MethodSummary 
+  name: new_record?
+- !ruby/object:RI::MethodSummary 
+  name: pk
+- !ruby/object:RI::MethodSummary 
+  name: pk_hash
+- !ruby/object:RI::MethodSummary 
+  name: primary_key
+- !ruby/object:RI::MethodSummary 
+  name: refresh
+- !ruby/object:RI::MethodSummary 
+  name: reload
+- !ruby/object:RI::MethodSummary 
+  name: save
+- !ruby/object:RI::MethodSummary 
+  name: save
+- !ruby/object:RI::MethodSummary 
+  name: save!
+- !ruby/object:RI::MethodSummary 
+  name: save_changes
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: this
+- !ruby/object:RI::MethodSummary 
+  name: update
+- !ruby/object:RI::MethodSummary 
+  name: update_with
+- !ruby/object:RI::MethodSummary 
+  name: update_with_params
+name: Model
+superclass: Object

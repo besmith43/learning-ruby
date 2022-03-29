@@ -1,0 +1,1013 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 78DA11740DD5DC6D00955BBE /* Fenestra */;
+		activeTarget = 4DDCA7030ACC9A6100E082CE /* Fenestra */;
+		addToTargets = (
+			4DDCA7030ACC9A6100E082CE /* Fenestra */,
+		);
+		codeSenseManager = 78DA11830DD5DC7200955BBE /* Code sense */;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					454,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					343,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 260311527;
+			PBXWorkspaceStateSaveDate = 260311527;
+		};
+		perUserProjectItems = {
+			788BF9E40F3259CD00B3BE8A /* PBXBookmark */ = 788BF9E40F3259CD00B3BE8A /* PBXBookmark */;
+			788BF9E60F3259CD00B3BE8A /* PBXBookmark */ = 788BF9E60F3259CD00B3BE8A /* PBXBookmark */;
+			78C781150F84790D00EF2AEB /* PBXTextBookmark */ = 78C781150F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781160F84790D00EF2AEB /* PBXTextBookmark */ = 78C781160F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781180F84790D00EF2AEB /* PBXTextBookmark */ = 78C781180F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7811A0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7811A0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7811C0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7811C0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7811E0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7811E0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781200F84790D00EF2AEB /* PBXTextBookmark */ = 78C781200F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781220F84790D00EF2AEB /* PBXTextBookmark */ = 78C781220F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781240F84790D00EF2AEB /* PBXTextBookmark */ = 78C781240F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781260F84790D00EF2AEB /* PBXTextBookmark */ = 78C781260F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781280F84790D00EF2AEB /* PBXTextBookmark */ = 78C781280F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7812A0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7812A0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7812C0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7812C0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7812E0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7812E0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781300F84790D00EF2AEB /* PBXTextBookmark */ = 78C781300F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781320F84790D00EF2AEB /* PBXTextBookmark */ = 78C781320F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781340F84790D00EF2AEB /* PBXTextBookmark */ = 78C781340F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781360F84790D00EF2AEB /* PBXTextBookmark */ = 78C781360F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781380F84790D00EF2AEB /* PBXTextBookmark */ = 78C781380F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7813A0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7813A0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7813C0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7813C0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7813E0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7813E0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781400F84790D00EF2AEB /* PBXTextBookmark */ = 78C781400F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781420F84790D00EF2AEB /* PBXTextBookmark */ = 78C781420F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781440F84790D00EF2AEB /* PBXTextBookmark */ = 78C781440F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781460F84790D00EF2AEB /* PBXTextBookmark */ = 78C781460F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781470F84790D00EF2AEB /* PBXTextBookmark */ = 78C781470F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781490F84790D00EF2AEB /* PBXTextBookmark */ = 78C781490F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7814B0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7814B0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7814D0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7814D0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7814F0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7814F0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781510F84790D00EF2AEB /* PBXTextBookmark */ = 78C781510F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781530F84790D00EF2AEB /* PBXTextBookmark */ = 78C781530F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781550F84790D00EF2AEB /* PBXTextBookmark */ = 78C781550F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781570F84790D00EF2AEB /* PBXTextBookmark */ = 78C781570F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781590F84790D00EF2AEB /* PBXTextBookmark */ = 78C781590F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7815B0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7815B0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7815D0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7815D0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7815F0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7815F0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781610F84790D00EF2AEB /* PBXTextBookmark */ = 78C781610F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781630F84790D00EF2AEB /* PBXTextBookmark */ = 78C781630F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781650F84790D00EF2AEB /* PBXTextBookmark */ = 78C781650F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781670F84790D00EF2AEB /* PBXTextBookmark */ = 78C781670F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781690F84790D00EF2AEB /* PBXTextBookmark */ = 78C781690F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7816B0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7816B0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7816D0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7816D0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C7816F0F84790D00EF2AEB /* PBXTextBookmark */ = 78C7816F0F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781710F84790D00EF2AEB /* PBXTextBookmark */ = 78C781710F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781730F84790D00EF2AEB /* PBXTextBookmark */ = 78C781730F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781750F84790D00EF2AEB /* PBXTextBookmark */ = 78C781750F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781770F84790D00EF2AEB /* PBXTextBookmark */ = 78C781770F84790D00EF2AEB /* PBXTextBookmark */;
+			78C781790F84790D00EF2AEB /* PBXTextBookmark */ = 78C781790F84790D00EF2AEB /* PBXTextBookmark */;
+		};
+		sourceControlManager = 78DA11820DD5DC7200955BBE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {633, 224}}";
+			sepNavSelRange = "{237, 0}";
+			sepNavVisRange = "{30, 265}";
+		};
+	};
+	4DDCA7030ACC9A6100E082CE /* Fenestra */ = {
+		activeExec = 0;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+	};
+	782D83980F4BB482009BAC0C /* FenestraHelp.html */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.html;
+		name = FenestraHelp.html;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/English.lproj/FenestraHelp/FenestraHelp.html";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {704, 1498}}";
+			sepNavSelRange = "{3194, 0}";
+			sepNavVisRange = "{0, 1173}";
+		};
+	};
+	788BF9E40F3259CD00B3BE8A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 782B05070F3202B3002EC0C5 /* Fenestra.icns */;
+	};
+	788BF9E60F3259CD00B3BE8A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 782B05070F3202B3002EC0C5 /* Fenestra.icns */;
+	};
+	78C781150F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 782D83980F4BB482009BAC0C /* FenestraHelp.html */;
+		name = "FenestraHelp.html: 118";
+		rLen = 0;
+		rLoc = 3194;
+		rType = 0;
+		vrLen = 1173;
+		vrLoc = 0;
+	};
+	78C781160F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781170F84790D00EF2AEB /* AppDelegate.rb */;
+		name = "AppDelegate.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 0;
+	};
+	78C781170F84790D00EF2AEB /* AppDelegate.rb */ = {
+		isa = PBXFileReference;
+		name = AppDelegate.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/AppDelegate.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781180F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781190F84790D00EF2AEB /* AppChoiceController.rb */;
+		name = "AppChoiceController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 697;
+		vrLoc = 1175;
+	};
+	78C781190F84790D00EF2AEB /* AppChoiceController.rb */ = {
+		isa = PBXFileReference;
+		name = AppChoiceController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/AppChoiceController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7811A0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7811B0F84790D00EF2AEB /* LogController.rb */;
+		name = "LogController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 0;
+	};
+	78C7811B0F84790D00EF2AEB /* LogController.rb */ = {
+		isa = PBXFileReference;
+		name = LogController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/LogController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7811C0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7811D0F84790D00EF2AEB /* MainWindowController.rb */;
+		name = "MainWindowController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 443;
+		vrLoc = 0;
+	};
+	78C7811D0F84790D00EF2AEB /* MainWindowController.rb */ = {
+		isa = PBXFileReference;
+		name = MainWindowController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/MainWindowController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7811E0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7811F0F84790D00EF2AEB /* NameOrientedPreferencesFacade.rb */;
+		name = "NameOrientedPreferencesFacade.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 1535;
+	};
+	78C7811F0F84790D00EF2AEB /* NameOrientedPreferencesFacade.rb */ = {
+		isa = PBXFileReference;
+		name = NameOrientedPreferencesFacade.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/preferences/NameOrientedPreferencesFacade.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781200F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781210F84790D00EF2AEB /* TranslatorPreference.rb */;
+		name = "TranslatorPreference.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 1134;
+	};
+	78C781210F84790D00EF2AEB /* TranslatorPreference.rb */ = {
+		isa = PBXFileReference;
+		name = TranslatorPreference.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/preferences/TranslatorPreference.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781220F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781230F84790D00EF2AEB /* PreferencesTableView.rb */;
+		name = "PreferencesTableView.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 619;
+		vrLoc = 607;
+	};
+	78C781230F84790D00EF2AEB /* PreferencesTableView.rb */ = {
+		isa = PBXFileReference;
+		name = PreferencesTableView.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PreferencesTableView.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781240F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781250F84790D00EF2AEB /* PrefsTableDraggingInfo.rb */;
+		name = "PrefsTableDraggingInfo.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	78C781250F84790D00EF2AEB /* PrefsTableDraggingInfo.rb */ = {
+		isa = PBXFileReference;
+		name = PrefsTableDraggingInfo.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PrefsTableDraggingInfo.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781260F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781270F84790D00EF2AEB /* RubyFileChooserController.rb */;
+		name = "RubyFileChooserController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 0;
+	};
+	78C781270F84790D00EF2AEB /* RubyFileChooserController.rb */ = {
+		isa = PBXFileReference;
+		name = RubyFileChooserController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/RubyFileChooserController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781280F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781290F84790D00EF2AEB /* formatters.rb */;
+		name = "formatters.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 478;
+	};
+	78C781290F84790D00EF2AEB /* formatters.rb */ = {
+		isa = PBXFileReference;
+		name = formatters.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/formatters.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7812A0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7812B0F84790D00EF2AEB /* CountingApp.rb */;
+		name = "CountingApp.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 765;
+		vrLoc = 1127;
+	};
+	78C7812B0F84790D00EF2AEB /* CountingApp.rb */ = {
+		isa = PBXFileReference;
+		name = CountingApp.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/CountingApp.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7812C0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7812D0F84790D00EF2AEB /* ToString.rb */;
+		name = "ToString.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 208;
+		vrLoc = 0;
+	};
+	78C7812D0F84790D00EF2AEB /* ToString.rb */ = {
+		isa = PBXFileReference;
+		name = ToString.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/ToString.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7812E0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7812F0F84790D00EF2AEB /* Translator.rb */;
+		name = "Translator.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 575;
+		vrLoc = 21;
+	};
+	78C7812F0F84790D00EF2AEB /* Translator.rb */ = {
+		isa = PBXFileReference;
+		name = Translator.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/Translator.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781300F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781310F84790D00EF2AEB /* Constants.rb */;
+		name = "Constants.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 0;
+	};
+	78C781310F84790D00EF2AEB /* Constants.rb */ = {
+		isa = PBXFileReference;
+		name = Constants.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Constants.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781320F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781330F84790D00EF2AEB /* Controller.rb */;
+		name = "Controller.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 221;
+		vrLoc = 0;
+	};
+	78C781330F84790D00EF2AEB /* Controller.rb */ = {
+		isa = PBXFileReference;
+		name = Controller.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Controller.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781340F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781350F84790D00EF2AEB /* Delegatable.rb */;
+		name = "Delegatable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 296;
+		vrLoc = 0;
+	};
+	78C781350F84790D00EF2AEB /* Delegatable.rb */ = {
+		isa = PBXFileReference;
+		name = Delegatable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Delegatable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781360F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781370F84790D00EF2AEB /* FenestraNotifiable.rb */;
+		name = "FenestraNotifiable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 551;
+		vrLoc = 0;
+	};
+	78C781370F84790D00EF2AEB /* FenestraNotifiable.rb */ = {
+		isa = PBXFileReference;
+		name = FenestraNotifiable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/FenestraNotifiable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781380F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781390F84790D00EF2AEB /* NSPatches.rb */;
+		name = "NSPatches.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 542;
+		vrLoc = 64;
+	};
+	78C781390F84790D00EF2AEB /* NSPatches.rb */ = {
+		isa = PBXFileReference;
+		name = NSPatches.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/NSPatches.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7813A0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7813B0F84790D00EF2AEB /* NSTableViewPatches.rb */;
+		name = "NSTableViewPatches.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 0;
+	};
+	78C7813B0F84790D00EF2AEB /* NSTableViewPatches.rb */ = {
+		isa = PBXFileReference;
+		name = NSTableViewPatches.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/NSTableViewPatches.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7813C0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7813D0F84790D00EF2AEB /* PermanentlyIdentifiable.rb */;
+		name = "PermanentlyIdentifiable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 824;
+		vrLoc = 0;
+	};
+	78C7813D0F84790D00EF2AEB /* PermanentlyIdentifiable.rb */ = {
+		isa = PBXFileReference;
+		name = PermanentlyIdentifiable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/PermanentlyIdentifiable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7813E0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7813F0F84790D00EF2AEB /* test-support.rb */;
+		name = "test-support.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 343;
+		vrLoc = 0;
+	};
+	78C7813F0F84790D00EF2AEB /* test-support.rb */ = {
+		isa = PBXFileReference;
+		name = "test-support.rb";
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/test-support.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781400F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781410F84790D00EF2AEB /* value-transformers.rb */;
+		name = "value-transformers.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 671;
+	};
+	78C781410F84790D00EF2AEB /* value-transformers.rb */ = {
+		isa = PBXFileReference;
+		name = "value-transformers.rb";
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/value-transformers.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781420F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781430F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */;
+		name = "CellOrientedDraggingInfo.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 473;
+		vrLoc = 0;
+	};
+	78C781430F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */ = {
+		isa = PBXFileReference;
+		name = CellOrientedDraggingInfo.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/CellOrientedDraggingInfo.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781440F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781450F84790D00EF2AEB /* PreferencesController.rb */;
+		name = "PreferencesController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 4508;
+	};
+	78C781450F84790D00EF2AEB /* PreferencesController.rb */ = {
+		isa = PBXFileReference;
+		name = PreferencesController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PreferencesController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781460F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 782D83980F4BB482009BAC0C /* FenestraHelp.html */;
+		name = "FenestraHelp.html: 118";
+		rLen = 0;
+		rLoc = 3194;
+		rType = 0;
+		vrLen = 1173;
+		vrLoc = 0;
+	};
+	78C781470F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781480F84790D00EF2AEB /* AppDelegate.rb */;
+		name = "AppDelegate.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 806;
+		vrLoc = 0;
+	};
+	78C781480F84790D00EF2AEB /* AppDelegate.rb */ = {
+		isa = PBXFileReference;
+		name = AppDelegate.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/AppDelegate.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781490F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7814A0F84790D00EF2AEB /* AppChoiceController.rb */;
+		name = "AppChoiceController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 697;
+		vrLoc = 1175;
+	};
+	78C7814A0F84790D00EF2AEB /* AppChoiceController.rb */ = {
+		isa = PBXFileReference;
+		name = AppChoiceController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/AppChoiceController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7814B0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7814C0F84790D00EF2AEB /* LogController.rb */;
+		name = "LogController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 0;
+	};
+	78C7814C0F84790D00EF2AEB /* LogController.rb */ = {
+		isa = PBXFileReference;
+		name = LogController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/LogController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7814D0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7814E0F84790D00EF2AEB /* MainWindowController.rb */;
+		name = "MainWindowController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 443;
+		vrLoc = 0;
+	};
+	78C7814E0F84790D00EF2AEB /* MainWindowController.rb */ = {
+		isa = PBXFileReference;
+		name = MainWindowController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/main-window/MainWindowController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7814F0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781500F84790D00EF2AEB /* NameOrientedPreferencesFacade.rb */;
+		name = "NameOrientedPreferencesFacade.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 820;
+		vrLoc = 1535;
+	};
+	78C781500F84790D00EF2AEB /* NameOrientedPreferencesFacade.rb */ = {
+		isa = PBXFileReference;
+		name = NameOrientedPreferencesFacade.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/preferences/NameOrientedPreferencesFacade.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781510F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781520F84790D00EF2AEB /* TranslatorPreference.rb */;
+		name = "TranslatorPreference.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 610;
+		vrLoc = 1134;
+	};
+	78C781520F84790D00EF2AEB /* TranslatorPreference.rb */ = {
+		isa = PBXFileReference;
+		name = TranslatorPreference.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/preferences/TranslatorPreference.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781530F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781540F84790D00EF2AEB /* PreferencesController.rb */;
+		name = "PreferencesController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 4508;
+	};
+	78C781540F84790D00EF2AEB /* PreferencesController.rb */ = {
+		isa = PBXFileReference;
+		name = PreferencesController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PreferencesController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781550F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781560F84790D00EF2AEB /* PreferencesTableView.rb */;
+		name = "PreferencesTableView.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 619;
+		vrLoc = 607;
+	};
+	78C781560F84790D00EF2AEB /* PreferencesTableView.rb */ = {
+		isa = PBXFileReference;
+		name = PreferencesTableView.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PreferencesTableView.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781570F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781580F84790D00EF2AEB /* PrefsTableDraggingInfo.rb */;
+		name = "PrefsTableDraggingInfo.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 445;
+		vrLoc = 0;
+	};
+	78C781580F84790D00EF2AEB /* PrefsTableDraggingInfo.rb */ = {
+		isa = PBXFileReference;
+		name = PrefsTableDraggingInfo.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PrefsTableDraggingInfo.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781590F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7815A0F84790D00EF2AEB /* RubyFileChooserController.rb */;
+		name = "RubyFileChooserController.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 0;
+	};
+	78C7815A0F84790D00EF2AEB /* RubyFileChooserController.rb */ = {
+		isa = PBXFileReference;
+		name = RubyFileChooserController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/RubyFileChooserController.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7815B0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7815C0F84790D00EF2AEB /* formatters.rb */;
+		name = "formatters.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 478;
+	};
+	78C7815C0F84790D00EF2AEB /* formatters.rb */ = {
+		isa = PBXFileReference;
+		name = formatters.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/formatters.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7815D0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7815E0F84790D00EF2AEB /* CountingApp.rb */;
+		name = "CountingApp.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 765;
+		vrLoc = 1127;
+	};
+	78C7815E0F84790D00EF2AEB /* CountingApp.rb */ = {
+		isa = PBXFileReference;
+		name = CountingApp.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/CountingApp.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7815F0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781600F84790D00EF2AEB /* ToString.rb */;
+		name = "ToString.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 208;
+		vrLoc = 0;
+	};
+	78C781600F84790D00EF2AEB /* ToString.rb */ = {
+		isa = PBXFileReference;
+		name = ToString.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/ToString.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781610F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781620F84790D00EF2AEB /* Translator.rb */;
+		name = "Translator.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 575;
+		vrLoc = 21;
+	};
+	78C781620F84790D00EF2AEB /* Translator.rb */ = {
+		isa = PBXFileReference;
+		name = Translator.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/translators/Translator.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781630F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781640F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */;
+		name = "CellOrientedDraggingInfo.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 473;
+		vrLoc = 0;
+	};
+	78C781640F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */ = {
+		isa = PBXFileReference;
+		name = CellOrientedDraggingInfo.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/CellOrientedDraggingInfo.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781650F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781660F84790D00EF2AEB /* Constants.rb */;
+		name = "Constants.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 842;
+		vrLoc = 0;
+	};
+	78C781660F84790D00EF2AEB /* Constants.rb */ = {
+		isa = PBXFileReference;
+		name = Constants.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Constants.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781670F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781680F84790D00EF2AEB /* Controller.rb */;
+		name = "Controller.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 221;
+		vrLoc = 0;
+	};
+	78C781680F84790D00EF2AEB /* Controller.rb */ = {
+		isa = PBXFileReference;
+		name = Controller.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Controller.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781690F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7816A0F84790D00EF2AEB /* Delegatable.rb */;
+		name = "Delegatable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 296;
+		vrLoc = 0;
+	};
+	78C7816A0F84790D00EF2AEB /* Delegatable.rb */ = {
+		isa = PBXFileReference;
+		name = Delegatable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/Delegatable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7816B0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7816C0F84790D00EF2AEB /* FenestraNotifiable.rb */;
+		name = "FenestraNotifiable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 551;
+		vrLoc = 0;
+	};
+	78C7816C0F84790D00EF2AEB /* FenestraNotifiable.rb */ = {
+		isa = PBXFileReference;
+		name = FenestraNotifiable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/FenestraNotifiable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7816D0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7816E0F84790D00EF2AEB /* NSPatches.rb */;
+		name = "NSPatches.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 542;
+		vrLoc = 64;
+	};
+	78C7816E0F84790D00EF2AEB /* NSPatches.rb */ = {
+		isa = PBXFileReference;
+		name = NSPatches.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/NSPatches.rb";
+		sourceTree = "<absolute>";
+	};
+	78C7816F0F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781700F84790D00EF2AEB /* NSTableViewPatches.rb */;
+		name = "NSTableViewPatches.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 680;
+		vrLoc = 0;
+	};
+	78C781700F84790D00EF2AEB /* NSTableViewPatches.rb */ = {
+		isa = PBXFileReference;
+		name = NSTableViewPatches.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/NSTableViewPatches.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781710F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781720F84790D00EF2AEB /* PermanentlyIdentifiable.rb */;
+		name = "PermanentlyIdentifiable.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 824;
+		vrLoc = 0;
+	};
+	78C781720F84790D00EF2AEB /* PermanentlyIdentifiable.rb */ = {
+		isa = PBXFileReference;
+		name = PermanentlyIdentifiable.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/PermanentlyIdentifiable.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781730F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781740F84790D00EF2AEB /* test-support.rb */;
+		name = "test-support.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 343;
+		vrLoc = 0;
+	};
+	78C781740F84790D00EF2AEB /* test-support.rb */ = {
+		isa = PBXFileReference;
+		name = "test-support.rb";
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/test-support.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781750F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781760F84790D00EF2AEB /* value-transformers.rb */;
+		name = "value-transformers.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 671;
+	};
+	78C781760F84790D00EF2AEB /* value-transformers.rb */ = {
+		isa = PBXFileReference;
+		name = "value-transformers.rb";
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/value-transformers.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781770F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C781780F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */;
+		name = "CellOrientedDraggingInfo.rb: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 473;
+		vrLoc = 0;
+	};
+	78C781780F84790D00EF2AEB /* CellOrientedDraggingInfo.rb */ = {
+		isa = PBXFileReference;
+		name = CellOrientedDraggingInfo.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/util/CellOrientedDraggingInfo.rb";
+		sourceTree = "<absolute>";
+	};
+	78C781790F84790D00EF2AEB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78C7817A0F84790D00EF2AEB /* PreferencesController.rb */;
+		name = "PreferencesController.rb: 168";
+		rLen = 0;
+		rLoc = 5192;
+		rType = 0;
+		vrLen = 1116;
+		vrLoc = 1268;
+	};
+	78C7817A0F84790D00EF2AEB /* PreferencesController.rb */ = {
+		isa = PBXFileReference;
+		name = PreferencesController.rb;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/app/prefs-window/PreferencesController.rb";
+		sourceTree = "<absolute>";
+	};
+	78DA11740DD5DC6D00955BBE /* Fenestra */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Fenestra;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	78DA11820DD5DC7200955BBE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	78DA11830DD5DC7200955BBE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E8F5E25803AEB7C803A81C6F /* rb_main.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {662, 438}}";
+			sepNavSelRange = "{611, 0}";
+			sepNavVisRange = "{0, 611}";
+			sepNavWindowFrame = "{{80, 209}, {721, 566}}";
+		};
+	};
+}

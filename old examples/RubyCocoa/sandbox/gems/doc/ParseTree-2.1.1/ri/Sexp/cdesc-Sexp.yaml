@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: for
+- !ruby/object:RI::MethodSummary 
+  name: from_array
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sexps are the basic storage mechanism of SexpProcessor. Sexps have a <tt>type</tt> (to be renamed <tt>node_type</tt>) which is the first element of the Sexp. The type is used by SexpProcessor to determine whom to dispatch the Sexp to for processing.
+constants: []
+
+full_name: Sexp
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ===
+- !ruby/object:RI::MethodSummary 
+  name: =~
+- !ruby/object:RI::MethodSummary 
+  name: array_type?
+- !ruby/object:RI::MethodSummary 
+  name: each_of_type
+- !ruby/object:RI::MethodSummary 
+  name: find_and_replace_all
+- !ruby/object:RI::MethodSummary 
+  name: gsub
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: sexp_body
+- !ruby/object:RI::MethodSummary 
+  name: shift
+- !ruby/object:RI::MethodSummary 
+  name: structure
+- !ruby/object:RI::MethodSummary 
+  name: sub
+name: Sexp
+superclass: Array

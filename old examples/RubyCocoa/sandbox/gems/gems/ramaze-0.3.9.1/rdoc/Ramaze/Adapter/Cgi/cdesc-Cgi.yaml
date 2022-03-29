@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: start
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Our CGI adapter acts as wrapper for the Rack::Handler::CGI.
+constants: []
+
+full_name: Ramaze::Adapter::Cgi
+includes: []
+
+instance_methods: []
+
+name: Cgi
+superclass: Base

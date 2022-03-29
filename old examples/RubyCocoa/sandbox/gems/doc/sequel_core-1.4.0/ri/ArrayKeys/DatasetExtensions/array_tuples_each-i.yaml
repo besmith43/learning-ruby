@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Fetches a dataset's records, converting each tuple into an array with keys.
+full_name: ArrayKeys::DatasetExtensions#array_tuples_each
+is_singleton: false
+name: array_tuples_each
+params: (opts = nil, &block)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts everything given to strings and passes them on with :info
+full_name: Ramaze::Logging#info
+is_singleton: false
+name: info
+params: (*objects)
+visibility: public

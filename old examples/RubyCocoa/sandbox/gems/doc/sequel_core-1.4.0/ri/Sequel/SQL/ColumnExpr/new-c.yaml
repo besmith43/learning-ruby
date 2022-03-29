@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQL::ColumnExpr::new
+is_singleton: true
+name: new
+params: (l, op, r = nil)
+visibility: public

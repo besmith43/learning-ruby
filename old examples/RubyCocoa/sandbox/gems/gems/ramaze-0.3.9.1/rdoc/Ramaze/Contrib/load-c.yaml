@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Loads and sets up contrib modules from /ramaze/contrib.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Ramaze::Contrib.load :gzip_filter\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Creating a contrib module:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  module Ramaze::Contrib::Test\n    def self.setup\n      Log.info &quot;Test module set up&quot;\n    end\n  end\n  class TestController &lt; Ramaze::Controller\n    map '/test'\n    def index; &quot;Chunky Bacon!&quot;; end\n  end\n\n  # Save that to your &lt;app dir&gt;/contrib and use like:\n  Ramaze.contrib :test\n"
+full_name: Ramaze::Contrib::load
+is_singleton: true
+name: load
+params: (*contribs)
+visibility: public

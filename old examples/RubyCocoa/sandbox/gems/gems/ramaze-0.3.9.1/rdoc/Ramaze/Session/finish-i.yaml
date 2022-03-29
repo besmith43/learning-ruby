@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: at the end of a request delete the current[:FLASH] and assign it to current[:FLASH_PREVIOUS]
+- !ruby/struct:SM::Flow::P 
+  body: this is needed so flash can iterate over requests and always just keep the current and previous key/value pairs.
+- !ruby/struct:SM::Flow::P 
+  body: finalizes the session and assigns the key to the response via set_cookie.
+full_name: Ramaze::Session#finish
+is_singleton: false
+name: finish
+params: ()
+visibility: public

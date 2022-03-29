@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: use this to cache values in your controller and templates, for example heavy calculations or time-consuming queries.
+full_name: Ramaze::Helper::Cache#value_cache
+is_singleton: false
+name: value_cache
+params: ()
+visibility: private

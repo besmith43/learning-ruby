@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: update
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Updates and saves values to database from the passed-in Hash.
+full_name: Sequel::Model#set
+is_singleton: false
+name: set
+params: (values)
+visibility: public

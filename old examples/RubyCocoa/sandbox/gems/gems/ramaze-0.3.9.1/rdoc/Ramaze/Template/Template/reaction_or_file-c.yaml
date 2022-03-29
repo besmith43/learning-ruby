@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: calls result_and_file with the given action and returns the first of the result of the controller or content of the file.
+full_name: Ramaze::Template::Template::reaction_or_file
+is_singleton: true
+name: reaction_or_file
+params: (action)
+visibility: public

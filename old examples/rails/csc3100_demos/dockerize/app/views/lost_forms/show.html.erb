@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Current date:</strong>
+  <%= @lost_form.current_date %>
+</p>
+
+<p>
+  <strong>Lost date:</strong>
+  <%= @lost_form.lost_date %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @lost_form.phone %>
+</p>
+
+<p>
+  <strong>Owner name:</strong>
+  <%= @lost_form.owner_name %>
+</p>
+
+<p>
+  <strong>Pet name:</strong>
+  <%= @lost_form.pet_name %>
+</p>
+
+<p>
+  <strong>Collar:</strong>
+  <%= @lost_form.collar %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @lost_form.tags %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @lost_form.color %>
+</p>
+
+<p>
+  <strong>Species:</strong>
+  <%= @lost_form.species %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @lost_form.breed %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @lost_form.gender %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @lost_form.size %>
+</p>
+
+<p>
+  <strong>Spayed neutered:</strong>
+  <%= @lost_form.spayed_neutered %>
+</p>
+
+<p>
+  <strong>Found:</strong>
+  <%= @lost_form.found %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @lost_form.comments %>
+</p>
+
+<%= link_to 'Edit', edit_lost_form_path(@lost_form) %> |
+<%= link_to 'Back', lost_forms_path %>

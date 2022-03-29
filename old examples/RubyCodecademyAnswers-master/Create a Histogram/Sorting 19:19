@@ -1,0 +1,3 @@
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+
+fruits.sort! {|fruit1, fruit2| fruit2 <=> fruit1 }

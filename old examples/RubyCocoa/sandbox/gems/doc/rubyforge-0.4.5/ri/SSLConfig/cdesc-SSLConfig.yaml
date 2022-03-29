@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTPAccess2::SSLConfig -- SSL configuration of a client.
+constants: []
+
+full_name: SSLConfig
+includes: []
+
+instance_methods: []
+
+name: SSLConfig
+superclass: Object

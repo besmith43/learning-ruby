@@ -1,0 +1,44 @@
+<header>
+    <h1>
+        Welcome to my app, <%= current_user.email %>
+    </h1>
+    <h2>
+        Using Rails <%= Rails.version %>
+    </h2>
+</header>
+<section>
+    <p>
+        Future home of our Dashboard
+    </p>
+    <p>
+    <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+    </p>
+    
+    <ul>
+        <li>
+        <% if user_signed_in? %>
+        <%= link_to "Courses" , { :controller => :dashboard, :action => :page2 } %>
+        <% end %>
+        </li>
+        <li>
+        <% if user_signed_in? %>
+       <%= link_to "Work Experience", { :controller => :dashboard, :action => :experience } %>
+        <% end %>
+        </li>
+        <li>
+        <% if user_signed_in? %>
+        <%= link_to "Honors and Awards", { :controller => :dashboard, :action => :honors } %>
+        <% end %>
+        </li>
+        <li>
+        <% if user_signed_in? %>
+        <%= link_to "Skills and Interests", { :controller => :dashboard, :action => :skills } %>
+        <% end %>
+        </li>
+        <li>
+        <% if user_signed_in? %>
+        <%= link_to "References", { :controller => :dashboard, :action => :references } %>
+        <% end %>
+        </li>
+    </ul>
+</section>

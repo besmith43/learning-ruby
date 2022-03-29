@@ -1,0 +1,48 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: resolve
+- !ruby/object:RI::MethodSummary 
+  name: resolve
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Ramaze support simple routing using string, regex and lambda based routers. Route are stored in a dictionary, which supports hash-like access but preserves order, so routes are evaluated in the order they are added.
+- !ruby/struct:SM::Flow::P 
+  body: "String routers are the simplest way to route in Ramaze. One path is translated into another:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Ramaze::Route[ '/foo' ] = '/bar'\n    '/foo'  =&gt;  '/bar'\n"
+- !ruby/struct:SM::Flow::P 
+  body: Regex routers allow matching against paths using regex. Matches within your regex using () are substituted in the new path using printf-like syntax.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Ramaze::Route[ %r!^/(\\d+)\\.te?xt$! ] = &quot;/text/%d&quot;\n    '/123.txt'  =&gt;  '/text/123'\n    '/789.text' =&gt;  '/text/789'\n"
+- !ruby/struct:SM::Flow::P 
+  body: For more complex routing, lambda routers can be used. Lambda routers are passed in the current path and request object, and must return either a new path string, or nil.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Ramaze::Route[ 'name of route' ] = lambda{ |path, request|\n    '/bar' if path == '/foo' and request[:bar] == '1'\n  }\n    '/foo'        =&gt;  '/foo'\n    '/foo?bar=1'  =&gt;  '/bar'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Lambda routers can also use this alternative syntax:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Ramaze::Route('name of route') do |path, request|\n    '/bar' if path == '/foo' and request[:bar] == '1'\n  end\n"
+constants: []
+
+full_name: Ramaze::Route
+includes: []
+
+instance_methods: []
+
+name: Route
+superclass: Object

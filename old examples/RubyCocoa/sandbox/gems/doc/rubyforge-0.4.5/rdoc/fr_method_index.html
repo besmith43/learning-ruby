@@ -1,0 +1,152 @@
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/SSLSocketWrap.html#M000135"><< (SSLSocketWrap)</a><br />
+    <a href="classes/DebugSocket.html#M000145"><< (DebugSocket)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000189">[] (HTTP::Message::Headers)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000188">[]= (HTTP::Message::Headers)</a><br />
+    <a href="classes/RubyForge.html#M000123">add_file (RubyForge)</a><br />
+    <a href="classes/RubyForge.html#M000122">add_release (RubyForge)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000129">addr (SSLSocketWrap)</a><br />
+    <a href="classes/HTTP/Message.html#M000157">body (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000158">body= (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000184">body_size= (HTTP::Message::Headers)</a><br />
+    <a href="classes/RubyForge.html#M000124">client (RubyForge)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000130">close (SSLSocketWrap)</a><br />
+    <a href="classes/DebugSocket.html#M000142">close (DebugSocket)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000131">closed? (SSLSocketWrap)</a><br />
+    <a href="classes/Client.html#M000077">connect_timeout (Client)</a><br />
+    <a href="classes/Client.html#M000078">connect_timeout= (Client)</a><br />
+    <a href="classes/HTTP/Message.html#M000156">content (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message/Body.html#M000176">content (HTTP::Message::Body)</a><br />
+    <a href="classes/HTTP/Message.html#M000165">contenttype (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000182">contenttype (HTTP::Message::Headers)</a><br />
+    <a href="classes/HTTP/Message.html#M000166">contenttype= (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000183">contenttype= (HTTP::Message::Headers)</a><br />
+    <a href="classes/RubyForge.html#M000119">create_package (RubyForge)</a><br />
+    <a href="classes/HTTP/Message.html#M000168">create_query_multipart_str (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000167">create_query_part_str (HTTP::Message)</a><br />
+    <a href="classes/DebugSocket.html#M000139">create_socket (DebugSocket)</a><br />
+    <a href="classes/Client.html#M000073">debug_dev (Client)</a><br />
+    <a href="classes/Client.html#M000074">debug_dev= (Client)</a><br />
+    <a href="classes/Client.html#M000094">default_redirect_uri_callback (Client)</a><br />
+    <a href="classes/Client.html#M000099">delete (Client)</a><br />
+    <a href="classes/Client.html#M000107">delete_async (Client)</a><br />
+    <a href="classes/RubyForge.html#M000121">delete_package (RubyForge)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000185">dump (HTTP::Message::Headers)</a><br />
+    <a href="classes/HTTP/Message/Body.html#M000175">dump (HTTP::Message::Body)</a><br />
+    <a href="classes/HTTP/Message.html#M000152">dump (HTTP::Message)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000132">eof? (SSLSocketWrap)</a><br />
+    <a href="classes/HTTP/Message.html#M000171">escape (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000170">escape_query (HTTP::Message)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000136">flush (SSLSocketWrap)</a><br />
+    <a href="classes/Client.html#M000096">get (Client)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000187">get (HTTP::Message::Headers)</a><br />
+    <a href="classes/Client.html#M000104">get_async (Client)</a><br />
+    <a href="classes/Client.html#M000092">get_content (Client)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000133">gets (SSLSocketWrap)</a><br />
+    <a href="classes/DebugSocket.html#M000143">gets (DebugSocket)</a><br />
+    <a href="classes/Client.html#M000095">head (Client)</a><br />
+    <a href="classes/Client.html#M000103">head_async (Client)</a><br />
+    <a href="classes/HTTP/Message.html#M000154">header (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000155">header= (HTTP::Message)</a><br />
+    <a href="classes/HTTP.html#M000146">http_date (HTTP)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000179">init_request (HTTP::Message::Headers)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000180">init_response (HTTP::Message::Headers)</a><br />
+    <a href="classes/HTTP.html#M000147">keep_alive_enabled? (HTTP)</a><br />
+    <a href="classes/HTTP/Message.html#M000153">load (HTTP::Message)</a><br />
+    <a href="classes/DebugSocket.html#M000141">log_connect (DebugSocket)</a><br />
+    <a href="classes/RubyForge.html#M000118">login (RubyForge)</a><br />
+    <a href="classes/HTTP/Message.html#M000172">mime_type (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000169">multiparam_query? (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000178">new (HTTP::Message::Headers)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000125">new (SSLSocketWrap)</a><br />
+    <a href="classes/DebugSocket.html#M000140">new (DebugSocket)</a><br />
+    <a href="classes/HTTP/Message.html#M000149">new (HTTP::Message)</a><br />
+    <a href="classes/RubyForge.html#M000113">new (RubyForge)</a><br />
+    <a href="classes/HTTP/Message/Body.html#M000173">new (HTTP::Message::Body)</a><br />
+    <a href="classes/Client.html#M000072">new (Client)</a><br />
+    <a href="classes/HTTP/Message.html#M000150">new_request (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000151">new_response (HTTP::Message)</a><br />
+    <a href="classes/Client.html#M000085">no_proxy (Client)</a><br />
+    <a href="classes/Client.html#M000086">no_proxy= (Client)</a><br />
+    <a href="classes/Client.html#M000100">options (Client)</a><br />
+    <a href="classes/Client.html#M000108">options_async (Client)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000128">peer_cert (SSLSocketWrap)</a><br />
+    <a href="classes/Client.html#M000097">post (Client)</a><br />
+    <a href="classes/Client.html#M000105">post_async (Client)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000127">post_connection_check (SSLSocketWrap)</a><br />
+    <a href="classes/Client.html#M000093">post_content (Client)</a><br />
+    <a href="classes/RubyForge.html#M000120">post_news (RubyForge)</a><br />
+    <a href="classes/Client.html#M000075">protocol_version (Client)</a><br />
+    <a href="classes/Client.html#M000076">protocol_version= (Client)</a><br />
+    <a href="classes/Client.html#M000083">proxy (Client)</a><br />
+    <a href="classes/Client.html#M000084">proxy= (Client)</a><br />
+    <a href="classes/Client.html#M000098">put (Client)</a><br />
+    <a href="classes/Client.html#M000106">put_async (Client)</a><br />
+    <a href="classes/DebugSocket.html#M000144">read (DebugSocket)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000134">read (SSLSocketWrap)</a><br />
+    <a href="classes/HTTP/Message.html#M000163">reason (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000164">reason= (HTTP::Message)</a><br />
+    <a href="classes/Client.html#M000081">receive_timeout (Client)</a><br />
+    <a href="classes/Client.html#M000082">receive_timeout= (Client)</a><br />
+    <a href="classes/HTTP/Status.html#M000148">redirect? (HTTP::Status)</a><br />
+    <a href="classes/Client.html#M000091">redirect_uri_callback= (Client)</a><br />
+    <a href="classes/Client.html#M000102">request (Client)</a><br />
+    <a href="classes/Client.html#M000110">request_async (Client)</a><br />
+    <a href="classes/Client.html#M000111">reset (Client)</a><br />
+    <a href="classes/Client.html#M000112">reset_all (Client)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000181">response_status_code= (HTTP::Message::Headers)</a><br />
+    <a href="classes/RubyForge.html#M000115">save_autoconfig (RubyForge)</a><br />
+    <a href="classes/Client.html#M000090">save_cookie_store (Client)</a><br />
+    <a href="classes/RubyForge.html#M000116">scrape_config (RubyForge)</a><br />
+    <a href="classes/RubyForge.html#M000117">scrape_project (RubyForge)</a><br />
+    <a href="classes/Client.html#M000079">send_timeout (Client)</a><br />
+    <a href="classes/Client.html#M000080">send_timeout= (Client)</a><br />
+    <a href="classes/HTTP/Message/Headers.html#M000186">set (HTTP::Message::Headers)</a><br />
+    <a href="classes/Client.html#M000088">set_basic_auth (Client)</a><br />
+    <a href="classes/HTTP/Message/Body.html#M000177">set_content (HTTP::Message::Body)</a><br />
+    <a href="classes/Client.html#M000089">set_cookie_store (Client)</a><br />
+    <a href="classes/RubyForge.html#M000114">setup (RubyForge)</a><br />
+    <a href="classes/HTTP/Message/Body.html#M000174">size (HTTP::Message::Body)</a><br />
+    <a href="classes/Client.html#M000087">socket_sync= (Client)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000126">ssl_connect (SSLSocketWrap)</a><br />
+    <a href="classes/HTTP/Message.html#M000159">status (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000160">status= (HTTP::Message)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000137">sync (SSLSocketWrap)</a><br />
+    <a href="classes/SSLSocketWrap.html#M000138">sync= (SSLSocketWrap)</a><br />
+    <a href="classes/Client.html#M000101">trace (Client)</a><br />
+    <a href="classes/Client.html#M000109">trace_async (Client)</a><br />
+    <a href="classes/HTTP/Message.html#M000161">version (HTTP::Message)</a><br />
+    <a href="classes/HTTP/Message.html#M000162">version= (HTTP::Message)</a><br />
+  </div>
+</div>
+</body>
+</html>

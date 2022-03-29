@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the first record in the dataset. If the num argument is specified, an array is returned with the first <em>num</em> records.
+full_name: Sequel::Dataset::Convenience#first
+is_singleton: false
+name: first
+params: (*args, &block)
+visibility: public

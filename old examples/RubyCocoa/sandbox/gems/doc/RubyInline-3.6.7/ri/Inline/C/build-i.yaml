@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Builds the source file, if needed, and attempts to compile it.
+full_name: Inline::C#build
+is_singleton: false
+name: build
+params: ()
+visibility: public

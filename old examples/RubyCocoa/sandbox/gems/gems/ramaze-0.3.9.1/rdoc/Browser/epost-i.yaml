@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Browser#epost
+is_singleton: false
+name: epost
+params: (path = '/', hash = {})
+visibility: public

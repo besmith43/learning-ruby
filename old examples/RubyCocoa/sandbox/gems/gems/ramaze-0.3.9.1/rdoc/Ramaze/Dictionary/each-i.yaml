@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: each_pair
+- !ruby/object:RI::AliasName 
+  name: each_pair
+block_params: ( k,@hash[k] )
+comment: 
+full_name: Ramaze::Dictionary#each
+is_singleton: false
+name: each
+params: () {|k,@hash[k]| ...}
+visibility: public

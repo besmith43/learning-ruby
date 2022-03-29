@@ -1,0 +1,17 @@
+# Generate Controllers and Actions
+rails generate controller about index
+rails generate controller books new create update edit destroy index show
+rails generate controller categories new create update edit destroy index show
+rails generate controller authors new create update edit destroy index show
+rails generate controller publishers new create update edit destroy index show
+
+# Add Resources to routes
+resources :books
+resources :categories
+resources :authors
+resources :publishers
+
+rake routes
+
+
+

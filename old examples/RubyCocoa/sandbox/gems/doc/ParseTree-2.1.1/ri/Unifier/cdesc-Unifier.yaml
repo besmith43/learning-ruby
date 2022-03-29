@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Quick and easy SexpProcessor that unified the sexp structure.
+constants: []
+
+full_name: Unifier
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: UnifiedRuby
+instance_methods: []
+
+name: Unifier
+superclass: SexpProcessor

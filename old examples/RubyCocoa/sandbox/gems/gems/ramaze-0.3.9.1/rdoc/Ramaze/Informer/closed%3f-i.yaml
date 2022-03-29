@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: is @out closed?
+full_name: Ramaze::Informer#closed?
+is_singleton: false
+name: closed?
+params: ()
+visibility: public

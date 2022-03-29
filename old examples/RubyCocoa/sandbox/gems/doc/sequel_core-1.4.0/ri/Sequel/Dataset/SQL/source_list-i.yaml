@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts an array of sources names into into a comma separated list.
+full_name: Sequel::Dataset::SQL#source_list
+is_singleton: false
+name: source_list
+params: (source)
+visibility: public

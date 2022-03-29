@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQLite::Database#pragma_get
+is_singleton: false
+name: pragma_get
+params: (name)
+visibility: public

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: day
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts self from days to seconds
+full_name: Assistance::TimeCalculations#days
+is_singleton: false
+name: days
+params: ()
+visibility: public

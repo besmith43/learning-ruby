@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::ODBC::Dataset#convert_odbc_value
+is_singleton: false
+name: convert_odbc_value
+params: (v)
+visibility: public

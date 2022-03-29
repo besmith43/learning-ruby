@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Honor date</th>
+      <th>Honor name</th>
+      <th>Honor description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @honors_and_awards.each do |honors_and_award| %>
+      <tr>
+        <td><%= honors_and_award.owner %></td>
+        <td><%= honors_and_award.honor_date %></td>
+        <td><%= honors_and_award.honor_name %></td>
+        <td><%= honors_and_award.honor_description %></td>
+        <td><%= link_to 'Show', honors_and_award %></td>
+        <td><%= link_to 'Edit', edit_honors_and_award_path(honors_and_award) %></td>
+        <td><%= link_to 'Destroy', honors_and_award, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Honors And Award', new_honors_and_award_path %>

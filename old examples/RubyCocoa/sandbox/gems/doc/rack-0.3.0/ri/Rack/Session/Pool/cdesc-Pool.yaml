@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: key
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: pool
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::Session::Pool provides simple cookie based session management. Session data is stored in a hash held by @pool. The corresponding session key sent to the client. The pool is unmonitored and unregulated, which means that over prolonged use the session pool will be very large.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    use Rack::Session::Pool, :key =&gt; 'rack.session',\n                             :domain =&gt; 'foo.com',\n                             :path =&gt; '/',\n                             :expire_after =&gt; 2592000\n\n    All parameters are optional.\n"
+constants: []
+
+full_name: Rack::Session::Pool
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: context
+name: Pool
+superclass: Object

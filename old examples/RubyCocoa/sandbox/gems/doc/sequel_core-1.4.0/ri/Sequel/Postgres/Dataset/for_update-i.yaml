@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Dataset#for_update
+is_singleton: false
+name: for_update
+params: ()
+visibility: public

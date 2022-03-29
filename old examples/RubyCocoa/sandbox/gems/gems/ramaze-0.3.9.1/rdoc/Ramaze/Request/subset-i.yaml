@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Answers with a subset of request.params with only the key/value pairs for which you pass the keys. Valid keys are objects that respond to :to_s
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  request.params\n  # =&gt; {'name' =&gt; 'jason', 'age' =&gt; '45', 'job' =&gt; 'lumberjack'}\n  request.sub('name')\n  # =&gt; {'name' =&gt; 'jason'}\n  request.sub(:name, :job)\n  # =&gt; {'name' =&gt; 'jason', 'job' =&gt; 'lumberjack'}\n"
+full_name: Ramaze::Request#subset
+is_singleton: false
+name: subset
+params: (*keys)
+visibility: public

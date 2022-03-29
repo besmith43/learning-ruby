@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides facilities to perform http basic authentication. You don't need to provide <tt>usr</tt> and <tt>pwd</tt> if they are already included in the uri, i.e. http://user:password@www.example.com/
+full_name: SimpleHttp#basic_authentication
+is_singleton: false
+name: basic_authentication
+params: (usr, pwd)
+visibility: public

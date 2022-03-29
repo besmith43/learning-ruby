@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Can be replaced by Ruby Facets' Functor pattern
+full_name: Ramaze::Template::XSLT::make_functor
+is_singleton: true
+name: make_functor
+params: (m, &block)
+visibility: private

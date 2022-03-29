@@ -1,0 +1,99 @@
+<%= form_for(lost_form) do |f| %>
+  <% if lost_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lost_form.errors.count, "error") %> prohibited this lost_form from being saved:</h2>
+
+      <ul>
+      <% lost_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :current_date %>
+    <%= f.date_select :current_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lost_date %>
+    <%= f.date_select :lost_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_name %>
+    <%= f.text_field :owner_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pet_name %>
+    <%= f.text_field :pet_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :collar %>
+    <%= f.text_field :collar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :species %>
+    <%= f.text_field :species %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spayed_neutered %>
+    <%= f.text_field :spayed_neutered %>
+  </div>
+
+  <div class="field">
+    <%= f.label :found %>
+    <%= f.text_area :found %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <% if !lost_form.new_record? %>
+  <div class="field">
+    <%= f.label :pending %>
+    <%= f.text_field :pending %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

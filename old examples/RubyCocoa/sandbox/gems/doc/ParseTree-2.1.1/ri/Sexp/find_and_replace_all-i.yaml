@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Replaces all elements whose node_type is <tt>from</tt> with <tt>to</tt>. Used only for the most trivial of rewrites.
+full_name: Sexp#find_and_replace_all
+is_singleton: false
+name: find_and_replace_all
+params: (from, to)
+visibility: public

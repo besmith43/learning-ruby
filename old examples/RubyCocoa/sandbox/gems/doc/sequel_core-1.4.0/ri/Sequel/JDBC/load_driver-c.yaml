@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::JDBC::load_driver
+is_singleton: true
+name: load_driver
+params: (driver)
+visibility: public

@@ -1,0 +1,5 @@
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+
+symbols = []
+strings.each { |x| symbols.push x.intern}

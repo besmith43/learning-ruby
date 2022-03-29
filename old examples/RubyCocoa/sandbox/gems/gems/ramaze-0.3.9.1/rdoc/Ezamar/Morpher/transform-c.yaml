@@ -1,0 +1,68 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Since the functionality is best explained by examples, here they come.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::P 
+  body: "if:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div if=&quot;@name&quot;&gt;#@name&lt;/div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "morphs to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;?r if @name ?&gt;\n    &lt;div&gt;#@name&lt;/div&gt;\n  &lt;?r end ?&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "unless:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div unless=&quot;@name&quot;&gt;No Name&lt;/div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "morphs to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;?r unless @name ?&gt;\n    &lt;div&gt;No Name&lt;/div&gt;\n  &lt;?r end ?&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "for:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div for=&quot;name in @names&quot;&gt;#{name}&lt;/div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "morphs to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;?r for name in @names ?&gt;\n    &lt;div&gt;#{name}&lt;/div&gt;\n  &lt;?r end ?&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "times:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div times=&quot;3&quot;&gt;#{_t}&lt;div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "morphs to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;?r 3.times do |_t| ?&gt;\n    &lt;div&gt;#{_t}&lt;/div&gt;\n  &lt;?r end ?&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "each:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div each=&quot;[1,2,3]&quot;&gt;#{_e}&lt;/div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "morphs to:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;?r [1,2,3].each do |_e| ?&gt;\n    &lt;div&gt;#{_e}&lt;/div&gt;\n  &lt;?r end ?&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: The latter two examples show you also one standard introduced by a limitation of the replacement-system.
+- !ruby/struct:SM::Flow::P 
+  body: When you yield a value, please name it by the first character(s) of the morphs name, with an underscore prefixed.
+- !ruby/struct:SM::Flow::P 
+  body: for each an _e, for times a _t.
+- !ruby/struct:SM::Flow::P 
+  body: This is by far not the best way to handle it and might lead to problems due to the lack of proper scoping in ruby (if you define an _e or _t before the block it will be overwritten).
+- !ruby/struct:SM::Flow::P 
+  body: So please be careful, I tried to come up with something that is both easy to write and doesn't look outright awful while keeping an easy to remember mnemonic.
+- !ruby/struct:SM::Flow::P 
+  body: "TODO:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - Add pure Ruby implementation as a fall-back.\n"
+full_name: Ezamar::Morpher::transform
+is_singleton: true
+name: transform
+params: (template)
+visibility: public

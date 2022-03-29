@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexpProcessor#test_require_empty_false
+is_singleton: false
+name: test_require_empty_false
+params: ()
+visibility: public

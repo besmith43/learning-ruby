@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @honors_and_award.owner %>
+</p>
+
+<p>
+  <strong>Honor date:</strong>
+  <%= @honors_and_award.honor_date %>
+</p>
+
+<p>
+  <strong>Honor name:</strong>
+  <%= @honors_and_award.honor_name %>
+</p>
+
+<p>
+  <strong>Honor description:</strong>
+  <%= @honors_and_award.honor_description %>
+</p>
+
+<%= link_to 'Edit', edit_honors_and_award_path(@honors_and_award) %> |
+<%= link_to 'Back', dashboard_honors_path %>

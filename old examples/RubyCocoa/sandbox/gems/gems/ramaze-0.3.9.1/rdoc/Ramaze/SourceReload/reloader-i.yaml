@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Start reload loop in separate Thread
+full_name: Ramaze::SourceReload#reloader
+is_singleton: false
+name: reloader
+params: ()
+visibility: public

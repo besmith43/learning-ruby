@@ -1,0 +1,7 @@
+..
+.
+struct_generator.rb
+generator.rb
+generator_task.rb
+types_generator.rb
+const_generator.rb

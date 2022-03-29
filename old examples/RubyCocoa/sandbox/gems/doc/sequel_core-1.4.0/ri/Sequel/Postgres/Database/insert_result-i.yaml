@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Database#insert_result
+is_singleton: false
+name: insert_result
+params: (conn, table, values)
+visibility: public

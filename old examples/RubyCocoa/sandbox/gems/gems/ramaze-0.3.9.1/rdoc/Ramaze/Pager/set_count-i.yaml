@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: generates total and page count of the pager.
+full_name: Ramaze::Pager#set_count
+is_singleton: false
+name: set_count
+params: (total_count)
+visibility: private

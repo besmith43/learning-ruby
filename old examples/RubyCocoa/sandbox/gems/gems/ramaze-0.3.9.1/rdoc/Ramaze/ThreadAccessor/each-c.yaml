@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: key, meth
+comment: 
+full_name: Ramaze::ThreadAccessor::each
+is_singleton: true
+name: each
+params: (*names) {|key, meth| ...}
+visibility: public

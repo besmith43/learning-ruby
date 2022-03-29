@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Will be going to be much simpler after deprecation <b>sigh</b>
+full_name: Ramaze::Helper::Methods#find_helper
+is_singleton: false
+name: find_helper
+params: (name)
+visibility: private

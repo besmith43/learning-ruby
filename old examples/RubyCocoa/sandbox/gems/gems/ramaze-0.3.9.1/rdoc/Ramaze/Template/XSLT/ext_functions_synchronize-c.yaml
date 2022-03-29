@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Template::XSLT::ext_functions_synchronize
+is_singleton: true
+name: ext_functions_synchronize
+params: (&block)
+visibility: private

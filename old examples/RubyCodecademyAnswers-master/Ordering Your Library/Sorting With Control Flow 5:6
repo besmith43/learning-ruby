@@ -1,0 +1,10 @@
+def alphabetize(arr, rev=false)
+    if rev=true
+        alphabetize.sort {|book1, book2| book2 <=> book1}
+    else
+        alphabetize.sort! {|book1, book2| book1 <=> book2}
+        return a
+    end
+end
+
+puts a

@@ -1,0 +1,14 @@
+puts "try"
+puts "trytry"
+text = gets.chomp
+redact = gets.chomp
+words = text.split(" ")
+
+words.each do |words|
+    if words != "REDACTED"
+    print "#{words}" + " "
+    else
+    print "REDACTED"
+    end
+end
+

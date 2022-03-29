@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>crap_for_windoze (Inline::C)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/inline.rb, line 458</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">crap_for_windoze</span>
+      <span class="ruby-comment cmt"># gawd windoze land sucks</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-constant">RUBY_PLATFORM</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/mswin32/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-node">&quot; -link /LIBPATH:\&quot;#{Config::CONFIG['libdir']}\&quot; /DEFAULTLIB:\&quot;#{Config::CONFIG['LIBRUBY']}\&quot; /INCREMENTAL:no /EXPORT:Init_#{module_name}&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/mingw32/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-node">&quot; -Wl,--enable-auto-import -L#{Config::CONFIG['libdir']} -lmsvcrt-ruby18&quot;</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/i386-cygwin/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-value str">' -L/usr/local/lib -lruby.dll'</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-value str">''</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

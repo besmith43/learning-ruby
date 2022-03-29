@@ -1,0 +1,52 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Helper::Redirect actually takes advantage of Helper::Link.link_raw to build the links it redirects to. It doesn't do much else than this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    setting a status-code of 303 and a response['Location'] = link\n"
+- !ruby/struct:SM::Flow::P 
+  body: returning some nice text for visitors who insist on ignoring those hints :P
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  redirect Rs()\n  redirect R(MainController)\n  redirect R(MainController, :foo)\n  redirect 'foo/bar'\n  redirect 'foo/bar', :status =&gt; 301\n"
+- !ruby/struct:SM::Flow::P 
+  body: "TODO:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - maybe some more options, like a delay\n"
+constants: []
+
+full_name: Ramaze::Helper::Redirect
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: raw_redirect
+- !ruby/object:RI::MethodSummary 
+  name: raw_redirect
+- !ruby/object:RI::MethodSummary 
+  name: redirect
+- !ruby/object:RI::MethodSummary 
+  name: redirect
+- !ruby/object:RI::MethodSummary 
+  name: redirect_referer
+- !ruby/object:RI::MethodSummary 
+  name: redirect_referer
+- !ruby/object:RI::MethodSummary 
+  name: redirect_referrer
+- !ruby/object:RI::MethodSummary 
+  name: redirect_referrer
+- !ruby/object:RI::MethodSummary 
+  name: redirected?
+- !ruby/object:RI::MethodSummary 
+  name: redirected?
+- !ruby/object:RI::MethodSummary 
+  name: respond
+- !ruby/object:RI::MethodSummary 
+  name: respond
+name: Redirect
+superclass: 

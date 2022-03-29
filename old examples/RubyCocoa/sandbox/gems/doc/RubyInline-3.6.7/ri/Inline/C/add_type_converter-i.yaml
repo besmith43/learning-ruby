@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Registers C type-casts +r2c+ and +c2r+ for <tt>type</tt>.
+full_name: Inline::C#add_type_converter
+is_singleton: false
+name: add_type_converter
+params: (type, r2c, c2r)
+visibility: public

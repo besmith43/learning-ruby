@@ -1,0 +1,1 @@
+load 'gui_warble/bin/example.rb'

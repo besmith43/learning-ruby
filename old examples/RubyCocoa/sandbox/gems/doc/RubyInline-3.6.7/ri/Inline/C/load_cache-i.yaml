@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Attempts to load pre-generated code returning true if it succeeds.
+full_name: Inline::C#load_cache
+is_singleton: false
+name: load_cache
+params: ()
+visibility: public

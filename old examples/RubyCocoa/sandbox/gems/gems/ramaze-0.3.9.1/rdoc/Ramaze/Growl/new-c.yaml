@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes the options from the default trait for merging.
+full_name: Ramaze::Growl::new
+is_singleton: true
+name: new
+params: (options = {})
+visibility: public

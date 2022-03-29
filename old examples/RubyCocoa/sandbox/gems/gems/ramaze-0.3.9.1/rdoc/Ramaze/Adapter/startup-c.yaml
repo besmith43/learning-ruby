@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Is called by Ramaze.startup and will first call start_adapter and wait up to 3 seconds for an adapter to appear. It will then wait for the adapters to finish If Global.run_loose is set or otherwise pass you on control which is useful for testing or IRB sessions.
+full_name: Ramaze::Adapter::startup
+is_singleton: true
+name: startup
+params: (options = {})
+visibility: public

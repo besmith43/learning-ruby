@@ -1,0 +1,12 @@
+..
+.
+experimental.rb
+experimental
+verbose.rb
+spell_checker.rb
+jaro_winkler.rb
+core_ext
+levenshtein.rb
+spell_checkers
+formatters
+version.rb

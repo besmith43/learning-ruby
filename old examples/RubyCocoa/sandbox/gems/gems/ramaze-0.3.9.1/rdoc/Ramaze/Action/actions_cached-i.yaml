@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Action#actions_cached
+is_singleton: false
+name: actions_cached
+params: ()
+visibility: private

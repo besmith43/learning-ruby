@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Action = Struct.new('Action', :template, :method, :params)
+- !ruby/struct:SM::Flow::P 
+  body: "a = Action.fill(:template =&gt; nil, :method =&gt; :meth, :params =&gt; [1]) # =&gt; #&lt;struct Struct::Action template=nil, method=:meth, params=[1]&gt;"
+full_name: Struct::fill
+is_singleton: true
+name: fill
+params: (hash = {})
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: start server on given host and port.
+full_name: Ramaze::Adapter::Ebb::run_server
+is_singleton: true
+name: run_server
+params: (host, port)
+visibility: public

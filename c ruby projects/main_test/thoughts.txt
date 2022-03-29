@@ -1,0 +1,5 @@
+so while you can check for self equal to main, it doesn't work all that well unlike python where I got the idea from
+
+so this is how it's done
+
+if __FILE__ == $PROGRAM_NAME

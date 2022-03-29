@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Builds a basic &lt;a&gt; tag.
+- !ruby/struct:SM::Flow::P 
+  body: `text` is mandatory, the second hash of options will be transformed into arguments of the tag, :href is a special case and its segments will be CGI.escaped.
+- !ruby/struct:SM::Flow::P 
+  body: If you pass no :href, the text will be run through Rs and its result is used instead. If you really want an empty href, use :href =&gt; ''
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  A('text')                       #&gt; &lt;a href=&quot;/text&quot;&gt;text&lt;/a&gt;\n  A('foo/bar')                    #&gt; &lt;a href=&quot;/foo/bar&quot;&gt;foo/bar&lt;/a&gt;\n  A('/foo?x=y')                   #&gt; &lt;a href=&quot;/foo?x=y&quot;&gt;/foo?x=y&lt;/a&gt;\n  A('text', :href =&gt; '/foo?x=y')  #&gt; &lt;a href=&quot;/foo?x=y&quot;&gt;text&lt;/a&gt;\n  A('Home', :href =&gt; Rs(:/))      #&gt; &lt;a href=&quot;/foo/bar&quot;&gt;Home&lt;/a&gt;\n"
+full_name: Ramaze::Helper::Link#A
+is_singleton: false
+name: A
+params: (*args)
+visibility: private

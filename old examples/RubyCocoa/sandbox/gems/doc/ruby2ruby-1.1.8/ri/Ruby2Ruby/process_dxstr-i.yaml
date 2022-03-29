@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#process_dxstr
+is_singleton: false
+name: process_dxstr
+params: (exp)
+visibility: public

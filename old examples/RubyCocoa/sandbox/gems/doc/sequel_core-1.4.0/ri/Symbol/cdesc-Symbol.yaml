@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COLUMN_REF_RE1
+  value: /^(\w+)__(\w+)___(\w+)/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COLUMN_REF_RE2
+  value: /^(\w+)___(\w+)$/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COLUMN_REF_RE3
+  value: /^(\w+)__(\w+)$/.freeze
+full_name: Symbol
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: to_column_ref
+- !ruby/object:RI::MethodSummary 
+  name: "|"
+name: Symbol
+superclass: Object

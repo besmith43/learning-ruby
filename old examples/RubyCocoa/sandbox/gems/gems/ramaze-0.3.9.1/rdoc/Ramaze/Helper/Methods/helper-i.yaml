@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This loads the helper-files from /ramaze/helper/helpername.rb and includes it into Ramaze::Template (or wherever it is called)
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  helper :redirect, :link\n"
+full_name: Ramaze::Helper::Methods#helper
+is_singleton: false
+name: helper
+params: (*syms)
+visibility: private

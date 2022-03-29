@@ -1,0 +1,10 @@
+<div class="row">
+  <h3> Notes </h3>
+  <% @notes.each do |note| %>
+    <p>
+    <%= note.title %>
+    <%= link_to 'show', note_path(note) %> |
+    <%= link_to 'delete', note_path(note), method: :delete %>
+    </p>
+  <% end %>
+</div>

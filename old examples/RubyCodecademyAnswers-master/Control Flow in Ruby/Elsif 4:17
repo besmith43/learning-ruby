@@ -1,0 +1,8 @@
+a = 2
+if a < 6
+    print "small"
+elsif a > 6
+    print "big"
+else
+    print "fuck you"
+end

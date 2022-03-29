@@ -1,0 +1,31 @@
+<%= form_for(skills_and_interest) do |f| %>
+  <% if skills_and_interest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skills_and_interest.errors.count, "error") %> prohibited this skills_and_interest from being saved:</h2>
+
+      <ul>
+      <% skills_and_interest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :owner, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_name %>
+    <%= f.text_field :skill_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_description %>
+    <%= f.text_field :skill_description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

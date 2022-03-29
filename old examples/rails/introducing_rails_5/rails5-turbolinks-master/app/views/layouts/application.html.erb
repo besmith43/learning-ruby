@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TasksTurbolinks</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p>
+    <%= link_to 'tasks', new_task_path %> |
+    <%= link_to 'notes', notes_path %>
+    </p>
+    <%= yield %>
+  </body>
+</html>

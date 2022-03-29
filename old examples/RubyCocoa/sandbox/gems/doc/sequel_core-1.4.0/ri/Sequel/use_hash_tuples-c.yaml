@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Modifies all dataset classes to fetch records as hashes.
+full_name: Sequel::use_hash_tuples
+is_singleton: true
+name: use_hash_tuples
+params: ()
+visibility: public

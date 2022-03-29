@@ -1,0 +1,58 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "This module provides a basic skeleton for your own loggers to be compatible. The minimal usage is like this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MyLogger\n    include Logging\n\n    def log(tag, *args)\n      p tag =&gt; args\n    end\n  end\n"
+constants: []
+
+full_name: Ramaze::Logging
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: debug
+- !ruby/object:RI::MethodSummary 
+  name: debug
+- !ruby/object:RI::MethodSummary 
+  name: debug?
+- !ruby/object:RI::MethodSummary 
+  name: debug?
+- !ruby/object:RI::MethodSummary 
+  name: dev
+- !ruby/object:RI::MethodSummary 
+  name: dev
+- !ruby/object:RI::MethodSummary 
+  name: error
+- !ruby/object:RI::MethodSummary 
+  name: error
+- !ruby/object:RI::MethodSummary 
+  name: info
+- !ruby/object:RI::MethodSummary 
+  name: info
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: tag_log
+- !ruby/object:RI::MethodSummary 
+  name: tag_log
+- !ruby/object:RI::MethodSummary 
+  name: warn
+- !ruby/object:RI::MethodSummary 
+  name: warn
+name: Logging
+superclass: 

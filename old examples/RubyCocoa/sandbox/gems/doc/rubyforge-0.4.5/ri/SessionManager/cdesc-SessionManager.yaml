@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTPAccess2::SessionManager -- manage several sessions.
+constants: []
+
+full_name: SessionManager
+includes: []
+
+instance_methods: []
+
+name: SessionManager
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: create a new YAML::Store with the given file (which will be created if it is not already there).
+full_name: Ramaze::YAMLStoreCache::new
+is_singleton: true
+name: new
+params: (file = 'cache.yaml')
+visibility: public

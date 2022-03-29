@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: deep_clone is the usual Marshalling hack to make a deep copy. It is rather slow, so use it sparingly. Helps with debugging SexpProcessors since you usually shift off sexps.
+full_name: Object#deep_clone
+is_singleton: false
+name: deep_clone
+params: ()
+visibility: public

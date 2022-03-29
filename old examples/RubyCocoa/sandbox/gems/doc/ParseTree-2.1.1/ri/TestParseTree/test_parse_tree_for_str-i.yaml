@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestParseTree#test_parse_tree_for_str
+is_singleton: false
+name: test_parse_tree_for_str
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: transforms all &lt;Element&gt; tags within the string, takes also a binding to be compatible to the transform-pipeline, won't have any use for it though.
+full_name: Ezamar::Element::transform
+is_singleton: true
+name: transform
+params: (template)
+visibility: public

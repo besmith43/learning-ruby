@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: store
+- !ruby/object:RI::MethodSummary 
+  name: store
+- !ruby/object:RI::MethodSummary 
+  name: update
+- !ruby/object:RI::MethodSummary 
+  name: update
+comment: 
+constants: []
+
+full_name: Ramaze::Tool::Gettext
+includes: []
+
+instance_methods: []
+
+name: Gettext
+superclass: Tool::Localize

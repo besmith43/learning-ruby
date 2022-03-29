@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: (a, lit1) =&gt; &quot;a = 1&quot; (a, (b, lit2)) =&gt; &quot;a = b = 2&quot; (a, (b)) =&gt; &quot;&quot;
+full_name: Ruby2Ruby#process_dasgn_curr
+is_singleton: false
+name: process_dasgn_curr
+params: (exp)
+visibility: public

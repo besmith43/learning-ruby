@@ -1,0 +1,321 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "<b>Recommended</b>: The author(s) of the package. (can be array) Really. Set this or we'll tease you."
+  name: author
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: A description of the release's latest changes. Auto-populates."
+  name: changes
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: An array of file patterns to delete on clean."
+  name: clean_globs
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: A description of the project. Auto-populates."
+  name: description
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: What sections from the readme to use for auto-description. Defaults to %w(description)."
+  name: description_sections
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "<b>Recommended</b>: The author's email address(es). (can be array)"
+  name: email
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: An array of rubygem dependencies."
+  name: extra_deps
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "<b>MANDATORY</b>: The name of the release."
+  name: name
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: Should package create a tarball? [default: true]"
+  name: need_tar
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: Should package create a zipfile? [default: false]"
+  name: need_zip
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: A regexp to match documentation files against the manifest."
+  name: rdoc_pattern
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: Name of RDoc destination directory on Rubyforge. [default: <tt>name</tt>]"
+  name: remote_rdoc_dir
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: Flags for RDoc rsync. [default: &quot;-av --delete&quot;]"
+  name: rsync_args
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: The name of the rubyforge project. [default: name.downcase]"
+  name: rubyforge_name
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: A hash of extra values to set in the gemspec. Value may be a proc."
+  name: spec_extras
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: A short summary of the project. Auto-populates."
+  name: summary
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: Number of sentences from description for summary. Defaults to 1."
+  name: summary_sentences
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: An array of test file patterns [default: test/**/test_*.rb]"
+  name: test_globs
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Optional: The url(s) of the project. (can be array). Auto-populates."
+  name: url
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "<b>MANDATORY</b>: The version. Don't hardcode! use a constant in the project."
+  name: version
+  rw: RW
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: hoe - a tool to help rake
+- !ruby/struct:SM::Flow::P 
+  body: Hoe is a simple rake/rubygems helper for project Rakefiles. It generates all the usual tasks for projects including rdoc generation, testing, packaging, and deployment.
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Using Hoe
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Basics
+- !ruby/struct:SM::Flow::P 
+  body: "Use this as a minimal starting point:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  require 'hoe'\n\n  Hoe.new(&quot;project_name&quot;, '1.0.0') do |p|\n    p.rubyforge_name = &quot;rf_project&quot;\n    # add other details here\n  end\n\n  # add other tasks here\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Tasks Provided:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "announce:"
+    body: Create news email file and post to rubyforge.
+  - !ruby/struct:SM::Flow::LI 
+    label: "audit:"
+    body: Run ZenTest against the package.
+  - !ruby/struct:SM::Flow::LI 
+    label: "check_manifest:"
+    body: Verify the manifest.
+  - !ruby/struct:SM::Flow::LI 
+    label: "clean:"
+    body: Clean up all the extras.
+  - !ruby/struct:SM::Flow::LI 
+    label: "config_hoe:"
+    body: Create a fresh ~/.hoerc file.
+  - !ruby/struct:SM::Flow::LI 
+    label: "debug_gem:"
+    body: Show information about the gem.
+  - !ruby/struct:SM::Flow::LI 
+    label: "default:"
+    body: Run the default tasks.
+  - !ruby/struct:SM::Flow::LI 
+    label: "docs:"
+    body: Build the docs HTML Files
+  - !ruby/struct:SM::Flow::LI 
+    label: "email:"
+    body: Generate email announcement file.
+  - !ruby/struct:SM::Flow::LI 
+    label: "gem:"
+    body: Build the gem file hoe-1.5.0.gem
+  - !ruby/struct:SM::Flow::LI 
+    label: "generate_key:"
+    body: Generate a key for signing your gems.
+  - !ruby/struct:SM::Flow::LI 
+    label: "install_gem:"
+    body: Install the package as a gem.
+  - !ruby/struct:SM::Flow::LI 
+    label: "multi:"
+    body: Run the test suite using multiruby.
+  - !ruby/struct:SM::Flow::LI 
+    label: "package:"
+    body: Build all the packages
+  - !ruby/struct:SM::Flow::LI 
+    label: "post_blog:"
+    body: Post announcement to blog.
+  - !ruby/struct:SM::Flow::LI 
+    label: "post_news:"
+    body: Post announcement to rubyforge.
+  - !ruby/struct:SM::Flow::LI 
+    label: "publish_docs:"
+    body: Publish RDoc to RubyForge.
+  - !ruby/struct:SM::Flow::LI 
+    label: "release:"
+    body: Package and upload the release to rubyforge.
+  - !ruby/struct:SM::Flow::LI 
+    label: "ridocs:"
+    body: Generate ri locally for testing.
+  - !ruby/struct:SM::Flow::LI 
+    label: "test:"
+    body: Run the test suite.
+  - !ruby/struct:SM::Flow::LI 
+    label: "test_deps:"
+    body: Show which test files fail when run alone.
+  type: :NOTE
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Extra Configuration Options:"
+- !ruby/struct:SM::Flow::P 
+  body: "Run <tt>config_hoe</tt> to generate a new ~/.hoerc file. The file is a YAML formatted config file with the following settings:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "exclude:"
+    body: A regular expression of files to exclude from <tt>check_manifest</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "publish_on_announce:"
+    body: Run <tt>publish_docs</tt> when you run <tt>release</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "signing_key_file:"
+    body: Signs your gems with this private key.
+  - !ruby/struct:SM::Flow::LI 
+    label: "signing_cert_file:"
+    body: Signs your gem with this certificate.
+  - !ruby/struct:SM::Flow::LI 
+    label: "blogs:"
+    body: An array of hashes of blog settings.
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: Run <tt>config_hoe</tt> and see ~/.hoerc for examples.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Signing Gems:"
+- !ruby/struct:SM::Flow::P 
+  body: "Run the 'generate_key' task. This will:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "1."
+    body: Configure your ~/.hoerc.
+  - !ruby/struct:SM::Flow::LI 
+    label: "2."
+    body: Generate a signing key and certificate.
+  - !ruby/struct:SM::Flow::LI 
+    label: "3."
+    body: Install the private key and public certificate files into ~/.gem.
+  - !ruby/struct:SM::Flow::LI 
+    label: "4."
+    body: Upload the certificate to RubyForge.
+  type: :NUMBER
+- !ruby/struct:SM::Flow::P 
+  body: Hoe will now generate signed gems when the package task is run. If you have multiple machines you build gems on, be sure to install your key and certificate on each machine.
+- !ruby/struct:SM::Flow::P 
+  body: Keep your private key secret! Keep your private key safe!
+- !ruby/struct:SM::Flow::P 
+  body: "To make sure your gems are signed run:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  rake package; tar tf pkg/yourproject-1.2.3.gem\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If your gem is signed you will see:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  data.tar.gz\n  data.tar.gz.sig\n  metadata.gz\n  metadata.gz.sig\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Platform awareness
+- !ruby/struct:SM::Flow::P 
+  body: Hoe allows bundling of pre-compiled extensions in the <tt>package</tt> task.
+- !ruby/struct:SM::Flow::P 
+  body: "To create a package for your current platform:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  rake package INLINE=1\n"
+- !ruby/struct:SM::Flow::P 
+  body: This will force Hoe analize your <tt>Inline</tt> already compiled extensions and include them in your gem.
+- !ruby/struct:SM::Flow::P 
+  body: "If somehow you need to force a specific platform:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  rake package INLINE=1 FORCE_PLATFORM=mswin32\n"
+- !ruby/struct:SM::Flow::P 
+  body: This will set the +Gem::Specification+ platform to the one indicated in <tt>FORCE_PLATFORM</tt> (instead of default Gem::Platform::CURRENT)
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'1.5.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used to specify a custom install location (for rake install).
+  name: PREFIX
+  value: ENV['PREFIX'] || ruby_prefix
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used to add extra flags to RUBY_FLAGS.
+  name: RUBY_DEBUG
+  value: ENV['RUBY_DEBUG']
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used to specify flags to ruby [has smart default].
+  name: RUBY_FLAGS
+  value: ENV['RUBY_FLAGS'] || default_ruby_flags
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used to add flags to test_unit (e.g., -n test_borked).
+  name: FILTER
+  value: ENV['FILTER']
+full_name: Hoe
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: developer
+- !ruby/object:RI::MethodSummary 
+  name: paragraphs_of
+name: Hoe
+superclass: Object

@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BOOL_TRUE
+  value: "'1'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BOOL_FALSE
+  value: "'0'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UNTITLED_COLUMN
+  value: "'untitled_%d'.freeze"
+full_name: Sequel::ODBC::Dataset
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_make_row
+- !ruby/object:RI::MethodSummary 
+  name: convert_odbc_value
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: hash_row
+- !ruby/object:RI::MethodSummary 
+  name: insert
+- !ruby/object:RI::MethodSummary 
+  name: literal
+- !ruby/object:RI::MethodSummary 
+  name: update
+name: Dataset
+superclass: Sequel::Dataset

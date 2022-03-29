@@ -1,0 +1,4 @@
+puts "please text"
+text = gets.chomp
+
+words = text.split

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Fetch/Create a OpenID::Consumer for current session.
+full_name: Ramaze::Helper::Identity#openid_consumer
+is_singleton: false
+name: openid_consumer
+params: ()
+visibility: private

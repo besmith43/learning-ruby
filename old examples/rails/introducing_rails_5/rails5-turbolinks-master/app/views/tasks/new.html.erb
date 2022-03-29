@@ -1,0 +1,15 @@
+<%= form_for @task, remote: true do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Create Task' %>
+<% end %>
+
+<h3> Incomplete </h3>
+<%= render Task.incomplete %>
+
+<h3> Complete </h3>
+<%= render Task.complete %>
+
+<h3> Notes </h3>
+<% @notes.each do |note| %>
+  <p><%= note.title %> <%= link_to 'delete', note_path(note), method: :delete %></p>
+<% end %>

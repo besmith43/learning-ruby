@@ -1,0 +1,29 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new Pager object.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "request:"
+    body: Ramaze::Request object providing access to GET parameters
+  - !ruby/struct:SM::Flow::LI 
+    label: "limit:"
+    body: how many elements go to one page
+  - !ruby/struct:SM::Flow::LI 
+    label: "total_count:"
+    body: total element count
+  - !ruby/struct:SM::Flow::LI 
+    label: "key:"
+    body: key used for getting the current page from GET paramaters
+  type: :NOTE
+- !ruby/struct:SM::Flow::P 
+  body: "Note: You never have to create this class yourself, use the `paginate()` convenience method from the Helper::Pager."
+full_name: Ramaze::Pager::new
+is_singleton: true
+name: new
+params: (request, limit, total_count, key = trait[:key])
+visibility: public

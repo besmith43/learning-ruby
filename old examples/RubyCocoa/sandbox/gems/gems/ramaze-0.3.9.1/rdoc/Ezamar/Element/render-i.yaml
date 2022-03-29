@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The method that will be called upon to render the things inside the element, you can access #content from here, which contains the contents between the tags."
+- !ruby/struct:SM::Flow::P 
+  body: It should answer with a String.
+full_name: Ezamar::Element#render
+is_singleton: false
+name: render
+params: (*args)
+visibility: public

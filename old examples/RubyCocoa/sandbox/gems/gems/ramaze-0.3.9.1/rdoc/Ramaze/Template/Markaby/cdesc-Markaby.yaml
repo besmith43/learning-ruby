@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: extract_ivs
+- !ruby/object:RI::MethodSummary 
+  name: extract_ivs
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform_string
+- !ruby/object:RI::MethodSummary 
+  name: transform_string
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Is responsible for compiling a template using the Markaby templating engine. Can be found at: http://code.whytheluckystiff.net/markaby/"
+constants: []
+
+full_name: Ramaze::Template::Markaby
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Methods
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Methods
+instance_methods: []
+
+name: Markaby
+superclass: Template

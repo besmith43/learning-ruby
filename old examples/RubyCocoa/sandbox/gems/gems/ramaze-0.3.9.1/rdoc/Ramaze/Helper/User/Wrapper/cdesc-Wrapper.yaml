@@ -1,0 +1,52 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: user
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: user
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Ramaze::Helper::User::Wrapper
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: logged_in?
+- !ruby/object:RI::MethodSummary 
+  name: logged_in?
+- !ruby/object:RI::MethodSummary 
+  name: login
+- !ruby/object:RI::MethodSummary 
+  name: login
+- !ruby/object:RI::MethodSummary 
+  name: login?
+- !ruby/object:RI::MethodSummary 
+  name: login?
+- !ruby/object:RI::MethodSummary 
+  name: logout
+- !ruby/object:RI::MethodSummary 
+  name: logout
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: persist
+- !ruby/object:RI::MethodSummary 
+  name: persist
+- !ruby/object:RI::MethodSummary 
+  name: persist=
+- !ruby/object:RI::MethodSummary 
+  name: persist=
+name: Wrapper
+superclass: Object

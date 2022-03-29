@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>add_file (RubyForge)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rubyforge.rb, line 316</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_file</span>(<span class="ruby-identifier">group_name</span>, <span class="ruby-identifier">package_name</span>, <span class="ruby-identifier">release_name</span>, <span class="ruby-identifier">userfile</span>)
+    <span class="ruby-identifier">page</span>         = <span class="ruby-value str">'/frs/admin/editrelease.php'</span>
+    <span class="ruby-identifier">type_id</span>      = <span class="ruby-ivar">@userconfig</span>[<span class="ruby-value str">&quot;type_id&quot;</span>]
+    <span class="ruby-identifier">group_id</span>     = <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;group&quot;</span>, <span class="ruby-identifier">group_name</span>
+    <span class="ruby-identifier">package_id</span>   = <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;package&quot;</span>, <span class="ruby-identifier">package_name</span>
+    <span class="ruby-identifier">release_id</span>   = (<span class="ruby-constant">Integer</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">release_name</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">release_name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">lookup</span>(<span class="ruby-value str">&quot;release&quot;</span>, <span class="ruby-identifier">package_name</span>)[<span class="ruby-identifier">release_name</span>]
+    <span class="ruby-identifier">processor_id</span> = <span class="ruby-ivar">@userconfig</span>[<span class="ruby-value str">&quot;processor_id&quot;</span>]
+
+    <span class="ruby-identifier">page</span> = <span class="ruby-node">&quot;/frs/admin/editrelease.php?group_id=#{group_id}&amp;release_id=#{release_id}&amp;package_id=#{package_id}&quot;</span>
+
+    <span class="ruby-identifier">userfile</span> = <span class="ruby-identifier">open</span> <span class="ruby-identifier">userfile</span>, <span class="ruby-value str">'rb'</span>
+
+    <span class="ruby-identifier">type_id</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">userfile</span>.<span class="ruby-identifier">path</span>[<span class="ruby-regexp re">%r|\.[^\./]+$|</span>]
+    <span class="ruby-identifier">type_id</span> = (<span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;type&quot;</span>, <span class="ruby-identifier">type_id</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;type&quot;</span>, <span class="ruby-value str">&quot;.oth&quot;</span>)
+
+    <span class="ruby-identifier">processor_id</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;Any&quot;</span>
+    <span class="ruby-identifier">processor_id</span> = <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;processor&quot;</span>, <span class="ruby-identifier">processor_id</span>
+
+    <span class="ruby-identifier">form</span> = {
+      <span class="ruby-value str">&quot;step2&quot;</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+      <span class="ruby-value str">&quot;type_id&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type_id</span>,
+      <span class="ruby-value str">&quot;processor_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">processor_id</span>,
+      <span class="ruby-value str">&quot;userfile&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">userfile</span>,
+      <span class="ruby-value str">&quot;submit&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Add This File&quot;</span>
+      }
+
+    <span class="ruby-identifier">boundary</span> = <span class="ruby-constant">Array</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-value">8</span>){ <span class="ruby-value str">&quot;%2.2d&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">42</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'__'</span>)
+    <span class="ruby-identifier">boundary</span> = <span class="ruby-node">&quot;multipart/form-data; boundary=___#{ boundary }___&quot;</span>
+
+    <span class="ruby-identifier">run</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">form</span>, <span class="ruby-value str">'content-type'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">boundary</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

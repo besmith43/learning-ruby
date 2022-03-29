@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes an Action The result or file is rendered using Amrita2::Template.
+- !ruby/struct:SM::Flow::P 
+  body: The context data are set to @data in the controller before expansion.
+full_name: Ramaze::Template::Amrita2::transform
+is_singleton: true
+name: transform
+params: (action)
+visibility: public

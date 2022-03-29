@@ -1,0 +1,88 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: cookie
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: cookie
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: http
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: http
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "         Copyright (c) 2008 Michael Fellinger m.fellinger@gmail.com\n"
+- !ruby/struct:SM::Flow::P 
+  body: All files in this distribution are subject to the terms of the Ruby license.
+constants: []
+
+full_name: Browser
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: eget
+- !ruby/object:RI::MethodSummary 
+  name: eget
+- !ruby/object:RI::MethodSummary 
+  name: epost
+- !ruby/object:RI::MethodSummary 
+  name: epost
+- !ruby/object:RI::MethodSummary 
+  name: erequest
+- !ruby/object:RI::MethodSummary 
+  name: erequest
+- !ruby/object:RI::MethodSummary 
+  name: find_link
+- !ruby/object:RI::MethodSummary 
+  name: find_link
+- !ruby/object:RI::MethodSummary 
+  name: follow_link
+- !ruby/object:RI::MethodSummary 
+  name: follow_link
+- !ruby/object:RI::MethodSummary 
+  name: follow_links
+- !ruby/object:RI::MethodSummary 
+  name: follow_links
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: get_cookie
+- !ruby/object:RI::MethodSummary 
+  name: get_cookie
+- !ruby/object:RI::MethodSummary 
+  name: hget
+- !ruby/object:RI::MethodSummary 
+  name: hget
+- !ruby/object:RI::MethodSummary 
+  name: hpost
+- !ruby/object:RI::MethodSummary 
+  name: hpost
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: request
+- !ruby/object:RI::MethodSummary 
+  name: request
+- !ruby/object:RI::MethodSummary 
+  name: story
+- !ruby/object:RI::MethodSummary 
+  name: story
+name: Browser
+superclass: Object

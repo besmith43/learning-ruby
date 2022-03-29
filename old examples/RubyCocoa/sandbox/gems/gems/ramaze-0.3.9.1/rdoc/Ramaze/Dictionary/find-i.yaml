@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (k,v)
+comment: 
+full_name: Ramaze::Dictionary#find
+is_singleton: false
+name: find
+params: () {|k,v| ...}
+visibility: public

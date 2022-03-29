@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: SYNOPSIS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Client#get_content(uri, query = nil, extheader = {}, &amp;block = nil)\n"
+- !ruby/struct:SM::Flow::P 
+  body: ARGS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  uri       an_URI or a_string of uri to connect.\n  query     a_hash or an_array of query part.  e.g. { &quot;a&quot; =&gt; &quot;b&quot; }.\n            Give an array to pass multiple value like\n            [[&quot;a&quot; =&gt; &quot;b&quot;], [&quot;a&quot; =&gt; &quot;c&quot;]].\n  extheader\n            a_hash of extra headers like { &quot;SOAPAction&quot; =&gt; &quot;urn:foo&quot; }.\n  &amp;block    Give a block to get chunked message-body of response like\n            get_content(uri) { |chunked_body| ... }\n            Size of each chunk may not be the same.\n"
+- !ruby/struct:SM::Flow::P 
+  body: DESCRIPTION
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Get a_sring of message-body of response.\n"
+full_name: Client#get_content
+is_singleton: false
+name: get_content
+params: (uri, query = nil, extheader = {}, &block)
+visibility: public

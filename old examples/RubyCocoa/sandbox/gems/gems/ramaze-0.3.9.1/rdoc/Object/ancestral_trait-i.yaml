@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: builds a trait from all the ancestors, closer ancestors overwrite distant ancestors
+- !ruby/struct:SM::Flow::P 
+  body: class Foo
+- !ruby/struct:SM::Flow::VERB 
+  body: "  trait :one =&gt; :eins\n  trait :first =&gt; :erstes\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+- !ruby/struct:SM::Flow::P 
+  body: class Bar &lt; Foo
+- !ruby/struct:SM::Flow::VERB 
+  body: "  trait :two =&gt; :zwei\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+- !ruby/struct:SM::Flow::P 
+  body: class Foobar &lt; Bar
+- !ruby/struct:SM::Flow::VERB 
+  body: "  trait :three =&gt; :drei\n  trait :first =&gt; :overwritten\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+- !ruby/struct:SM::Flow::P 
+  body: Foobar.ancestral_trait {:three=&gt;:drei, :two=&gt;:zwei, :one=&gt;:eins, :first=&gt;:overwritten}
+full_name: Object#ancestral_trait
+is_singleton: false
+name: ancestral_trait
+params: ()
+visibility: public

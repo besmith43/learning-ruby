@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (io)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Equivalent to +File::open+ with an associated block, but moves any existing file with the same name to the side first.
+full_name: File::write_with_backup
+is_singleton: true
+name: write_with_backup
+params: (path) {|io| ...}
+visibility: public

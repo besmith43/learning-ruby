@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#alter_table_sql_list
+is_singleton: false
+name: alter_table_sql_list
+params: (table, operations)
+visibility: public

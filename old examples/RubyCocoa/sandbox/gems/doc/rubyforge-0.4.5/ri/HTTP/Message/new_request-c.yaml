@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::Message::new_request
+is_singleton: true
+name: new_request
+params: (method, uri, query = nil, body = nil, proxy = nil, boundary = nil)
+visibility: public

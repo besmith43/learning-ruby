@@ -1,0 +1,9 @@
+puts "try"
+puts "trytry"
+text = gets.chomp
+redact = gets.chomp
+words = text.split(" ")
+
+words.each do |words|
+  print words
+end

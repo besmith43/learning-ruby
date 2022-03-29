@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: run_server
+- !ruby/object:RI::MethodSummary 
+  name: run_server
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Our Mongrel adapter acts as wrapper for the Rack::Handler::Mongrel.
+constants: []
+
+full_name: Ramaze::Adapter::Mongrel
+includes: []
+
+instance_methods: []
+
+name: Mongrel
+superclass: Base

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FakeProcessor1#default_processor
+is_singleton: false
+name: default_processor
+params: (exp)
+visibility: public

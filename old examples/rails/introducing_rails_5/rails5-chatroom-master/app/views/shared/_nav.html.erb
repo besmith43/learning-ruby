@@ -1,0 +1,10 @@
+<nav>
+  <ul class='pull-left'>
+    <% @rooms.each do |room| %>
+      <li><%= link_to room.name, room_path(room) %></li>
+    <% end %>
+  </ul>
+  <ul class='pull-right'>
+    <li><%= link_to 'Logout', logout_path %></li>
+  </ul>
+</nav>

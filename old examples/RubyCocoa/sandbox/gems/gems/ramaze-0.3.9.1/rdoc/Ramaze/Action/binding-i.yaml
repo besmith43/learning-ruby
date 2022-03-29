@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a binding of the instance, will be cached on first access.
+full_name: Ramaze::Action#binding
+is_singleton: false
+name: binding
+params: ()
+visibility: public

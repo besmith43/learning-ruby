@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: methodnames that may be used for current controller.
+full_name: Ramaze::Controller::action_methods
+is_singleton: true
+name: action_methods
+params: ()
+visibility: public

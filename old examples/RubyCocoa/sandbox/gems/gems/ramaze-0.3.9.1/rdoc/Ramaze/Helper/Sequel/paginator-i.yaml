@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Helper::Sequel#paginator
+is_singleton: false
+name: paginator
+params: (paginated, target)
+visibility: public

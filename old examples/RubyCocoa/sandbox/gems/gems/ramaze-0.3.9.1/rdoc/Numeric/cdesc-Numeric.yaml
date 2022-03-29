@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "         Copyright (c) 2008 Michael Fellinger m.fellinger@gmail.com\n"
+- !ruby/struct:SM::Flow::P 
+  body: All files in this distribution are subject to the terms of the Ruby license.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FILESIZE_FORMAT
+  value: "[       ['%.1fT', 1 << 40],       ['%.1fG', 1 << 30],       ['%.1fM', 1 << 20],       ['%.1fK', 1 << 10],     ]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FILESIZE_FORMAT
+  value: "[       ['%.1fT', 1 << 40],       ['%.1fG', 1 << 30],       ['%.1fM', 1 << 20],       ['%.1fK', 1 << 10],     ]"
+full_name: Numeric
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: filesize_format
+- !ruby/object:RI::MethodSummary 
+  name: filesize_format
+name: Numeric
+superclass: Object

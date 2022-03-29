@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: render to the browser directly, ignoring any templates
+full_name: Ramaze::Helper::Redirect#respond
+is_singleton: false
+name: respond
+params: (*args)
+visibility: public

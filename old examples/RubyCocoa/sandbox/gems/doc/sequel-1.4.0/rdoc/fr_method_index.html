@@ -1,0 +1,115 @@
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/Sequel/Model.html#M001128">== (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001129">=== (Sequel::Model)</a><br />
+    <a href="classes/Sequel.html#M001083">Model (Sequel)</a><br />
+    <a href="classes/Sequel/Model.html#M001123">[] (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001124">[]= (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001084">all_association_reflections (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001085">associate (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001086">association_reflection (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001087">associations (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001092">belongs_to (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model.html#M001138">cache_key (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001118">cache_key_from_values (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001116">cache_store (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001117">cache_ttl (Sequel::Model)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001097">column_sizes (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model.html#M001112">columns (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001108">columns (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001133">create (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001159">create_table (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001161">create_table! (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001136">create_with_params (Sequel::Model)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001100">data_line (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model.html#M001105">database_opened (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001107">dataset (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001111">dataset (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001110">db (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001103">db (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001104">db= (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001154">delete (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001153">destroy (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001160">drop_table (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001125">each (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model/Associations/EagerLoading.html#M001095">eager (Sequel::Model::Associations::EagerLoading)</a><br />
+    <a href="classes/Sequel/Model.html#M001146">exists? (Sequel::Model)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001099">format_cell (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001094">has_and_belongs_to_many (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model.html#M001119">has_hooks? (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001090">has_many (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001101">header_line (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model.html#M001127">id (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001106">implicit_table_name (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001120">is (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001126">keys (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001143">load (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001093">many_to_many (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001091">many_to_one (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model.html#M001142">new (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001144">new? (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001145">new_record? (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001089">one_to_many (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model/Associations.html#M001088">one_to_one (Sequel::Model::Associations)</a><br />
+    <a href="classes/Sequel/Model.html#M001140">pk (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001141">pk_hash (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001122">plugin_gem (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001121">plugin_module (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001130">primary_key (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001139">primary_key (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001131">primary_key_hash (Sequel::Model)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001102">print (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001096">records_columns (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model.html#M001151">refresh (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001152">reload (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001147">save (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001163">save (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001162">save! (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001148">save_changes (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001156">schema (Sequel::Model)</a><br />
+    <a href="classes/Sequel/PrettyTable.html#M001098">separator_line (Sequel::PrettyTable)</a><br />
+    <a href="classes/Sequel/Model.html#M001113">serialize (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001149">set (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001114">set_cache (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001115">set_cache_ttl (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001109">set_dataset (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001132">set_primary_key (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001155">set_schema (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001158">table_exists? (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001157">table_name (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001137">this (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001150">update (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001135">update_with (Sequel::Model)</a><br />
+    <a href="classes/Sequel/Model.html#M001134">update_with_params (Sequel::Model)</a><br />
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SexpTestCase#util_equals
+is_singleton: false
+name: util_equals
+params: (x, y)
+visibility: public

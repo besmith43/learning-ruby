@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The KeySet module contains methods that extend an array of keys to return a key's position in the key set.
+constants: []
+
+full_name: ArrayKeys::KeySet
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_key
+- !ruby/object:RI::MethodSummary 
+  name: del_key
+- !ruby/object:RI::MethodSummary 
+  name: key_pos
+name: KeySet
+superclass: 

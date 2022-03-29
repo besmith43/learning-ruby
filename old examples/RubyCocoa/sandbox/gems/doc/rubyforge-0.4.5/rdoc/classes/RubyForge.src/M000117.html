@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>scrape_project (RubyForge)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rubyforge.rb, line 94</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scrape_project</span>(<span class="ruby-identifier">project</span>)
+    <span class="ruby-identifier">data</span> = {
+      <span class="ruby-value str">&quot;group_ids&quot;</span> =<span class="ruby-operator">&gt;</span> {},
+      <span class="ruby-value str">&quot;package_ids&quot;</span> =<span class="ruby-operator">&gt;</span> {},
+      <span class="ruby-value str">&quot;processor_ids&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = {} },
+      <span class="ruby-value str">&quot;release_ids&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = {} },
+    }
+
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Updating #{project}&quot;</span>
+
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;group_ids&quot;</span>].<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">project</span> <span class="ruby-keyword kw">then</span>
+      <span class="ruby-identifier">html</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;http://rubyforge.org/projects/#{project}/index.html&quot;</span>).<span class="ruby-identifier">read</span>
+      <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">html</span>[<span class="ruby-regexp re">/(frs|tracker|mail)\/\?group_id=\d+/</span>][<span class="ruby-regexp re">/\d+/</span>].<span class="ruby-identifier">to_i</span>
+      <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;group_ids&quot;</span>][<span class="ruby-identifier">project</span>] = <span class="ruby-identifier">group_id</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;group_ids&quot;</span>][<span class="ruby-identifier">project</span>]
+
+    <span class="ruby-identifier">html</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-node">&quot;http://rubyforge.org/frs/?group_id=#{group_id}&quot;</span>).<span class="ruby-identifier">read</span>
+
+    <span class="ruby-identifier">package</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-identifier">html</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/&lt;h3&gt;[^&lt;]+|release_id=\d+&quot;&gt;[^&gt;]+|filemodule_id=\d+/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">s</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/&lt;h3&gt;([^&lt;]+)/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">package</span> = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">strip</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/release_id=(\d+)&quot;&gt;([^&lt;]+)/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;release_ids&quot;</span>][<span class="ruby-identifier">package</span>][<span class="ruby-identifier">$2</span>] = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/filemodule_id=(\d+)/</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;package_ids&quot;</span>][<span class="ruby-identifier">package</span>] = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">data</span>[<span class="ruby-value str">'release_ids'</span>][<span class="ruby-identifier">package</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">and</span>
+       <span class="ruby-ivar">@autoconfig</span>[<span class="ruby-value str">'processor_ids'</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Fetching processor ids&quot;</span>
+
+      <span class="ruby-identifier">login</span>
+
+      <span class="ruby-identifier">html</span> = <span class="ruby-identifier">client</span>.<span class="ruby-identifier">get_content</span> <span class="ruby-node">&quot;http://rubyforge.org/frs/admin/qrs.php?package=&amp;group_id=#{group_id}&quot;</span>
+
+      <span class="ruby-identifier">html</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/&lt;select name=&quot;processor_id&quot;&gt;(.*?)&lt;\/select&gt;/</span><span class="ruby-identifier">m</span>
+      <span class="ruby-identifier">processors</span> = <span class="ruby-identifier">$1</span>
+      <span class="ruby-identifier">processors</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/&lt;option value=&quot;(\d{4})&quot;&gt;([^&lt;]+)/</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">data</span>[<span class="ruby-value str">&quot;processor_ids&quot;</span>][<span class="ruby-identifier">$2</span>] = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">processors</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@autoconfig</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">save_autoconfig</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

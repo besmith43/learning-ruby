@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Sequel::Dataset::Sequelizer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Sequel::Dataset::Sequelizer</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/sequel_core/dataset/sequelizer_rb.html">
+                lib/sequel_core/dataset/sequelizer.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="Sequelizer.html">Sequelizer</a> module includes methods for
+translating Ruby expressions into <a href="SQL.html">SQL</a> expressions,
+making it possible to specify dataset filters using blocks, e.g.:
+</p>
+<pre>
+  DB[:items].filter {:price &lt; 100}
+  DB[:items].filter {:category == 'ruby' &amp;&amp; :date &lt; 3.days.ago}
+</pre>
+<p>
+Block filters can refer to literals, variables, constants, arguments,
+instance variables or anything else in order to create parameterized
+queries. Block filters can also refer to other dataset objects as
+sub-queries. Block filters are pretty much limitless!
+</p>
+<p>
+Block filters are based on ParseTree. If you do not have the ParseTree gem
+installed, block filters will raise an error.
+</p>
+<p>
+To enable full block filter support make sure you have both ParseTree and
+Ruby2Ruby installed:
+</p>
+<pre>
+  sudo gem install parsetree
+  sudo gem install ruby2ruby
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001033">call_expr</a>&nbsp;&nbsp;
+      <a href="#M001030">collate_match_expr</a>&nbsp;&nbsp;
+      <a href="#M001029">compare_expr</a>&nbsp;&nbsp;
+      <a href="#M001036">eval_expr</a>&nbsp;&nbsp;
+      <a href="#M001032">ext_expr</a>&nbsp;&nbsp;
+      <a href="#M001037">ext_expr</a>&nbsp;&nbsp;
+      <a href="#M001031">match_expr</a>&nbsp;&nbsp;
+      <a href="#M001034">replace_dvars</a>&nbsp;&nbsp;
+      <a href="#M001035">value_to_parse_tree</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">JOIN_AND</td>
+          <td>=</td>
+          <td class="context-item-value">&quot; AND &quot;.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">JOIN_COMMA</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;, &quot;.freeze</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001033" class="method-detail">
+        <a name="M001033"></a>
+
+        <div class="method-heading">
+          <a href="#M001033" class="method-signature">
+          <span class="method-name">call_expr</span><span class="method-args">(e, b, opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Translates a method call parse-tree to <a href="SQL.html">SQL</a>
+expression. The following operators are recognized and translated to <a
+href="SQL.html">SQL</a> expressions: &gt;, &lt;, &gt;=, &lt;=,
+</p>
+<h2>, =~, +, -, *, /, %:</h2>
+<pre>
+  :x == 1 #=&gt; &quot;(x = 1)&quot;
+  (:x + 100) &lt; 200 #=&gt; &quot;((x + 100) &lt; 200)&quot;
+</pre>
+<p>
+The in, in?, nil and nil? method calls are intercepted and passed to <a
+href="Sequelizer.html#M001029">compare_expr</a>.
+</p>
+<pre>
+  :x.in [1, 2, 3] #=&gt; &quot;(x IN (1, 2, 3))&quot;
+  :x.in?(DB[:y].select(:z)) #=&gt; &quot;(x IN (SELECT z FROM y))&quot;
+  :x.nil? #=&gt; &quot;(x IS NULL)&quot;
+</pre>
+<p>
+The like and like? method calls are intercepted and passed to <a
+href="Sequelizer.html#M001031">match_expr</a>.
+</p>
+<pre>
+  :x.like? 'ABC%' #=&gt; &quot;(x LIKE 'ABC%')&quot;
+</pre>
+<p>
+The method also supports <a href="SQL.html">SQL</a> functions by invoking
+<a href="../../Symbol.html">Symbol</a>#[]:
+</p>
+<pre>
+  :avg[:x] #=&gt; &quot;avg(x)&quot;
+  :substring[:x, 5] #=&gt; &quot;substring(x, 5)&quot;
+</pre>
+<p>
+All other method calls are evaulated as normal Ruby code.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001033-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 116</span>
+116:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+117:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">op</span> = <span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>]
+118:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:&gt;</span>, <span class="ruby-identifier">:&lt;</span>, <span class="ruby-identifier">:&gt;=</span>, <span class="ruby-identifier">:&lt;=</span>
+119:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+120:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+121:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">is_one_of?</span>(<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">LiteralString</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>) <span class="ruby-operator">||</span> \
+122:           <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_one_of?</span>(<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">LiteralString</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>)
+123:           <span class="ruby-node">&quot;(#{literal(l)} #{op} #{literal(r)})&quot;</span>
+124:         <span class="ruby-keyword kw">else</span>
+125:           <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+126:         <span class="ruby-keyword kw">end</span>
+127:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:==</span>
+128:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+129:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+130:         <span class="ruby-identifier">compare_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+131:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:=~</span>
+132:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+133:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+134:         <span class="ruby-identifier">collate_match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+135:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:+</span>, <span class="ruby-identifier">:-</span>, <span class="ruby-identifier">:*</span>, <span class="ruby-identifier">:%</span>, <span class="ruby-identifier">:/</span>
+136:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+137:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+138:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">is_one_of?</span>(<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">LiteralString</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>) <span class="ruby-operator">||</span> \
+139:           <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_one_of?</span>(<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">LiteralString</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>)
+140:           <span class="ruby-node">&quot;(#{literal(l)} #{op} #{literal(r)})&quot;</span>.<span class="ruby-identifier">lit</span>
+141:         <span class="ruby-keyword kw">else</span>
+142:           <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+143:         <span class="ruby-keyword kw">end</span>
+144:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:&lt;&lt;</span>
+145:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+146:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+147:         <span class="ruby-node">&quot;#{literal(l)} = #{literal(r)}&quot;</span>.<span class="ruby-identifier">lit</span>
+148:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:|</span>
+149:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+150:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+151:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">l</span>.<span class="ruby-identifier">is_one_of?</span>(<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Subscript</span>)
+152:           <span class="ruby-identifier">l</span><span class="ruby-operator">|</span><span class="ruby-identifier">r</span>
+153:         <span class="ruby-keyword kw">else</span>
+154:           <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+155:         <span class="ruby-keyword kw">end</span>
+156:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:in</span>, <span class="ruby-identifier">:in?</span>
+157:         <span class="ruby-comment cmt"># in/in? operators are supported using two forms:</span>
+158:         <span class="ruby-comment cmt">#   :x.in([1, 2, 3])</span>
+159:         <span class="ruby-comment cmt">#   :x.in(1, 2, 3) # variable arity</span>
+160:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+161:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>((<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+162:         <span class="ruby-identifier">compare_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+163:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:nil</span>, <span class="ruby-identifier">:nil?</span>
+164:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+165:         <span class="ruby-identifier">compare_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-keyword kw">nil</span>)
+166:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:like</span>, <span class="ruby-identifier">:like?</span>
+167:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+168:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>][<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+169:         <span class="ruby-identifier">collate_match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+170:       <span class="ruby-keyword kw">else</span>
+171:         <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">op</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:[]</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:lit</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>])
+172:           <span class="ruby-comment cmt"># SQL Functions, e.g.: :sum[:x]</span>
+173:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>]
+174:             <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>][<span class="ruby-operator">*</span><span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)]
+175:           <span class="ruby-keyword kw">else</span>
+176:             <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>][]
+177:           <span class="ruby-keyword kw">end</span>
+178:         <span class="ruby-keyword kw">else</span>
+179:           <span class="ruby-comment cmt"># external code</span>
+180:           <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+181:         <span class="ruby-keyword kw">end</span>
+182:       <span class="ruby-keyword kw">end</span>
+183:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001030" class="method-detail">
+        <a name="M001030"></a>
+
+        <div class="method-heading">
+          <a href="#M001030" class="method-signature">
+          <span class="method-name">collate_match_expr</span><span class="method-args">(l, r)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Formats a string matching expression with support for multiple choices. For
+more information see <a href="Sequelizer.html#M001031">match_expr</a>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001030-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collate_match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+61:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+62:         <span class="ruby-node">&quot;(#{r.map {|i| match_expr(l, i)}.join(' OR ')})&quot;</span>
+63:       <span class="ruby-keyword kw">else</span>
+64:         <span class="ruby-identifier">match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+65:       <span class="ruby-keyword kw">end</span>
+66:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001029" class="method-detail">
+        <a name="M001029"></a>
+
+        <div class="method-heading">
+          <a href="#M001029" class="method-signature">
+          <span class="method-name">compare_expr</span><span class="method-args">(l, r)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Formats an comparison expression involving a left value and a right value.
+Comparison expressions differ according to the class of the right value.
+The stock implementation supports <a href="../../Range.html">Range</a>
+(inclusive and exclusive), <a href="../../Array.html">Array</a> (as a list
+of values to compare against), <a href="../Dataset.html">Dataset</a> (as a
+subquery to compare against), or a regular value.
+</p>
+<pre>
+  dataset.compare_expr('id', 1..20) #=&gt;
+    &quot;(id &gt;= 1 AND id &lt;= 20)&quot;
+  dataset.compare_expr('id', [3,6,10]) #=&gt;
+    &quot;(id IN (3, 6, 10))&quot;
+  dataset.compare_expr('id', DB[:items].select(:id)) #=&gt;
+    &quot;(id IN (SELECT id FROM items))&quot;
+  dataset.compare_expr('id', nil) #=&gt;
+    &quot;(id IS NULL)&quot;
+  dataset.compare_expr('id', 3) #=&gt;
+    &quot;(id = 3)&quot;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001029-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 39</span>
+39:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compare_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+40:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">r</span>
+41:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Range</span>
+42:         <span class="ruby-identifier">r</span>.<span class="ruby-identifier">exclude_end?</span> <span class="ruby-value">? </span>\
+43:           <span class="ruby-node">&quot;(#{literal(l)} &gt;= #{literal(r.begin)} AND #{literal(l)} &lt; #{literal(r.end)})&quot;</span> <span class="ruby-operator">:</span> \
+44:           <span class="ruby-node">&quot;(#{literal(l)} &gt;= #{literal(r.begin)} AND #{literal(l)} &lt;= #{literal(r.end)})&quot;</span>
+45:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+46:         <span class="ruby-node">&quot;(#{literal(l)} IN (#{literal(r)}))&quot;</span>
+47:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Dataset</span>
+48:         <span class="ruby-node">&quot;(#{literal(l)} IN (#{r.sql}))&quot;</span>
+49:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">NilClass</span>
+50:         <span class="ruby-node">&quot;(#{literal(l)} IS NULL)&quot;</span>
+51:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Regexp</span>
+52:         <span class="ruby-identifier">collate_match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+53:       <span class="ruby-keyword kw">else</span>
+54:         <span class="ruby-node">&quot;(#{literal(l)} = #{literal(r)})&quot;</span>
+55:       <span class="ruby-keyword kw">end</span>
+56:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001036" class="method-detail">
+        <a name="M001036"></a>
+
+        <div class="method-heading">
+          <a href="#M001036" class="method-signature">
+          <span class="method-name">eval_expr</span><span class="method-args">(e, b, opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Evaluates a parse-tree into an <a href="SQL.html">SQL</a> expression.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001036-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 250</span>
+250:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+251:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">0</span>]
+252:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:call</span> <span class="ruby-comment cmt"># method call</span>
+253:         <span class="ruby-identifier">call_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+254:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:fcall</span>
+255:         <span class="ruby-identifier">fcall_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+256:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:vcall</span>
+257:         <span class="ruby-identifier">vcall_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+258:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:ivar</span>, <span class="ruby-identifier">:cvar</span>, <span class="ruby-identifier">:dvar</span>, <span class="ruby-identifier">:const</span>, <span class="ruby-identifier">:gvar</span> <span class="ruby-comment cmt"># local ref</span>
+259:         <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">b</span>)
+260:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:nth_ref</span>
+261:         <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;$#{e[1]}&quot;</span>, <span class="ruby-identifier">b</span>)
+262:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:lvar</span> <span class="ruby-comment cmt"># local context</span>
+263:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:block</span>
+264:           <span class="ruby-identifier">sub_proc</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">b</span>)
+265:           <span class="ruby-identifier">sub_proc</span>.<span class="ruby-identifier">to_sql</span>(<span class="ruby-keyword kw">self</span>)
+266:         <span class="ruby-keyword kw">else</span>
+267:           <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">b</span>)
+268:         <span class="ruby-keyword kw">end</span>
+269:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:lit</span>, <span class="ruby-identifier">:str</span> <span class="ruby-comment cmt"># literal</span>
+270:          <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>]
+271:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:dot2</span> <span class="ruby-comment cmt"># inclusive range</span>
+272:         <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)<span class="ruby-operator">..</span><span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+273:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:dot3</span> <span class="ruby-comment cmt"># exclusive range</span>
+274:         <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)<span class="ruby-operator">...</span><span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+275:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:colon2</span> <span class="ruby-comment cmt"># qualified constant ref</span>
+276:         <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>).<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>])
+277:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:false</span>
+278:         <span class="ruby-keyword kw">false</span>
+279:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:true</span>
+280:         <span class="ruby-keyword kw">true</span>
+281:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:nil</span>
+282:         <span class="ruby-keyword kw">nil</span>
+283:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:array</span>
+284:         <span class="ruby-comment cmt"># array</span>
+285:         <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)}
+286:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:match3</span>
+287:         <span class="ruby-comment cmt"># =~/!~ operator</span>
+288:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+289:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+290:         <span class="ruby-identifier">compare_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+291:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:iter</span>
+292:         <span class="ruby-identifier">iter_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+293:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:dasgn</span>, <span class="ruby-identifier">:dasgn_curr</span>
+294:         <span class="ruby-comment cmt"># assignment</span>
+295:         <span class="ruby-identifier">l</span> = <span class="ruby-identifier">e</span>[<span class="ruby-value">1</span>]
+296:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">e</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+297:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidExpression</span>, <span class="ruby-node">&quot;#{l} = #{r}. Did you mean :#{l} == #{r}?&quot;</span>
+298:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:if</span>
+299:         <span class="ruby-identifier">op</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">br1</span>, <span class="ruby-identifier">br2</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">e</span>
+300:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+301:           <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">br1</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+302:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">br2</span>
+303:           <span class="ruby-identifier">eval_expr</span>(<span class="ruby-identifier">br2</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+304:         <span class="ruby-keyword kw">end</span>
+305:       <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:dstr</span>
+306:         <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+307:       <span class="ruby-keyword kw">else</span>
+308:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidExpression</span>, <span class="ruby-node">&quot;Invalid expression tree: #{e.inspect}&quot;</span>
+309:       <span class="ruby-keyword kw">end</span>
+310:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001032" class="method-detail">
+        <a name="M001032"></a>
+
+        <div class="method-heading">
+          <a href="#M001032" class="method-signature">
+          <span class="method-name">ext_expr</span><span class="method-args">(e, b, opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Evaluates a method call. This method is used to evaluate Ruby expressions
+referring to indirect values, e.g.:
+</p>
+<pre>
+  dataset.filter {:category =&gt; category.to_s}
+  dataset.filter {:x &gt; y[0..3]}
+</pre>
+<p>
+This method depends on the Ruby2Ruby gem. If you do not have Ruby2Ruby
+installed, this method will raise an error.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001032-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 88</span>
+88:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ext_expr</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">opts</span>)
+89:       <span class="ruby-identifier">eval</span>(<span class="ruby-constant">RubyToRuby</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">e</span>), <span class="ruby-identifier">b</span>)
+90:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001037" class="method-detail">
+        <a name="M001037"></a>
+
+        <div class="method-heading">
+          <a href="#M001037" class="method-signature">
+          <span class="method-name">ext_expr</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001037-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 367</span>
+367:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ext_expr</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+368:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-value str">&quot;You must have the Ruby2Ruby gem installed in order to use this block filter.&quot;</span>
+369:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001031" class="method-detail">
+        <a name="M001031"></a>
+
+        <div class="method-heading">
+          <a href="#M001031" class="method-signature">
+          <span class="method-name">match_expr</span><span class="method-args">(l, r)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Formats a string matching expression. The stock implementation supports
+matching against strings only using the LIKE operator. Specific adapters
+can override this method to provide support for regular expressions.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001031-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">match_expr</span>(<span class="ruby-identifier">l</span>, <span class="ruby-identifier">r</span>)
+72:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">r</span>
+73:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+74:         <span class="ruby-node">&quot;(#{literal(l)} LIKE #{literal(r)})&quot;</span>
+75:       <span class="ruby-keyword kw">else</span>
+76:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>, <span class="ruby-node">&quot;Unsupported match pattern class (#{r.class}).&quot;</span>
+77:       <span class="ruby-keyword kw">end</span>
+78:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001034" class="method-detail">
+        <a name="M001034"></a>
+
+        <div class="method-heading">
+          <a href="#M001034" class="method-signature">
+          <span class="method-name">replace_dvars</span><span class="method-args">(a, values)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001034-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 203</span>
+203:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace_dvars</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">values</span>)
+204:       <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+205:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">i</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:dvar</span>)
+206:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span> = <span class="ruby-identifier">values</span>[<span class="ruby-identifier">i</span>[<span class="ruby-value">1</span>]]
+207:             <span class="ruby-identifier">value_to_parse_tree</span>(<span class="ruby-identifier">v</span>)
+208:           <span class="ruby-keyword kw">else</span>
+209:             <span class="ruby-identifier">i</span>
+210:           <span class="ruby-keyword kw">end</span>
+211:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span>
+212:           <span class="ruby-identifier">replace_dvars</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">values</span>)
+213:         <span class="ruby-keyword kw">else</span>
+214:           <span class="ruby-identifier">i</span>
+215:         <span class="ruby-keyword kw">end</span>
+216:       <span class="ruby-keyword kw">end</span>
+217:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001035" class="method-detail">
+        <a name="M001035"></a>
+
+        <div class="method-heading">
+          <a href="#M001035" class="method-signature">
+          <span class="method-name">value_to_parse_tree</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001035-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/dataset/sequelizer.rb, line 219</span>
+219:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">value_to_parse_tree</span>(<span class="ruby-identifier">value</span>)
+220:       <span class="ruby-identifier">c</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>
+221:       <span class="ruby-identifier">c</span>.<span class="ruby-identifier">class_eval</span>(<span class="ruby-node">&quot;def m; #{value.inspect}; end&quot;</span>)
+222:       <span class="ruby-constant">ParseTree</span>.<span class="ruby-identifier">translate</span>(<span class="ruby-identifier">c</span>, <span class="ruby-identifier">:m</span>)[<span class="ruby-value">2</span>][<span class="ruby-value">1</span>][<span class="ruby-value">2</span>]
+223:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

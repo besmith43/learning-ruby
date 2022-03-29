@@ -1,0 +1,2 @@
+Main-Class: example
+Class-Path: jruby.jar jruby-stdlib-9.3.3.0.jar

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#cond_loop
+is_singleton: false
+name: cond_loop
+params: (exp, name)
+visibility: public

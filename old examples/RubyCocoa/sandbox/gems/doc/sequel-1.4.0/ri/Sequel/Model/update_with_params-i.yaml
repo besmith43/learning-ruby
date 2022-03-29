@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: update_with
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Updates the instance with the supplied values with support for virtual attributes, ignoring any values for which no setter method is available.
+full_name: Sequel::Model#update_with_params
+is_singleton: false
+name: update_with_params
+params: (values)
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Constructs a new pool with a maximum size. If a block is supplied, it is used to create new connections as they are needed.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  pool = ConnectionPool.new(10) {MyConnection.new(opts)}\n"
+- !ruby/struct:SM::Flow::P 
+  body: The connection creation proc can be changed at any time by assigning a Proc to pool#connection_proc.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  pool = ConnectionPool.new(10)\n  pool.connection_proc = proc {MyConnection.new(opts)}\n"
+full_name: ConnectionPool::new
+is_singleton: true
+name: new
+params: (max_size = 4, &block)
+visibility: public

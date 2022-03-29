@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new Sexp from Array <tt>a</tt>, typically from ParseTree::translate.
+full_name: Sexp::from_array
+is_singleton: true
+name: from_array
+params: (a)
+visibility: public

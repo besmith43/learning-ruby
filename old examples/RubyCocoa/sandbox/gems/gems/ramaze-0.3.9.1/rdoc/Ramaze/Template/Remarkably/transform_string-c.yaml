@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes a string and action, sets args to action.args and then proceeds to instance_eval the string inside the action.instance
+full_name: Ramaze::Template::Remarkably::transform_string
+is_singleton: true
+name: transform_string
+params: (string, action)
+visibility: public

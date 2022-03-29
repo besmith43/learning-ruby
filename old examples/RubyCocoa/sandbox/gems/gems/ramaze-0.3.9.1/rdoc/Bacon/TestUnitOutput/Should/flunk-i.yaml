@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Bacon::TestUnitOutput::Should#flunk
+is_singleton: false
+name: flunk
+params: (reason="Flunked")
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #log"
+full_name: Ramaze::Helper::Log#inform
+is_singleton: false
+name: inform
+params: (tag, *args)
+visibility: public

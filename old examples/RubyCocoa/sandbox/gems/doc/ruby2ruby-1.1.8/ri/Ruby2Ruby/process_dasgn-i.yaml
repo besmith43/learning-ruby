@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#process_dasgn
+is_singleton: false
+name: process_dasgn
+params: (exp)
+visibility: public

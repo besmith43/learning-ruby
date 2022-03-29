@@ -1,0 +1,84 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Real test classes:"
+constants: []
+
+full_name: TestSexpProcessor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: test_assert_type_hit
+- !ruby/object:RI::MethodSummary 
+  name: test_assert_type_miss
+- !ruby/object:RI::MethodSummary 
+  name: test_auto_shift_type
+- !ruby/object:RI::MethodSummary 
+  name: test_auto_shift_type_equal
+- !ruby/object:RI::MethodSummary 
+  name: test_debug
+- !ruby/object:RI::MethodSummary 
+  name: test_debug=
+- !ruby/object:RI::MethodSummary 
+  name: test_default_method
+- !ruby/object:RI::MethodSummary 
+  name: test_default_method=
+- !ruby/object:RI::MethodSummary 
+  name: test_expected
+- !ruby/object:RI::MethodSummary 
+  name: test_expected=
+- !ruby/object:RI::MethodSummary 
+  name: test_generate
+- !ruby/object:RI::MethodSummary 
+  name: test_process_default
+- !ruby/object:RI::MethodSummary 
+  name: test_process_generic
+- !ruby/object:RI::MethodSummary 
+  name: test_process_not_sexp
+- !ruby/object:RI::MethodSummary 
+  name: test_process_rewrite
+- !ruby/object:RI::MethodSummary 
+  name: test_process_rewrite_deep
+- !ruby/object:RI::MethodSummary 
+  name: test_process_rewrite_depth_first
+- !ruby/object:RI::MethodSummary 
+  name: test_process_specific
+- !ruby/object:RI::MethodSummary 
+  name: test_process_strip
+- !ruby/object:RI::MethodSummary 
+  name: test_process_unsupported_wrong
+- !ruby/object:RI::MethodSummary 
+  name: test_require_empty=
+- !ruby/object:RI::MethodSummary 
+  name: test_require_empty_false
+- !ruby/object:RI::MethodSummary 
+  name: test_require_empty_true
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_deep
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_depth_first
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_different_type
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_not_empty
+- !ruby/object:RI::MethodSummary 
+  name: test_strict
+- !ruby/object:RI::MethodSummary 
+  name: test_strict=
+- !ruby/object:RI::MethodSummary 
+  name: test_unsupported_equal
+- !ruby/object:RI::MethodSummary 
+  name: test_warn_on_default
+- !ruby/object:RI::MethodSummary 
+  name: test_warn_on_default=
+name: TestSexpProcessor
+superclass: Test::Unit::TestCase

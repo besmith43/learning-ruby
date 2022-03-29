@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: paginated
+comment: 
+full_name: Sequel::Dataset::Convenience#each_page
+is_singleton: false
+name: each_page
+params: (page_size) {|paginated| ...}
+visibility: public

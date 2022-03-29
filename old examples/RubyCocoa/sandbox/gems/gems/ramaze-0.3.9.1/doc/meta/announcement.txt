@@ -1,0 +1,126 @@
+This time we are proud to announce Version 0.3.5 of Ramaze, the light and
+modular open source web framework.
+
+This release features a lot of work directly from our community and we are
+really greatful for everybody who helped in testing, patching and contributing
+exciting new features.
+
+Our extensive set of specs and docs now covers almost every detail of
+implementation and usage. Ramaze is under development by a growing community
+and in production use at companies.
+
+
+Home page:   http://ramaze.net
+Screencasts: http://ramaze.net/screencasts
+
+View source: http://source.ramaze.net
+Darcsweb:    http://darcs.ramaze.net
+
+IRC: #ramaze on irc.freenode.net
+
+
+Simple example:
+
+  require 'ramaze'
+
+  class MainController
+    def index
+      'Hello, World!'
+    end
+  end
+
+  Ramaze.start
+
+
+Special (alphabetic) thanks go to:
+
+  Aman 'tmm1' Gupta         - patches and support
+  Carlo Zottmann            - first patch!
+  Chris 'celldee' Duncan    - first patch!
+  Gabriele 'riffraff' Renzi - patches for file dispatcher
+  jeedee                    - new Ramaze logo
+  Jonathan 'Kashia' Buch    - patches and support
+  Keita Yamaguchi           - first patch!
+  Pistos                    - lots of friendly support
+  skaar                     - first patch!
+
+
+Selected summary of the 62 patches from 0.3.0 to 0.3.5:
+
+  Core
+    - Ramaze::Contrib::Route made available by default as Ramaze::Route
+      (backwards compatibility retained)
+    - Support added for ETag and If-Modified-Since in Dispatcher::File
+    - Adapter for LiteSpeed webserver added
+    - Added ability to set default session cookie options using Session::COOKIE
+    - Support added for Content-Language based localization and gettext
+
+  Templates
+    - Support added for passing in locals to render_template
+    - Added support for symbol argument to template_root
+    - render_template no longer requires template extensions
+    - Dots allowed in template extensions (template.html.erb)
+
+  Templating Engines
+    - Builder templating engine added to produce XML
+    - RedCloth templating engine added
+    - Amrita2 templating engine updated to latest release
+
+  Helpers
+    - Simple EmailHelper added
+    - IdentityHelper updated for latest ruby-openid
+    - MarukuHelper added
+    - AuthHelper cleaned up
+    - LinkHelper improved: A(), R(), Rs() and breadcrumbs
+
+  Examples
+    - All examples were standardized to include rubygems
+    - Simple file upload example added
+    - Search and diff functionality added to Rapaste
+
+  Misc
+    - Read and read/write issues fixed in Ramaze::Store
+    - Fix applied for running Ramaze apps within IDEs on Windows
+
+
+A complete Changelog is available at
+http://darcs.ramaze.net/ramaze/doc/CHANGELOG
+
+
+Known issues:
+
+  - none yet, waiting for your reports :)
+
+
+Ramaze Features:
+  - Builds on top of the Rack library, which provides easy use of adapters like
+    Mongrel, WEBrick, LiteSpeed, Thin, CGI or FCGI.
+
+  - Supports a wide range of templating-engines like: Amrita2, Erubis, Haml,
+    Liquid, Markaby, Remarkably and its own engine called Ezamar and (still
+    unofficial) Nagoro.
+
+  - Highly modular structure: you can just use the parts you like. This also
+    means that it's very simple to add your own customizations.
+
+  - A variety of helpers is already available, giving you things like advanced
+    caching, OpenID-authentication or aspect-oriented programming for your
+    controllers.
+
+  - It is possible to use the ORM you like, be it Sequel, DataMapper,
+    ActiveRecord, Og, Kansas or something more simplistic like DBI, or a
+    wrapper around YAML::Store.
+
+  - Good documentation: although we don't have 100% documentation right now
+    (dcov says around 75%), just about every part of Ramaze is covered with
+    basic and advanced docs. There are a variety of examples, screencasts and a
+    tutorial available.
+
+  - Friendly community: there are people from all over the world using Ramaze,
+    so you can get almost instant help and info.
+
+
+For more information please come to http://ramaze.net or ask directly on IRC
+irc://irc.freenode.net/#ramaze
+
+Thank you, Michael 'manveru' Fellinger and the Ramaze community

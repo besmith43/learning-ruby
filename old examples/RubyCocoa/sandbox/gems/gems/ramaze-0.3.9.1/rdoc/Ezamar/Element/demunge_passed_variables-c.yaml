@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: basically processes stuff like
+- !ruby/struct:SM::Flow::VERB 
+  body: "  'foo=&quot;bar&quot; foobar=&quot;baz&quot;'\n"
+- !ruby/struct:SM::Flow::P 
+  body: do NOT pass actual objects that cannot be simply read as a string here, the information will be lost.
+- !ruby/struct:SM::Flow::P 
+  body: Exceptions are true, false, Integers and Floats. They will appear in their real form (this again is also valid for strings that contain these values in a way that makes Integer/Float possible to parse them)
+- !ruby/struct:SM::Flow::P 
+  body: Just remember, walk like a duck, talk like a duck.
+full_name: Ezamar::Element::demunge_passed_variables
+is_singleton: true
+name: demunge_passed_variables
+params: (template)
+visibility: public

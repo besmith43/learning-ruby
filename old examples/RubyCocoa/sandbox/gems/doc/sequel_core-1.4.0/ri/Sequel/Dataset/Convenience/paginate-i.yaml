@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a paginated dataset. The resulting dataset also provides the total number of pages (Dataset#page_count) and the current page number (Dataset#current_page), as well as Dataset#prev_page and Dataset#next_page for implementing pagination controls.
+full_name: Sequel::Dataset::Convenience#paginate
+is_singleton: false
+name: paginate
+params: (page_no, page_size)
+visibility: public

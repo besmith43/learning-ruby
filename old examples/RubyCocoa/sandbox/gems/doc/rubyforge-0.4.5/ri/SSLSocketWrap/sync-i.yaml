@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SSLSocketWrap#sync
+is_singleton: false
+name: sync
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is a wrapper to use Global.compile without even thinking about it. Don't use it if your engine is not based on a compile/eval principle.
+full_name: Ramaze::Template::Template::wrap_compile
+is_singleton: true
+name: wrap_compile
+params: (action, template = nil)
+visibility: public

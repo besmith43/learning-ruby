@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: clear the session and redirect to the index action of the mapping of the current controller.
+full_name: Ramaze::Helper::Auth#logout
+is_singleton: false
+name: logout
+params: ()
+visibility: public

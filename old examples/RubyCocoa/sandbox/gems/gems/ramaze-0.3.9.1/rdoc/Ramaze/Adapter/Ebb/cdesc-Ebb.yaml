@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: run_server
+- !ruby/object:RI::MethodSummary 
+  name: run_server
+comment: 
+constants: []
+
+full_name: Ramaze::Adapter::Ebb
+includes: []
+
+instance_methods: []
+
+name: Ebb
+superclass: Base

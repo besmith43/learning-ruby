@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #from_now"
+full_name: Assistance::TimeCalculations#since
+is_singleton: false
+name: since
+params: (t = Time.now)
+visibility: public

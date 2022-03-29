@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a key to the key set.
+full_name: ArrayKeys::KeySet#add_key
+is_singleton: false
+name: add_key
+params: (key)
+visibility: public

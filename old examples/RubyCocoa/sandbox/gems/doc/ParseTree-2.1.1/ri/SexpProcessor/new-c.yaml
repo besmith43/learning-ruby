@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new SexpProcessor. Use super to invoke this initializer from SexpProcessor subclasses, then use the attributes above to customize the functionality of the SexpProcessor
+full_name: SexpProcessor::new
+is_singleton: true
+name: new
+params: ()
+visibility: public

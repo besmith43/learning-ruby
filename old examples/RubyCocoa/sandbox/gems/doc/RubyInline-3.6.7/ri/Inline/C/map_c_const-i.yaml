@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Maps a C constant to ruby (with the same name). <tt>names_and_types</tt> is a hash that maps the name of the constant to its C type.
+full_name: Inline::C#map_c_const
+is_singleton: false
+name: map_c_const
+params: (names_and_types)
+visibility: public

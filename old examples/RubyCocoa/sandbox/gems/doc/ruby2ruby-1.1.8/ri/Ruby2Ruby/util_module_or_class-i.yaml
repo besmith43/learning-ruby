@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#util_module_or_class
+is_singleton: false
+name: util_module_or_class
+params: (exp, is_class=false)
+visibility: public

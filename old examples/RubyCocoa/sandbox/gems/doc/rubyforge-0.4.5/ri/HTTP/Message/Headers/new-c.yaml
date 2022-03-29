@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: SYNOPSIS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  HTTP::Message.new\n"
+- !ruby/struct:SM::Flow::P 
+  body: ARGS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  N/A\n"
+- !ruby/struct:SM::Flow::P 
+  body: DESCRIPTION
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Create a instance of HTTP request or HTTP response.  Specify\n  status_code for HTTP response.\n"
+full_name: HTTP::Message::Headers::new
+is_singleton: true
+name: new
+params: ()
+visibility: public

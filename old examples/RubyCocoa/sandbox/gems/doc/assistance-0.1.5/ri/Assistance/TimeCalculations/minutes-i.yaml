@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: minute
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts self from minutes to seconds
+full_name: Assistance::TimeCalculations#minutes
+is_singleton: false
+name: minutes
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Entry point for Adapter#respond, takes a Rack::Request and Rack::Response, sets up the environment and the goes on to dispatch for the given path from rack_request.
+full_name: Ramaze::Dispatcher::handle
+is_singleton: true
+name: handle
+params: ()
+visibility: public

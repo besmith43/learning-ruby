@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ParseTreeTestCase::add_test
+is_singleton: true
+name: add_test
+params: (name, data, klass = self.name[4..-1])
+visibility: public

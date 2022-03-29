@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: PGconn#connected?
+is_singleton: false
+name: connected?
+params: ()
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a method to Object to annotate your objects with certain traits. It's basically a simple Hash that takes the current object as key
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Foo\n    trait :instance =&gt; false\n\n    def initialize\n      trait :instance =&gt; true\n    end\n  end\n\n  Foo.trait[:instance]\n  # false\n\n  foo = Foo.new\n  foo.trait[:instance]\n  # true\n"
+full_name: Object#trait
+is_singleton: false
+name: trait
+params: (hash = nil)
+visibility: public

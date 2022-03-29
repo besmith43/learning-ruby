@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::Message::Body::new
+is_singleton: true
+name: new
+params: (body = nil, date = nil, type = nil, charset = nil, boundary = nil)
+visibility: public

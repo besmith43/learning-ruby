@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Point = Struct.new(:x, :y)\n point = Point.new(15, 10)\n point.values_at(:y, :x)\n # =&gt; [10, 15]\n point.values_at(0, 1)\n # =&gt; [15, 10]\n"
+full_name: Struct#values_at
+is_singleton: false
+name: values_at
+params: (*keys)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Database::adapter_class
+is_singleton: true
+name: adapter_class
+params: (scheme)
+visibility: public

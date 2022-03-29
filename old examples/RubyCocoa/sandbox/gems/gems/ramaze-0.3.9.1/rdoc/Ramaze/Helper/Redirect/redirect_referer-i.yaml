@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: redirect to the location the browser says it's coming from.
+full_name: Ramaze::Helper::Redirect#redirect_referer
+is_singleton: false
+name: redirect_referer
+params: ()
+visibility: public

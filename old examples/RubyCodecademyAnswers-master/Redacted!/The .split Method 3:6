@@ -1,0 +1,5 @@
+puts "try"
+puts "trytry"
+text = gets.chomp
+redact = gets.chomp
+words = text.split(" ")

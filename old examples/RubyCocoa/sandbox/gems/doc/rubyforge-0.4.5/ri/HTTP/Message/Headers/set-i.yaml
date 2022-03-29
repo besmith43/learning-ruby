@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::Message::Headers#set
+is_singleton: false
+name: set
+params: (key, value)
+visibility: public

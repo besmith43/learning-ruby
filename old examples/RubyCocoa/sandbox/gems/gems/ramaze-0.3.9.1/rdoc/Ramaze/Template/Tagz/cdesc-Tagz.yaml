@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Is responsible for compiling a template using the Tagz templating engine. Can be found at: http://rubyforge.org/projects/codeforpeople/"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  gem install tagz\n"
+- !ruby/struct:SM::Flow::P 
+  body: be sure you get version 1.0 or higher
+constants: []
+
+full_name: Ramaze::Template::Tagz
+includes: []
+
+instance_methods: []
+
+name: Tagz
+superclass: Template

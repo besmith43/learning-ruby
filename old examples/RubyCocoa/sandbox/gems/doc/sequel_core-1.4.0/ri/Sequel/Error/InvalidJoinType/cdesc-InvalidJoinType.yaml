@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Represents an invalid join type.
+constants: []
+
+full_name: Sequel::Error::InvalidJoinType
+includes: []
+
+instance_methods: []
+
+name: InvalidJoinType
+superclass: Error

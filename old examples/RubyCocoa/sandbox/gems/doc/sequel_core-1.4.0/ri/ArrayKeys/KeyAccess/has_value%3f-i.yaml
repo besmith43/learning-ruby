@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: value?
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the array contains the given value.
+full_name: ArrayKeys::KeyAccess#has_value?
+is_singleton: false
+name: has_value?
+params: (k)
+visibility: public

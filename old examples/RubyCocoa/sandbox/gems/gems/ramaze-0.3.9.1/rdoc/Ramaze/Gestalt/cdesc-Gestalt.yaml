@@ -1,0 +1,62 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: out
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: out
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gestalt is the custom HTML/XML builder for Ramaze, based on a very simple DSL it will build your markup.
+constants: []
+
+full_name: Ramaze::Gestalt
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_build_tag
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_build_tag
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_call_tag
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_call_tag
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_escape_entities
+- !ruby/object:RI::MethodSummary 
+  name: _gestalt_escape_entities
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: p
+- !ruby/object:RI::MethodSummary 
+  name: p
+- !ruby/object:RI::MethodSummary 
+  name: tag
+- !ruby/object:RI::MethodSummary 
+  name: tag
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_str
+- !ruby/object:RI::MethodSummary 
+  name: to_str
+name: Gestalt
+superclass: Object

@@ -1,0 +1,23 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "please read the documentation of memcache-client for further methods. also, it is highly recommended to install memcache-client_extensions for a bit of speedup and more functionality Some examples:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: key
+    body: "#=&gt; get a key"
+  - !ruby/struct:SM::Flow::LI 
+    label: key
+    body: "= value #=&gt; set a key"
+  type: :LABELED
+- !ruby/struct:SM::Flow::P 
+  body: "delete(key) #=&gt; delete key set_many :x =&gt; :y, :n =&gt; :m #=&gt; set many key/value pairs get_hash :x, :y #=&gt; return a hash with key/value pairs stats #=&gt; get some statistics about usage namespace #=&gt; get the current namespace namespace = 'ramaze' #=&gt; set a different namespace ('ramaze' is default) flush_all #=&gt; flush the whole cache (deleting all) compression #=&gt; see if compression is true/false compression = false #=&gt; turn off compression (it's by default true)"
+full_name: Ramaze::MemcachedCache#method_missing
+is_singleton: false
+name: method_missing
+params: (*args, &block)
+visibility: public

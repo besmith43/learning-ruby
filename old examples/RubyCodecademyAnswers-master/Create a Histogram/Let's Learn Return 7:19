@@ -1,0 +1,3 @@
+def add(n , nn)
+return n + nn
+end

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: CompositeSexpProcessor#on_error_in
+is_singleton: false
+name: on_error_in
+params: (node_type, &block)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "interal Takes a HTTPResponse (or subclass) and determines how to handle the response. Default behaviour is:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     HTTPSuccess : return the body of the response\n     HTTPRedirection : follow the redirect until success.\n     default : raise the HTTPResponse.\n"
+- !ruby/struct:SM::Flow::P 
+  body: the default behaviour can be overidden by registering a response handler using the `register_response_handler` method.
+full_name: SimpleHttp#handle_response
+is_singleton: false
+name: handle_response
+params: (http_request, http_response)
+visibility: public

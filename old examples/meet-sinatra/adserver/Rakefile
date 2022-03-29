@@ -1,0 +1,18 @@
+Dir['vendor/isolate*/lib'].each do |dir|
+  $: << dir
+end
+require 'rubygems'
+
+# Installs dependencies listed in the file named "Isolate"
+require 'isolate/now'
+
+desc "Run the server on http://localhost:4567"
+task :server do
+  exec "rackup config.ru -p 4567"
+end
+
+desc "Deploy to Heroku"
+task :deploy do
+  system "git push heroku master"
+end
+

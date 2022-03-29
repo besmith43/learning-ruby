@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#process_iter
+is_singleton: false
+name: process_iter
+params: (exp)
+visibility: public

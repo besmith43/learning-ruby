@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes exception, of metainfo only :controller is used at the moment. Then goes on to try and find the correct response status and path. In case metainfo has a controller we try to get the action for the path on it, dispatching there if we find one. Otherwise a plain-text error message is set as response.
+full_name: Ramaze::Dispatcher::Error::process
+is_singleton: true
+name: process
+params: (error, metainfo = {})
+visibility: public

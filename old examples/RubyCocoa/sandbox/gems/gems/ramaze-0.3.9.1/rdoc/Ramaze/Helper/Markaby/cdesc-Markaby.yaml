@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to use some shortcuts for markaby in your Controller.
+constants: []
+
+full_name: Ramaze::Helper::Markaby
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: mab
+- !ruby/object:RI::MethodSummary 
+  name: mab
+- !ruby/object:RI::MethodSummary 
+  name: markaby
+- !ruby/object:RI::MethodSummary 
+  name: markaby
+name: Markaby
+superclass: 

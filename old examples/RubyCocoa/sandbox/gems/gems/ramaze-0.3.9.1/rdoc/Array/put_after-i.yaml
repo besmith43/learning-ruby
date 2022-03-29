@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "a = [1, 2, 3] a.put_after(2, 4) a # =&gt; [1, 2, 4, 3]"
+full_name: Array#put_after
+is_singleton: false
+name: put_after
+params: (element, object)
+visibility: public

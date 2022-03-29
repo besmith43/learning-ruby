@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Initialize a new Session, requires the original Rack::Request instance given to us from Dispatcher#setup_environment.
+- !ruby/struct:SM::Flow::P 
+  body: sets @session_id and @session_flash
+full_name: Ramaze::Session::new
+is_singleton: true
+name: new
+params: (request = Current.request)
+visibility: public

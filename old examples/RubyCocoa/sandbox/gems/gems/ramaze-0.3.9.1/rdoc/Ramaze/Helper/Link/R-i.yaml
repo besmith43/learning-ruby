@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Builds links out of segments.
+- !ruby/struct:SM::Flow::P 
+  body: Pass it strings, symbols, controllers and it will produce a link out of it. Paths to Controllers are obtained from Global.mapping.
+- !ruby/struct:SM::Flow::P 
+  body: "For brevity, the mapping for the example below is following:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  { MC =&gt; '/', OC =&gt; '/o', ODC =&gt; '/od' }\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  R(MC) #=&gt; '/'\n  R(OC) #=&gt; '/o'\n  R(ODC) #=&gt; '/od'\n  R(MC, :foo) #=&gt; '/foo'\n  R(OC, :foo) #=&gt; '/o/foo'\n  R(ODC, :foo) #=&gt; '/od/foo'\n  R(MC, :foo, :bar =&gt; :x) #=&gt; '/foo?bar=x'\n"
+full_name: Ramaze::Helper::Link#R
+is_singleton: false
+name: R
+params: (*atoms)
+visibility: private

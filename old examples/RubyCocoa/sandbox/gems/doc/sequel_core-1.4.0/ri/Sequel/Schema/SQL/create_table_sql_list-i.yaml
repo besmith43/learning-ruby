@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#create_table_sql_list
+is_singleton: false
+name: create_table_sql_list
+params: (name, columns, indexes = nil)
+visibility: public

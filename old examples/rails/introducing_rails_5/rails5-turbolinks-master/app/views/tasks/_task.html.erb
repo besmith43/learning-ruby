@@ -1,0 +1,6 @@
+<%= form_for task, render: true do |f| %>
+  <%= f.check_box :status, data: { behaviour: 'completed' } %>
+  <%= task.name %>
+  <%= link_to 'delete', task_path(task), remote: true, method: :delete %>
+  <%= link_to 'show', task_path(task) %>
+<% end %>

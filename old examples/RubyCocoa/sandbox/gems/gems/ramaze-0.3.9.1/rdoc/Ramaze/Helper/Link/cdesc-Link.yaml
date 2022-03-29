@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper::Link is included into the Controller by default
+- !ruby/struct:SM::Flow::P 
+  body: Usage is shown in spec/ramaze/helper/link.rb and the rdocs below.
+constants: []
+
+full_name: Ramaze::Helper::Link
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: A
+- !ruby/object:RI::MethodSummary 
+  name: A
+- !ruby/object:RI::MethodSummary 
+  name: R
+- !ruby/object:RI::MethodSummary 
+  name: R
+- !ruby/object:RI::MethodSummary 
+  name: Rs
+- !ruby/object:RI::MethodSummary 
+  name: Rs
+- !ruby/object:RI::MethodSummary 
+  name: breadcrumbs
+- !ruby/object:RI::MethodSummary 
+  name: breadcrumbs
+name: Link
+superclass: 

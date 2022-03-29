@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::Generator#column
+is_singleton: false
+name: column
+params: (name, type, opts = {})
+visibility: public

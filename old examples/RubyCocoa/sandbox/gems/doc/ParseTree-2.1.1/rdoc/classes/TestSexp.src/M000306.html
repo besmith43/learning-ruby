@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_equals3_subset_match (TestSexp)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/test_sexp.rb, line 155</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_equals3_subset_match</span>
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:b</span>))                 <span class="ruby-comment cmt"># left</span>
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>   ), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:b</span>))       <span class="ruby-comment cmt"># mid 1</span>
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>, <span class="ruby-value">1</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:b</span>))    <span class="ruby-comment cmt"># mid 2</span>
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-ivar">@basic_sexp</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:b</span>))      <span class="ruby-comment cmt"># mid deeper</span>
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-ivar">@basic_sexp</span>, <span class="ruby-identifier">s</span>(<span class="ruby-ivar">@basic_sexp</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:b</span>))      <span class="ruby-comment cmt"># left deeper</span>
+
+    <span class="ruby-identifier">util_equals3</span> <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>), <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:a</span>)))       <span class="ruby-comment cmt"># left deeper</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

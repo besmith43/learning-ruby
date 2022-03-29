@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: PGconn#pkey_and_sequence
+is_singleton: false
+name: pkey_and_sequence
+params: (table)
+visibility: public

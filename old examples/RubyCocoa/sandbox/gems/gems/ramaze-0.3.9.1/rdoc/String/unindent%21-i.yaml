@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: ui!
+- !ruby/object:RI::AliasName 
+  name: ui!
+block_params: 
+comment: 
+full_name: String#unindent!
+is_singleton: false
+name: unindent!
+params: ()
+visibility: public

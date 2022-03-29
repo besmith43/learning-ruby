@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestProcessor#process_nonempty
+is_singleton: false
+name: process_nonempty
+params: (exp)
+visibility: public

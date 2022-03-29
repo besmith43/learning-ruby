@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the bare bones structure of the sexp. s(:a, :b, s(:c, :d), :e) =&gt; s(:a, s(:c))
+full_name: Sexp#structure
+is_singleton: false
+name: structure
+params: ()
+visibility: public

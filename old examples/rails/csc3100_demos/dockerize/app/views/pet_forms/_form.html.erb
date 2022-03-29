@@ -1,0 +1,97 @@
+<%= form_for(pet_form) do |f| %>
+  <% if pet_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet_form.errors.count, "error") %> prohibited this pet_form from being saved:</h2>
+
+      <ul>
+      <% pet_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_since %>
+    <%= f.datetime_select :date_since %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :owner_name %>
+    <%= f.text_field :owner_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pet_name %>
+    <%= f.text_field :pet_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= f.label :collar %>
+    <%= f.text_field :collar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
+  </div>
+
+  <div class="field">
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= f.label :size %>
+    <%= f.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :spayed_neutered %>
+    <%= f.check_box :spayed_neutered %>
+  </div>
+
+  <div class="field">
+    <%= f.label :area %>
+    <%= f.text_area :area %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lost_found %>
+    <%= f.check_box :lost_found %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pending %>
+    <%= f.check_box :pending %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

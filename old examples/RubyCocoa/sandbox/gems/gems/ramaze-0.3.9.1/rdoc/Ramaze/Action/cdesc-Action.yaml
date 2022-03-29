@@ -1,0 +1,126 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: create
+- !ruby/object:RI::MethodSummary 
+  name: create
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: stack
+- !ruby/object:RI::MethodSummary 
+  name: stack
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Action holds information that is essential to render the action for a request.
+constants: []
+
+full_name: Ramaze::Action
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Helper::Link
+- !ruby/object:RI::IncludedModule 
+  name: Helper::Link
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: actions_cached
+- !ruby/object:RI::MethodSummary 
+  name: actions_cached
+- !ruby/object:RI::MethodSummary 
+  name: after_process
+- !ruby/object:RI::MethodSummary 
+  name: after_process
+- !ruby/object:RI::MethodSummary 
+  name: after_process
+- !ruby/object:RI::MethodSummary 
+  name: after_process
+- !ruby/object:RI::MethodSummary 
+  name: before_process
+- !ruby/object:RI::MethodSummary 
+  name: before_process
+- !ruby/object:RI::MethodSummary 
+  name: before_process
+- !ruby/object:RI::MethodSummary 
+  name: before_process
+- !ruby/object:RI::MethodSummary 
+  name: binding
+- !ruby/object:RI::MethodSummary 
+  name: binding
+- !ruby/object:RI::MethodSummary 
+  name: cached_render
+- !ruby/object:RI::MethodSummary 
+  name: cached_render
+- !ruby/object:RI::MethodSummary 
+  name: cached_render_file
+- !ruby/object:RI::MethodSummary 
+  name: cached_render_file
+- !ruby/object:RI::MethodSummary 
+  name: cached_render_memory
+- !ruby/object:RI::MethodSummary 
+  name: cached_render_memory
+- !ruby/object:RI::MethodSummary 
+  name: engine
+- !ruby/object:RI::MethodSummary 
+  name: engine
+- !ruby/object:RI::MethodSummary 
+  name: extended_path
+- !ruby/object:RI::MethodSummary 
+  name: extended_path
+- !ruby/object:RI::MethodSummary 
+  name: instance
+- !ruby/object:RI::MethodSummary 
+  name: instance
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: method=
+- !ruby/object:RI::MethodSummary 
+  name: method=
+- !ruby/object:RI::MethodSummary 
+  name: name
+- !ruby/object:RI::MethodSummary 
+  name: name
+- !ruby/object:RI::MethodSummary 
+  name: params=
+- !ruby/object:RI::MethodSummary 
+  name: params=
+- !ruby/object:RI::MethodSummary 
+  name: params=
+- !ruby/object:RI::MethodSummary 
+  name: params=
+- !ruby/object:RI::MethodSummary 
+  name: relaxed_hash
+- !ruby/object:RI::MethodSummary 
+  name: relaxed_hash
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: should_cache?
+- !ruby/object:RI::MethodSummary 
+  name: should_cache?
+- !ruby/object:RI::MethodSummary 
+  name: stack
+- !ruby/object:RI::MethodSummary 
+  name: stack
+- !ruby/object:RI::MethodSummary 
+  name: to_hash
+- !ruby/object:RI::MethodSummary 
+  name: to_hash
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: uncached_render
+- !ruby/object:RI::MethodSummary 
+  name: uncached_render
+name: Action
+superclass: Object

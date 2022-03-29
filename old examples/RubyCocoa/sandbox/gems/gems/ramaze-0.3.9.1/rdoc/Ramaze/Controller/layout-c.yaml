@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Define a layout for all actions on this controller
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Foo &lt; Ramaze::Controller\n    layout :foo\n  end\n\n This defines the action :foo to be layout of the controller and will\n render the layout after any other action has been rendered, assigns\n @content to the result of the action and then goes on rendering\n the layout-action where @content may or may not be used, returning\n whatever the layout returns.\n"
+full_name: Ramaze::Controller::layout
+is_singleton: true
+name: layout
+params: (*meth_or_hash)
+visibility: public

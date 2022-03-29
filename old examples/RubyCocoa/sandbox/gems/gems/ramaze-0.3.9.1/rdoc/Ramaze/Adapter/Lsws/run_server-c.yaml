@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: start Lsws in a new thread, host and port parameter are only taken to make it compatible with other adapters but have no influence and can be omitted
+full_name: Ramaze::Adapter::Lsws::run_server
+is_singleton: true
+name: run_server
+params: (host = nil, ports = nil)
+visibility: public

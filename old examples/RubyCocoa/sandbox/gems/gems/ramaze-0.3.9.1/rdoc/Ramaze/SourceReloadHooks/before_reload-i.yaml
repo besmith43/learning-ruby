@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overwrite to add actions before the reload cycle is started.
+full_name: Ramaze::SourceReloadHooks#before_reload
+is_singleton: false
+name: before_reload
+params: ()
+visibility: public

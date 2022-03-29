@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Formats an comparison expression involving a left value and a right value. Comparison expressions differ according to the class of the right value. The stock implementation supports Range (inclusive and exclusive), Array (as a list of values to compare against), Dataset (as a subquery to compare against), or a regular value.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  dataset.compare_expr('id', 1..20) #=&gt;\n    &quot;(id &gt;= 1 AND id &lt;= 20)&quot;\n  dataset.compare_expr('id', [3,6,10]) #=&gt;\n    &quot;(id IN (3, 6, 10))&quot;\n  dataset.compare_expr('id', DB[:items].select(:id)) #=&gt;\n    &quot;(id IN (SELECT id FROM items))&quot;\n  dataset.compare_expr('id', nil) #=&gt;\n    &quot;(id IS NULL)&quot;\n  dataset.compare_expr('id', 3) #=&gt;\n    &quot;(id = 3)&quot;\n"
+full_name: Sequel::Dataset::Sequelizer#compare_expr
+is_singleton: false
+name: compare_expr
+params: (l, r)
+visibility: public

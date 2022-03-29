@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ArrayKeys provide support for accessing array elements by keys. ArrayKeys are based on the arrayfields gem by Ara Howard, and can be used as substitutes for fetching records tuples as Ruby hashes.
+- !ruby/struct:SM::Flow::P 
+  body: The main advantage offered by ArrayKeys over hashes is that the values are always ordered according to the column order in the query. Another purported advantage is that they reduce the memory footprint, but this has turned out to be a false claim.
+constants: []
+
+full_name: ArrayKeys
+includes: []
+
+instance_methods: []
+
+name: ArrayKeys
+superclass: 

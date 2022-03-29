@@ -1,0 +1,229 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: translate
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'1.1.8'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LINE_LENGTH
+  value: "78"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Nodes that represent assignment and probably need () around them.
+  name: ASSIGN_NODES
+  value: "[                   :dasgn,                   :flip2,                   :flip3,                   :lasgn,                   :masgn,                   :op_asgn1,                   :op_asgn2,                   :op_asgn_and,                   :op_asgn_or,                   :return,                  ]"
+full_name: Ruby2Ruby
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: UnifiedRuby
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cond_loop
+- !ruby/object:RI::MethodSummary 
+  name: indent
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process_alias
+- !ruby/object:RI::MethodSummary 
+  name: process_and
+- !ruby/object:RI::MethodSummary 
+  name: process_arglist
+- !ruby/object:RI::MethodSummary 
+  name: process_args
+- !ruby/object:RI::MethodSummary 
+  name: process_argscat
+- !ruby/object:RI::MethodSummary 
+  name: process_argspush
+- !ruby/object:RI::MethodSummary 
+  name: process_array
+- !ruby/object:RI::MethodSummary 
+  name: process_attrasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_back_ref
+- !ruby/object:RI::MethodSummary 
+  name: process_begin
+- !ruby/object:RI::MethodSummary 
+  name: process_block
+- !ruby/object:RI::MethodSummary 
+  name: process_block_arg
+- !ruby/object:RI::MethodSummary 
+  name: process_block_pass
+- !ruby/object:RI::MethodSummary 
+  name: process_break
+- !ruby/object:RI::MethodSummary 
+  name: process_call
+- !ruby/object:RI::MethodSummary 
+  name: process_case
+- !ruby/object:RI::MethodSummary 
+  name: process_cdecl
+- !ruby/object:RI::MethodSummary 
+  name: process_class
+- !ruby/object:RI::MethodSummary 
+  name: process_colon2
+- !ruby/object:RI::MethodSummary 
+  name: process_colon3
+- !ruby/object:RI::MethodSummary 
+  name: process_const
+- !ruby/object:RI::MethodSummary 
+  name: process_cvar
+- !ruby/object:RI::MethodSummary 
+  name: process_cvasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_cvdecl
+- !ruby/object:RI::MethodSummary 
+  name: process_dasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_dasgn_curr
+- !ruby/object:RI::MethodSummary 
+  name: process_defined
+- !ruby/object:RI::MethodSummary 
+  name: process_defn
+- !ruby/object:RI::MethodSummary 
+  name: process_defs
+- !ruby/object:RI::MethodSummary 
+  name: process_dot2
+- !ruby/object:RI::MethodSummary 
+  name: process_dot3
+- !ruby/object:RI::MethodSummary 
+  name: process_dregx
+- !ruby/object:RI::MethodSummary 
+  name: process_dregx_once
+- !ruby/object:RI::MethodSummary 
+  name: process_dstr
+- !ruby/object:RI::MethodSummary 
+  name: process_dsym
+- !ruby/object:RI::MethodSummary 
+  name: process_dvar
+- !ruby/object:RI::MethodSummary 
+  name: process_dxstr
+- !ruby/object:RI::MethodSummary 
+  name: process_ensure
+- !ruby/object:RI::MethodSummary 
+  name: process_evstr
+- !ruby/object:RI::MethodSummary 
+  name: process_false
+- !ruby/object:RI::MethodSummary 
+  name: process_fcall
+- !ruby/object:RI::MethodSummary 
+  name: process_flip2
+- !ruby/object:RI::MethodSummary 
+  name: process_flip3
+- !ruby/object:RI::MethodSummary 
+  name: process_for
+- !ruby/object:RI::MethodSummary 
+  name: process_gasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_gvar
+- !ruby/object:RI::MethodSummary 
+  name: process_hash
+- !ruby/object:RI::MethodSummary 
+  name: process_iasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_if
+- !ruby/object:RI::MethodSummary 
+  name: process_iter
+- !ruby/object:RI::MethodSummary 
+  name: process_ivar
+- !ruby/object:RI::MethodSummary 
+  name: process_lasgn
+- !ruby/object:RI::MethodSummary 
+  name: process_lit
+- !ruby/object:RI::MethodSummary 
+  name: process_lvar
+- !ruby/object:RI::MethodSummary 
+  name: process_masgn
+- !ruby/object:RI::MethodSummary 
+  name: process_match
+- !ruby/object:RI::MethodSummary 
+  name: process_match2
+- !ruby/object:RI::MethodSummary 
+  name: process_match3
+- !ruby/object:RI::MethodSummary 
+  name: process_module
+- !ruby/object:RI::MethodSummary 
+  name: process_next
+- !ruby/object:RI::MethodSummary 
+  name: process_nil
+- !ruby/object:RI::MethodSummary 
+  name: process_not
+- !ruby/object:RI::MethodSummary 
+  name: process_nth_ref
+- !ruby/object:RI::MethodSummary 
+  name: process_op_asgn1
+- !ruby/object:RI::MethodSummary 
+  name: process_op_asgn2
+- !ruby/object:RI::MethodSummary 
+  name: process_op_asgn_and
+- !ruby/object:RI::MethodSummary 
+  name: process_op_asgn_or
+- !ruby/object:RI::MethodSummary 
+  name: process_or
+- !ruby/object:RI::MethodSummary 
+  name: process_postexe
+- !ruby/object:RI::MethodSummary 
+  name: process_redo
+- !ruby/object:RI::MethodSummary 
+  name: process_resbody
+- !ruby/object:RI::MethodSummary 
+  name: process_rescue
+- !ruby/object:RI::MethodSummary 
+  name: process_retry
+- !ruby/object:RI::MethodSummary 
+  name: process_return
+- !ruby/object:RI::MethodSummary 
+  name: process_sclass
+- !ruby/object:RI::MethodSummary 
+  name: process_scope
+- !ruby/object:RI::MethodSummary 
+  name: process_self
+- !ruby/object:RI::MethodSummary 
+  name: process_splat
+- !ruby/object:RI::MethodSummary 
+  name: process_str
+- !ruby/object:RI::MethodSummary 
+  name: process_super
+- !ruby/object:RI::MethodSummary 
+  name: process_svalue
+- !ruby/object:RI::MethodSummary 
+  name: process_to_ary
+- !ruby/object:RI::MethodSummary 
+  name: process_true
+- !ruby/object:RI::MethodSummary 
+  name: process_undef
+- !ruby/object:RI::MethodSummary 
+  name: process_until
+- !ruby/object:RI::MethodSummary 
+  name: process_valias
+- !ruby/object:RI::MethodSummary 
+  name: process_when
+- !ruby/object:RI::MethodSummary 
+  name: process_while
+- !ruby/object:RI::MethodSummary 
+  name: process_xstr
+- !ruby/object:RI::MethodSummary 
+  name: process_yield
+- !ruby/object:RI::MethodSummary 
+  name: process_zarray
+- !ruby/object:RI::MethodSummary 
+  name: process_zsuper
+- !ruby/object:RI::MethodSummary 
+  name: rewrite_rescue
+- !ruby/object:RI::MethodSummary 
+  name: splat
+- !ruby/object:RI::MethodSummary 
+  name: util_dthing
+- !ruby/object:RI::MethodSummary 
+  name: util_module_or_class
+name: Ruby2Ruby
+superclass: SexpProcessor

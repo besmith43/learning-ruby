@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: respond
+- !ruby/object:RI::MethodSummary 
+  name: respond
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: stop
+- !ruby/object:RI::MethodSummary 
+  name: stop
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is holding common behaviour for its subclasses.
+constants: []
+
+full_name: Ramaze::Adapter::Base
+includes: []
+
+instance_methods: []
+
+name: Base
+superclass: Object

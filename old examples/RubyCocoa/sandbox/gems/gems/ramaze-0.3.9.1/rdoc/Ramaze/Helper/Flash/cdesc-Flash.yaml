@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The purpose of this class is to provide an easy way of setting/retrieving from the current flash.
+- !ruby/struct:SM::Flow::P 
+  body: Flash is a way to keep a temporary pairs of keys and values for the duration of two requests, the current and following.
+- !ruby/struct:SM::Flow::P 
+  body: "Very vague Example:"
+- !ruby/struct:SM::Flow::P 
+  body: "On the first request, for example on registering:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  flash[:error] = &quot;You should reconsider your username, it's taken already&quot;\n  redirect R(self, :register)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "This is the request from the redirect:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  do_stuff if flash[:error]\n"
+- !ruby/struct:SM::Flow::P 
+  body: On the request after this, flash[:error] is gone.
+constants: []
+
+full_name: Ramaze::Helper::Flash
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: flash
+- !ruby/object:RI::MethodSummary 
+  name: flash
+- !ruby/object:RI::MethodSummary 
+  name: flashbox
+- !ruby/object:RI::MethodSummary 
+  name: flashbox
+name: Flash
+superclass: 

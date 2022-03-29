@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>setup (TestSexp)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/test_sexp.rb, line 54</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup</span>
+    <span class="ruby-keyword kw">super</span>
+    <span class="ruby-ivar">@sexp_class</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+    <span class="ruby-ivar">@processor</span> = <span class="ruby-constant">SexpProcessor</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@sexp</span> = <span class="ruby-ivar">@sexp_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>)
+    <span class="ruby-ivar">@basic_sexp</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:lasgn</span>, <span class="ruby-identifier">:var</span>, <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:lit</span>, <span class="ruby-value">42</span>))
+    <span class="ruby-ivar">@re</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:lit</span>, <span class="ruby-value">42</span>)
+    <span class="ruby-ivar">@bad1</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:lit</span>, <span class="ruby-value">24</span>)
+    <span class="ruby-ivar">@bad1</span> = <span class="ruby-identifier">s</span>(<span class="ruby-identifier">:blah</span>, <span class="ruby-value">42</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

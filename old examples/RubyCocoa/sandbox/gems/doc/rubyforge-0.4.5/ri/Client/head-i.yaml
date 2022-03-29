@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#head
+is_singleton: false
+name: head
+params: (uri, query = nil, extheader = {})
+visibility: public

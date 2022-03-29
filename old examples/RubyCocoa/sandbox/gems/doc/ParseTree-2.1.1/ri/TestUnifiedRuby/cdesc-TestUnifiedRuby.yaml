@@ -1,0 +1,66 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "TODO:"
+- !ruby/struct:SM::Flow::P 
+  body: "1) DONE [vf]call =&gt; call 2) DONE defn scope block args -&gt; defn args scope block 3) DONE [bd]method/fbody =&gt; defn 4) rescue cleanup 5) defs x -&gt; defn self.x # ON HOLD 6) ? :block_arg into args list?"
+constants: []
+
+full_name: TestUnifiedRuby
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: doit
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: test_argscat
+- !ruby/object:RI::MethodSummary 
+  name: test_call_args
+- !ruby/object:RI::MethodSummary 
+  name: test_call_array_args
+- !ruby/object:RI::MethodSummary 
+  name: test_call_no_args
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_bmethod
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_bmethod_noargs
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_bmethod_splat
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defn
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defn_attr
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defn_block_arg
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defn_bmethod_alias
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defn_ivar
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_defs
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_dmethod
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_fbody
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_fcall
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_fcall_loop
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_fcall_splat
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_resbody
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_resbody_empty
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_resbody_lasgn
+- !ruby/object:RI::MethodSummary 
+  name: test_rewrite_vcall
+name: TestUnifiedRuby
+superclass: Test::Unit::TestCase

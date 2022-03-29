@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A module used by the Templates and the Controllers it provides both Ramaze::Trinity (request/response/session) and also a helper method, look below for more information about it
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This helper simply includes the Nitro::FormHelper so you can use its methods in your Controller.
+  name: Nitroform
+  value: "::Nitro::FormHelper"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Tagz
+  value: "::Tagz"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOOKUP
+  value: Set.new
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This helper simply includes the Nitro::FormHelper so you can use its methods in your Controller.
+  name: Nitroform
+  value: "::Nitro::FormHelper"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Tagz
+  value: "::Tagz"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LOOKUP
+  value: Set.new
+full_name: Ramaze::Helper
+includes: []
+
+instance_methods: []
+
+name: Helper
+superclass: 

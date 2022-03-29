@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: get the current request out of Thread.current[:request]
+- !ruby/struct:SM::Flow::P 
+  body: You can call this from everywhere with Ramaze::Request.current
+full_name: Ramaze::Request::current
+is_singleton: true
+name: current
+params: ()
+visibility: public

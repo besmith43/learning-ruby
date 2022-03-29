@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_equals2_array (TestSexp)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/test_sexp.rb, line 97</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_equals2_array</span>
+    <span class="ruby-comment cmt"># can't use assert_equals because it uses array as receiver</span>
+    <span class="ruby-identifier">assert_not_equal</span>(<span class="ruby-ivar">@sexp</span>, [<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>],
+                     <span class="ruby-value str">&quot;Sexp must not be equal to equivalent array&quot;</span>)
+    <span class="ruby-comment cmt"># both directions just in case</span>
+    <span class="ruby-comment cmt"># HACK - this seems to be a bug in ruby as far as I'm concerned</span>
+    <span class="ruby-comment cmt"># assert_not_equal([1, 2, 3], @sexp,</span>
+    <span class="ruby-comment cmt">#   &quot;Sexp must not be equal to equivalent array&quot;)</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

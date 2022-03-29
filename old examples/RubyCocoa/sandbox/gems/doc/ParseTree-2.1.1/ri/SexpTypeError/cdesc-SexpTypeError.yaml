@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Raised if assert_type encounters an unexpected sexp type.
+constants: []
+
+full_name: SexpTypeError
+includes: []
+
+instance_methods: []
+
+name: SexpTypeError
+superclass: SexpProcessorError

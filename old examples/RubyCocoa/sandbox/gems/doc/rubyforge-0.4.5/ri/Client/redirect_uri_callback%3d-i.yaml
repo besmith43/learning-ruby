@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#redirect_uri_callback=
+is_singleton: false
+name: redirect_uri_callback=
+params: (redirect_uri_callback)
+visibility: public

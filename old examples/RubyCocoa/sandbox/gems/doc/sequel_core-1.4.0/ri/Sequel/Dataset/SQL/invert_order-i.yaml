@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Inverts the given order by breaking it into a list of column references and inverting them.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  dataset.invert_order([:id.desc]]) #=&gt; [:id]\n  dataset.invert_order(:category, :price.desc]) #=&gt;\n    [:category.desc, :price]\n"
+full_name: Sequel::Dataset::SQL#invert_order
+is_singleton: false
+name: invert_order
+params: (order)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#process_to_ary
+is_singleton: false
+name: process_to_ary
+params: (exp)
+visibility: public

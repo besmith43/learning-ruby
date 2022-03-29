@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a C function to the source, including performing automatic type conversion to arguments and the return value. The Ruby method name can be overridden by providing method_name. Unknown type conversions can be extended by using <tt>add_type_converter</tt>.
+full_name: Inline::C#c
+is_singleton: false
+name: c
+params: (src, options = {})
+visibility: public

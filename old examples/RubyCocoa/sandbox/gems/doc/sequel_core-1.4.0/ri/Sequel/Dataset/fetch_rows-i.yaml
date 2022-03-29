@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Executes a select query and fetches records, passing each record to the supplied block. Adapters should override this method.
+full_name: Sequel::Dataset#fetch_rows
+is_singleton: false
+name: fetch_rows
+params: (sql, &block)
+visibility: public

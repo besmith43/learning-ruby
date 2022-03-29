@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Symbol</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Symbol</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/sequel_core/core_sql_rb.html">
+                lib/sequel_core/core_sql.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000533">[]</a>&nbsp;&nbsp;
+      <a href="#M000536">method_missing</a>&nbsp;&nbsp;
+      <a href="#M000535">to_column_ref</a>&nbsp;&nbsp;
+      <a href="#M000534">|</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">COLUMN_REF_RE1</td>
+          <td>=</td>
+          <td class="context-item-value">/^(\w+)__(\w+)___(\w+)/.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">COLUMN_REF_RE2</td>
+          <td>=</td>
+          <td class="context-item-value">/^(\w+)___(\w+)$/.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">COLUMN_REF_RE3</td>
+          <td>=</td>
+          <td class="context-item-value">/^(\w+)__(\w+)$/.freeze</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000533" class="method-detail">
+        <a name="M000533"></a>
+
+        <div class="method-heading">
+          <a href="#M000533" class="method-signature">
+          <span class="method-name">[]</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000533-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000533-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/core_sql.rb, line 155</span>
+155:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>); <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000536" class="method-detail">
+        <a name="M000536"></a>
+
+        <div class="method-heading">
+          <a href="#M000536" class="method-signature">
+          <span class="method-name">method_missing</span><span class="method-args">(sym, *args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts missing method calls into functions on columns, if the method name
+is made of all upper case letters.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000536-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000536-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/core_sql.rb, line 192</span>
+192:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+193:     <span class="ruby-keyword kw">if</span> ((<span class="ruby-identifier">s</span> = <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([A-Z]+)$/</span>)
+194:       <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Function</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-keyword kw">self</span>)
+195:     <span class="ruby-keyword kw">else</span>
+196:       <span class="ruby-keyword kw">super</span>
+197:     <span class="ruby-keyword kw">end</span>
+198:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000535" class="method-detail">
+        <a name="M000535"></a>
+
+        <div class="method-heading">
+          <a href="#M000535" class="method-signature">
+          <span class="method-name">to_column_ref</span><span class="method-args">(ds)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts a symbol into a column name. This method supports underscore
+notation in order to express qualified (two underscores) and aliased (three
+underscores) columns:
+</p>
+<pre>
+  ds = DB[:items]
+  :abc.to_column_ref(ds) #=&gt; &quot;abc&quot;
+  :abc___a.to_column_ref(ds) #=&gt; &quot;abc AS a&quot;
+  :items__abc.to_column_ref(ds) #=&gt; &quot;items.abc&quot;
+  :items__abc___a.to_column_ref(ds) #=&gt; &quot;items.abc AS a&quot;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000535-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000535-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/core_sql.rb, line 177</span>
+177:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_column_ref</span>(<span class="ruby-identifier">ds</span>)
+178:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">s</span> = <span class="ruby-identifier">to_s</span>
+179:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">COLUMN_REF_RE1</span>
+180:       <span class="ruby-node">&quot;#{$1}.#{ds.quote_column_ref($2)} AS #{ds.quote_column_ref($3)}&quot;</span>
+181:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">COLUMN_REF_RE2</span>
+182:       <span class="ruby-node">&quot;#{ds.quote_column_ref($1)} AS #{ds.quote_column_ref($2)}&quot;</span>
+183:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">COLUMN_REF_RE3</span>
+184:       <span class="ruby-node">&quot;#{$1}.#{ds.quote_column_ref($2)}&quot;</span>
+185:     <span class="ruby-keyword kw">else</span>
+186:       <span class="ruby-identifier">ds</span>.<span class="ruby-identifier">quote_column_ref</span>(<span class="ruby-identifier">s</span>)
+187:     <span class="ruby-keyword kw">end</span>
+188:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000534" class="method-detail">
+        <a name="M000534"></a>
+
+        <div class="method-heading">
+          <a href="#M000534" class="method-signature">
+          <span class="method-name">|</span><span class="method-args">(sub)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000534-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000534-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/core_sql.rb, line 156</span>
+156:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">sub</span>)
+157:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sub</span>
+158:       <span class="ruby-identifier">sub</span> = [<span class="ruby-identifier">sub</span>]
+159:     <span class="ruby-keyword kw">end</span>
+160:     <span class="ruby-constant">Sequel</span><span class="ruby-operator">::</span><span class="ruby-constant">SQL</span><span class="ruby-operator">::</span><span class="ruby-constant">Subscript</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">sub</span>)
+161:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

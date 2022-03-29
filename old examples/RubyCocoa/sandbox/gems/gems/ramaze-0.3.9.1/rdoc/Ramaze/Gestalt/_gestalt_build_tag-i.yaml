@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: build a tag for `name`, using `args` and an optional block that will be yielded
+full_name: Ramaze::Gestalt#_gestalt_build_tag
+is_singleton: false
+name: _gestalt_build_tag
+params: (name, attr={}) {|| ...}
+visibility: public

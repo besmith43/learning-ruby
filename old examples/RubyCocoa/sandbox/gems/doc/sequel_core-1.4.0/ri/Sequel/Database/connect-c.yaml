@@ -1,0 +1,25 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Creates a new database object based on the supplied connection string and or options. If a URI is used, the URI scheme determines the database class used, and the rest of the string specifies the connection options. For example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB = Sequel.open 'sqlite:///blog.db'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The second form of this method takes an options:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB = Sequel.open :adapter =&gt; :sqlite, :database =&gt; 'blog.db'\n"
+full_name: Sequel::Database::connect
+is_singleton: true
+name: connect
+params: |
+  Sequel::Database.connect(conn_string)
+  Sequel::Database.connect(opts)
+  Sequel.connect(conn_string)
+  Sequel.connect(opts)
+  Sequel.open(conn_string)
+  Sequel.open(opts)
+
+visibility: public

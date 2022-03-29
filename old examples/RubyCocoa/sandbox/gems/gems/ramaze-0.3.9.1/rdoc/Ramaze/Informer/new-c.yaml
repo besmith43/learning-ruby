@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new instance of Informer. You can spcify
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Informer.new                    #=&gt; logs to stdout with all levels being\n                                      shown.\n  Informer.new($stderr)           #=&gt; same, but to stderr\n  Informer.new(&quot;foo.log&quot;)         #=&gt; same, but logs to the file foo.log\n                                      (or creates it if it doesn't exist yet)\n  Informer.new($stdout, [:info])  #=&gt; show only #info messages to stdout.\n"
+full_name: Ramaze::Informer::new
+is_singleton: true
+name: new
+params: (out = $stdout, log_levels = [:debug, :error, :info, :warn])
+visibility: public

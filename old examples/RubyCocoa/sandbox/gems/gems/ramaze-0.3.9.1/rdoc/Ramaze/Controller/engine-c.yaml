@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Controller::engine
+is_singleton: true
+name: engine
+params: (name)
+visibility: public

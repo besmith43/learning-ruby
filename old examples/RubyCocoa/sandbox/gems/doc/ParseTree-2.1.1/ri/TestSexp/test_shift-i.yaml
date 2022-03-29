@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexp#test_shift
+is_singleton: false
+name: test_shift
+params: ()
+visibility: public

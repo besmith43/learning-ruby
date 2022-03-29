@@ -1,0 +1,2 @@
+module SkillsAndInterestsHelper
+end

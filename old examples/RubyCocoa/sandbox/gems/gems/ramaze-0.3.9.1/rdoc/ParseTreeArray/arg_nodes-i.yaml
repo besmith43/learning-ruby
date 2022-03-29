@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ParseTreeArray#arg_nodes
+is_singleton: false
+name: arg_nodes
+params: ()
+visibility: public

@@ -1,0 +1,166 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 78DA11740DD5DC6D00955BBE /* Fenestra */;
+		activeTarget = 4DDCA7030ACC9A6100E082CE /* Fenestra */;
+		addToTargets = (
+			4DDCA7030ACC9A6100E082CE /* Fenestra */,
+		);
+		codeSenseManager = 78DA11830DD5DC7200955BBE /* Code sense */;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					10,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					343,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 257215279;
+			PBXWorkspaceStateSaveDate = 257215279;
+		};
+		perUserProjectItems = {
+			7806A0930F54CBA800779230 /* PBXBookmark */ = 7806A0930F54CBA800779230 /* PBXBookmark */;
+			78A159F50F3DF78C0093A1EA /* PBXTextBookmark */ = 78A159F50F3DF78C0093A1EA /* PBXTextBookmark */;
+			78A159F60F3DF78C0093A1EA /* PBXTextBookmark */ = 78A159F60F3DF78C0093A1EA /* PBXTextBookmark */;
+			78D3505B0F54CB1C001A9648 /* PBXBookmark */ = 78D3505B0F54CB1C001A9648 /* PBXBookmark */;
+		};
+		sourceControlManager = 78DA11820DD5DC7200955BBE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {633, 224}}";
+			sepNavSelRange = "{237, 0}";
+			sepNavVisRange = "{30, 265}";
+		};
+	};
+	4DDCA7030ACC9A6100E082CE /* Fenestra */ = {
+		activeExec = 0;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+	};
+	4DDCA7110ACC9A6100E082CE /* Info.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {701, 784}}";
+			sepNavSelRange = "{690, 0}";
+			sepNavVisRange = "{39, 953}";
+			sepNavWindowFrame = "{{88, 196}, {760, 614}}";
+		};
+	};
+	7806A0930F54CBA800779230 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 782B05070F3202B3002EC0C5 /* Fenestra.icns */;
+	};
+	785085F10F3393BC00CEFB23 /* FenestraHelp.html */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.html;
+		name = FenestraHelp.html;
+		path = "/Users/marick/writing/rubycocoa-book/Book/code/fenestra/fit-and-finish/English.lproj/FenestraHelp/FenestraHelp.html";
+		sourceTree = "<absolute>";
+	};
+	78A159F50F3DF78C0093A1EA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 785085F10F3393BC00CEFB23 /* FenestraHelp.html */;
+		name = "FenestraHelp.html: 118";
+		rLen = 0;
+		rLoc = 3194;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	78A159F60F3DF78C0093A1EA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 785085F10F3393BC00CEFB23 /* FenestraHelp.html */;
+		name = "FenestraHelp.html: 118";
+		rLen = 0;
+		rLoc = 3194;
+		rType = 0;
+		vrLen = 775;
+		vrLoc = 0;
+	};
+	78D3505B0F54CB1C001A9648 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 782B05070F3202B3002EC0C5 /* Fenestra.icns */;
+	};
+	78DA11740DD5DC6D00955BBE /* Fenestra */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Fenestra;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	78DA11820DD5DC7200955BBE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	78DA11830DD5DC7200955BBE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E8F5E25803AEB7C803A81C6F /* rb_main.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {662, 438}}";
+			sepNavSelRange = "{611, 0}";
+			sepNavVisRange = "{0, 611}";
+			sepNavWindowFrame = "{{80, 209}, {721, 566}}";
+		};
+	};
+}

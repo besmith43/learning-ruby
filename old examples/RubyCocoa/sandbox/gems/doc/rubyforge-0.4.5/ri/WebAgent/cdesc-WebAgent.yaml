@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HACK to fix http-access2 cookie selection bug
+constants: []
+
+full_name: WebAgent
+includes: []
+
+instance_methods: []
+
+name: WebAgent
+superclass: Object

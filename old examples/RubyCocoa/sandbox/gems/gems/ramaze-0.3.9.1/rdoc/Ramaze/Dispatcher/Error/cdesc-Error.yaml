@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: log_error
+- !ruby/object:RI::MethodSummary 
+  name: log_error
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Last resort dispatcher, tries to recover as much information as possible from the past request and takes the appropiate actions.
+- !ruby/struct:SM::Flow::P 
+  body: You can configure it over the HANDLE_ERROR constant or by defining error actions in your controllers.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The class of exception is matched when an error occurs and the status code is set. The absolute URLs are used as fallback in case of a total failure.
+  name: HANDLE_ERROR
+  value: "{                           Exception => [ 500, '/error' ],             Ramaze::Error::NoAction => [ 404, '/error' ],         Ramaze::Error::NoController => [ 404, '/error' ],       }"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The class of exception is matched when an error occurs and the status code is set. The absolute URLs are used as fallback in case of a total failure.
+  name: HANDLE_ERROR
+  value: "{                           Exception => [ 500, '/error' ],             Ramaze::Error::NoAction => [ 404, '/error' ],         Ramaze::Error::NoController => [ 404, '/error' ],       }"
+full_name: Ramaze::Dispatcher::Error
+includes: []
+
+instance_methods: []
+
+name: Error
+superclass: Object

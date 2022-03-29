@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates new instance with values set to passed-in Hash ensuring that new? returns true.
+full_name: Sequel::Model::create
+is_singleton: true
+name: create
+params: (values = {}, &block)
+visibility: public

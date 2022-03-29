@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parse_signature (Inline::C)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/inline.rb, line 140</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_signature</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">raw</span>=<span class="ruby-keyword kw">false</span>)
+
+      <span class="ruby-identifier">sig</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">strip_comments</span>(<span class="ruby-identifier">src</span>)
+      <span class="ruby-comment cmt"># strip preprocessor directives</span>
+      <span class="ruby-identifier">sig</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/^\s*\#.*(\\\n.*)*/</span>, <span class="ruby-value str">''</span>)
+      <span class="ruby-comment cmt"># strip {}s</span>
+      <span class="ruby-identifier">sig</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\{[^\}]*\}/</span>, <span class="ruby-value str">'{ }'</span>)
+      <span class="ruby-comment cmt"># clean and collapse whitespace</span>
+      <span class="ruby-identifier">sig</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\s+/</span>, <span class="ruby-value str">' '</span>)
+
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-ivar">@types</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-ivar">@types</span> = <span class="ruby-value str">'void|'</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@@type_map</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">x</span>)}.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'|'</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-node">/(#{@types})\s*(\w+)\s*\(([^)]*)\)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">sig</span> <span class="ruby-keyword kw">then</span>
+        <span class="ruby-identifier">return_type</span>, <span class="ruby-identifier">function_name</span>, <span class="ruby-identifier">arg_string</span> = <span class="ruby-identifier">$1</span>, <span class="ruby-identifier">$2</span>, <span class="ruby-identifier">$3</span>
+        <span class="ruby-identifier">args</span> = []
+        <span class="ruby-identifier">arg_string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+
+          <span class="ruby-comment cmt"># helps normalize into 'char * varname' form</span>
+          <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s*\*\s*/</span>, <span class="ruby-value str">' * '</span>).<span class="ruby-identifier">strip</span>
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-node">/(((#{@types})\s*\*?)+)\s+(\w+)\s*$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">arg</span> <span class="ruby-keyword kw">then</span>
+            <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">$4</span>, <span class="ruby-identifier">$1</span>])
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;void&quot;</span> <span class="ruby-keyword kw">then</span>
+            <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;WAR\NING: '#{arg}' not understood&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">arity</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-identifier">arity</span> = <span class="ruby-constant">MAGIC_ARITY</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">raw</span>
+
+        <span class="ruby-keyword kw">return</span> {
+          <span class="ruby-value str">'return'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">return_type</span>,
+          <span class="ruby-value str">'name'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">function_name</span>,
+          <span class="ruby-value str">'args'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>,
+          <span class="ruby-value str">'arity'</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">arity</span>
+        }
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;Can't parse signature: #{sig}&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

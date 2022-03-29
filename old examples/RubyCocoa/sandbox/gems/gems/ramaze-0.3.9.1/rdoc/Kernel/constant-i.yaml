@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Original from Trans (Facets 1.4.5) This is similar to +Module#const_get+ but is accessible at all levels, and, unlike <tt>const_get</tt>, can handle module hierarchy.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  constant(&quot;Fixnum&quot;)                  # -&gt; Fixnum\n  constant(:Fixnum)                   # -&gt; Fixnum\n\n  constant(&quot;Process::Sys&quot;)            # -&gt; Process::Sys\n  constant(&quot;Regexp::MULTILINE&quot;)       # -&gt; 4\n\n  require 'test/unit'\n  Test.constant(&quot;Unit::Assertions&quot;)   # -&gt; Test::Unit::Assertions\n  Test.constant(&quot;::Test::Unit&quot;)       # -&gt; Test::Unit\n"
+full_name: Kernel#constant
+is_singleton: false
+name: constant
+params: (const)
+visibility: public

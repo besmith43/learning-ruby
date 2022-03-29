@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ruby2Ruby#process_yield
+is_singleton: false
+name: process_yield
+params: (exp)
+visibility: public

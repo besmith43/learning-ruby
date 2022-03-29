@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: the current session[:FLASH_PREVIOUS]
+full_name: Ramaze::Session::Flash#previous
+is_singleton: false
+name: previous
+params: ()
+visibility: public

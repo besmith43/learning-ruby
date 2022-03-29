@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generate link for the first page.
+full_name: Ramaze::Pager#link_first_page
+is_singleton: false
+name: link_first_page
+params: ()
+visibility: private

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: the string returned at the end of the function is used as the html body if there is no template for the action. if there is a template, the string is silently ignored
+full_name: MainController#notemplate
+is_singleton: false
+name: notemplate
+params: ()
+visibility: public

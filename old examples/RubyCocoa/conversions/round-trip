@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+# Hey Emacs, think of this as -*- ruby -*- code.
+
+require 'osx/cocoa'
+include OSX
+
+#START:code
+class ValueHolder < NSObject
+  attr_accessor :held
+end
+
+def round_trip(value)
+#END:code
+  puts "------"
+  puts "If 'In' is #{description(value)},"
+#START:code
+  # ...
+  holder = ValueHolder.alloc.init
+  holder.setValue_forKey(value, 'held')
+  new_value = holder.valueForKey('held')
+  # ...
+#END:code
+  puts "then 'Out' will be #{description(new_value)} with"
+  puts "classes #{superclasses(new_value.class).inspect}"
+  puts "Will Out==In? #{yorno(new_value == value)}."
+  if to_ruby_able?(new_value)
+    puts "Out.to_ruby will be #{description(new_value.to_ruby)}." 
+  else
+    puts "Out will not respond to 'to_ruby'."
+  end
+#START:code
+end
+#END:code
+
+
+def description(value)
+  "the #{value.class} '#{value}' (#{value.inspect})"
+end
+
+def yorno(bool)
+  bool ? "Yes" : "No"
+end
+
+def superclasses(klass, so_far=[])
+  so_far << klass
+  if klass == Object or klass == NSObject
+    so_far
+  else
+    superclasses(klass.superclass, so_far)
+  end
+end
+
+def to_ruby_able?(v)
+  v.to_ruby
+  true
+rescue NoMethodError 
+  false
+end
+
+
+def help
+  $stderr.puts "
+With no arguments, round-trip will convert various Ruby objects to their
+Objective-C equivalents, convert them back, and print information about
+the resulting object.
+
+Any argument will be evaluated (with 'eval') and the result will be used
+in the above conversion.
+
+Note that you may need to guard your argument from shell interpretation.
+For example, to find out about a String, you need something like this:
+
+    % ./round-trip '\"hi\"'
+
+Otherwise, the shell will \"steal\" the double quotes.
+"
+  exit 1
+end
+
+
+if $0 == __FILE__
+  help if ARGV[0] && (ARGV[0]=='-h' || ARGV[0] == '--help')
+    
+  if ARGV.length > 0
+    ARGV.each do | string | 
+      round_trip(eval(string))
+    end	
+    exit 0
+  end
+  round_trip(1)
+  round_trip(1..2)
+  round_trip("hi")
+  round_trip(:symbol)
+  round_trip([1, 2, 3])
+  round_trip(true)
+  round_trip(false)
+  round_trip(nil)
+  exit 0
+end

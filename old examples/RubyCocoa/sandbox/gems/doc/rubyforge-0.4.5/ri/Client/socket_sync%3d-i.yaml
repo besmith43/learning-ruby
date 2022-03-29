@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: if your ruby is older than 2005-09-06, do not set socket_sync = false to avoid an SSL socket blocking bug in openssl/buffering.rb.
+full_name: Client#socket_sync=
+is_singleton: false
+name: socket_sync=
+params: (socket_sync)
+visibility: public

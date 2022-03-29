@@ -1,0 +1,45 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "''"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RamazeLogger
+  value: Ramaze::SpecLogger.new
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "''"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RamazeLogger
+  value: Ramaze::SpecLogger.new
+full_name: Bacon::PrettyOutput
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: general_error
+- !ruby/object:RI::MethodSummary 
+  name: general_error
+- !ruby/object:RI::MethodSummary 
+  name: handle_requirement
+- !ruby/object:RI::MethodSummary 
+  name: handle_requirement
+- !ruby/object:RI::MethodSummary 
+  name: handle_specification
+- !ruby/object:RI::MethodSummary 
+  name: handle_specification
+- !ruby/object:RI::MethodSummary 
+  name: handle_summary
+- !ruby/object:RI::MethodSummary 
+  name: handle_summary
+name: PrettyOutput
+superclass: 

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is used for template rerouting, takes action, optionally a controller and action to route to.
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MainController\n    template :index, OtherController, :list\n    template :foo, :bar\n    template :bar, :file =&gt; '/absolute/path'\n    template :baz, :file =&gt; 'relative/path'\n    template :abc, :controller =&gt; OtherController\n    template :xyz, :controller =&gt; OtherController, :action =&gt; 'list'\n\n    def index\n      'will use template from OtherController#list'\n    end\n\n    def foo\n      'will use template from self#bar'\n    end\n\n    def bar\n      'will use template from /absolute/path'\n    end\n\n    def baz\n      'will use template from relative/path'\n    end\n\n    def abc\n      'will use template from OtherController#index'\n    end\n\n    def xyz\n      'will use template from OtherController#list'\n    end\n  end\n"
+full_name: Ramaze::Controller::template
+is_singleton: true
+name: template
+params: (this, *argv)
+visibility: public

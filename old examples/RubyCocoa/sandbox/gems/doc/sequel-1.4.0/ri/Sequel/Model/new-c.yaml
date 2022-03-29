@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates new instance with values set to passed-in Hash.
+- !ruby/struct:SM::Flow::P 
+  body: This method guesses whether the record exists when <tt>new_record</tt> is set to false.
+full_name: Sequel::Model::new
+is_singleton: true
+name: new
+params: (values = nil, from_db = false, &block)
+visibility: public

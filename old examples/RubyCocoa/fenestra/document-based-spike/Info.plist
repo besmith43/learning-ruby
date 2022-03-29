@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+
+	<key>CFBundleDocumentTypes</key>
+	<array>
+	  <dict>
+	    <!-- START:all -->
+	    <key>NSDocumentClass</key>
+	    <string>Document</string>
+	    <key>CFBundleTypeExtensions</key>
+	    <array>
+	      <string>fenestra</string>
+	    </array>
+	    <!-- END:all -->
+	    <key>CFBundleTypeName</key>
+	    <string>NSRTFPboardType</string>
+	    <key>CFBundleTypeMIMETypes</key>
+	    <array>
+	      <string>text/rtf</string>
+	    </array>
+	    <key>CFBundleTypeRole</key>
+	    <string>Editor</string>
+	    <key>LSTypeIsPackage</key>
+	    <false/>
+	  </dict>
+	</array>
+
+	<key>CFBundleExecutable</key>
+	<string>Fenestra</string>
+	<key>CFBundleIconFile</key>
+	<string>Fenestra</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.exampler.Fenestra</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>FenestraHelp</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Fenestra Help</string>
+</dict>
+</plist>

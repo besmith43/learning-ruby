@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: Helper::Partial
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Example Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MyController\n    def index\n    end\n    def list\n      plain = request['plain']\n      &quot;Hello World from List!  Plain List == #{plain}&quot;\n    end\n  end\n\n  &lt;html&gt;\n    &lt;head&gt;&lt;title&gt;Partial Render Index&lt;/title&gt;&lt;/head&gt;\n    &lt;body&gt;\n      #{render_partial(Rs(:list), 'plain' =&gt; true)}\n    &lt;/body&gt;\n  &lt;/html&gt;\n"
+constants: []
+
+full_name: Ramaze::Helper::Partial
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: render_action
+- !ruby/object:RI::MethodSummary 
+  name: render_action
+- !ruby/object:RI::MethodSummary 
+  name: render_partial
+- !ruby/object:RI::MethodSummary 
+  name: render_partial
+- !ruby/object:RI::MethodSummary 
+  name: render_template
+- !ruby/object:RI::MethodSummary 
+  name: render_template
+name: Partial
+superclass: 

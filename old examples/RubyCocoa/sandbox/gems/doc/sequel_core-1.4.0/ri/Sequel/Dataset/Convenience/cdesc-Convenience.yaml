@@ -1,0 +1,120 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: current_page
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: page_count
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: page_size
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: pagination_record_count
+  rw: RW
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAKED_HASH
+  value: "{:naked => true}.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COUNT_OF_ALL_AS_COUNT
+  value: ":count['*'.lit].AS(:count)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMA_SEPARATOR
+  value: "', '.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MUTATION_RE
+  value: /^(.+)!$/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_METHODS
+  value: "{         /^order_by_(.+)$/   => proc {|c| proc {order(c)}},         /^first_by_(.+)$/   => proc {|c| proc {order(c).first}},         /^last_by_(.+)$/    => proc {|c| proc {order(c).last}},         /^filter_by_(.+)$/  => proc {|c| proc {|v| filter(c => v)}},         /^all_by_(.+)$/     => proc {|c| proc {|v| filter(c => v).all}},         /^find_by_(.+)$/    => proc {|c| proc {|v| filter(c => v).first}},         /^group_by_(.+)$/   => proc {|c| proc {group(c)}},         /^count_by_(.+)$/   => proc {|c| proc {group_and_count(c)}}"
+full_name: Sequel::Dataset::Convenience
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: avg
+- !ruby/object:RI::MethodSummary 
+  name: create_or_replace_view
+- !ruby/object:RI::MethodSummary 
+  name: create_view
+- !ruby/object:RI::MethodSummary 
+  name: current_page_record_count
+- !ruby/object:RI::MethodSummary 
+  name: current_page_record_range
+- !ruby/object:RI::MethodSummary 
+  name: each_hash
+- !ruby/object:RI::MethodSummary 
+  name: each_page
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: first
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: group_and_count
+- !ruby/object:RI::MethodSummary 
+  name: import
+- !ruby/object:RI::MethodSummary 
+  name: interval
+- !ruby/object:RI::MethodSummary 
+  name: last
+- !ruby/object:RI::MethodSummary 
+  name: magic_method_missing
+- !ruby/object:RI::MethodSummary 
+  name: map
+- !ruby/object:RI::MethodSummary 
+  name: max
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: min
+- !ruby/object:RI::MethodSummary 
+  name: multi_insert
+- !ruby/object:RI::MethodSummary 
+  name: next_page
+- !ruby/object:RI::MethodSummary 
+  name: page_range
+- !ruby/object:RI::MethodSummary 
+  name: paginate
+- !ruby/object:RI::MethodSummary 
+  name: prev_page
+- !ruby/object:RI::MethodSummary 
+  name: print
+- !ruby/object:RI::MethodSummary 
+  name: query
+- !ruby/object:RI::MethodSummary 
+  name: range
+- !ruby/object:RI::MethodSummary 
+  name: set_pagination_info
+- !ruby/object:RI::MethodSummary 
+  name: single_record
+- !ruby/object:RI::MethodSummary 
+  name: single_value
+- !ruby/object:RI::MethodSummary 
+  name: sum
+- !ruby/object:RI::MethodSummary 
+  name: table_exists?
+- !ruby/object:RI::MethodSummary 
+  name: to_csv
+- !ruby/object:RI::MethodSummary 
+  name: to_hash
+name: Convenience
+superclass: 

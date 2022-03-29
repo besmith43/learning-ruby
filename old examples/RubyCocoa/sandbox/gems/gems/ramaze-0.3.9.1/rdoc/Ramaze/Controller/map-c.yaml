@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Map Controller to the given syms or strings. Replaces old mappings. If you want to <em>add</em> a mapping, just modify Global.mapping.
+full_name: Ramaze::Controller::map
+is_singleton: true
+name: map
+params: (*syms)
+visibility: public

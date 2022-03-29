@@ -1,0 +1,113 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: db
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: opts
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A Dataset represents a view of a the data in a database, constrained by specific parameters such as filtering conditions, order, etc. Datasets can be used to create, retrieve, update and delete records.
+- !ruby/struct:SM::Flow::P 
+  body: "Query results are always retrieved on demand, so a dataset can be kept around and reused indefinitely:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  my_posts = DB[:posts].filter(:author =&gt; 'david') # no records are retrieved\n  p my_posts.all # records are now retrieved\n  ...\n  p my_posts.all # records are retrieved again\n"
+- !ruby/struct:SM::Flow::P 
+  body: "In order to provide this functionality, dataset methods such as where, select, order, etc. return modified copies of the dataset, so you can use different datasets to access data:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  posts = DB[:posts]\n  davids_posts = posts.filter(:author =&gt; 'david')\n  old_posts = posts.filter('stamp &lt; ?', 1.week.ago)\n"
+- !ruby/struct:SM::Flow::P 
+  body: Datasets are Enumerable objects, so they can be manipulated using any of the Enumerable methods, such as map, inject, etc.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: The Dataset Adapter Interface
+- !ruby/struct:SM::Flow::P 
+  body: "Each adapter should define its own dataset class as a descendant of Sequel::Dataset. The following methods should be overriden by the adapter Dataset class (each method with the stock implementation):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # Iterate over the results of the SQL query and call the supplied\n  # block with each record (as a hash).\n  def fetch_rows(sql, &amp;block)\n    @db.synchronize do\n      r = @db.execute(sql)\n      r.each(&amp;block)\n    end\n  end\n\n  # Insert records.\n  def insert(*values)\n    @db.synchronize do\n      @db.execute(insert_sql(*values)).last_insert_id\n    end\n  end\n\n  # Update records.\n  def update(*args, &amp;block)\n    @db.synchronize do\n      @db.execute(update_sql(*args, &amp;block)).affected_rows\n    end\n  end\n\n  # Delete records.\n  def delete(opts = nil)\n    @db.synchronize do\n      @db.execute(delete_sql(opts)).affected_rows\n    end\n  end\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NOTIMPL_MSG
+  value: "\"This method must be overriden in Sequel adapters\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STOCK_TRANSFORMS
+  value: "{       :marshal => [         # for backwards-compatibility we support also non-base64-encoded values.         proc {|v| Marshal.load(Base64.decode64(v)) rescue Marshal.load(v)},          proc {|v| Base64.encode64(Marshal.dump(v))}"
+full_name: Sequel::Dataset
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Enumerable
+- !ruby/object:RI::IncludedModule 
+  name: Sequelizer
+- !ruby/object:RI::IncludedModule 
+  name: SQL
+- !ruby/object:RI::IncludedModule 
+  name: Convenience
+- !ruby/object:RI::IncludedModule 
+  name: Callback
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: all
+- !ruby/object:RI::MethodSummary 
+  name: clone
+- !ruby/object:RI::MethodSummary 
+  name: clone_merge
+- !ruby/object:RI::MethodSummary 
+  name: columns
+- !ruby/object:RI::MethodSummary 
+  name: columns!
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: extend_with_destroy
+- !ruby/object:RI::MethodSummary 
+  name: fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: insert
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: model_classes
+- !ruby/object:RI::MethodSummary 
+  name: naked
+- !ruby/object:RI::MethodSummary 
+  name: polymorphic_key
+- !ruby/object:RI::MethodSummary 
+  name: remove_row_proc
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: set_model
+- !ruby/object:RI::MethodSummary 
+  name: set_row_proc
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform_load
+- !ruby/object:RI::MethodSummary 
+  name: transform_save
+- !ruby/object:RI::MethodSummary 
+  name: update
+- !ruby/object:RI::MethodSummary 
+  name: update_each_method
+name: Dataset
+superclass: Object

@@ -1,0 +1,51 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The Sequelizer module includes methods for translating Ruby expressions into SQL expressions, making it possible to specify dataset filters using blocks, e.g.:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB[:items].filter {:price &lt; 100}\n  DB[:items].filter {:category == 'ruby' &amp;&amp; :date &lt; 3.days.ago}\n"
+- !ruby/struct:SM::Flow::P 
+  body: Block filters can refer to literals, variables, constants, arguments, instance variables or anything else in order to create parameterized queries. Block filters can also refer to other dataset objects as sub-queries. Block filters are pretty much limitless!
+- !ruby/struct:SM::Flow::P 
+  body: Block filters are based on ParseTree. If you do not have the ParseTree gem installed, block filters will raise an error.
+- !ruby/struct:SM::Flow::P 
+  body: "To enable full block filter support make sure you have both ParseTree and Ruby2Ruby installed:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  sudo gem install parsetree\n  sudo gem install ruby2ruby\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JOIN_AND
+  value: "\" AND \".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JOIN_COMMA
+  value: "\", \".freeze"
+full_name: Sequel::Dataset::Sequelizer
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call_expr
+- !ruby/object:RI::MethodSummary 
+  name: collate_match_expr
+- !ruby/object:RI::MethodSummary 
+  name: compare_expr
+- !ruby/object:RI::MethodSummary 
+  name: eval_expr
+- !ruby/object:RI::MethodSummary 
+  name: ext_expr
+- !ruby/object:RI::MethodSummary 
+  name: ext_expr
+- !ruby/object:RI::MethodSummary 
+  name: match_expr
+- !ruby/object:RI::MethodSummary 
+  name: replace_dvars
+- !ruby/object:RI::MethodSummary 
+  name: value_to_parse_tree
+name: Sequelizer
+superclass: 

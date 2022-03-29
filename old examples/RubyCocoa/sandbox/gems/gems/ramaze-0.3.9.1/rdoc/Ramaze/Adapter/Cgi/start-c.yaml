@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: start CGI in a new thread, host and port parameter are only taken to make it compatible with other adapters but have no influence and can be omitted
+full_name: Ramaze::Adapter::Cgi::start
+is_singleton: true
+name: start
+params: (host = nil, ports = nil)
+visibility: public

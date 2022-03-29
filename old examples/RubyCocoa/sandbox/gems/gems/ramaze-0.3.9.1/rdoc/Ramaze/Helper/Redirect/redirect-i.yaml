@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  redirect Rs()\n  redirect R(MainController)\n  redirect R(MainController, :foo)\n  redirect 'foo/bar'\n  redirect 'foo/bar', :status =&gt; 301\n"
+full_name: Ramaze::Helper::Redirect#redirect
+is_singleton: false
+name: redirect
+params: (target, opts = {})
+visibility: public

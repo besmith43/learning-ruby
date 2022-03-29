@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexp#test_array_type_eh
+is_singleton: false
+name: test_array_type_eh
+params: ()
+visibility: public

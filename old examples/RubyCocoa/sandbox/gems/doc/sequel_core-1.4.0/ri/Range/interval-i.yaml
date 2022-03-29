@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the interval between the beginning and end of the range.
+full_name: Range#interval
+is_singleton: false
+name: interval
+params: ()
+visibility: public

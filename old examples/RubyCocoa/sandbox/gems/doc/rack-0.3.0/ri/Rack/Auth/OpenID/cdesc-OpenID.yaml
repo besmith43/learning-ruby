@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rack::Auth::OpenID provides a simple method for permitting openid based logins. It requires the ruby-openid lib from janrain to operate, as well as some method of session management of a Hash type.
+- !ruby/struct:SM::Flow::P 
+  body: After a transaction, the response status object is stored in the environment at rack.auth.openid.status, which can be used in the followup block or in a wrapping application to accomplish additional data maniipulation.
+- !ruby/struct:SM::Flow::P 
+  body: "NOTE: Due to the amount of data that ruby-openid stores in the session, Rack::Session::Cookie may fault."
+- !ruby/struct:SM::Flow::P 
+  body: A hash of data is stored in the session hash at the key of :openid. The fully canonicalized identity url is stored within at 'identity'. Extension data from 'openid.sreg.nickname' would be stored as { 'nickname' =&gt; value }.
+- !ruby/struct:SM::Flow::P 
+  body: "NOTE: To my knowledge there is no collision at this point from storage of this manner, if there is please let me know so I may adjust this app to cope."
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Required for ruby-openid
+  name: OIDStore
+  value: "::OpenID::MemoryStore.new"
+full_name: Rack::Auth::OpenID
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: auth_fail
+- !ruby/object:RI::MethodSummary 
+  name: bad_login
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: check
+- !ruby/object:RI::MethodSummary 
+  name: finish
+- !ruby/object:RI::MethodSummary 
+  name: no_session
+name: OpenID
+superclass: AbstractHandler

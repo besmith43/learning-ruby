@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Shortcuts to some CGI methods
+constants: []
+
+full_name: Ramaze::Helper::CGI
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: c
+- !ruby/object:RI::MethodSummary 
+  name: c
+- !ruby/object:RI::MethodSummary 
+  name: h
+- !ruby/object:RI::MethodSummary 
+  name: h
+- !ruby/object:RI::MethodSummary 
+  name: html_escape
+- !ruby/object:RI::MethodSummary 
+  name: html_escape
+- !ruby/object:RI::MethodSummary 
+  name: html_unescape
+- !ruby/object:RI::MethodSummary 
+  name: html_unescape
+- !ruby/object:RI::MethodSummary 
+  name: u
+- !ruby/object:RI::MethodSummary 
+  name: u
+- !ruby/object:RI::MethodSummary 
+  name: url_decode
+- !ruby/object:RI::MethodSummary 
+  name: url_decode
+- !ruby/object:RI::MethodSummary 
+  name: url_encode
+- !ruby/object:RI::MethodSummary 
+  name: url_encode
+name: CGI
+superclass: 

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The main namespace for Ramaze
+constants: []
+
+full_name: Ramaze
+includes: []
+
+instance_methods: []
+
+name: Ramaze
+superclass: 

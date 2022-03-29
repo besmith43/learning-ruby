@@ -1,0 +1,17 @@
+movies = { titanic: 4 }
+
+puts "title please"
+title = gets.chomp
+
+puts "rating of the movie please"
+rating = gets.chomp
+
+title = title.to_sym
+rating = rating.to_i
+
+movies[title] = rating
+
+case choice
+when "
+
+

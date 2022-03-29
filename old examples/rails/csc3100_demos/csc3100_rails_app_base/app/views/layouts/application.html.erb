@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 08</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
+
+    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => false %>
+    <%= javascript_include_tag 'application', "data-turbolinks-track" => false %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      	<div class="row">
+      		<div class="col-md-12">
+      			<nav class="navbar navbar-default" role="navigation">
+      				<div class="navbar-header">
+      					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      					</button> 
+      					<%= link_to root_path, { :class => "navbar-brand"} do %>
+      					   <i class="glyphicon glyphicon-home"></i> Home
+      					<% end %>
+      				</div>
+      				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      					<ul class="nav navbar-nav">
+                    <% if user_signed_in? %>
+      						<li>
+      						  <%= link_to "Experiences", dashboard_page1_path %>
+      						</li>
+                    <% end %>      					    
+      					</ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if user_signed_in? %>
+                    <li>
+                      <%= link_to edit_user_registration_path do %>
+                         <i class="glyphicon glyphicon-cog"></i>
+                      <% end %>
+                    </li>
+                    <% end %>      					    
+                    <li>
+                    <% if user_signed_in? %>
+                        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+                    <% else %>
+                        <%= link_to "Login", new_user_session_path %>
+                    <% end %>      					    
+       					    </li>
+      					</ul>
+      				</div>
+      			</nav>
+      		</div>
+
+      	</div>
+      
+      <% if notice %>
+      <p class="notice">
+        <div class="alert alert-info alert-dismissable">
+           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+           <%= notice %>
+        </div>
+      </p>
+      <% end %>
+      <%= yield %>
+      </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"></script>
+  </body>
+</html>

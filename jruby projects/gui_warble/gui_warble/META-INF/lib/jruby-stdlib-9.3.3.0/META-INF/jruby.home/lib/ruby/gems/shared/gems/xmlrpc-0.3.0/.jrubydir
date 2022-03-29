@@ -1,0 +1,9 @@
+..
+.
+README.md
+Gemfile
+xmlrpc.gemspec
+lib
+bin
+Rakefile
+LICENSE.txt

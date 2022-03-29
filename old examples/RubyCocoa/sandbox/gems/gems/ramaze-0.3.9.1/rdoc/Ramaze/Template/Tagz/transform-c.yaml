@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Entry point for Action#render
+full_name: Ramaze::Template::Tagz::transform
+is_singleton: true
+name: transform
+params: (action)
+visibility: public

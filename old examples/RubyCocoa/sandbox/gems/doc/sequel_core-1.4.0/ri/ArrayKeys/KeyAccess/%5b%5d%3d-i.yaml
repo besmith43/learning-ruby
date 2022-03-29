@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the value referenced by an array index or a key.
+full_name: ArrayKeys::KeyAccess#[]=
+is_singleton: false
+name: "[]="
+params: (idx,*args)
+visibility: public

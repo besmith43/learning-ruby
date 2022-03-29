@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Entering point for Dispatcher, first Controller::resolve(path) and then renders the resulting Action.
+full_name: Ramaze::Controller::handle
+is_singleton: true
+name: handle
+params: (path)
+visibility: public

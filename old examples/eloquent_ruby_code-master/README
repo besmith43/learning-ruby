@@ -1,0 +1,35 @@
+Eloquent Ruby Source Code
+=========================
+
+This is the source code from Russ Olsen's book Eloquent Ruby.
+In this repo you will find all of the source code from the
+book, organized by chapters.
+
+The code has been updated and tested with Ruby 2.3.3p222.
+
+Because the code here was written to be included in a book,
+it is organized a little differently than the garden variety
+Ruby project:
+
+* The code for each chapter is in a directory whose name
+corresponds to that chapter. Thus the code for Chapter 7
+is in a directory named `07`.
+
+* In each chapter directory you will find one or more *_spec.rb
+files. These are rspec file (See Chapter 9) which drive execution
+of the code. To run all of the examples, make your current directory
+the very top of the repo and run `rake`. To run the code in an
+individual directory, `cd` into that directory and run `rake`.
+To run an individual spec file, `cd` to the appropriate directory
+and run:
+
+    rspec -I . <the file>
+
+
+* Note that the `Rakefile`s run `rspec` over and over, once
+for each spec file. This is generally *not* what you would
+do in a normal Ruby project - normally you would run everything
+in a directory in one swoop: `rspec .`. The thing is that many
+of the examples from the book will construct a class and then
+change it and then change it again. This is great for explaining
+but means that you have to carefully isolate each example.

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sequel::Oracle::Dataset</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sequel::Oracle::Dataset</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/sequel_core/adapters/oracle_rb.html">
+                lib/sequel_core/adapters/oracle.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Dataset.html">
+                Sequel::Dataset
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000609">array_tuples_fetch_rows</a>&nbsp;&nbsp;
+      <a href="#M000612">delete</a>&nbsp;&nbsp;
+      <a href="#M000608">fetch_rows</a>&nbsp;&nbsp;
+      <a href="#M000610">insert</a>&nbsp;&nbsp;
+      <a href="#M000607">literal</a>&nbsp;&nbsp;
+      <a href="#M000613">select_sql</a>&nbsp;&nbsp;
+      <a href="#M000614">sql</a>&nbsp;&nbsp;
+      <a href="#M000611">update</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000609" class="method-detail">
+        <a name="M000609"></a>
+
+        <div class="method-heading">
+          <a href="#M000609" class="method-signature">
+          <span class="method-name">array_tuples_fetch_rows</span><span class="method-args">(sql) {|r| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000609-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000609-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 103</span>
+103:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">array_tuples_fetch_rows</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+104:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+105:           <span class="ruby-identifier">cursor</span> = <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">sql</span>
+106:           <span class="ruby-keyword kw">begin</span>
+107:             <span class="ruby-ivar">@columns</span> = <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">get_col_names</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_sym</span>}
+108:             <span class="ruby-identifier">raw_rnum_index</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">:raw_rnum_</span>)
+109:             <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">r</span> = <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">fetch</span>
+110:               <span class="ruby-identifier">r</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">raw_rnum_index</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">raw_rnum_index</span>
+111:               <span class="ruby-identifier">r</span>.<span class="ruby-identifier">keys</span> =  <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">delete_if</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:raw_rnum_</span>}
+112:               <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">r</span>
+113:             <span class="ruby-keyword kw">end</span>
+114:           <span class="ruby-keyword kw">ensure</span>
+115:             <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">close</span>
+116:           <span class="ruby-keyword kw">end</span>
+117:         <span class="ruby-keyword kw">end</span>
+118:         <span class="ruby-keyword kw">self</span>
+119:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000612" class="method-detail">
+        <a name="M000612"></a>
+
+        <div class="method-heading">
+          <a href="#M000612" class="method-signature">
+          <span class="method-name">delete</span><span class="method-args">(opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000612-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000612-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 129</span>
+129:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">opts</span> = <span class="ruby-keyword kw">nil</span>)
+130:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">delete_sql</span>(<span class="ruby-identifier">opts</span>)
+131:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000608" class="method-detail">
+        <a name="M000608"></a>
+
+        <div class="method-heading">
+          <a href="#M000608" class="method-signature">
+          <span class="method-name">fetch_rows</span><span class="method-args">(sql) {|row| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000608-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000608-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 86</span>
+ 86:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_rows</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+ 87:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+ 88:           <span class="ruby-identifier">cursor</span> = <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">sql</span>
+ 89:           <span class="ruby-keyword kw">begin</span>
+ 90:             <span class="ruby-ivar">@columns</span> = <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">get_col_names</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_sym</span>}
+ 91:             <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">r</span> = <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">fetch</span>
+ 92:               <span class="ruby-identifier">row</span> = {}
+ 93:               <span class="ruby-identifier">r</span>.<span class="ruby-identifier">each_with_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">row</span>[<span class="ruby-identifier">columns</span>[<span class="ruby-identifier">i</span>]] = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">columns</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:raw_rnum_</span>}
+ 94:               <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">row</span>
+ 95:             <span class="ruby-keyword kw">end</span>
+ 96:           <span class="ruby-keyword kw">ensure</span>
+ 97:             <span class="ruby-identifier">cursor</span>.<span class="ruby-identifier">close</span>
+ 98:           <span class="ruby-keyword kw">end</span>
+ 99:         <span class="ruby-keyword kw">end</span>
+100:         <span class="ruby-keyword kw">self</span>
+101:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000610" class="method-detail">
+        <a name="M000610"></a>
+
+        <div class="method-heading">
+          <a href="#M000610" class="method-signature">
+          <span class="method-name">insert</span><span class="method-args">(*values)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000610-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000610-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 121</span>
+121:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+122:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">insert_sql</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+123:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000607" class="method-detail">
+        <a name="M000607"></a>
+
+        <div class="method-heading">
+          <a href="#M000607" class="method-signature">
+          <span class="method-name">literal</span><span class="method-args">(v)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000607-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000607-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 77</span>
+77:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">literal</span>(<span class="ruby-identifier">v</span>)
+78:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+79:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>
+80:           <span class="ruby-identifier">literal</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">iso8601</span>)
+81:         <span class="ruby-keyword kw">else</span>
+82:           <span class="ruby-keyword kw">super</span>
+83:         <span class="ruby-keyword kw">end</span>
+84:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000613" class="method-detail">
+        <a name="M000613"></a>
+
+        <div class="method-heading">
+          <a href="#M000613" class="method-signature">
+          <span class="method-name">select_sql</span><span class="method-args">(opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Formats a SELECT statement using the given options and the dataset options.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000613-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000613-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 136</span>
+136:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select_sql</span>(<span class="ruby-identifier">opts</span> = <span class="ruby-keyword kw">nil</span>)
+137:         <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">opts</span> <span class="ruby-value">? </span><span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">opts</span>) <span class="ruby-operator">:</span> <span class="ruby-ivar">@opts</span>
+138: 
+139:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:sql</span>]
+140:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">sql</span>
+141:         <span class="ruby-keyword kw">end</span>
+142: 
+143:         <span class="ruby-identifier">columns</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:select</span>]
+144:         <span class="ruby-identifier">select_columns</span> = <span class="ruby-identifier">columns</span> <span class="ruby-value">? </span><span class="ruby-identifier">column_list</span>(<span class="ruby-identifier">columns</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">WILDCARD</span>
+145:         <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:distinct</span>] <span class="ruby-operator">?</span> \
+146:         <span class="ruby-node">&quot;SELECT DISTINCT #{select_columns}&quot;</span> <span class="ruby-operator">:</span> \
+147:         <span class="ruby-node">&quot;SELECT #{select_columns}&quot;</span>
+148:         
+149:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:from</span>]
+150:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; FROM #{source_list(opts[:from])}&quot;</span>
+151:         <span class="ruby-keyword kw">end</span>
+152:         
+153:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">join</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:join</span>]
+154:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">join</span>
+155:         <span class="ruby-keyword kw">end</span>
+156: 
+157:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">where</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:where</span>]
+158:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; WHERE #{where}&quot;</span>
+159:         <span class="ruby-keyword kw">end</span>
+160: 
+161:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">group</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:group</span>]
+162:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; GROUP BY #{column_list(group)}&quot;</span>
+163:         <span class="ruby-keyword kw">end</span>
+164: 
+165:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">having</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:having</span>]
+166:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; HAVING #{having}&quot;</span>
+167:         <span class="ruby-keyword kw">end</span>
+168: 
+169:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">union</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:union</span>]
+170:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:union_all</span>] <span class="ruby-operator">?</span> \
+171:             <span class="ruby-node">&quot; UNION ALL #{union.sql}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot; UNION #{union.sql}&quot;</span>)
+172:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">intersect</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:intersect</span>]
+173:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:intersect_all</span>] <span class="ruby-operator">?</span> \
+174:             <span class="ruby-node">&quot; INTERSECT ALL #{intersect.sql}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot; INTERSECT #{intersect.sql}&quot;</span>)
+175:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">except</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:except</span>]
+176:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:except_all</span>] <span class="ruby-operator">?</span> \
+177:             <span class="ruby-node">&quot; EXCEPT ALL #{except.sql}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot; EXCEPT #{except.sql}&quot;</span>)
+178:         <span class="ruby-keyword kw">end</span>
+179: 
+180:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">order</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:order</span>]
+181:           <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; ORDER BY #{column_list(order)}&quot;</span>
+182:         <span class="ruby-keyword kw">end</span>
+183: 
+184:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">limit</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:limit</span>]
+185:           <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">offset</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:offset</span>]) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">offset</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+186:             <span class="ruby-identifier">sql</span> = <span class="ruby-node">&quot;SELECT * FROM (SELECT raw_sql_.*, ROWNUM raw_rnum_ FROM(#{sql}) raw_sql_ WHERE ROWNUM &lt;= #{limit + offset}) WHERE raw_rnum_ &gt; #{offset}&quot;</span>
+187:           <span class="ruby-keyword kw">else</span>
+188:             <span class="ruby-identifier">sql</span> = <span class="ruby-node">&quot;SELECT * FROM (#{sql}) WHERE ROWNUM &lt;= #{limit}&quot;</span>
+189:           <span class="ruby-keyword kw">end</span>
+190:         <span class="ruby-keyword kw">end</span>
+191: 
+192:         <span class="ruby-identifier">sql</span>
+193:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000614" class="method-detail">
+        <a name="M000614"></a>
+
+        <div class="method-heading">
+          <span class="method-name">sql</span><span class="method-args">(opts = nil)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Dataset.html#M000613">select_sql</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000611" class="method-detail">
+        <a name="M000611"></a>
+
+        <div class="method-heading">
+          <a href="#M000611" class="method-signature">
+          <span class="method-name">update</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000611-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000611-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/oracle.rb, line 125</span>
+125:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+126:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">update_sql</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+127:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

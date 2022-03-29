@@ -1,0 +1,17 @@
+print "example"
+first_name = gets.chomp
+first_name.capitalize!
+
+print "example2"
+last_name = gets.chomp
+last_name.capitalize!
+
+print "example3"
+city = gets.chomp
+city.capitalize!
+
+print "example4"
+state = gets.chomp
+state.upcase!
+
+puts "Your name is #{first_name} #{last_name} and you're from #{city}, #{state}!"

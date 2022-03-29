@@ -1,0 +1,15 @@
+<h2>Categories</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Category Name</th>
+		<th>Actions</th>
+	</tr>
+
+	<% @categories.each do |category| %>
+		<tr>
+			<td><%= category.name %></td>
+			<td><%= link_to 'Edit', edit_category_path(category.id) %> | <%= link_to 'Delete', category_path(category), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+</table>

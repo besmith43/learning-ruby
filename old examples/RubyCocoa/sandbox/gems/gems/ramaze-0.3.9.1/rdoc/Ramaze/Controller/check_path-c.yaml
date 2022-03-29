@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: checks paths for existance and logs a warning if it doesn't exist yet.
+full_name: Ramaze::Controller::check_path
+is_singleton: true
+name: check_path
+params: (message, *paths)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Iterates through each record, converting it into a hash.
+full_name: Sequel::Dataset::Convenience#each_hash
+is_singleton: false
+name: each_hash
+params: (&block)
+visibility: public

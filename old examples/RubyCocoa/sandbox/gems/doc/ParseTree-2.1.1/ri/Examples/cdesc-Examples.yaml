@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: reader
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: writer
+  rw: W
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "key: wwtt = what were they thinking?"
+constants: []
+
+full_name: Examples
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: a_method
+- !ruby/object:RI::MethodSummary 
+  name: an_alias
+name: Examples
+superclass: Object

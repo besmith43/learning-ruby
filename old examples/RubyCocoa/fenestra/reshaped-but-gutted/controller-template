@@ -1,0 +1,11 @@
+require 'Controller'
+
+class SomeController < Controller
+  # declare ib_outlets and ib_actions
+
+  def awakeFromNib
+    NSLog("Some controller awakes from Nib.")
+  end
+
+  # Actions, methods that respond to notifications, etc.
+end

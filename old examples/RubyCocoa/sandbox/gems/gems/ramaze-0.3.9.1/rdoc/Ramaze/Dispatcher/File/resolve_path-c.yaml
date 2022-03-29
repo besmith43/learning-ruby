@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Dispatcher::File::resolve_path
+is_singleton: true
+name: resolve_path
+params: (path)
+visibility: public

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: mab
+- !ruby/object:RI::AliasName 
+  name: mab
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "use this inside your controller to directly build Markaby Refer to the Markaby-documentation and testsuite for more examples. Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  mab { h1 &quot;Apples &amp; Oranges&quot;}                    #=&gt; &quot;&lt;h1&gt;Apples &amp;amp; Oranges&lt;/h1&gt;&quot;\n  mab { h1 'Apples', :class =&gt; 'fruits&amp;floots' }  #=&gt; &quot;&lt;h1 class=\\&quot;fruits&amp;amp;floots\\&quot;&gt;Apples&lt;/h1&gt;&quot;\n"
+full_name: Ramaze::Helper::Markaby#markaby
+is_singleton: false
+name: markaby
+params: (ivs = {}, helpers = nil, &block)
+visibility: public

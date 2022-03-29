@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: HTTP::Message::Headers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">HTTP::Message::Headers</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/http-access2/http_rb.html">
+                lib/http-access2/http.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="Headers.html">HTTP::Message::Headers</a> &#8212; <a
+href="../../HTTP.html">HTTP</a> message header.
+</p>
+<p>
+DESCRIPTION
+</p>
+<pre>
+  A class that describes header part of HTTP message.
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000189">[]</a>&nbsp;&nbsp;
+      <a href="#M000188">[]=</a>&nbsp;&nbsp;
+      <a href="#M000184">body_size=</a>&nbsp;&nbsp;
+      <a href="#M000182">contenttype</a>&nbsp;&nbsp;
+      <a href="#M000183">contenttype=</a>&nbsp;&nbsp;
+      <a href="#M000185">dump</a>&nbsp;&nbsp;
+      <a href="#M000187">get</a>&nbsp;&nbsp;
+      <a href="#M000179">init_request</a>&nbsp;&nbsp;
+      <a href="#M000180">init_response</a>&nbsp;&nbsp;
+      <a href="#M000178">new</a>&nbsp;&nbsp;
+      <a href="#M000181">response_status_code=</a>&nbsp;&nbsp;
+      <a href="#M000186">set</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">StatusCodeMap</td>
+          <td>=</td>
+          <td class="context-item-value">{       Status::OK =&gt; 'OK',       Status::MOVED_PERMANENTLY =&gt; 'Moved Permanently',       Status::FOUND =&gt; 'Found',       Status::SEE_OTHER =&gt; 'See Other',       Status::TEMPORARY_REDIRECT =&gt; 'Temporary Redirect',       Status::MOVED_TEMPORARILY =&gt; 'Temporary Redirect',       Status::BAD_REQUEST =&gt; 'Bad Request',       Status::INTERNAL =&gt; 'Internal Server Error',     }</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CharsetMap</td>
+          <td>=</td>
+          <td class="context-item-value">{       'NONE' =&gt; 'us-ascii',       'EUC'  =&gt; 'euc-jp',       'SJIS' =&gt; 'shift_jis',       'UTF8' =&gt; 'utf-8',     }</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">body_charset</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Charset.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">body_date</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+A milestone of body.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">body_size</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Size of body.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">body_type</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+Content-type.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">chunked</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Chunked or not.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">http_version</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../../HTTP.html">HTTP</a> version string in a <a
+href="../../HTTP.html">HTTP</a> header.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">reason_phrase</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+<a href="../../HTTP.html">HTTP</a> status reason phrase.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">request_method</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Request method.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">request_uri</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc">
+Requested URI.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">request_via_proxy</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">response_status_code</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000178.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000178.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+SYNOPSIS
+</p>
+<pre>
+  HTTP::Message.new
+</pre>
+<p>
+ARGS
+</p>
+<pre>
+  N/A
+</pre>
+<p>
+DESCRIPTION
+</p>
+<pre>
+  Create a instance of HTTP request or HTTP response.  Specify
+  status_code for HTTP response.
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000189.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000189.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000188.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000188.html');return false;">
+          <span class="method-name">[]=</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000184" class="method-detail">
+        <a name="M000184"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000184.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000184.html');return false;">
+          <span class="method-name">body_size=</span><span class="method-args">(body_size)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+body_size == nil means that the body is_a? IO
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000182" class="method-detail">
+        <a name="M000182"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000182.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000182.html');return false;">
+          <span class="method-name">contenttype</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000183" class="method-detail">
+        <a name="M000183"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000183.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000183.html');return false;">
+          <span class="method-name">contenttype=</span><span class="method-args">(contenttype)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000185" class="method-detail">
+        <a name="M000185"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000185.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000185.html');return false;">
+          <span class="method-name">dump</span><span class="method-args">(dev = '')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000187" class="method-detail">
+        <a name="M000187"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000187.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000187.html');return false;">
+          <span class="method-name">get</span><span class="method-args">(key = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000179.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000179.html');return false;">
+          <span class="method-name">init_request</span><span class="method-args">(method, uri, query = nil, via_proxy = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000180.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000180.html');return false;">
+          <span class="method-name">init_response</span><span class="method-args">(status_code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000181" class="method-detail">
+        <a name="M000181"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000181.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000181.html');return false;">
+          <span class="method-name">response_status_code=</span><span class="method-args">(status_code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000186" class="method-detail">
+        <a name="M000186"></a>
+
+        <div class="method-heading">
+          <a href="Headers.src/M000186.html" target="Code" class="method-signature"
+            onclick="popupCode('Headers.src/M000186.html');return false;">
+          <span class="method-name">set</span><span class="method-args">(key, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

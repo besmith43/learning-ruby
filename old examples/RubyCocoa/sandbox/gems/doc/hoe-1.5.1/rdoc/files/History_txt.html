@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: History.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>History.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>History.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Apr 15 12:30:43 -0500 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h3>1.5.1 / 2008-03-04</h3>
+<ul>
+<li>2 Minor Enhancements:
+
+<ul>
+<li>Removed install/uninstall tasks. Too buggy. Gems do a better job.
+
+</li>
+<li>Added cleaning of rbc files to default list
+
+</li>
+</ul>
+</li>
+<li>5 Bug Fixes:
+
+<ul>
+<li>Correctly deal with errors intuiting history and readme files. Thanks
+Aaron!
+
+</li>
+<li>Fixed rdoc title. Thanks, Sander!
+
+</li>
+<li>Fixed sow to match new Rakefile and History format. Thanks, me!
+
+</li>
+<li>Moved test/unit to the front for rake test. Fixes use of miniunit.
+
+</li>
+<li>Renamed shadowed variable.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.5.0 / 2008-01-30</h3>
+<ul>
+<li>9 Minor Enhancements:
+
+<ul>
+<li>Added autopopulation of changes from History.txt.
+
+</li>
+<li>Added autopopulation of urls from History.txt.
+
+</li>
+<li>Added autopopulation of description from History.txt
+
+</li>
+<li>Added autopopulation of summary from description.
+
+</li>
+<li>Added description_sections to declare what sections of readme to use.
+
+</li>
+<li>Added summary_sentences to declare how many sentences you want in summary.
+
+</li>
+<li>Added developer(name, email) to cleanly populate both author/email arrays.
+
+</li>
+<li>author and email now default to &quot;doofus&quot;.
+
+</li>
+<li>author and email warn that they&#8216;ll blow up on 2008-04-01.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.4.0 / 2007-12-20</h3>
+<ul>
+<li>1 Major Enhancement:
+
+<ul>
+<li>rake package now supports INLINE=1 and FORCE_PLATFORM=whatever.
+
+<ul>
+<li>Supports ruby_inline extensions.
+
+</li>
+<li>Contributed by Luis Lavena. Thanks Luis!
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.3.0 / 2007-08-13</h3>
+<ul>
+<li>1 Major Enhancement:
+
+<ul>
+<li><a href="../classes/Hoe.html">Hoe</a> now builds signed gems automatically.
+Run the generate_key task to automatically create a signing key.
+
+</li>
+</ul>
+</li>
+<li>4 Minor Enhancements:
+
+<ul>
+<li>Extended rdoc pattern to include ext dirs.
+
+</li>
+<li>Fixed dependency adding for versionless dependencies.
+
+</li>
+<li>Added NODOT env var to disable RDoc diagram generation.
+
+</li>
+<li>The config_hoe task automatically merges in new config entries.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.2.2 / 2007-07-23</h3>
+<ul>
+<li>2 Minor Enhancements:
+
+<ul>
+<li>Added exclude parameter for check_manifest filtering to .hoerc.
+
+</li>
+<li>Documented .hoerc stuffs.
+
+</li>
+</ul>
+</li>
+<li>1 Bug Fix:
+
+<ul>
+<li>Various (untested) fixes for windows compatibility.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.2.1 / 2007-05-21</h3>
+<ul>
+<li>8 Minor Enhancements:
+
+<ul>
+<li>Allow for spaces in filenames in manifest. Thanks to Aaron Patterson.
+
+</li>
+<li>Allow rsync flags to be set.
+
+</li>
+<li>Allow rdoc destination directory to be set.
+
+</li>
+<li>Deal with bad line-endings. Stupid windoze users&#8230; :(
+
+</li>
+<li>Added WINDOZE check for diff.exe and look for gdiff first.
+
+</li>
+<li>Use gdiff if available, diff otherwise. Allows to work on borked Solaris.
+
+</li>
+<li>Move RDoc to attr* from big &#8216;ol chunk at the top of the class.
+
+</li>
+<li>Basic conversion of history/urls from rdoc to markdown.
+
+</li>
+</ul>
+</li>
+<li>1 Bug Fix:
+
+<ul>
+<li>Fixed executables regexp to /^bin/.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.2.0 / 2007-02-13</h3>
+<ul>
+<li>4 Minor Enhancements:
+
+<ul>
+<li>Added more support for ext dirs.
+
+</li>
+<li>Added a simple config file (yaml). Use &#8216;rake config_hoe&#8217; to
+edit.
+
+</li>
+<li>Added post_blog task (thanks Aaron!), configured via config_hoe.
+
+</li>
+<li>Announce task now posts to your blogs and/or publishes API depending on
+config.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.7 / 2007-01-10</h3>
+<ul>
+<li>5 Minor Enhancements:
+
+<ul>
+<li>extra_deps is now self-healing, and ensures no (direct) cycles.
+
+</li>
+<li>cleans check_manifest for CVS projects.
+
+</li>
+<li>rubyforge changes for config.
+
+</li>
+<li>Now uses rsync for publish_docs. YAY for fast!
+
+</li>
+<li>Bug 7193 fix spelling of &#8216;synopsys&#8217;. Submitted by Jacob Atzen.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.6 / 2006-11-29</h3>
+<ul>
+<li>1 Bug Fix:
+
+<ul>
+<li>Fix release to work correctly with need_zip and need_tar.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.5 / 2006-11-29</h3>
+<ul>
+<li>2 Minor Enhancements:
+
+<ul>
+<li>Reduced check_manifest dependencies to just diff for windows.
+
+</li>
+<li>Don&#8216;t use default author in summary, description or changes.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.4 / 2006-11-12</h3>
+<ul>
+<li>3 Minor Enhancements:
+
+<ul>
+<li>Added need_tar and need_zip to customize package requirements. Stupid
+windoze.
+
+</li>
+<li>Extended spec_extras to take procs as values. Passes in named parameter.
+
+</li>
+<li>Removed test from require_paths. I thought I already parameterized this. :/
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.3 / 2006-11-09</h3>
+<ul>
+<li>6 Minor Enhancements:
+
+<ul>
+<li>Added test_deps, now you can automatically discover test dependency
+ommisions.
+
+</li>
+<li>Added ext support! Build C extensions with hoe!
+
+</li>
+<li>Gemspec uses test_all.rb or result of test_globs. Tweak those tests.
+
+</li>
+<li>Now uses https to login to rubyforge. Rubyforge crackers beware!
+
+</li>
+<li>Fixed doco and automated updating of it.
+
+</li>
+<li>Added rdoc_pattern. Go doco go!
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.2 / 2006-10-22</h3>
+<ul>
+<li>4 Minor Enhancements:
+
+<ul>
+<li>Added -d and -t flags to sow to make dev or trunk subdirs for p4 and svn
+projects.
+
+</li>
+<li>Added install_gem to further test gem builds.
+
+</li>
+<li>Added test_globs to customize your test file list.
+
+</li>
+<li>Removed demo.rb from clean_globs. I&#8216;m torn on this one.
+
+</li>
+</ul>
+</li>
+<li>1 Bug Fix:
+
+<ul>
+<li>Fixed bug in install rule.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.1 / 2006-10-11</h3>
+<ul>
+<li>2 Bug Fixes:
+
+<ul>
+<li>Fixed minor problem with subject of email.
+
+</li>
+<li>Fixed problem in test.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.1.0 / 2006-10-04</h3>
+<ul>
+<li>1 Major Enhancement:
+
+<ul>
+<li>Added sow, a command-line tool for quickly creating new projects.
+
+</li>
+</ul>
+</li>
+<li>1 Minor Enhancement:
+
+<ul>
+<li>Added check_manifest task
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.5 / 2006-10-03</h3>
+<ul>
+<li>8 Minor Enhancements:
+
+<ul>
+<li>Doco cleanup.
+
+</li>
+<li>Removed Manifest.txt from rdoc and added title.
+
+</li>
+<li>Added changeset support.
+
+</li>
+<li>Added spec_extras for easy gemspec attribute setting.
+
+</li>
+<li>Added release_notes, changeset setting for releases.
+
+</li>
+<li>Added paragraphs_of utility method.
+
+</li>
+<li>Added email and rubyforge news announcement tasks.
+
+</li>
+<li>Url attribute may now be an array of urls.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.4 / 2006-09-23</h3>
+<ul>
+<li>1 Bug Fix:
+
+<ul>
+<li>Damnit&#8230; I messed up. There is no rubygems gem to be dependent upon.
+Duh.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.3 / 2006-09-23</h3>
+<ul>
+<li>9 Minor Enhancements:
+
+<ul>
+<li>Added debug_gem rule.
+
+</li>
+<li>Added lots of doco.
+
+</li>
+<li>Added proper deps to hoe for other&#8216;s gems, and
+rake/rubyforge/rubygems for hoe.
+
+</li>
+<li>Added ridocs to generate ri locally for testing.
+
+</li>
+<li>Added support for multiple authors.
+
+</li>
+<li>Rdoc now includes any top level .txt files.
+
+</li>
+<li>Renamed deploy to release.
+
+</li>
+<li>Renamed upload to publish_docs.
+
+</li>
+<li>publish_docs is now smart about subprojects and missing subdirectories.
+
+</li>
+</ul>
+</li>
+<li>1 Bug Fix:
+
+<ul>
+<li>Fixed include paths.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.2 / 2006-09-20</h3>
+<ul>
+<li>2 Minor Enhancements:
+
+<ul>
+<li>Wee little tests.
+
+</li>
+<li>Fixed up gemspec&#8216;s require_paths.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.1 / 2006-09-20</h3>
+<ul>
+<li>5 Minor Enhancements:
+
+<ul>
+<li>Finally got deployment straightened out. Maybe. Some might be on
+rubyforge.org.
+
+</li>
+<li>Added default description and summary.
+
+</li>
+<li>Added dependency mechanism.
+
+</li>
+<li>Improved gemspec debugging.
+
+</li>
+<li>Swapped gem with tgz in deploy&#8230; we&#8216;d rather screw up on tgz
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>1.0.0 / 2006-09-19</h3>
+<ul>
+<li>1 Major Enhancement:
+
+<ul>
+<li>Birthday!
+
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

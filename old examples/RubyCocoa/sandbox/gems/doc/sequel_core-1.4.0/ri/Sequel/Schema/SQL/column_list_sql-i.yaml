@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#column_list_sql
+is_singleton: false
+name: column_list_sql
+params: (columns)
+visibility: public

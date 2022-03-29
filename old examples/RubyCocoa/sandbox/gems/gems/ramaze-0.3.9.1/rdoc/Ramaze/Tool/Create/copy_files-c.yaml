@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: copy the files over
+full_name: Ramaze::Tool::Create::copy_files
+is_singleton: true
+name: copy_files
+params: (*files)
+visibility: public

@@ -1,0 +1,41 @@
+<%= form_for(work_experience) do |f| %>
+  <% if work_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
+
+      <ul>
+      <% work_experience.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :owner, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

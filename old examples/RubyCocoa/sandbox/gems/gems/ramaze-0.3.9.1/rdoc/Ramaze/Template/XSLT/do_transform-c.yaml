@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Template::XSLT::do_transform
+is_singleton: true
+name: do_transform
+params: (action)
+visibility: private

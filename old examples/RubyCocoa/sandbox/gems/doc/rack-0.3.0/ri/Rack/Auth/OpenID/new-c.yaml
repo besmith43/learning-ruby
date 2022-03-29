@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A Hash of options is taken as it's single initializing argument. String keys are taken to be openid protocol extension namespaces.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  For example: 'sreg' =&gt; { 'required' =&gt; # 'nickname' }\n"
+- !ruby/struct:SM::Flow::P 
+  body: Other keys are taken as options for Rack::Auth::OpenID, normally Symbols. Only :return is required. :trust is highly recommended to be set.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":return defines the url to return to after the client authenticates with the openid service provider. Should point to where this app is mounted. (ex: 'http://mysite.com/openid')"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":trust defines the url identifying the site they are actually logging into. (ex: 'http://mysite.com/')"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":session_key defines the key to the session hash in the env. (by default it uses 'rack.session')"
+  type: :BULLET
+full_name: Rack::Auth::OpenID::new
+is_singleton: true
+name: new
+params: (options={})
+visibility: public

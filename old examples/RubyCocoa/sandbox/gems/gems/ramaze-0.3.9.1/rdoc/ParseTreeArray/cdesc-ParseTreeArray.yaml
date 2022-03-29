@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: translate
+- !ruby/object:RI::MethodSummary 
+  name: translate
+comment: 
+constants: []
+
+full_name: ParseTreeArray
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: arg_nodes
+- !ruby/object:RI::MethodSummary 
+  name: arg_nodes
+- !ruby/object:RI::MethodSummary 
+  name: deep_array_node
+- !ruby/object:RI::MethodSummary 
+  name: deep_array_node
+- !ruby/object:RI::MethodSummary 
+  name: get_args
+- !ruby/object:RI::MethodSummary 
+  name: get_args
+name: ParseTreeArray
+superclass: Array

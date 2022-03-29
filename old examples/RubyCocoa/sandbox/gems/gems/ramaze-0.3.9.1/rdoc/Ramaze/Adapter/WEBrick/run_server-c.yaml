@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: start server on given host and port, see below for possible options.
+full_name: Ramaze::Adapter::WEBrick::run_server
+is_singleton: true
+name: run_server
+params: (host, port, options = {})
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestSexp#test_equals3_subset_match
+is_singleton: false
+name: test_equals3_subset_match
+params: ()
+visibility: public

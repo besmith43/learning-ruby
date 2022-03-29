@@ -1,0 +1,2165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGELOG</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGELOG</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGELOG
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Apr 15 12:31:06 -0500 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h3>1.4.0 (2008-04-08)</h3>
+<ul>
+<li>Merge 3 mysql patches from the bugtracker (mvyver) (200, 201, 202).
+
+</li>
+<li>Merge 2 postgresql patches from the bugtracker (a&#8230;@mellowtone.co.jp)
+(211, 212).
+
+</li>
+<li>Allow overriding of default posgres spec database via
+ENV[&#8216;SEQUEL_PG_SPEC_DB&#8217;] (jeremyevans).
+
+</li>
+<li>Allow using the <a href="../classes/Sequel/Model.html">Sequel::Model</a> as
+the first argument in a dataset join selection (jeremyevans) (170).
+
+</li>
+<li>Add simple callback mechanism to make model eager loading implementation
+easier (jeremyevans).
+
+</li>
+<li>Added <a
+href="../classes/Sequel/Error/InvalidOperation.html">Sequel::Error::InvalidOperation</a>
+class for invalid operations (198).
+
+</li>
+<li>Implemented MySQL::Database#server_version (199).
+
+</li>
+<li>Added spec configuration for MySQL socket file.
+
+</li>
+<li>Fixed transform with array tuples in postgres adapter.
+
+</li>
+<li>Changed spec configuration to Database objects instead of URIs in order to
+support custom options for spec databases.
+
+</li>
+<li>Renamed schema files.
+
+</li>
+<li>Fixed Dataset#from to work correctly with SQL functions (193).
+
+</li>
+</ul>
+<h3>1.3 (2008-03-08)</h3>
+<ul>
+<li>Added configuration file for running specs (186).
+
+</li>
+<li>Changed Database#drop_index to accept fixed arity (173).
+
+</li>
+<li>Changed column definition sql to put UNSIGNED constraint before unique in
+order to satisfy MySQL (171).
+
+</li>
+<li>Enhanced MySQL adapter to support load data local infile_, added compress
+option for mysql connection by default (172).
+
+</li>
+<li>Fixed bug when inserting hashes in array tuples mode.
+
+</li>
+<li>Changed SQLite adapter to catch RuntimeError raised when executing a
+statement and raise an Error::InvalidStatement with the offending SQL and
+error message (188).
+
+</li>
+<li>Added Error::InvalidStatement class.
+
+</li>
+<li>Fixed Dataset#reverse to not raise for unordered dataset (189).
+
+</li>
+<li>Added Dataset#unordered method and changed order to remove order if nil is
+specified (190).
+
+</li>
+<li>Fixed reversing order of ASC expression (164).
+
+</li>
+<li>Added support for :null =&gt; true option when defining table columns
+(192).
+
+</li>
+<li>Fixed <a href="../classes/Symbol.html#M000536">Symbol#method_missing</a> to
+accept variable arity (185).
+
+</li>
+</ul>
+<h3>1.2.1 (2008-02-29)</h3>
+<ul>
+<li>Added add_constraint and drop_constraint functionality to
+Database#alter_table (182).
+
+</li>
+<li>Enhanced Dataset#multi_insert to accept datasets (179).
+
+</li>
+<li>Added MySQL::Database#use method for switching database (180).
+
+</li>
+<li>Enhanced Database.uri_to_options to accept uri strings (178).
+
+</li>
+<li>Added Dataset#columns! method that always makes a roundtrip to the DB
+(177).
+
+</li>
+<li>Added new Dataset#each_page method that iterates over all pages in the
+result set (175).
+
+</li>
+<li>Added Dataset#reverse alias to Dataset#reverse_order (174).
+
+</li>
+<li>Fixed Dataset#transform_load and transform_save to create a trasnformed
+copy of the supplied hash instead of transforming it in place (184).
+
+</li>
+<li>Implemented MySQL::Dataset#replace (163).
+
+</li>
+</ul>
+<h3>1.2 (2008-02-15)</h3>
+<ul>
+<li>Added support for :varchar[100] like type declarations in create_table.
+
+</li>
+<li>Fixed rename_column in mysql adapter to support types like varchar(255)
+(159).
+
+</li>
+<li>Added support for order and limit in DELETE statement in MySQL adapter
+(160).
+
+</li>
+<li>Added checks to Dataset#multi_insert to prevent work if no values are given
+(162).
+
+</li>
+<li>Override ruby2ruby implementation of <a
+href="../classes/Proc.html#M000541">Proc#to_sexp</a> which leaks memory
+(161).
+
+</li>
+<li>Added log option, help for sequel script (157).
+
+</li>
+</ul>
+<h3>1.1 (2008-02-15)</h3>
+<ul>
+<li>Fixed Dataset#join_table to support joining of datasets (156).
+
+</li>
+<li>Changed Dataset#empty? to use EXISTS condition instead of counting records,
+for much better performance (158).
+
+</li>
+<li>Implemented insertion of multiple records in a single statement for
+postgres adapter. This feature is available only in postgres 8.2 and newer.
+
+</li>
+<li>Implemented Postgres::Database#server_version.
+
+</li>
+<li>Implemented Database#get, short for dataset.get(...).
+
+</li>
+<li>Refactored Dataset#multi_insert, added import alias, added support for
+calling multi_insert using array of columns and array of value arrays
+(thanks David Lee).
+
+</li>
+<li>Implemented Dataset#get, a replacement for select(column).first[column].
+
+</li>
+<li>Implemented Dataset#grep method, poor man&#8216;s text search.
+
+</li>
+</ul>
+<h3>1.0.10 (2008-02-13)</h3>
+<ul>
+<li>Fixed Datset#group_and_count to work inside a query block (152).
+
+</li>
+<li>Changed datasets with transforms to automatically transform hash filters
+(155).
+
+</li>
+<li>Changed Marshal stock transform to use Base64 encoding with
+backward-compatibility to support existing marshaled values (154).
+
+</li>
+<li>Added support for inserting multiple records in a single statement using
+multi_insert in MySQL adapter (153).
+
+</li>
+<li>Added support for :slice option (same as :commit_every) in
+Dataset#multi_insert.
+
+</li>
+<li>Changed Dataset#all to accept opts and iteration block.
+
+</li>
+</ul>
+<h3>1.0.9 (2008-02-10)</h3>
+<ul>
+<li>Implemented Dataset#inspect and Database#inspect (151).
+
+</li>
+<li>Added full-text searching for odbc_mssql adapter (thanks Joseph Love).
+
+</li>
+<li>Added AlterTableGenerator#add_full_text_index method.
+
+</li>
+<li>Implemented full_text indexing and searching for PostgreSQL adapter (thanks
+David Lee).
+
+</li>
+<li>Implemented full_text indexing and searching for MySQL adapter (thanks
+David Lee).
+
+</li>
+<li>Fixed Dataset#insert_sql to work with array subscript references (thanks
+Jim Morris).
+
+</li>
+</ul>
+<h3>1.0.8 (2008-02-08)</h3>
+<ul>
+<li>Added support for multiple choices in string matching expressions (147).
+
+</li>
+<li>Renamed Dataset#clone_merge to Dataset#clone, works with or without options
+for merging (148).
+
+</li>
+<li>Fixed MySQL::Database#&lt;&lt; method to always free the result in order to
+allow multiple calls in a row (149). Same also for PostgreSQL adapter.
+
+</li>
+</ul>
+<h3>1.0.7 (2008-02-05)</h3>
+<ul>
+<li>Added support for conditional filters (using if else statements) inside
+block filters (thanks Kee).
+
+</li>
+</ul>
+<h3>1.0.6 (2008-02-05)</h3>
+<ul>
+<li>Removed code pollution introduced in revs 814, 817 (really bad patch, IMO).
+
+</li>
+<li>Fixed joining datasets using aliased tables (140).
+
+</li>
+<li>Added support additional field types in postgresql adapter (146).
+
+</li>
+<li>Added support for date field types in postgresql adapter (145).
+
+</li>
+<li>Fixed Dataset#count to work correctly for grouped datasets (144).
+
+</li>
+<li>Added Dataset#select_more, Dataset#order_more methods (129).
+
+</li>
+</ul>
+<h3>1.0.5 (2008-01-25)</h3>
+<ul>
+<li>Added support for instantiating models by using the load constructor
+method.
+
+</li>
+</ul>
+<h3>1.0.4.1 (2008-01-24)</h3>
+<ul>
+<li>Fixed bin/sequel to require sequel_model if available.
+
+</li>
+</ul>
+<h3>1.0.4 (2008-01-24)</h3>
+<ul>
+<li>Added Dataset#select_all method.
+
+</li>
+<li>Changed ODBC::Database to support connection using driver and database
+name, also added support for untitled columns in ODBC::Dataset (thanks
+Leonid Borisenko).
+
+</li>
+<li>Fixed MySQL adapter to correctly format foreign key definitions (123).
+
+</li>
+<li>Changed MySQL::Dataset to allow HAVING clause on ungrouped datasets, and
+put HAVING clause before ORDER BY clause (133).
+
+</li>
+<li>Changed Dataset#group_and_count to accept multiple columns (134).
+
+</li>
+<li>Fixed database spec to open YAML file in binary mode (131).
+
+</li>
+<li>Cleaned up gem spec (132).
+
+</li>
+<li>Added Dataset#table_exists? convenience method.
+
+</li>
+</ul>
+<h3>1.0.3 (2008-01-17)</h3>
+<ul>
+<li>Added support for UNSIGNED constraint, used in MySQL? (127).
+
+</li>
+<li>Implemented constraint definitions inside Database#create_table.
+
+</li>
+<li>Fixed postgres adapter to define PGconn#async_exec as alias to exec if not
+defined (for pure-ruby postgres driver).
+
+</li>
+<li>Added <a href="../classes/String.html#M000557">String#to_date</a>. Updated
+mysql adapter to use <a
+href="../classes/String.html#M000557">String#to_date</a> for mysql date
+types (thanks drfreeze).
+
+</li>
+</ul>
+<h3>1.0.2 (2008-01-14)</h3>
+<ul>
+<li>Removed ConnectionPool, NumericExtensions. Added dependency on assistance.
+
+</li>
+</ul>
+<h3>1.0.1 (2008-01-12)</h3>
+<ul>
+<li>Changed postgres adapter to quote column references using double quotes.
+
+</li>
+<li>Applied patch for oracle adapter: fix behavior of limit and offset,
+transactions, table_exists?, tables and additional specs (thanks Liming
+Lian 122).
+
+</li>
+<li>Allow for additional filters on a grouped dataset (119 and 120)
+
+</li>
+<li>Changed mysql adapter to default to localhost if :host option is not
+specified (114).
+
+</li>
+<li>Refactored Sequelizer to use <a
+href="../classes/Proc.html#M000541">Proc#to_sexp</a> (method provided by
+r2r).
+
+</li>
+<li>Enhanced Database.connect to accept options with string keys, so it can now
+accept options loaded from YAML files. Database.connect also automatically
+converts :username option into :user for compatibility with existing YAML
+configuration files for AR and DataMapper.
+
+</li>
+</ul>
+<h3>1.0.0.1 (2008-01-03)</h3>
+<ul>
+<li>Changed MySQL adapter to support specifying socket option.
+
+</li>
+<li>Added support for limiting and paginating datasets with fixed SQL, gotten
+with DB#fetch (thanks Ruy Diaz).
+
+</li>
+<li>Added new Dataset#from_self method that returns a dataset selecting from
+the original dataset.
+
+</li>
+</ul>
+<h3>1.0 (2008-01-02)</h3>
+<ul>
+<li>Removed deprecated adapter stubs.
+
+</li>
+<li>Removed <a href="../classes/Sequel/Model.html">Sequel::Model</a>() stub.
+
+</li>
+<li>Changed name to sequel_core.
+
+</li>
+<li>100% code coverage.
+
+</li>
+<li>Fixed error behavior when sequel_model is not available.
+
+</li>
+<li>Fixed error behavior when parse_tree or ruby2ruby are not available.
+
+</li>
+</ul>
+<h3>0.5.0.2 (2008-01-01)</h3>
+<ul>
+<li>Fixed <a href="../classes/String.html#M000556">String#to_time</a> to raise
+error correctly for invalid time stamps.
+
+</li>
+<li>Improved code coverage - now at 99.2%.
+
+</li>
+</ul>
+<h3>0.5.0.1 (2007-12-31)</h3>
+<ul>
+<li>Added a stub for <a href="../classes/Sequel/Model.html">Sequel::Model</a>
+that auto-loads sequel_model.
+
+</li>
+<li>Changed Sequel.method_missing and Database.adapter_class to raise
+AdapterNotFound if an adapter could not be loaded.
+
+</li>
+<li>Fixed behavior of error trap in sequel command line tool.
+
+</li>
+</ul>
+<h3>0.5 (2007-12-30)</h3>
+<ul>
+<li>Removed model code into separate sub-project. Rearranged trunk into core,
+model and model_plugins.
+
+</li>
+</ul>
+<h3>0.4.5 (2007-12-25)</h3>
+<ul>
+<li>Added rdoc for new alter_table functionality (109).
+
+</li>
+<li>Fixed update_sql with array sub-item keys (110).
+
+</li>
+<li>Refactored model specs.
+
+</li>
+<li>Added Model#update as alias to set.
+
+</li>
+<li>Refactored validations code. Renamed Model.validations? into
+Model.has_validations?.
+
+</li>
+<li>Added initial Model validations (Thanks Lance Carlson)
+
+</li>
+<li>Added Database#set_column_default method (thanks Jim Morris.)
+
+</li>
+<li>Removed warning on uninitialized @transform value (thanks Jim Morris).
+
+</li>
+</ul>
+<h3>0.4.4.2 (2007-12-20)</h3>
+<ul>
+<li>Fixed parsing errors in Ruby 1.9.
+
+</li>
+<li>Fixed sync problem in connection_pool_spec.
+
+</li>
+<li>Changed <a href="../classes/String.html#M000556">String#to_time</a> to
+raise Error::InvalidValue if Time.parse fails.
+
+</li>
+<li>Refactored sequel error classes.
+
+</li>
+</ul>
+<h3>0.4.4.1 (2007-12-19)</h3>
+<ul>
+<li>Fixed schema generation code to use field quoting and support
+adapter-specific literalization of default values (108).
+
+</li>
+</ul>
+<h3>0.4.4 (2007-12-17)</h3>
+<ul>
+<li>Implemented Database#rename_table (104).
+
+</li>
+<li>Fixed drop_index in mysql adapter (103).
+
+</li>
+<li>Added ALTER TABLE specs for postgres, sqlite and mysql adapters. Added
+custom alter_table behavior for sqlite and mysql adapters (101, 102).
+
+</li>
+<li>Added direct Database API for altering tables.
+
+</li>
+<li>Added Database#alter_table method with support for adding, dropping,
+renaming, modifying columns and adding and droppping indexes.
+
+</li>
+<li>Added unique schema method for defining unique indexes (thanks Dado).
+
+</li>
+<li>Implemented unfolding of each calls inside sequelizer blocks (thanks Jim
+Morris).
+
+</li>
+</ul>
+<h3>0.4.3 (2007-12-15)</h3>
+<ul>
+<li>Fixed Dataset#update to accept strings (98).
+
+</li>
+<li>Fixed Model.[] to raise for boolean argument (97).
+
+</li>
+<li>Added Database#add_index method (thanks coda.hale).
+
+</li>
+<li>Added error reporting for filtering on comparison not in a block (thanks
+Jim Morris).
+
+</li>
+<li>Added support for inline index definition (thanks Dado).
+
+</li>
+<li>Added Database#create_table! method for forcibly creating a table (thanks
+Dado).
+
+</li>
+<li>Added support for using Dataset#update with block.
+
+</li>
+<li>Changed subscript access to use | operator.
+
+</li>
+<li>Fixed subscript access in sequelizer.
+
+</li>
+<li>Added support for subscript access using <a
+href="../classes/Symbol.html">Symbol</a>#/ operator.
+
+</li>
+</ul>
+<h3>0.4.2.2 (2007-12-10)</h3>
+<ul>
+<li>Improved code coverage.
+
+</li>
+<li>Fixed Dataset#count to work properly with datasets with fixed SQL (when
+using fetch).
+
+</li>
+<li>Added Model.create_with_params method that filters the given parameters
+accordring to the model&#8216;s columns (thanks Aman Gupta).
+
+</li>
+</ul>
+<h3>0.4.2.1 (2007-12-09)</h3>
+<ul>
+<li>Refactored and fixed Dataset#reverse_order to work with field quoting
+(thanks Christian).
+
+</li>
+<li>Fixed problem with field quoting in insert statements.
+
+</li>
+<li>Changed sequelizer code to silently fail on any error when requiring
+parsetree and ruby2ruby.
+
+</li>
+<li>Added Database#create_view, create_or_replace_view and drop_view methods.
+Also implemented Dataset#create_view and create_or_replace_view convenience
+methods.
+
+</li>
+<li>Keep DRY by re-using Model#[]= from method_missing.
+
+</li>
+<li>Added Model.fetch alias for DB.fetch.set_model(Model)
+
+</li>
+</ul>
+<h3>0.4.2 (2007-12-07)</h3>
+<ul>
+<li>Implemented Model#save_changes.
+
+</li>
+<li>Extended Model#save to accept specific columns to update.
+
+</li>
+<li>Implemented experimental JDBC adapter.
+
+</li>
+<li>Added adapter skeleton as starting point for new adapters.
+
+</li>
+<li>Cleaned-up adapters and moved automatic requiring of &#8216;sequel&#8217;
+to adapter stubs.
+
+</li>
+</ul>
+<h3>0.4.1.3 (2007-12-05)</h3>
+<ul>
+<li>Better plugin conventions.
+
+</li>
+<li>Added experimental OpenBase adapter.
+
+</li>
+<li>Fixed <a href="../classes/Sequel.html">Sequel</a>.&lt;xxx&gt; methods to
+accept options hash as well as database name. Fixed Sequel.connect to
+accept options hash as well as URI (Wayne).
+
+</li>
+</ul>
+<h3>0.4.1.2 (2007-12-04)</h3>
+<ul>
+<li>Added release rake task (using RubyForge).
+
+</li>
+<li>Changed Model.is to accept variable arity.
+
+</li>
+<li>Implemented plugin loading for model classes.
+
+</li>
+<li>Fixed odbc-mssql and odbc adapters (thanks Dusty.)
+
+</li>
+<li>Implemented odbc-mssql adapter (thanks Dusty.)
+
+</li>
+</ul>
+<h3>0.4.1.1 (2007-11-27)</h3>
+<ul>
+<li>Fixed first and last functionality in Informix::Dataset (thanks Gerardo
+Santana).
+
+</li>
+</ul>
+<h3>0.4.1 (2007-11-25)</h3>
+<ul>
+<li>Put adapter files in lib/sequel/adapters. Requiring sequel/&lt;adapter&gt;
+is now deprecated. Users can now just require &#8216;sequel&#8217; and
+adapters are automagically loaded (93).
+
+</li>
+</ul>
+<h3>0.4.0 (2007-11-24)</h3>
+<ul>
+<li>Reorganized lib directory structure.
+
+</li>
+<li>Added support for dbi-xxx URI schemes (86).
+
+</li>
+<li>Fixed problem in Database#uri where setting the password would raise an
+error (87).
+
+</li>
+<li>Improved Dataset#insert_sql to correctly handle string keys (92).
+
+</li>
+<li>Improved error-handling for worker threads. Errors are saved to an array
+and are accessible through errors (91).
+
+</li>
+<li>Dataset#uniq/distinct can now accept a column list for DISTINCT ON clauses.
+
+</li>
+<li>Fixed Model.all.
+
+</li>
+<li>Fixed literalization of strings with escape sequences in postgres adapter
+(90).
+
+</li>
+<li>Added support for literalizing BigDecimal values (89).
+
+</li>
+<li>Fixed column qualification for joined datasets (thanks Christian).
+
+</li>
+<li>Implemented experimental informix adapter.
+
+</li>
+</ul>
+<h3>0.3.4.1 (2007-11-10)</h3>
+<ul>
+<li>Changed Dataset#select_sql to support queries without a FROM clause.
+
+</li>
+</ul>
+<h3>0.3.4 (2007-11-10)</h3>
+<ul>
+<li>Fixed MySQL adapter to allow calling stored procedures (thanks Sebastian).
+
+</li>
+<li>Changed Dataset#each to always return self.
+
+</li>
+<li>Fixed SQL functions without arguments in block filters.
+
+</li>
+<li>Implemented super-cool Symbol#cast_as method.
+
+</li>
+<li>Fixed error message in command-line tool if failed to load adapter (85).
+
+</li>
+<li>Refactored code relating to column references for better extendibility
+(88).
+
+</li>
+<li>Tiny fix to Model#run_hooks.
+
+</li>
+</ul>
+<h3>0.3.3 (2007-11-04)</h3>
+<ul>
+<li>Revised code to generate SQL statements without trailing semicolons.
+
+</li>
+<li>Added <a href="../classes/Sequel/Worker.html">Sequel::Worker</a>
+implementation of a simple worker thread for asynchronous execution.
+
+</li>
+<li>Added spec for Oracle adapter.
+
+</li>
+<li>Fixed Oracle adapter to format INSERT statements without semicolons (thanks
+Liming Lian).
+
+</li>
+<li>Renamed alias to Array#keys as Array#columns instead of Array#fields.
+
+</li>
+<li>Renamed FieldCompositionMethods as ColumnCompositionMethods.
+
+</li>
+<li>Implemented Sequel::NumericExtensions to provide stuff like 30.days.ago.
+
+</li>
+</ul>
+<h3>0.3.2 (2007-11-01)</h3>
+<ul>
+<li>Added to_column_name as alias to to_field_name, column_title as alias to
+field_title.
+
+</li>
+<li>Added Dataset#interval method for getting interval between minimum/maximum
+values for a column.
+
+</li>
+<li>Fixed Oracle::Database#execute (84).
+
+</li>
+<li>Added group_and_count as general implementation for count_by_xxx.
+
+</li>
+<li>Added count_by magic method.
+
+</li>
+<li>Added Dataset#range method for getting the minimum/maximum values for a
+column.
+
+</li>
+<li>Fixed timestamp translation in SQLite adapter (83).
+
+</li>
+<li>Experimental DB2 adapter.
+
+</li>
+<li>Added Dataset#set as alias to Dataset#update.
+
+</li>
+<li>Removed long deprecated expressions.rb code.
+
+</li>
+<li>Better documentation.
+
+</li>
+<li>Implemented Dataset magic methods: order_by_xxx, group_by_xxx,
+filter_by_xxx, all_by_xxx, first_by_xxx, last_by_xxx.
+
+</li>
+<li>Changed Model.create and Model.new to accept a block.
+
+</li>
+</ul>
+<h3>0.3.1 (2007-10-30)</h3>
+<ul>
+<li>Typo fixes (79).
+
+</li>
+<li>Added require &#8216;yaml&#8217; to dataset.rb (78).
+
+</li>
+<li>Changed postgres adapter to use the ruby-postgres library&#8216;s type
+conversion if available (76).
+
+</li>
+<li>Fixed string literalization in mysql adapter for strings with comment
+backslashes in them (75).
+
+</li>
+<li>Fixed ParseTree dependency to work with version 2.0.0 and later (74).
+
+</li>
+<li>foreign_key definitions now accept :key option for specifying the remote
+key (73).
+
+</li>
+<li>Fixed Model#method_missing to not raise error for columns not in the table
+but for which a value exists (77).
+
+</li>
+<li>New documentation for Model.
+
+</li>
+<li>Implemented Oracle adapter based on ruby-oci8 library.
+
+</li>
+<li>Implemented Model#pk_hash. Is it really necessary?
+
+</li>
+<li>Deprecated Model#pkey. Implemented better Model#pk method.
+
+</li>
+<li>Specs and docs for Model.one_to_one, Model.one_to_many macros.
+
+</li>
+</ul>
+<h3>0.3.0.1 (2007-10-20)</h3>
+<ul>
+<li>Changed Database#fetch to return a modified dataset.
+
+</li>
+</ul>
+<h3>0.3 (2007-10-20)</h3>
+<ul>
+<li>Added stock transforms to Dataset#transform. Refactored Model.serialize.
+
+</li>
+<li>Added Database#logger= method for setting the database logger object.
+
+</li>
+<li>Fixed Model.[] to act as shortcut to Model.find when a hash is given (71).
+
+</li>
+<li>Added support for old and new decimal types in MySQL adapter, and updated
+MYSQL_TYPES with MySQL 5.0 constants (72).
+
+</li>
+<li>Implemented Database#disconnect method for all adapters.
+
+</li>
+<li>Fixed small bug in <a href="../classes/ArrayKeys.html">ArrayKeys</a>
+module.
+
+</li>
+<li>Implemented model caching by primary key.
+
+</li>
+<li>Separated Model.find and Model.[] functionality. Model.find takes a filter.
+Model.[] is strictly for finding by primary keys.
+
+</li>
+<li>Enhanced Dataset#first to accept a filter block. Model#find can also now
+accept a filter block.
+
+</li>
+<li>Changed Database#[] to act as shortcut to fetch if a string is given.
+
+</li>
+<li>Renamed Database#each to fetch. If no block is given, the method returns an
+enumerator.
+
+</li>
+<li>Changed Dataset#join methods to correctly literalize values in join
+conditions (70).
+
+</li>
+<li>Fixed filter with ranges to correctly literalize field names (69).
+
+</li>
+<li>Implemented Database#each method for quickly retrieving records with
+arbitrary SQL (thanks Aman Gupta).
+
+</li>
+<li>Fixed bug in postgres adapter where a LiteralString would be literalized as
+a regular <a href="../classes/String.html">String</a>.
+
+</li>
+<li>Fixed SQLite insert with subquery (68).
+
+</li>
+<li>Reverted back to hashes as default mode. Added <a
+href="../classes/Sequel.html#M000558">Sequel.use_array_tuples</a> and <a
+href="../classes/Sequel.html#M000559">Sequel.use_hash_tuples</a> methods.
+
+</li>
+<li>Fixed problem with arrays with keys when using delete.
+
+</li>
+<li>Implemented <a href="../classes/ArrayKeys.html">ArrayKeys</a> as substitute
+for ArrayFields.
+
+</li>
+<li>Added Dataset#each_hash method.
+
+</li>
+<li>Rewrote SQLite::Database#transaction to use sqlite3-ruby library
+implementation of transactions.
+
+</li>
+<li>Fixed Model.destroy_all to work correctly in cases where no before_destroy
+hook is defined and an after_destroy hook is defined.
+
+</li>
+<li>Restored Model.has_hooks? implementation.
+
+</li>
+<li>Changed Database#&lt;&lt; to strip comments and whitespace only when an
+array is given.
+
+</li>
+<li>Changed Schema::Generator#primary_key to accept calls with the type
+argument omitted.
+
+</li>
+<li>Hooks can now be prepended or appended by choice.
+
+</li>
+<li>Changed Model.subset to define filter method on the underlying dataset
+instead of the model class.
+
+</li>
+<li>Fixed Dataset#transform to work with array fields.
+
+</li>
+<li>Added Dataset#to_csv method.
+
+</li>
+<li>PrettyTable can now extract column names from arrayfields.
+
+</li>
+<li>Converted ado, dbi, odbc adapters to use arrayfields instead of hashes.
+
+</li>
+<li>Fixed composite key support.
+
+</li>
+<li>Fixed Dataset#insert_sql, update_sql to support array fields.
+
+</li>
+<li>Converted sqlite, mysql, postgres adapters to use arrayfields instead of
+hashes.
+
+</li>
+<li>Extended Dataset#from to auto alias sub-queries.
+
+</li>
+<li>Extended Dataset#from to accept hash for aliasing tables.
+
+</li>
+<li>Added before_update, after_update hooks.
+
+</li>
+</ul>
+<h3>0.2.1.1 (2007-10-07)</h3>
+<ul>
+<li>Added Date literalization to sqlite adapter (60).
+
+</li>
+<li>Changed Model.serialize to allow calling it after the class is defined
+(59).
+
+</li>
+<li>Fixed after_create hooks to allow calling save inside the hook (58).
+
+</li>
+<li>Fixed MySQL quoting of sql functions (57).
+
+</li>
+<li>Implemented rollback! global method for cancelling transactions in
+progress.
+
+</li>
+<li>Fixed =~ operator in Sequelizer.
+
+</li>
+<li>Fixed ODBC::Dataset#fetch_rows (thanks Dusty).
+
+</li>
+<li>Renamed Model.recreate_table to create_table!. recreate_table is deprecated
+and will issue a warning (56).
+
+</li>
+</ul>
+<h3>0.2.1 (2007-09-24)</h3>
+<ul>
+<li>Added default implementation of Model.primary_key_hash.
+
+</li>
+<li>Fixed <a href="../classes/Sequel/Model.html">Sequel::Model</a>() to set
+dataset for inherited classes.
+
+</li>
+<li>Rewrote Model.serialize to use Dataset#transform.
+
+</li>
+<li>Implemented Dataset#transform.
+
+</li>
+<li>Added gem spec for Windows (without ParseTree dependency).
+
+</li>
+<li>Added support for dynamic strings in Sequelizer (49).
+
+</li>
+<li>Query branch merged into trunk.
+
+</li>
+<li>Implemented self-changing methods.
+
+</li>
+<li>Add support for ternary operator to Sequelizer.
+
+</li>
+<li>Fixed sequelizer to evaluate expressions if they don&#8216;t involve
+symbols or literal strings.
+
+</li>
+<li>Added protection against using each, delete, insert, update inside query
+blocks.
+
+</li>
+<li>Improved Model#method_missing to deal with invalid attributes.
+
+</li>
+<li>Implemented Dataset#query.
+
+</li>
+<li>Added Dataset#group_by as alias for Dataset#group.
+
+</li>
+<li>Added Dataset#order_by as alias for Dataset#order.
+
+</li>
+<li>More model refactoring. Added support for composite keys.
+
+</li>
+<li>Added Dataset#empty? method (46).
+
+</li>
+<li>Fixed Symbol#to_field_name to support names with numbers and upper-case
+characters (45).
+
+</li>
+<li>Added install_no_doc rake task.
+
+</li>
+<li>Partial refactoring of model code.
+
+</li>
+<li>Refactored dataset-model association and added Dataset#set_row_filter
+method.
+
+</li>
+<li>Added support for case-sensitive regexps to mysql adapter.
+
+</li>
+<li>Changed mysql adapter to support encoding option as well.
+
+</li>
+<li>Added charset/encoding option to postgres adapter.
+
+</li>
+<li>Implemented Model.serialize (thanks Aman Gupta.)
+
+</li>
+<li>Changed Model.create to INSERT DEFAULT VALUES instead of (id) VALUES (null)
+(brings back 41.)
+
+</li>
+<li>Fixed Model.new to work without arguments.
+
+</li>
+<li>Added Model.no_primary_key method to allow models without primary keys.
+
+</li>
+<li>Added Model#this method (42 thanks Duane Johnson).
+
+</li>
+<li>Fixed Dataset#insert_sql to use DEFAULT VALUES clause if argument is an
+empty hash.
+
+</li>
+<li>Fixed Model.create to work correctly when no argument is passed (41).
+
+</li>
+</ul>
+<h3>0.2.0.2 (2007-09-07)</h3>
+<ul>
+<li>Dataset#insert can now accept subqueries.
+
+</li>
+<li>Changed Migrator.apply to return the version.
+
+</li>
+<li>Changed <a href="../classes/Sequel/Model.html">Sequel::Model</a>() to cache
+intermediate classes so descendant classes can be reopened (39).
+
+</li>
+<li>Added :charset option to MySQL adapter (40).
+
+</li>
+<li>Fixed Dataset#exclude to add parens around NOT expression (38).
+
+</li>
+<li>Fixed use of sub-queries with all comparison operators in block filters
+(38).
+
+</li>
+<li>Fixed arithmetic expressions in block filters to not be literalized.
+
+</li>
+<li>Changed <a href="../classes/Symbol.html#M000536">Symbol#method_missing</a>
+to return LiteralString.
+
+</li>
+<li>Changed PrettyTable to right-align numbers.
+
+</li>
+<li>Fixed Model.create_table (thanks Duane Johnson.)
+
+</li>
+</ul>
+<h3>0.2.0.1 (2007-09-04)</h3>
+<ul>
+<li>Improved support for invoking methods with inline procs inside block
+filters.
+
+</li>
+</ul>
+<h3>0.2.0 (2007-09-02)</h3>
+<ul>
+<li>Fixed Model.drop_table (thanks Duane Johnson.)
+
+</li>
+<li>Dataset#each can now return rows for arbitrary SQL by specifying :sql
+option.
+
+</li>
+<li>Added spec for postgres adapter.
+
+</li>
+<li>Fixed Model.method_missing to work with new SQL generation.
+
+</li>
+<li>Fixed compare_expr to support regexps.
+
+</li>
+<li>Fixed postgres, mysql adapters to support regexps.
+
+</li>
+<li>More specs for block filters. Updated README.
+
+</li>
+<li>Added support for globals and $X macros in block filters.
+
+</li>
+<li>Fixed Sequelizer to not fail if ParseTree or Ruby2Ruby gems are missing.
+
+</li>
+<li>Renamed <a href="../classes/String.html#M000555">String#expr</a> into <a
+href="../classes/String.html#M000554">String#lit</a> (expr should be
+deprecated in future versions).
+
+</li>
+<li>Renamed Sequel::ExpressionString into LiteralString.
+
+</li>
+<li>Fixed <a href="../classes/Symbol.html">Symbol</a>#[] to return an
+ExpressionString, so as not to be literalized.
+
+</li>
+<li>Renamed Dataset::Expressions to Dataset::Sequelizer.
+
+</li>
+<li>Renamed Expressions#format_re_expression to match_expr.
+
+</li>
+<li>Renamed Expressions#format_eq_expression to compare_expr.
+
+</li>
+<li>Added support for Regexp in MySQL adapter.
+
+</li>
+<li>Refactored Regexp expressions into a separate format_re_expression method.
+
+</li>
+<li>Added support for arithmetic in proc filters.
+
+</li>
+<li>Added support for nested proc expressions, more specs.
+
+</li>
+<li>Added support for SQL function using symbols, e.g. :sum[:x].
+
+</li>
+<li>Fixed deadlock bug in ConnectionPool.
+
+</li>
+<li>Removed deprecated old expressions.rb.
+
+</li>
+<li>Rewrote <a href="../classes/Proc.html">Proc</a> filter feature using
+ParseTree.
+
+</li>
+<li>Added support for additional functions on columns using <a
+href="../classes/Symbol.html#M000536">Symbol#method_missing</a>.
+
+</li>
+<li>Added support for supplying filter block to DB#[] method, to allow stuff
+like DB[:nodes] {:path =~ /^icex1/}.
+
+</li>
+</ul>
+<h3>0.1.9.12 (2007-08-26)</h3>
+<ul>
+<li>Added spec for PrettyTable.
+
+</li>
+<li>Added specs for Schema::Generator and Model (36 thanks technoweenie).
+
+</li>
+<li>Fixed Sequel::Model.set_schema (36 thanks technoweenie.)
+
+</li>
+<li>Added support for no options on Schema::Generator#foreign_key (36 thanks
+technoweenie.)
+
+</li>
+<li>Implemented (restored?) Schema::Generator#primary_key_name (36 thanks
+technoweenie.)
+
+</li>
+<li>Better spec code coverage.
+
+</li>
+</ul>
+<h3>0.1.9.11 (2007-08-24)</h3>
+<ul>
+<li>Changed Dataset#set_model to allow supplying additional arguments to the
+model&#8216;s initialize method (35). Thanks Sunny Hirai.
+
+</li>
+</ul>
+<h3>0.1.9.10 (2007-08-22)</h3>
+<ul>
+<li>Changed schema generation code to generate separate statements for CREATE
+TABLE and each CREATE INDEX (34).
+
+</li>
+<li>Refactored Dataset::SQL#field_name for better support of different field
+quoting standards by specific adapters.
+
+</li>
+<li>Added current_page_record_count for paginated datasets.
+
+</li>
+<li>Removed Database#literal and included Dataset::SQL instead.
+
+</li>
+<li><a href="../classes/Sequel/Dataset.html">Sequel::Dataset</a>:SQL#field_name
+can now take a hash (as well as select and any method that uses field_name)
+for aliasing column names. E.g. DB[:test].select(:_qqa =&gt;
+&#8216;Date&#8217;).sql #=&gt; &#8216;SELECT _qqa AS Date FROM test&#8217;.
+
+</li>
+<li>Moved SingleThreadedPool to lib/sequel/connection_pool.rb.
+
+</li>
+<li>Changed SQLite::Dataset to return affected rows for delete and update (33).
+
+</li>
+<li>ADO adapter: Added use of <a
+href="../classes/Enumerable.html">Enumerable</a> for Recordset#Fields,
+playing it safe and moving to the first row before getting results, and
+changing the auto_increment constant to work for MSSQL.
+
+</li>
+</ul>
+<h3>0.1.9.9 (2007-08-18)</h3>
+<ul>
+<li>New ADO adapter by cdcarter (31).
+
+</li>
+<li>Added automatic column aliasing to avg, sum, min and max (30).
+
+</li>
+<li>Fixed broken Sequel::DBI::Dataset#fetch_rows (29 thanks cdcarter.)
+
+</li>
+</ul>
+<h3>0.1.9.8 (2007-08-15)</h3>
+<ul>
+<li>Fixed DBI adapter.
+
+</li>
+</ul>
+<h3>0.1.9.7 (2007-08-15)</h3>
+<ul>
+<li>Added support for executing batch statements in sqlite adapter.
+
+</li>
+<li>Changed current_page_record_range to return 0..0 for an invalid page.
+
+</li>
+<li>Fixed joining of aliased tables.
+
+</li>
+<li>Improved Symbol#to_field_name to prevent false positives.
+
+</li>
+<li>Implemented Dataset#multi_insert with :commit_every option.
+
+</li>
+<li>More docs for Dataset#set_model.
+
+</li>
+<li>Implemented automatic creation of convenience methods for each adapter
+(e.g. Sequel.sqlite etc.)
+
+</li>
+</ul>
+<h3>0.1.9.6 (2007-08-13)</h3>
+<ul>
+<li>Refactored schema definition code. Gets rid of famous primary_key problem
+as well as other issues (e.g. issue 22).
+
+</li>
+<li>Added pagination_record_count, page_range and current_page_record_range for
+paginated datasets.
+
+</li>
+<li>Changed MySQL adapter to automatically reconnect (issue 26).
+
+</li>
+<li>Changed <a href="../classes/Sequel.html">Sequel</a>() to accept variable
+arity.
+
+</li>
+<li>Added :elements option to column definition, in order to support ENUM and
+SET types.
+
+</li>
+</ul>
+<h3>0.1.9.5 (2007-08-12)</h3>
+<ul>
+<li>Fixed migration docs.
+
+</li>
+<li>Removed dependency on <a href="../classes/PGconn.html">PGconn</a> in Schema
+class.
+
+</li>
+</ul>
+<h3>0.1.9.4 (2007-08-11)</h3>
+<ul>
+<li>Added Sequel.dbi convenience method for using DBI connection strings to
+open DBI databases.
+
+</li>
+</ul>
+<h3>0.1.9.3 (2007-08-10)</h3>
+<ul>
+<li>Added support for specifying field size in schema definitions (thanks
+Florian Aßmann.)
+
+</li>
+<li>Added migration code based on work by Florian Aßmann.
+
+</li>
+<li>Reintroduced metaid dependency. No need to keep a local copy of it.
+
+</li>
+</ul>
+<h3>0.1.9.2 (2007-07-24)</h3>
+<ul>
+<li>Removed metaid dependency. Re-factored requires in lib/sequel.rb.
+
+</li>
+</ul>
+<h3>0.1.9.1 (2007-07-22)</h3>
+<ul>
+<li>Improved robustness of MySQL::Dataset#field_name.
+
+</li>
+<li>Added Sequel.single_threaded= convenience method.
+
+</li>
+</ul>
+<h3>0.1.9 (2007-07-21)</h3>
+<ul>
+<li>Fixed update_sql and insert_sql to support field quoting by calling
+field_name.
+
+</li>
+<li>Implemented automatic data type conversion in mysql adapter.
+
+</li>
+<li>Added support for boolean literals in mysql adapter.
+
+</li>
+<li>Added support for ORDER and LIMIT clauses in UPDATE statements in mysql
+adapter.
+
+</li>
+<li>Implemented correct field quoting (using back-ticks) in mysql adapter.
+
+</li>
+<li>Wrote basic MySQL spec.
+
+</li>
+<li>Fixd MySQL::Dataset to return correct data types with symbols as hash keys.
+
+</li>
+<li>Removed discunctional MySQL::Database#transaction.
+
+</li>
+<li>Added support for single threaded operation.
+
+</li>
+<li>Fixed bug in Dataset#format_eq_expression where <a
+href="../classes/Range.html">Range</a> objects would not be literalized
+correctly.
+
+</li>
+<li>Added parens around postgres LIKE expressions using regexps.
+
+</li>
+</ul>
+<h3>0.1.8 (2007-07-10)</h3>
+<ul>
+<li>Implemented Dataset#columns for retrieving the columns in the result set.
+
+</li>
+<li>Updated Model with changes to how model-associated datasets work.
+
+</li>
+<li>Beefed-up specs. Coverage is now at 95.0%.
+
+</li>
+<li>Added support for polymorphic datasets.
+
+</li>
+<li>The adapter dataset interface was simplified and standardized. Only four
+methods need be overriden: fetch_rows, update, insert and delete.
+
+</li>
+<li>The Dataset class was refactored. The bulk of the dataset code was moved
+into separate modules.
+
+</li>
+<li>Renamed Dataset#hash_column to Dataset#to_hash.
+
+</li>
+<li>Added some common pragmas to sqlite adapter.
+
+</li>
+<li>Added Postgres::Dataset#analyze for EXPLAIN ANALYZE queries.
+
+</li>
+<li>Fixed broken Postgres::Dataset#explain.
+
+</li>
+</ul>
+<h3>0.1.7</h3>
+<ul>
+<li>Removed db.synchronize wrapping calls in sqlite adapter.
+
+</li>
+<li>Implemented Model.join method to restrict returned columns to the model
+table (thanks Pedro Gutierrez).
+
+</li>
+<li>Implemented Dataset#paginate method.
+
+</li>
+<li>Fixed after_destroy hook.
+
+</li>
+<li>Improved Dataset#first and last to accept a filter hash.
+
+</li>
+<li>Added Dataset#[]= method.
+
+</li>
+<li>Added <a href="../classes/Sequel.html">Sequel</a>() convenience method.
+
+</li>
+<li>Fixed Dataset#first to include a LIMIT clause for a single record.
+
+</li>
+<li>Small fix to Postgres driver to return a primary_key value for the inserted
+record if it is specified in the insertion values (thanks Florian Aßmann
+and Pedro Gutierrez).
+
+</li>
+<li>Fixed Symbol#DESC to support qualified notation (thanks Pedro Gutierrez).
+
+</li>
+</ul>
+<h3>0.1.6</h3>
+<ul>
+<li>Fixed Model#method_missing to raise for an invalid attribute.
+
+</li>
+<li>Fixed PrettyTable to print model objects (thanks snok.)
+
+</li>
+<li>Fixed ODBC timestamp conversion to return DateTime rather than Time object
+(thanks snok.)
+
+</li>
+<li>Fixed Model.method_missing (thanks snok.)
+
+</li>
+<li>Model.method_missing now creates stubs for calling Model.dataset methods.
+Methods like Model.each etc are removed.
+
+</li>
+<li>Changed default join type to INNER JOIN (thanks snok.)
+
+</li>
+<li>Added support for literal expressions, e.g. DB[:items].filter(:col1 =&gt;
+&#8216;col2 - 10&#8217;.expr).
+
+</li>
+<li>Added Dataset#and.
+
+</li>
+<li>SQLite adapter opens a memory DB if no database is specified, e.g.
+Sequel.open &#8216;sqlite:/&#8217;.
+
+</li>
+<li>Added Dataset#or, pretty nifty.
+
+</li>
+</ul>
+<h3>0.1.5</h3>
+<ul>
+<li>Fixed Dataset#join to support multiple joins. Added left_outer_join,
+right_outer_join, full_outer_join, inner_join methods.
+
+</li>
+</ul>
+<h3>0.1.4</h3>
+<ul>
+<li>Added <a href="../classes/String.html#M000553">String#split_sql</a>.
+
+</li>
+<li>Implemented <a href="../classes/Array.html#M000538">Array#to_sql</a> and <a
+href="../classes/String.html#M000552">String#to_sql</a>. Database#to_sql
+can now take an array of strings and convert into an SQL string. Comments
+and excessive white-space are removed.
+
+</li>
+<li>Improved Schema generator to support data types as method names:
+DB.create_table :test do
+
+<pre>
+  integer :abc
+  text :def
+  ...
+</pre>
+<p>
+end
+</p>
+</li>
+<li>Implemented ODBC adapter.
+
+</li>
+</ul>
+<h3>0.1.3</h3>
+<ul>
+<li>Implemented DBI adapter.
+
+</li>
+<li>Refactored database connection code. Now handled through Database#connect.
+
+</li>
+</ul>
+<h3>0.1.2</h3>
+<ul>
+<li>The first opened database is automatically assigned to to Model.db.
+
+</li>
+<li>Removed SequelConnectionError. Exception class errors are converted to
+RuntimeError.
+
+</li>
+<li>Added support for UNION, INTERSECT and EXCEPT set operations.
+
+</li>
+<li>Fixed Dataset#single_record to return nil if no record is found.
+
+</li>
+<li>Updated specs to conform to RSpec 1.0.
+
+</li>
+<li>Added Model#find_or_create method.
+
+</li>
+<li>Fixed MySQL::Dataset#query_single (thanks Dries Harnie.)
+
+</li>
+<li>Added Model.subset method. Fixed Model.filter and Model.exclude to accept
+blocks.
+
+</li>
+<li>Added Database#uri method.
+
+</li>
+<li>Refactored and removed deprecated code in postgres adapter.
+
+</li>
+</ul>
+<h3>0.1.1</h3>
+<ul>
+<li>More documentation for Dataset.
+
+</li>
+<li>Added Dataset#size as alias to Dataset#count.
+
+</li>
+<li>Changed Database#&lt;&lt; to call execute (instead of being an alias). Thus
+it will work for descendants as well.
+
+</li>
+<li>Fixed Sequel.open to accept variable arity.
+
+</li>
+<li>Refactored Model#refresh, Model.create. Removed Model#reload.
+
+</li>
+<li>Refactored Model hooks.
+
+</li>
+<li>Cleaned up Dataset API.
+
+</li>
+</ul>
+<h3>0.1.0</h3>
+<ul>
+<li>Changed Database#create_table to only accept a block. Nobody&#8216;s gonna
+use the other way.
+
+</li>
+<li>Removed Dataset#[]= method. Too confusing and not really useful.
+
+</li>
+<li>Fixed ConnectionPool#hold to wrap exceptions only once.
+
+</li>
+<li>Dataset#where_list Renamed Dataset#expression_list.
+
+</li>
+<li>Added support for qualified fields in <a
+href="../classes/Proc.html">Proc</a> expressions (e.g. filter {items.id ==
+1}.)
+
+</li>
+<li>Added like? and in? <a href="../classes/Proc.html">Proc</a> expression
+operators.
+
+</li>
+<li>Added require &#8216;date&#8217; in dataset.rb. Is this a 1.8.5 thing?
+
+</li>
+<li>Refactored Dataset to use literal strings instead of format strings (slight
+performance improvement and better readability.)
+
+</li>
+<li>Added support for literalizing Date objects.
+
+</li>
+<li>Refactored literalization of Time objects.
+
+</li>
+</ul>
+<h3>0.0.20</h3>
+<ul>
+<li>Refactored Dataset where clause construction to use expressions.
+
+</li>
+<li>Implemented <a href="../classes/Proc.html">Proc</a> expressions (adapted
+from a great idea by Sam Smoot.)
+
+</li>
+<li>Fixed Model#map.
+
+</li>
+<li>Documentation for ConnectionPool.
+
+</li>
+<li>Specs for Database.
+
+</li>
+</ul>
+<h3>0.0.19</h3>
+<ul>
+<li>More specs for Dataset.
+
+</li>
+<li>Fixed Dataset#invert_order to work correctly with strings.
+
+</li>
+<li>Fixed Model#== to check equality of values.
+
+</li>
+<li>Added Model#exclude and Model#order.
+
+</li>
+<li>Fixed Dataset#order and Dataset#group to behave correctly when supplied
+with qualified field name symbols.
+
+</li>
+<li>Removed Database#literal. Shouldn&#8216;t have been there.
+
+</li>
+<li>Added SQLite::Dataset#explain. Returns an array of opcode hashes.
+
+</li>
+<li>Specs for ConnectionPool.
+
+</li>
+</ul>
+<h3>0.0.18</h3>
+<ul>
+<li>Implemented SequelError and SequelConnectionError classes.
+ConnectionPool#hold now catches any connection errors and reraises them
+SequelConnectionError.
+
+</li>
+<li>Removed duplication in Database#[].
+
+</li>
+<li>:from and :select options are now always arrays (patch by Alex Bradbury.)
+
+</li>
+<li>Fixed Dataset#exclude to work correctly (patch and specs by Alex Bradbury.)
+
+</li>
+</ul>
+<h3>0.0.17</h3>
+<ul>
+<li>Fixed Postgres::Database#tables to return table names as symbols (caused
+problem when using Database#table_exists?).
+
+</li>
+<li>Fixed Dataset#from to have variable arity, like Dataset#select and
+Dataset#where (patch by Alex Bradbury.)
+
+</li>
+<li>Added support for GROUP BY and HAVING clauses (patches by Alex Bradbury.)
+Refactored Dataset#filter.
+
+</li>
+<li>More specs.
+
+</li>
+<li>Refactored Dataset#where for better composability.
+
+</li>
+<li>Added Dataset#[]= method.
+
+</li>
+<li>Added support for DISTINCT and OFFSET clauses (patches by Alex Bradbury.)
+Dataset#limit now accepts ranges. Added Dataset#uniq and distinct methods.
+
+</li>
+</ul>
+<h3>0.0.16</h3>
+<ul>
+<li>More documentation.
+
+</li>
+<li>Added support for subqueries in Dataset#literal.
+
+</li>
+<li>Added support for Model.all_by_XXX methods through Model.method_missing.
+
+</li>
+<li>Added basic SQL logging to Database.
+
+</li>
+<li>Added <a href="../classes/Enumerable.html#M001082">Enumerable#send_each</a>
+convenience method.
+
+</li>
+<li>Changed Dataset#destroy to return the number of deleted records.
+
+</li>
+</ul>
+<h3>0.0.15</h3>
+<ul>
+<li>Improved Dataset#insert_sql to allow arrays as well as hashes.
+
+</li>
+<li>Database#drop_table now accepts a list of table names.
+
+</li>
+<li>Added Model#id to to return the id column.
+
+</li>
+</ul>
+<h3>0.0.14</h3>
+<ul>
+<li>Fixed Model&#8216;s attribute accessors (hopefully for the last time).
+
+</li>
+<li>Changed Model.db and Model.db= to allow different databases for different
+model classes.
+
+</li>
+<li>Fixed bug in aggregate methods (max, min, etc) for datasets using record
+classes.
+
+</li>
+</ul>
+<h3>0.0.13</h3>
+<ul>
+<li>Fixed Model#method_missing to do both find, filter and attribute accessors.
+duh.
+
+</li>
+<li>Fixed bug in Dataset#literal when quoting arrays of strings (thanks Douglas
+Koszerek.)
+
+</li>
+</ul>
+<h3>0.0.12</h3>
+<ul>
+<li>Model#save now correctly performs an INSERT for new objects.
+
+</li>
+<li>Added Model#reload for reloading an object from the database.
+
+</li>
+<li>Added Dataset#naked method for getting a version of a dataset that fetches
+records as hashes.
+
+</li>
+<li>Implemented attribute accessors for column values ala ActiveRecord models.
+
+</li>
+<li>Fixed filtering using nil values (e.g. dataset.filter(:parent_id =&gt;
+nil)).
+
+</li>
+</ul>
+<h3>0.0.11</h3>
+<ul>
+<li>Renamed Model.schema to Model.set_schema and Model.get_schema to
+Model.schema.
+
+</li>
+<li>Improved Model class to allow descendants of model clases (thanks Pedro
+Gutierrez.)
+
+</li>
+<li>Removed require &#8216;postgres&#8217; in schema.rb (thanks Douglas
+Koszerek.)
+
+</li>
+</ul>
+<h3>0.0.10</h3>
+<ul>
+<li>Added some examples.
+
+</li>
+<li>Added Dataset#print method for pretty-printing tables.
+
+</li>
+</ul>
+<h3>0.0.9</h3>
+<ul>
+<li>Fixed Postgres::Database#tables and locks methods.
+
+</li>
+<li>Added <a href="../classes/PGconn.html#M000546">PGconn#last_insert_id</a>
+method that should support all 7.x and 8.x versions of Postgresql.
+
+</li>
+<li>Added Dataset#exists method for EXISTS where clauses.
+
+</li>
+<li>Changed behavior of Dataset#literal to regard symbols as field names.
+
+</li>
+<li>Refactored and DRY&#8216;d Dataset#literal and overrides therof. Added
+support for subqueries in where clause.
+
+</li>
+</ul>
+<h3>0.0.8</h3>
+<ul>
+<li>Fixed Dataset#reverse_order to provide chainability. This method can be
+called without arguments to invert the current order or with arguments to
+provide a descending order.
+
+</li>
+<li>Fixed literal representation of literals in SQLite adapter (thanks
+Christian Neukirchen!)
+
+</li>
+<li>Refactored insert code in Postgres adapter (in preparation for fetching the
+last insert id for pre-8.1 versions).
+
+</li>
+</ul>
+<h3>0.0.7</h3>
+<ul>
+<li>Fixed bug in Model.schema, duh!
+
+</li>
+</ul>
+<h3>0.0.6</h3>
+<ul>
+<li>Added Dataset#sql as alias to Dataset#select_sql.
+
+</li>
+<li>Dataset#where and Dataset#exclude can now be used for refining dataset
+conditions, enabling stuff like posts.where(:title =&gt;
+&#8216;abcdef&#8217;).exclude(:user_id =&gt; 3).
+
+</li>
+<li>Implemented Dataset#exclude method.
+
+</li>
+<li>Added Sequel::Schema#auto_primary_key method for setting an automatic
+primary key to be added to every table definition. Changed the schema
+generator to not define a primary key by default.
+
+</li>
+<li>Changed Sequel::Database#table_exists? to rely on the tables method if it
+is available.
+
+</li>
+<li>Implemented SQLite::Database#tables.
+
+</li>
+</ul>
+<h3>0.0.5</h3>
+<ul>
+<li>Added Dataset#[] method. Refactored Model#find and Model#[].
+
+</li>
+<li>Renamed Pool#conn_maker to Pool#connection_proc.
+
+</li>
+<li>Added automatic require &#8216;sequel&#8217; to all adapters for
+convenience.
+
+</li>
+</ul>
+<h3>0.0.4</h3>
+<ul>
+<li>Added preliminary MySQL support.
+
+</li>
+<li>Code cleanup.
+
+</li>
+</ul>
+<h3>0.0.3</h3>
+<ul>
+<li>Add Dataset#sum method.
+
+</li>
+<li>Added support for exclusive ranges (thanks Christian Neukirchen.)
+
+</li>
+<li>Added sequel console for quick&#8216;n&#8216;dirty access to databases.
+
+</li>
+<li>Fixed small bug in Dataset#qualified_field_name for better join support.
+
+</li>
+</ul>
+<h3>0.0.2</h3>
+<ul>
+<li>Added Sequel.open as alias to Sequel.connect.
+
+</li>
+<li>Refactored Dataset#where_equal_condition into Dataset#where_condition,
+allowing arrays and ranges, e.g. posts.filter(:stamp =&gt;
+(3.days.ago)..(1.day.ago)), or posts.filter(:category =&gt;
+[&#8216;ruby&#8217;, &#8216;postgres&#8217;, &#8216;linux&#8217;]).
+
+</li>
+<li>Added Model#[]= method for changing column values and Model#save
+
+</li>
+</ul>
+<p>
+method for saving them.
+</p>
+<ul>
+<li>Added Dataset#destroy for deleting each record individually as support for
+models. Renamed Model#delete to Model#destroy (and Model#destroy_all) ala
+ActiveRecord.
+
+</li>
+<li>Refactored Dataset#first and Dataset#last code. These methods can now
+accept the number of records to fetch.
+
+</li>
+</ul>
+<h3>0.0.1</h3>
+<ul>
+<li>More documentation for Dataset.
+
+</li>
+<li>Renamed Database#query to Database#dataset.
+
+</li>
+<li>Added Dataset#insert_multiple for inserting multiple records.
+
+</li>
+<li>Added Dataset#&lt;&lt; as shorthand for inserting records.
+
+</li>
+<li>Added Database#&lt;&lt; method for executing arbitrary SQL.
+
+</li>
+<li>Imported <a href="../classes/Sequel.html">Sequel</a> code.
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

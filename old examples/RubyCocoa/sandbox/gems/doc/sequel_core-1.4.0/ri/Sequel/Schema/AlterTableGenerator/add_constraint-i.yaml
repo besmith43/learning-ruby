@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::AlterTableGenerator#add_constraint
+is_singleton: false
+name: add_constraint
+params: (name, *args, &block)
+visibility: public

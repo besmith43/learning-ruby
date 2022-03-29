@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Removes a key from the key set by its index.
+full_name: ArrayKeys::KeySet#del_key
+is_singleton: false
+name: del_key
+params: (idx)
+visibility: public

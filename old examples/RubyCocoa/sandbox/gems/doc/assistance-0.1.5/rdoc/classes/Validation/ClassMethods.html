@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Validation::ClassMethods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Validation::ClassMethods</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/assistance/validation_rb.html">
+                lib/assistance/validation.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="../Validation.html">Validation</a> class methods.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000033">has_validations?</a>&nbsp;&nbsp;
+      <a href="#M000035">skip_superclass_validations</a>&nbsp;&nbsp;
+      <a href="#M000034">validate</a>&nbsp;&nbsp;
+      <a href="#M000031">validates</a>&nbsp;&nbsp;
+      <a href="#M000037">validates_acceptance_of</a>&nbsp;&nbsp;
+      <a href="#M000038">validates_confirmation_of</a>&nbsp;&nbsp;
+      <a href="#M000036">validates_each</a>&nbsp;&nbsp;
+      <a href="#M000039">validates_format_of</a>&nbsp;&nbsp;
+      <a href="#M000040">validates_length_of</a>&nbsp;&nbsp;
+      <a href="#M000041">validates_numericality_of</a>&nbsp;&nbsp;
+      <a href="#M000042">validates_presence_of</a>&nbsp;&nbsp;
+      <a href="#M000032">validations</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NUMBER_RE</td>
+          <td>=</td>
+          <td class="context-item-value">/^\d*\.{0,1}\d+$/</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">INTEGER_RE</td>
+          <td>=</td>
+          <td class="context-item-value">/\A[+-]?\d+\Z/</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <a href="#M000033" class="method-signature">
+          <span class="method-name">has_validations?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if <a href="ClassMethods.html#M000032">validations</a> are
+defined.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 120</span>
+120:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_validations?</span>
+121:       <span class="ruby-operator">!</span><span class="ruby-identifier">validations</span>.<span class="ruby-identifier">empty?</span>
+122:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">skip_superclass_validations</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 135</span>
+135:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skip_superclass_validations</span>
+136:       <span class="ruby-ivar">@skip_superclass_validations</span> = <span class="ruby-keyword kw">true</span>
+137:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
+          <span class="method-name">validate</span><span class="method-args">(o)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates the given instance.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 125</span>
+125:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate</span>(<span class="ruby-identifier">o</span>)
+126:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:validate</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@skip_superclass_validations</span>
+127:         <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">o</span>)
+128:       <span class="ruby-keyword kw">end</span>
+129:       <span class="ruby-identifier">validations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">att</span>, <span class="ruby-identifier">procs</span><span class="ruby-operator">|</span>
+130:         <span class="ruby-identifier">v</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">att</span>)
+131:         <span class="ruby-identifier">procs</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>[<span class="ruby-identifier">o</span>, <span class="ruby-identifier">att</span>, <span class="ruby-identifier">v</span>]}
+132:       <span class="ruby-keyword kw">end</span>
+133:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <a href="#M000031" class="method-signature">
+          <span class="method-name">validates</span><span class="method-args">(&amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Defines <a href="ClassMethods.html#M000032">validations</a> by converting a
+longhand block into a series of shorthand definitions. For example:
+</p>
+<pre>
+  class MyClass
+    include Validation
+    validates do
+      length_of :name, :minimum =&gt; 6
+      length_of :password, :minimum =&gt; 8
+    end
+  end
+</pre>
+<p>
+is equivalent to:
+</p>
+<pre>
+  class MyClass
+    include Validation
+    validates_length_of :name, :minimum =&gt; 6
+    validates_length_of :password, :minimum =&gt; 8
+  end
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 110</span>
+110:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+111:       <span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+112:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">validates_acceptance_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates acceptance of an attribute.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 151</span>
+151:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_acceptance_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+152:       <span class="ruby-identifier">opts</span> = {
+153:         <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is not accepted'</span>,
+154:         <span class="ruby-identifier">:allow_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+155:         <span class="ruby-identifier">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'1'</span>
+156:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+157:       
+158:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+159:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nil</span>]) <span class="ruby-operator">||</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_blank</span>])
+160:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:accept</span>]
+161:       <span class="ruby-keyword kw">end</span>
+162:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">validates_confirmation_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates confirmation of an attribute.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 165</span>
+165:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_confirmation_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+166:       <span class="ruby-identifier">opts</span> = {
+167:         <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is not confirmed'</span>,
+168:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+169:       
+170:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+171:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nil</span>]) <span class="ruby-operator">||</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_blank</span>])
+172:         <span class="ruby-identifier">c</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{a}_confirmation&quot;</span><span class="ruby-node">&quot;#{a}_confirmation&quot;</span>)
+173:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">c</span>
+174:       <span class="ruby-keyword kw">end</span>
+175:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">validates_each</span><span class="method-args">(*atts, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a validation for each of the given attributes using the supplied
+block. The block must accept three arguments: instance, attribute and
+value, e.g.:
+</p>
+<pre>
+  validates_each :name, :password do |object, attribute, value|
+    object.errors[attribute] &lt;&lt; 'is not nice' unless value.nice?
+  end
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 146</span>
+146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+147:       <span class="ruby-identifier">atts</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">validations</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>}
+148:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="#M000039" class="method-signature">
+          <span class="method-name">validates_format_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates the format of an attribute.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 178</span>
+178:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_format_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+179:       <span class="ruby-identifier">opts</span> = {
+180:         <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is invalid'</span>,
+181:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+182:       
+183:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:with</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
+184:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;A regular expression must be supplied as the :with option of the options hash&quot;</span>
+185:       <span class="ruby-keyword kw">end</span>
+186:       
+187:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+188:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nil</span>]) <span class="ruby-operator">||</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_blank</span>])
+189:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:with</span>]
+190:       <span class="ruby-keyword kw">end</span>
+191:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="#M000040" class="method-signature">
+          <span class="method-name">validates_length_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates the length of an attribute.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000040-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 194</span>
+194:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_length_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+195:       <span class="ruby-identifier">opts</span> = {
+196:         <span class="ruby-identifier">:too_long</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is too long'</span>,
+197:         <span class="ruby-identifier">:too_short</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is too short'</span>,
+198:         <span class="ruby-identifier">:wrong_length</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is the wrong length'</span>
+199:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+200:       
+201:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+202:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nil</span>]) <span class="ruby-operator">||</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_blank</span>])
+203:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:maximum</span>]
+204:           <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:too_long</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">m</span>
+205:         <span class="ruby-keyword kw">end</span>
+206:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:minimum</span>]
+207:           <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:too_short</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">m</span>
+208:         <span class="ruby-keyword kw">end</span>
+209:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:is</span>]
+210:           <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:wrong_length</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">i</span>
+211:         <span class="ruby-keyword kw">end</span>
+212:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">w</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:within</span>]
+213:           <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:wrong_length</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">w</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>)
+214:         <span class="ruby-keyword kw">end</span>
+215:       <span class="ruby-keyword kw">end</span>
+216:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <a href="#M000041" class="method-signature">
+          <span class="method-name">validates_numericality_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates whether an attribute is a number.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000041-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 222</span>
+222:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_numericality_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+223:       <span class="ruby-identifier">opts</span> = {
+224:         <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is not a number'</span>,
+225:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+226:       
+227:       <span class="ruby-identifier">re</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:only_integer</span>] <span class="ruby-operator">?</span> <span class="ruby-constant">INTEGER_RE</span> <span class="ruby-operator">:</span> <span class="ruby-constant">NUMBER_RE</span>
+228:       
+229:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+230:         <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_nil</span>]) <span class="ruby-operator">||</span> (<span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:allow_blank</span>])
+231:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">re</span>
+232:       <span class="ruby-keyword kw">end</span>
+233:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="#M000042" class="method-signature">
+          <span class="method-name">validates_presence_of</span><span class="method-args">(*atts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Validates the presence of an attribute.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000042-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 236</span>
+236:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_presence_of</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>)
+237:       <span class="ruby-identifier">opts</span> = {
+238:         <span class="ruby-identifier">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'is not present'</span>,
+239:       }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">atts</span>.<span class="ruby-identifier">extract_options!</span>)
+240:       
+241:       <span class="ruby-identifier">validates_each</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">atts</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+242:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">errors</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:message</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">v</span>.<span class="ruby-identifier">blank?</span>
+243:       <span class="ruby-keyword kw">end</span>
+244:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <a href="#M000032" class="method-signature">
+          <span class="method-name">validations</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="ClassMethods.html#M000032">validations</a> hash for
+the class.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/assistance/validation.rb, line 115</span>
+115:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validations</span>
+116:       <span class="ruby-ivar">@validations</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = []}
+117:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

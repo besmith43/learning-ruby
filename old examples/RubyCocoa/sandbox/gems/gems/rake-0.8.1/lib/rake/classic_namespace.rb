@@ -1,0 +1,16 @@
+#---
+# Excerpted from "RubyCocoa",
+# published by The Pragmatic Bookshelf.
+# Copyrights apply to this code. It may not be used to create training material, 
+# courses, books, articles, and the like. Contact us if you are in doubt.
+# We make no guarantees that this code is fit for any purpose. 
+# Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+#---
+# The following classes used to be in the top level namespace.
+# Loading this file enables compatibility with older Rakefile that
+# referenced Task from the top level.
+
+Task = Rake::Task
+FileTask = Rake::FileTask
+FileCreationTask = Rake::FileCreationTask
+RakeApp = Rake::Application

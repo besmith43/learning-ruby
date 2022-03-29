@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: stmt.executeQuery(sql)
+comment: 
+full_name: Sequel::JDBC::Database#execute
+is_singleton: false
+name: execute
+params: (sql) {|stmt.executeQuery(sql)| ...}
+visibility: public

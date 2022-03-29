@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Something::classmethod
+is_singleton: true
+name: classmethod
+params: ()
+visibility: public

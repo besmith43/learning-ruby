@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Constructs a new instance of a database connection with the specified options hash.
+- !ruby/struct:SM::Flow::P 
+  body: Sequel::Database is an abstract class that is not useful by itself.
+full_name: Sequel::Database::new
+is_singleton: true
+name: new
+params: (opts = {}, &block)
+visibility: public

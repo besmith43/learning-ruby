@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns a new clean binding for this object
+- !ruby/struct:SM::Flow::VERB 
+  body: "  usage: eval 'self', object.scope  #=&gt; returns object\n"
+full_name: Object#scope
+is_singleton: false
+name: scope
+params: ()
+visibility: public

@@ -1,0 +1,28 @@
+>Begin
+>Message Start
+Welcome to a new land reaper. Here, you will face a bigger threat, as a group of enemy archers were spotted &
+on their way here, along with a few warriors.
+
+To dispose of them, i'll show you a new and exciting addition to our army. &
+Do you see that new minion on your land? That's a zombie.
+Zombies are slower but stronger than skeletons, a combination of both could be deadly.
+>Message Summon
+Summon two zombies to start.
+
+(Enter summoning mode (S) and press number 2 (you can swap between units with number keys (1,2,3...))
+>Message Enemies
+Enemies are almost here. Prepare yourself and show them the meaning of fear.
+>Message Archers
+An archer is about to arrive with a warrior at his side. Archers are deadly ranged units, however, killing a skeleton &
+with an arrow is a hard task. Try to summon extra skeletons when dealing with them.
+>Message More
+There are three enemy waves remaining master. Take a portion of my energy and destroy each one of them.
+
+(Wait for waves to begin spawning before summoning units (so you can identify the enemy army weakness and take advantage of it))
+(You can slow time by pressing the spacebar (and pressing it again would bring time back to normal))
+>Message Last
+The last group of enemies is about to arrive.
+(Try slowing time (spacebar) and order your units in a formation (to avoid units colliding))
+>Message Victory
+This land is now ours. I'll be experimenting with the blood of our fallen enemies. I'll be back soon.
+>End

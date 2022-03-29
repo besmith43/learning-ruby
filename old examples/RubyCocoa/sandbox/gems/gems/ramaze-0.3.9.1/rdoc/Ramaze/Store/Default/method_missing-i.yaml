@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: pass on all methods inside a transaction
+full_name: Ramaze::Store::Default#method_missing
+is_singleton: false
+name: method_missing
+params: (meth, *args, &block)
+visibility: public

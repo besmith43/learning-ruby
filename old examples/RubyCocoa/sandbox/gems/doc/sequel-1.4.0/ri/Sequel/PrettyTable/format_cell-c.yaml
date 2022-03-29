@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::PrettyTable::format_cell
+is_singleton: true
+name: format_cell
+params: (size, v)
+visibility: public

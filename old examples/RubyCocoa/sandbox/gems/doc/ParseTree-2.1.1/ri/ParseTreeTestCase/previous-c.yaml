@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: ParseTreeTestCase::previous
+is_singleton: true
+name: previous
+params: (key, extra=0)
+visibility: public

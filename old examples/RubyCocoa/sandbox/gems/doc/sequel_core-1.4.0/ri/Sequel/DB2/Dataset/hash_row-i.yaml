@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::DB2::Dataset#hash_row
+is_singleton: false
+name: hash_row
+params: (sth)
+visibility: public

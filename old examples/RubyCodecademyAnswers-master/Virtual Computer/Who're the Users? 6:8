@@ -1,0 +1,23 @@
+class Computer
+    @@users = {}
+    def initialize(username, password)
+        @@users[username] = password
+        @username = usernmae
+        @password = password
+        @files = {}
+    end
+
+end
+
+
+def create(filename)
+    time = Time.now
+    @files[filename] = time
+
+    puts "New file created"
+end
+
+def Computer.get_users
+  @@class_variable
+end
+

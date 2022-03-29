@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the dataset assoiated with the object's Model class.
+- !ruby/struct:SM::Flow::P 
+  body: See Dataset for more information.
+full_name: Sequel::Model#dataset
+is_singleton: false
+name: dataset
+params: ()
+visibility: public

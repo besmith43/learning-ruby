@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: reload
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Reloads values from database and returns self.
+full_name: Sequel::Model#refresh
+is_singleton: false
+name: refresh
+params: ()
+visibility: public

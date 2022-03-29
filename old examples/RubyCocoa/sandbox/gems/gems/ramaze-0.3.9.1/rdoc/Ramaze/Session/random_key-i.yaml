@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: generate a random (and hopefully unique) id for the current session.
+- !ruby/struct:SM::Flow::P 
+  body: It consists of the current time, the current request, the current PID of ruby and object_id of this instance.
+- !ruby/struct:SM::Flow::P 
+  body: All this is joined by some calls to Kernel#rand and returned as a Digest::SHA256::hexdigest
+full_name: Ramaze::Session#random_key
+is_singleton: false
+name: random_key
+params: ()
+visibility: public

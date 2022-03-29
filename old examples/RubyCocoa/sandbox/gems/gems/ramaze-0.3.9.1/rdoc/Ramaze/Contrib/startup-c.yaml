@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "# Will load all contrib modules from options[:contrib] +"
+full_name: Ramaze::Contrib::startup
+is_singleton: true
+name: startup
+params: (options = {})
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "One iteration of reload will look for files that changed since the last iteration and will try to #safe_load it. This method is quite handy if you want direct control over when your code is reloaded"
+- !ruby/struct:SM::Flow::P 
+  body: "Usage example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  trap :HUP do\n    Ramaze::Log.info &quot;reloading source&quot;\n    Thread.main[:sourcereload].reload\n  end\n"
+full_name: Ramaze::SourceReload#reload
+is_singleton: false
+name: reload
+params: ()
+visibility: public

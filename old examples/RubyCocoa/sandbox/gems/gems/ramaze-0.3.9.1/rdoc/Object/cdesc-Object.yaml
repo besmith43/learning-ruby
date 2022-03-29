@@ -1,0 +1,55 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extensions for Object
+constants: []
+
+full_name: Object
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::ThreadAccessor
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::ThreadAccessor
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ancestral_trait
+- !ruby/object:RI::MethodSummary 
+  name: ancestral_trait
+- !ruby/object:RI::MethodSummary 
+  name: class_def
+- !ruby/object:RI::MethodSummary 
+  name: class_def
+- !ruby/object:RI::MethodSummary 
+  name: class_trait
+- !ruby/object:RI::MethodSummary 
+  name: class_trait
+- !ruby/object:RI::MethodSummary 
+  name: meta_def
+- !ruby/object:RI::MethodSummary 
+  name: meta_def
+- !ruby/object:RI::MethodSummary 
+  name: meta_eval
+- !ruby/object:RI::MethodSummary 
+  name: meta_eval
+- !ruby/object:RI::MethodSummary 
+  name: metaclass
+- !ruby/object:RI::MethodSummary 
+  name: metaclass
+- !ruby/object:RI::MethodSummary 
+  name: pretty
+- !ruby/object:RI::MethodSummary 
+  name: pretty
+- !ruby/object:RI::MethodSummary 
+  name: scope
+- !ruby/object:RI::MethodSummary 
+  name: scope
+- !ruby/object:RI::MethodSummary 
+  name: trait
+- !ruby/object:RI::MethodSummary 
+  name: trait
+name: Object
+superclass: Object

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Represents an invalid value stored in the database.
+constants: []
+
+full_name: Sequel::Error::InvalidValue
+includes: []
+
+instance_methods: []
+
+name: InvalidValue
+superclass: Error

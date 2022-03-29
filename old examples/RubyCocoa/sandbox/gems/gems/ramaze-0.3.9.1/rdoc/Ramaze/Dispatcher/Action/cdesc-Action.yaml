@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This dispatcher is responsible for relaying requests to Controller::handle and filtering the results using FILTER.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The response is passed to each filter by sending .call(response) to it.
+  name: FILTER
+  value: "OrderedSet.new(         # Ramaze::Tool::Localize,       ) unless defined?(FILTER)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The response is passed to each filter by sending .call(response) to it.
+  name: FILTER
+  value: "OrderedSet.new(         # Ramaze::Tool::Localize,       ) unless defined?(FILTER)"
+full_name: Ramaze::Dispatcher::Action
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+instance_methods: []
+
+name: Action
+superclass: Object

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGELOG</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGELOG</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGELOG
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Apr 15 12:31:08 -0500 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h3>1.4.0 (2008-04-08)</h3>
+<ul>
+<li>Don&#8216;t mark a column as changed unless the new value is different from
+the current value (tamas.denes, jeremyevans) (203).
+
+</li>
+<li>Switch gem name from &quot;sequel_model&quot; to just &quot;sequel&quot;,
+which required large version bump (jeremyevans).
+
+</li>
+<li>Add :select option to many_to_many associations, default to selecting only
+the associated model table and not the join table (jeremyevans) (208).
+
+</li>
+<li>Add :reciprocal one_to_many association option, for setting corresponding
+many_to_one instance variable (jeremyevans).
+
+</li>
+<li>Add eager loading implementation (jeremyevans).
+
+</li>
+<li>Change *_to_many associations so that the all associations are considered
+:cache=&gt;true (jeremyevans).
+
+</li>
+<li>Fix associations with block arguments and :cache=&gt;true (jeremyevans).
+
+</li>
+</ul>
+<h3>0.5.0.2 (2008-03-12)</h3>
+<ul>
+<li>More fixes for Model.associate to accept strings and symbols as class
+references.
+
+</li>
+</ul>
+<h3>0.5.0.1 (2008-03-09)</h3>
+<ul>
+<li>Fixed Model.associate to accept class and class name in :class option.
+
+</li>
+</ul>
+<h3>0.5 (2008-03-08)</h3>
+<ul>
+<li>Merged new associations branch into trunk.
+
+</li>
+<li>Rewrote RDoc for associations.
+
+</li>
+<li>Added has_and_belongs_to_many alias for many_to_many.
+
+</li>
+<li>Added support for optional dataset block.
+
+</li>
+<li>Added :order option to order association datasets.
+
+</li>
+<li>Added :cache option to return and cache array of objects for association.
+
+</li>
+<li>Changed one_to_many, many_to_many associations to return dataset by
+default.
+
+</li>
+<li>Added has_many, belongs_to aliases.
+
+</li>
+<li>Refactored associations code.
+
+</li>
+<li>Added deprecations for old-style relations.
+
+</li>
+<li>Completed specs for new associations code.
+
+</li>
+<li>New associations code by Jeremy Evans (replaces relations code.)
+
+</li>
+</ul>
+<h3>0.4.2 (2008-02-29)</h3>
+<ul>
+<li>Fixed one_to_many implicit key to work correctly for namespaced classes
+(167).
+
+</li>
+<li>Fixed Model.db= to affect the underlying dataset (183).
+
+</li>
+<li>Fixed Model.implicit_table_name to disregard namespaces.
+
+</li>
+</ul>
+<h3>0.4.1 (2008-02-10)</h3>
+<ul>
+<li>Implemented Model#inspect (151).
+
+</li>
+<li>Changed Model#method_missing to short-circuit and bypass checking columns
+if the values hash already contains the relevant column (150).
+
+</li>
+<li>Updated to reflect changes in sequel_core (Dataset#clone_merge renamed to
+Dataset#clone).
+
+</li>
+</ul>
+<h3>0.4 (2008-02-05)</h3>
+<ul>
+<li>Fixed Model#set to work with string keys (143).
+
+</li>
+<li>Fixed Model.create to correctly initialize instances marked as new (135).
+
+</li>
+<li>Fixed Model#initialize to convert string keys into symbol keys. This also
+fixes problem with validating objects initialized with string keys (136).
+
+</li>
+</ul>
+<h3>0.3.3 (2008-01-25)</h3>
+<ul>
+<li>Finalized support for virtual attributes.
+
+</li>
+</ul>
+<h3>0.3.2.1 (2008-01-24)</h3>
+<ul>
+<li>Fixed Model.dataset to correctly set the dataset if using implicit naming
+or inheriting the superclass dataset (thanks celldee).
+
+</li>
+</ul>
+<h3>0.3.2 (2008-01-24)</h3>
+<ul>
+<li>Added Model#update_with_params method with support for virtual attributes
+and auto-filtering of unrelated parameters, and changed
+Model.create_with_params to support virtual attributes (128).
+
+</li>
+<li>Cleaned up gem spec (132).
+
+</li>
+<li>Removed validations code. Now relying on validations in assistance gem.
+
+</li>
+</ul>
+<h3>0.3.1 (2008-01-21)</h3>
+<ul>
+<li>Changed Model.dataset to use inflector to pluralize the class name into the
+table name. Works in similar fashion to table names in AR or DM.
+
+</li>
+</ul>
+<h3>0.3 (2008-01-18)</h3>
+<ul>
+<li>Implemented Validatable::Errors class.
+
+</li>
+<li>Added Model#reload as alias to Model#refresh.
+
+</li>
+<li>Changed Model.create to accept a block (126).
+
+</li>
+<li>Rewrote validations.
+
+</li>
+<li>Fixed Model#initialize to accept nil values (115).
+
+</li>
+</ul>
+<h3>0.2 (2008-01-02)</h3>
+<ul>
+<li>Removed deprecated Model.recreate_table method.
+
+</li>
+<li>Removed deprecated :class and :on options from one_to_many macro.
+
+</li>
+<li>Removed deprecated :class option from one_to_one macro.
+
+</li>
+<li>Removed deprecated Model#pkey method.
+
+</li>
+<li>Changed dependency to sequel_core.
+
+</li>
+<li>Removed examples from sequel core.
+
+</li>
+<li>Additional specs. We&#8216;re now at 100% coverage.
+
+</li>
+<li>Refactored hooks code. Hooks are now inheritable, and can be defined by
+supplying a block or a method name, or by overriding the hook instance
+method. Hook chains can now be broken by returning false (111, 112).
+
+</li>
+</ul>
+<h3>0.1 (2007-12-30)</h3>
+<ul>
+<li>Moved model code from sequel into separate model sub-project.
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Protects somewhat against hammering of erroring paths, since error-pages take a while to build in the default mode it is possible to decrease overall speed quite a bit by hitting Ramaze with such paths. shielded_dispatch checks the path and caches erronous responses so they won't be recreated but simply pushed out again without stopping at the Controller. Please note that this is just minor protection and the best option is to create a performant error-page instead.
+full_name: Ramaze::Dispatcher::shielded_dispatch
+is_singleton: true
+name: shielded_dispatch
+params: (path)
+visibility: public

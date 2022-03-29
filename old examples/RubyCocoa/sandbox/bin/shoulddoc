@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+def wrapped(obj)
+  case obj
+  when String
+    '(^\s*' + obj + '\s+)'
+  when Array
+    obj.collect { | s | wrapped(s) }.join("|")
+  end
+end
+
+keywords = %w{context should note should_eventually}
+as_code = false
+
+opts = OptionParser.new
+opts.on("-c", "--context-only") { | val | keywords = "context" }
+opts.on("--as-code") { | val | as_code = true }
+
+rest = opts.parse(*ARGV)
+grep_for = Regexp.new(wrapped(keywords))
+rest.each do | file | 
+  puts "#{file}:" unless rest.length == 1
+  puts File.readlines(file).grep(grep_for).collect { | l | 
+    l.sub(/do\s*$/, '') 
+  }.collect { | l |
+    l.sub(/\{\s*$/, '')
+  }
+end

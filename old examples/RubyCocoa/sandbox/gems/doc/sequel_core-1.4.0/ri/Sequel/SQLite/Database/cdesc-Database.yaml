@@ -1,0 +1,67 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TABLES_FILTER
+  value: "\"type = 'table' AND NOT name = 'sqlite_sequence'\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AUTO_VACUUM
+  value: "{'0' => :none, '1' => :full, '2' => :incremental}.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYNCHRONOUS
+  value: "{'0' => :off, '1' => :normal, '2' => :full}.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TEMP_STORE
+  value: "{'0' => :default, '1' => :file, '2' => :memory}.freeze"
+full_name: Sequel::SQLite::Database
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: alter_table_sql
+- !ruby/object:RI::MethodSummary 
+  name: auto_vacuum
+- !ruby/object:RI::MethodSummary 
+  name: auto_vacuum=
+- !ruby/object:RI::MethodSummary 
+  name: connect
+- !ruby/object:RI::MethodSummary 
+  name: dataset
+- !ruby/object:RI::MethodSummary 
+  name: disconnect
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: execute_insert
+- !ruby/object:RI::MethodSummary 
+  name: execute_select
+- !ruby/object:RI::MethodSummary 
+  name: pragma_get
+- !ruby/object:RI::MethodSummary 
+  name: pragma_set
+- !ruby/object:RI::MethodSummary 
+  name: serial_primary_key_options
+- !ruby/object:RI::MethodSummary 
+  name: single_value
+- !ruby/object:RI::MethodSummary 
+  name: synchronous
+- !ruby/object:RI::MethodSummary 
+  name: synchronous=
+- !ruby/object:RI::MethodSummary 
+  name: tables
+- !ruby/object:RI::MethodSummary 
+  name: temp_store
+- !ruby/object:RI::MethodSummary 
+  name: temp_store=
+- !ruby/object:RI::MethodSummary 
+  name: transaction
+name: Database
+superclass: Sequel::Database

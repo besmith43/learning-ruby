@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Raised when Sequel is unable to load a specified adapter.
+constants: []
+
+full_name: Sequel::Error::AdapterNotFound
+includes: []
+
+instance_methods: []
+
+name: AdapterNotFound
+superclass: Error

@@ -1,0 +1,149 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: action_methods
+- !ruby/object:RI::MethodSummary 
+  name: action_methods
+- !ruby/object:RI::MethodSummary 
+  name: at
+- !ruby/object:RI::MethodSummary 
+  name: at
+- !ruby/object:RI::MethodSummary 
+  name: cached
+- !ruby/object:RI::MethodSummary 
+  name: cached
+- !ruby/object:RI::MethodSummary 
+  name: cached
+- !ruby/object:RI::MethodSummary 
+  name: cached
+- !ruby/object:RI::MethodSummary 
+  name: cached_action_methods
+- !ruby/object:RI::MethodSummary 
+  name: cached_action_methods
+- !ruby/object:RI::MethodSummary 
+  name: check_path
+- !ruby/object:RI::MethodSummary 
+  name: check_path
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: deny_layout
+- !ruby/object:RI::MethodSummary 
+  name: deny_layout
+- !ruby/object:RI::MethodSummary 
+  name: engine
+- !ruby/object:RI::MethodSummary 
+  name: engine
+- !ruby/object:RI::MethodSummary 
+  name: extension_order
+- !ruby/object:RI::MethodSummary 
+  name: extension_order
+- !ruby/object:RI::MethodSummary 
+  name: handle
+- !ruby/object:RI::MethodSummary 
+  name: handle
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: layout
+- !ruby/object:RI::MethodSummary 
+  name: map
+- !ruby/object:RI::MethodSummary 
+  name: map
+- !ruby/object:RI::MethodSummary 
+  name: mapping
+- !ruby/object:RI::MethodSummary 
+  name: mapping
+- !ruby/object:RI::MethodSummary 
+  name: pattern_for
+- !ruby/object:RI::MethodSummary 
+  name: pattern_for
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_action
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_action
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_controller
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_controller
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_filter
+- !ruby/object:RI::MethodSummary 
+  name: raise_no_filter
+- !ruby/object:RI::MethodSummary 
+  name: resolve
+- !ruby/object:RI::MethodSummary 
+  name: resolve
+- !ruby/object:RI::MethodSummary 
+  name: resolve_action
+- !ruby/object:RI::MethodSummary 
+  name: resolve_action
+- !ruby/object:RI::MethodSummary 
+  name: resolve_method
+- !ruby/object:RI::MethodSummary 
+  name: resolve_method
+- !ruby/object:RI::MethodSummary 
+  name: resolve_method
+- !ruby/object:RI::MethodSummary 
+  name: resolve_method
+- !ruby/object:RI::MethodSummary 
+  name: resolve_template
+- !ruby/object:RI::MethodSummary 
+  name: resolve_template
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: template
+- !ruby/object:RI::MethodSummary 
+  name: template
+- !ruby/object:RI::MethodSummary 
+  name: template_paths
+- !ruby/object:RI::MethodSummary 
+  name: template_paths
+- !ruby/object:RI::MethodSummary 
+  name: template_root
+- !ruby/object:RI::MethodSummary 
+  name: template_root
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Controller is responsible for combining and rendering actions.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FILTER
+  value: "[ :cached, :default ] unless defined?(FILTER)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FILTER
+  value: "[ :cached, :default ] unless defined?(FILTER)"
+full_name: Ramaze::Controller
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Helper::Methods
+- !ruby/object:RI::IncludedModule 
+  name: Helper::Methods
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: error
+- !ruby/object:RI::MethodSummary 
+  name: error
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: render
+name: Controller
+superclass: Object

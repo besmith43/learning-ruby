@@ -1,0 +1,123 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This variable holds the current SessionFlash
+  name: flash
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This variable holds the current SessionFlash
+  name: flash
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The unique id for the current session which is also passed on to the cookie.
+  name: session_id
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The unique id for the current session which is also passed on to the cookie.
+  name: session_id
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: startup
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The purpose of Session is to hold key/value pairs like a Hash for a series of # request/response cycles from the same client."
+- !ruby/struct:SM::Flow::P 
+  body: The persistence is achieved by setting a cookie with the session_id to the client, which is then passed back and forth until the cookie is either deleted or expires.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: the key used for the cookie
+  name: SESSION_KEY
+  value: "'_ramaze_session_id' unless defined?(SESSION_KEY)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Holds counter for IPs
+  name: IP_COUNT
+  value: "::Hash.new{|h,k| h[k] = OrderedSet.new} unless defined?(IP_COUNT)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Limit the number of sessions one IP is allowed to hold.
+  name: IP_COUNT_LIMIT
+  value: 1000 unless defined?(IP_COUNT_LIMIT)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Holds the default cookie used for sessions
+  name: COOKIE
+  value: "{ :path => '/' }"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: the key used for the cookie
+  name: SESSION_KEY
+  value: "'_ramaze_session_id' unless defined?(SESSION_KEY)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Holds counter for IPs
+  name: IP_COUNT
+  value: "::Hash.new{|h,k| h[k] = OrderedSet.new} unless defined?(IP_COUNT)"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Limit the number of sessions one IP is allowed to hold.
+  name: IP_COUNT_LIMIT
+  value: 1000 unless defined?(IP_COUNT_LIMIT)
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Holds the default cookie used for sessions
+  name: COOKIE
+  value: "{ :path => '/' }"
+full_name: Ramaze::Session
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: current
+- !ruby/object:RI::MethodSummary 
+  name: finish
+- !ruby/object:RI::MethodSummary 
+  name: finish
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: random_key
+- !ruby/object:RI::MethodSummary 
+  name: random_key
+- !ruby/object:RI::MethodSummary 
+  name: sessions
+- !ruby/object:RI::MethodSummary 
+  name: sessions
+name: Session
+superclass: Object

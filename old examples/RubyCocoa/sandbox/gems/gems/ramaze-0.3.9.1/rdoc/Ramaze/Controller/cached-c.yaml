@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ignore cache when request.params is interesting
+full_name: Ramaze::Controller::cached
+is_singleton: true
+name: cached
+params: (path)
+visibility: public

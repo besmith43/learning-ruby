@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Inline::C#ruby2c
+is_singleton: false
+name: ruby2c
+params: (type)
+visibility: protected

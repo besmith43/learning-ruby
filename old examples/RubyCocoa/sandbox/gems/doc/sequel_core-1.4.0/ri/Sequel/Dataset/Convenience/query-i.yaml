@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Translates a query block into a dataset. Query blocks can be useful when expressing complex SELECT statements, e.g.:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  dataset = DB[:items].query do\n    select :x, :y, :z\n    where {:x &gt; 1 &amp;&amp; :y &gt; 2}\n    order_by :z.DESC\n  end\n"
+full_name: Sequel::Dataset::Convenience#query
+is_singleton: false
+name: query
+params: (&block)
+visibility: public

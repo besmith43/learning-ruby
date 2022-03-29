@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Current::before_call
+is_singleton: true
+name: before_call
+params: ()
+visibility: public

@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Sequel::ODBC::MSSQL::Dataset
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: full_text_search
+- !ruby/object:RI::MethodSummary 
+  name: nolock
+- !ruby/object:RI::MethodSummary 
+  name: select_sql
+- !ruby/object:RI::MethodSummary 
+  name: sql
+name: Dataset
+superclass: ODBC::Dataset

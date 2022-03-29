@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UnifiedRuby#rewrite_bmethod
+is_singleton: false
+name: rewrite_bmethod
+params: (exp)
+visibility: public

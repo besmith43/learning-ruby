@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: MockHTTP#mock_request
+is_singleton: false
+name: mock_request
+params: (meth, path, query = {})
+visibility: public

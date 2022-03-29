@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes a doc-string and then the option as hash, another :cli key can be given that will expose this option via the bin/ramaze.
+full_name: Ramaze::GlobalDSL::o
+is_singleton: true
+name: o
+params: (doc, options = {})
+visibility: public

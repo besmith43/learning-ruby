@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: operations
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Sequel::Schema::AlterTableGenerator
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_column
+- !ruby/object:RI::MethodSummary 
+  name: add_constraint
+- !ruby/object:RI::MethodSummary 
+  name: add_full_text_index
+- !ruby/object:RI::MethodSummary 
+  name: add_index
+- !ruby/object:RI::MethodSummary 
+  name: drop_column
+- !ruby/object:RI::MethodSummary 
+  name: drop_constraint
+- !ruby/object:RI::MethodSummary 
+  name: drop_index
+- !ruby/object:RI::MethodSummary 
+  name: rename_column
+- !ruby/object:RI::MethodSummary 
+  name: set_column_default
+- !ruby/object:RI::MethodSummary 
+  name: set_column_type
+name: AlterTableGenerator
+superclass: Object

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Takes value of Global.sourcereload and unless it's false calls #start"
+full_name: Ramaze::SourceReload::startup
+is_singleton: true
+name: startup
+params: (options = {})
+visibility: public

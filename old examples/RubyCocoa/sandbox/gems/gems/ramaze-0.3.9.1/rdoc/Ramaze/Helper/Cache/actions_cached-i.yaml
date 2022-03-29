@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This refers to the class-trait of cached actions, you can add/remove actions to be cached.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class FooController &lt; Ramaze::Controller\n    trait :actions_cached =&gt; [:index, :map_of_the_internet]\n  end\n"
+full_name: Ramaze::Helper::Cache#actions_cached
+is_singleton: false
+name: actions_cached
+params: ()
+visibility: private

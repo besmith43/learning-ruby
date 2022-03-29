@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Localizes a single 'entity'. If a translation in the chosen language is not available, it falls back to the default language.
+full_name: Ramaze::Tool::Localize::localize
+is_singleton: true
+name: localize
+params: (str, locale)
+visibility: public

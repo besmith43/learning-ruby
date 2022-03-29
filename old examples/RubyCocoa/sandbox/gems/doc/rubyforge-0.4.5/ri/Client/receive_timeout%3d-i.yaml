@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#receive_timeout=
+is_singleton: false
+name: receive_timeout=
+params: (receive_timeout)
+visibility: public

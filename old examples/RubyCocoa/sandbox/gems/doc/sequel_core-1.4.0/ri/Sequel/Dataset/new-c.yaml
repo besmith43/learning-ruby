@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Constructs a new instance of a dataset with a database instance, initial options and an optional record class. Datasets are usually constructed by invoking Database methods:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB[:posts]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Or:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB.dataset # the returned dataset is blank\n"
+- !ruby/struct:SM::Flow::P 
+  body: Sequel::Dataset is an abstract class that is not useful by itself. Each database adaptor should provide a descendant class of Sequel::Dataset.
+full_name: Sequel::Dataset::new
+is_singleton: true
+name: new
+params: (db, opts = nil)
+visibility: public

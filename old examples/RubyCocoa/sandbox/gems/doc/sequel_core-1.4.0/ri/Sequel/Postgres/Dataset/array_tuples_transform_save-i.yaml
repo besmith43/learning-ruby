@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Applies the value transform for data saved to the database.
+full_name: Sequel::Postgres::Dataset#array_tuples_transform_save
+is_singleton: false
+name: array_tuples_transform_save
+params: (r)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Dataset::Convenience#create_view
+is_singleton: false
+name: create_view
+params: (name)
+visibility: public

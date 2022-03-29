@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::keep_alive_enabled?
+is_singleton: true
+name: keep_alive_enabled?
+params: (version)
+visibility: public

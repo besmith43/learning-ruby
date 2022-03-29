@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add a <tt>processor</tt> to the list of processors to run.
+full_name: CompositeSexpProcessor#<<
+is_singleton: false
+name: "<<"
+params: (processor)
+visibility: public

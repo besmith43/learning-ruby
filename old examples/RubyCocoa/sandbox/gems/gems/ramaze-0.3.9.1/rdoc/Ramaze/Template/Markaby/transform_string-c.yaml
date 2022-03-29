@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes a string and action, instance_evals the string inside a mab block that gets the instance_variables of the original action.instance passed.
+full_name: Ramaze::Template::Markaby::transform_string
+is_singleton: true
+name: transform_string
+params: (string, action)
+visibility: public

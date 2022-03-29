@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Informer for the Swiftcore Analogger logging system.
+- !ruby/struct:SM::Flow::P 
+  body: You can find it at http://analogger.swiftcore.org and install with gem install analogger
+constants: []
+
+full_name: Ramaze::Analogger
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log
+name: Analogger
+superclass: "::Swiftcore::Analogger::Client"

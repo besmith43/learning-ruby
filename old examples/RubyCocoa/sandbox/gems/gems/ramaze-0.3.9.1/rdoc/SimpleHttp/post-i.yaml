@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Post the query data to the url. The body of the request remains empty if query=nil. In case `query` is a `Hash`, it's assumed that we are sending a form. In case `query` is a `String`, it's also assumed that a form is being sent, UNLESS the `content_type` parameter is set.
+full_name: SimpleHttp#post
+is_singleton: false
+name: post
+params: (query=nil, content_type='application/x-www-form-urlencoded')
+visibility: public

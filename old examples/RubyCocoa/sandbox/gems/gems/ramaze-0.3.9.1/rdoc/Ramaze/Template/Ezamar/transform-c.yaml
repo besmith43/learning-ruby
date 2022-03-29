@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Transforms an action into the XHTML code for parsing and returns the result
+full_name: Ramaze::Template::Ezamar::transform
+is_singleton: true
+name: transform
+params: (action)
+visibility: public

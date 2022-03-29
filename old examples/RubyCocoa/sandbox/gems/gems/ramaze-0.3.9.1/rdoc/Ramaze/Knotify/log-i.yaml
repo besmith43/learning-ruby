@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Please see for more information on the API used here: http://lukeplant.me.uk/articles.php?id=3"
+full_name: Ramaze::Knotify#log
+is_singleton: false
+name: log
+params: (tag, *messages)
+visibility: public

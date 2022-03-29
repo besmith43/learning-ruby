@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::http_date
+is_singleton: true
+name: http_date
+params: (a_time)
+visibility: public

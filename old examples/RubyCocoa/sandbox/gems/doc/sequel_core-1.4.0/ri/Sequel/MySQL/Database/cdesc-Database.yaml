@@ -1,0 +1,45 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AUTO_INCREMENT
+  value: "'AUTO_INCREMENT'.freeze"
+full_name: Sequel::MySQL::Database
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: alter_table_sql
+- !ruby/object:RI::MethodSummary 
+  name: auto_increment_sql
+- !ruby/object:RI::MethodSummary 
+  name: column_definition_sql
+- !ruby/object:RI::MethodSummary 
+  name: connect
+- !ruby/object:RI::MethodSummary 
+  name: dataset
+- !ruby/object:RI::MethodSummary 
+  name: disconnect
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: execute_select
+- !ruby/object:RI::MethodSummary 
+  name: index_definition_sql
+- !ruby/object:RI::MethodSummary 
+  name: serial_primary_key_options
+- !ruby/object:RI::MethodSummary 
+  name: server_version
+- !ruby/object:RI::MethodSummary 
+  name: tables
+- !ruby/object:RI::MethodSummary 
+  name: transaction
+- !ruby/object:RI::MethodSummary 
+  name: use
+name: Database
+superclass: Sequel::Database

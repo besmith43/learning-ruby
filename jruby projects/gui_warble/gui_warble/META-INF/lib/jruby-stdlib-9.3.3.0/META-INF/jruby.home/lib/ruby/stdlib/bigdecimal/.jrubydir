@@ -1,0 +1,7 @@
+..
+.
+newton.rb
+jacobian.rb
+ludcmp.rb
+util.rb
+math.rb

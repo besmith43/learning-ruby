@@ -1,0 +1,31 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Translates a method call parse-tree to SQL expression. The following operators are recognized and translated to SQL expressions: &gt;, &lt;, &gt;=, &lt;=,"
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: ", =~, +, -, *, /, %:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  :x == 1 #=&gt; &quot;(x = 1)&quot;\n  (:x + 100) &lt; 200 #=&gt; &quot;((x + 100) &lt; 200)&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The in, in?, nil and nil? method calls are intercepted and passed to #compare_expr."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  :x.in [1, 2, 3] #=&gt; &quot;(x IN (1, 2, 3))&quot;\n  :x.in?(DB[:y].select(:z)) #=&gt; &quot;(x IN (SELECT z FROM y))&quot;\n  :x.nil? #=&gt; &quot;(x IS NULL)&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The like and like? method calls are intercepted and passed to #match_expr."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  :x.like? 'ABC%' #=&gt; &quot;(x LIKE 'ABC%')&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The method also supports SQL functions by invoking Symbol#[]:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  :avg[:x] #=&gt; &quot;avg(x)&quot;\n  :substring[:x, 5] #=&gt; &quot;substring(x, 5)&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: All other method calls are evaulated as normal Ruby code.
+full_name: Sequel::Dataset::Sequelizer#call_expr
+is_singleton: false
+name: call_expr
+params: (e, b, opts)
+visibility: public

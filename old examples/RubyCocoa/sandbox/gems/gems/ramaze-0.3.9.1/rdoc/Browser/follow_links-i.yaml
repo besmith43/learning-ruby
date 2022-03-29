@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Browser#follow_links
+is_singleton: false
+name: follow_links
+params: (*texts)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes path, asks Controller to handle it and builds a response on success. The response is then passed to each member of FILTER for post-processing.
+full_name: Ramaze::Dispatcher::Action::process
+is_singleton: true
+name: process
+params: (path)
+visibility: public

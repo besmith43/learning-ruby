@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The list o' processors to run.
+  name: processors
+  rw: R
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Implements the Composite pattern on SexpProcessor. Need we say more?
+- !ruby/struct:SM::Flow::P 
+  body: Yeah... probably. Implements a SexpProcessor of SexpProcessors so you can easily chain multiple to each other. At some stage we plan on having all of them run <tt>process</tt> and but only ever output something when <tt>generate</tt> is called, allowing for deferred final processing.
+constants: []
+
+full_name: CompositeSexpProcessor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: on_error_in
+- !ruby/object:RI::MethodSummary 
+  name: process
+name: CompositeSexpProcessor
+superclass: SexpProcessor

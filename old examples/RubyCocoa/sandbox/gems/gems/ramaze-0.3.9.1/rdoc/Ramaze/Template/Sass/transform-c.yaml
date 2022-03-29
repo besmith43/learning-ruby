@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Transform via Sass templating engine
+full_name: Ramaze::Template::Sass::transform
+is_singleton: true
+name: transform
+params: (action)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Bacon::TestUnitOutput#handle_summary
+is_singleton: false
+name: handle_summary
+params: ()
+visibility: public

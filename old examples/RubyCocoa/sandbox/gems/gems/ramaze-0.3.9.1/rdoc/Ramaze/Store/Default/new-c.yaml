@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: create a new store with a filename
+full_name: Ramaze::Store::Default::new
+is_singleton: true
+name: new
+params: (filename = 'db.yaml')
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Gestalt.new is like ::build but will return itself. you can either access #out or .to_s it, which will return the actual markup."
+- !ruby/struct:SM::Flow::P 
+  body: Useful for distributed building of one page.
+full_name: Ramaze::Gestalt::new
+is_singleton: true
+name: new
+params: (&block)
+visibility: public

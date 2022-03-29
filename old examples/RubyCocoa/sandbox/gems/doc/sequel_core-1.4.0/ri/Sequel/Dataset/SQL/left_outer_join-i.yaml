@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a LEFT OUTER joined dataset.
+full_name: Sequel::Dataset::SQL#left_outer_join
+is_singleton: false
+name: left_outer_join
+params: (table, expr)
+visibility: public

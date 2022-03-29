@@ -1,0 +1,117 @@
+text-field-to-view
+	This version logs the app chosen.
+
+text-field-to-view-and-title
+	As above, but also changes the window title to
+	include app name.
+
+autoclose
+	Use a delegate class to exit the app when the sole
+	window closes.
+
+autoclose-with-notifications
+	As above, but do it with Notifications instead of
+	delegation. 
+
+simple-solution
+	This is the first version that observes and logs
+	NSNotifications from a remote app.
+
+reopen
+	Adding methods to Cocoa classes.
+
+reshaping-in-progress
+	Split one Fenestra class into three.
+
+reshaped-but-gutted
+	Add a TranslatorEnlister and simple ToString
+	translator. The guts of the methods are missing.
+
+reshaped-with-notifications
+	Flesh out the classes to receive and send
+	notifications. 
+
+reshaped-with-dsl
+	Replace notification code with a little Ruby DSL for
+	notifications. 
+
+bundling
+	This version contains a third-party gem and library
+	within the app bundle.
+
+editor-agnostic
+	Split the source into subdirectories. Can be built
+	either through Xcode or Rake. Readers can now
+	readily use their favorite editor.
+
+preferred-favorite
+	Storing the favorite translator as a persistent user
+	preference. 
+
+preferred-list
+	Storing a list of custom objects and using them to
+	fill the combo box's drop-down list.
+
+preferred-pull
+	Having the combo box pull list entries when it needs
+	them, rather than having them pushed into it.
+
+preferred-frame
+	Solution to a "Try this yourself" that stashes a
+	window's location into user preferences.
+
+binding-text-field
+	A first example of loading a Nib at runtime.
+
+binding-hash
+	Binding table columns to arrays of hashes.
+
+binding-formatters
+	Text cell formatters that convert objects into text
+	and can control or verify user edits.
+
+binding-transformer
+	Value transformers intervene in key-value binding to
+	convert objects as they're transferred between the 
+	bound object and the rooted keypath.
+
+binding-by-hand-1
+	Setting up bindings with code rather than IB. A 
+	start at subclassing NSArrayController.
+
+binding-by-hand-2
+	Making the subclass diverge from NSArrayController.
+
+table-two-buttons-start
+table-two-buttons-end
+	Hooking up Add and Remove buttons to an
+	NSArrayController.
+
+table-radio-buttons
+	Putting buttons in a column instead of text.
+
+table-formatter
+	More examples of using formatters to control text
+	cells.
+
+table-chooser-start
+table-chooser-end
+	Popping up an Open Panel when user double clicks on
+	a table cell.
+
+table-drag-start
+table-drag-end
+	Dragging and dropping into a table cell.
+
+fit-and-finish
+	All sorts of little tweaks to make Fenestra a
+	well-behaved Cocoa application. Plus the addition of
+	a help book.
+
+document-based-spike
+	Showing how document-based applications work. A
+	rudimentary conversion of Fenestra into one.
+
+macruby
+	The differences between RubyCocoa and MacRuby. A
+	rudimentary port.

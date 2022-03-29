@@ -1,0 +1,174 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Items per page.
+  name: limit
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Items per page.
+  name: limit
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The current page.
+  name: page
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The current page.
+  name: page
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The total number of pages.
+  name: page_count
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The total number of pages.
+  name: page_count
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Total count of items.
+  name: total_count
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Total count of items.
+  name: total_count
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Displays a collection of entitities in multiple pages.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Design
+- !ruby/struct:SM::Flow::P 
+  body: This pager is carefully designed for scaleability. It stores only the items for one page. The key parameter is needed, multiple pagers can coexist in a single page. The pager leverages the SQL LIMIT option to optimize database interaction.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Example
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MyController\n    def index\n      objs = (0..200).to_a\n      @entries, @pager = paginate(objs, :limit =&gt; 20)\n    end\n  end\n\n  &lt;html&gt;\n    &lt;head&gt;&lt;title&gt;Pager&lt;/title&gt;&lt;/head&gt;\n    &lt;body&gt;\n      &lt;?r if pager.navigation? ?&gt;\n        &lt;div class=&quot;pager&quot;&gt;#{@pager.navigation}&lt;/div&gt;\n      &lt;?r end ?&gt;\n      &lt;ul&gt;\n      &lt;?r @entries.each do |entry| ?&gt;\n        &lt;li&gt;#{entry}&lt;/li&gt;\n      &lt;?r end ?&gt;\n      &lt;/ul&gt;\n    &lt;/body&gt;\n  &lt;/html&gt;\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Styling
+- !ruby/struct:SM::Flow::P 
+  body: "The following classes can be used for styling with CSS (provided you put the pager in a element with class 'pager' like shown above):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  .pager {}\n  .pager .first {}\n  .pager .previous {}\n  .pager .next {}\n  .pager .last {}\n  .pager ul {}\n  .pager li {}\n  .pager li.active {}\n"
+constants: []
+
+full_name: Ramaze::Pager
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Link
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Link
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: each_with_index
+- !ruby/object:RI::MethodSummary 
+  name: each_with_index
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: first_page
+- !ruby/object:RI::MethodSummary 
+  name: first_page
+- !ruby/object:RI::MethodSummary 
+  name: first_page?
+- !ruby/object:RI::MethodSummary 
+  name: first_page?
+- !ruby/object:RI::MethodSummary 
+  name: last_page
+- !ruby/object:RI::MethodSummary 
+  name: last_page
+- !ruby/object:RI::MethodSummary 
+  name: last_page?
+- !ruby/object:RI::MethodSummary 
+  name: last_page?
+- !ruby/object:RI::MethodSummary 
+  name: limit
+- !ruby/object:RI::MethodSummary 
+  name: limit
+- !ruby/object:RI::MethodSummary 
+  name: link_first_page
+- !ruby/object:RI::MethodSummary 
+  name: link_first_page
+- !ruby/object:RI::MethodSummary 
+  name: link_last_page
+- !ruby/object:RI::MethodSummary 
+  name: link_last_page
+- !ruby/object:RI::MethodSummary 
+  name: link_next_page
+- !ruby/object:RI::MethodSummary 
+  name: link_next_page
+- !ruby/object:RI::MethodSummary 
+  name: link_prev_page
+- !ruby/object:RI::MethodSummary 
+  name: link_prev_page
+- !ruby/object:RI::MethodSummary 
+  name: nav_range
+- !ruby/object:RI::MethodSummary 
+  name: nav_range
+- !ruby/object:RI::MethodSummary 
+  name: navigation
+- !ruby/object:RI::MethodSummary 
+  name: navigation
+- !ruby/object:RI::MethodSummary 
+  name: navigation?
+- !ruby/object:RI::MethodSummary 
+  name: navigation?
+- !ruby/object:RI::MethodSummary 
+  name: next_page
+- !ruby/object:RI::MethodSummary 
+  name: next_page
+- !ruby/object:RI::MethodSummary 
+  name: offset
+- !ruby/object:RI::MethodSummary 
+  name: offset
+- !ruby/object:RI::MethodSummary 
+  name: page_range
+- !ruby/object:RI::MethodSummary 
+  name: page_range
+- !ruby/object:RI::MethodSummary 
+  name: prev_page
+- !ruby/object:RI::MethodSummary 
+  name: prev_page
+- !ruby/object:RI::MethodSummary 
+  name: set_count
+- !ruby/object:RI::MethodSummary 
+  name: set_count
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: target_uri
+- !ruby/object:RI::MethodSummary 
+  name: target_uri
+name: Pager
+superclass: Object

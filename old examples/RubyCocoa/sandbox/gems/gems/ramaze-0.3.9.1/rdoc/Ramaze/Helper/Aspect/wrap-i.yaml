@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: run block before and after given actions, or, if no actions specified. all actions
+full_name: Ramaze::Helper::Aspect#wrap
+is_singleton: false
+name: wrap
+params: (*meths, &block)
+visibility: private

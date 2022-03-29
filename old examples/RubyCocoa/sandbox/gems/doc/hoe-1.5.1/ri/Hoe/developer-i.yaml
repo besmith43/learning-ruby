@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Hoe#developer
+is_singleton: false
+name: developer
+params: (name, email)
+visibility: public

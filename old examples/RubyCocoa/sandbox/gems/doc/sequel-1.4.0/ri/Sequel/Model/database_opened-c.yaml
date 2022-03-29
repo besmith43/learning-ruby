@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Called when a database is opened in order to automatically associate the first opened database with model classes.
+full_name: Sequel::Model::database_opened
+is_singleton: true
+name: database_opened
+params: (db)
+visibility: public

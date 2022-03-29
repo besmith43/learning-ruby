@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: to_h
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts the array into a hash.
+full_name: ArrayKeys::KeyAccess#to_hash
+is_singleton: false
+name: to_hash
+params: ()
+visibility: public

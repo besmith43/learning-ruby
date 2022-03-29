@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::JDBC::Database#execute_and_forget
+is_singleton: false
+name: execute_and_forget
+params: (sql)
+visibility: public

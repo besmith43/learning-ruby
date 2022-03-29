@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Client#delete_async
+is_singleton: false
+name: delete_async
+params: (uri, extheader = {})
+visibility: public

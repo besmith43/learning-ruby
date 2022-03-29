@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Transform via Haml templating engine
+full_name: Ramaze::Template::Haml::transform
+is_singleton: true
+name: transform
+params: (action)
+visibility: public

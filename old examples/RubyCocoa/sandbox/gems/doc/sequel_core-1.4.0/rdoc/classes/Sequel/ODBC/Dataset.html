@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sequel::ODBC::Dataset</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sequel::ODBC::Dataset</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/sequel_core/adapters/odbc_rb.html">
+                lib/sequel_core/adapters/odbc.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Dataset.html">
+                Sequel::Dataset
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000581">array_tuples_fetch_rows</a>&nbsp;&nbsp;
+      <a href="#M000582">array_tuples_make_row</a>&nbsp;&nbsp;
+      <a href="#M000580">convert_odbc_value</a>&nbsp;&nbsp;
+      <a href="#M000585">delete</a>&nbsp;&nbsp;
+      <a href="#M000578">fetch_rows</a>&nbsp;&nbsp;
+      <a href="#M000579">hash_row</a>&nbsp;&nbsp;
+      <a href="#M000583">insert</a>&nbsp;&nbsp;
+      <a href="#M000577">literal</a>&nbsp;&nbsp;
+      <a href="#M000584">update</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BOOL_TRUE</td>
+          <td>=</td>
+          <td class="context-item-value">'1'.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BOOL_FALSE</td>
+          <td>=</td>
+          <td class="context-item-value">'0'.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">UNTITLED_COLUMN</td>
+          <td>=</td>
+          <td class="context-item-value">'untitled_%d'.freeze</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000581" class="method-detail">
+        <a name="M000581"></a>
+
+        <div class="method-heading">
+          <a href="#M000581" class="method-signature">
+          <span class="method-name">array_tuples_fetch_rows</span><span class="method-args">(sql) {|array_tuples_make_row(r)}| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000581-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000581-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 138</span>
+138:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">array_tuples_fetch_rows</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+139:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+140:           <span class="ruby-identifier">s</span> = <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">sql</span>
+141:           <span class="ruby-keyword kw">begin</span>
+142:             <span class="ruby-ivar">@columns</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-keyword kw">true</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>}
+143:             <span class="ruby-identifier">rows</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">fetch_all</span>
+144:             <span class="ruby-identifier">rows</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">array_tuples_make_row</span>(<span class="ruby-identifier">r</span>)}
+145:           <span class="ruby-keyword kw">ensure</span>
+146:             <span class="ruby-identifier">s</span>.<span class="ruby-identifier">drop</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+147:           <span class="ruby-keyword kw">end</span>
+148:         <span class="ruby-keyword kw">end</span>
+149:         <span class="ruby-keyword kw">self</span>
+150:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000582" class="method-detail">
+        <a name="M000582"></a>
+
+        <div class="method-heading">
+          <a href="#M000582" class="method-signature">
+          <span class="method-name">array_tuples_make_row</span><span class="method-args">(row)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000582-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000582-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 152</span>
+152:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">array_tuples_make_row</span>(<span class="ruby-identifier">row</span>)
+153:         <span class="ruby-identifier">row</span>.<span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@columns</span>
+154:         <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+155:           <span class="ruby-comment cmt"># When fetching a result set, the Ruby ODBC driver converts all ODBC </span>
+156:           <span class="ruby-comment cmt"># SQL types to an equivalent Ruby type; with the exception of</span>
+157:           <span class="ruby-comment cmt"># SQL_TYPE_DATE, SQL_TYPE_TIME and SQL_TYPE_TIMESTAMP.</span>
+158:           <span class="ruby-comment cmt">#</span>
+159:           <span class="ruby-comment cmt"># The conversions below are consistent with the mappings in</span>
+160:           <span class="ruby-comment cmt"># ODBCColumn#mapSqlTypeToGenericType and Column#klass.</span>
+161:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+162:           <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeStamp</span>
+163:             <span class="ruby-identifier">row</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">day</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">second</span>)
+164:           <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>
+165:             <span class="ruby-identifier">now</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>
+166:             <span class="ruby-identifier">row</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">gm</span>(<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">now</span>.<span class="ruby-identifier">day</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">second</span>)
+167:           <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">Date</span>
+168:             <span class="ruby-identifier">row</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">day</span>)
+169:           <span class="ruby-keyword kw">end</span>
+170:         <span class="ruby-keyword kw">end</span>
+171:         <span class="ruby-identifier">row</span>
+172:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000580" class="method-detail">
+        <a name="M000580"></a>
+
+        <div class="method-heading">
+          <a href="#M000580" class="method-signature">
+          <span class="method-name">convert_odbc_value</span><span class="method-args">(v)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000580-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000580-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 118</span>
+118:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">convert_odbc_value</span>(<span class="ruby-identifier">v</span>)
+119:         <span class="ruby-comment cmt"># When fetching a result set, the Ruby ODBC driver converts all ODBC </span>
+120:         <span class="ruby-comment cmt"># SQL types to an equivalent Ruby type; with the exception of</span>
+121:         <span class="ruby-comment cmt"># SQL_TYPE_DATE, SQL_TYPE_TIME and SQL_TYPE_TIMESTAMP.</span>
+122:         <span class="ruby-comment cmt">#</span>
+123:         <span class="ruby-comment cmt"># The conversions below are consistent with the mappings in</span>
+124:         <span class="ruby-comment cmt"># ODBCColumn#mapSqlTypeToGenericType and Column#klass.</span>
+125:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+126:         <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeStamp</span>
+127:           <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">day</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">second</span>)
+128:         <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">Time</span>
+129:           <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>
+130:           <span class="ruby-constant">Time</span>.<span class="ruby-identifier">gm</span>(<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">now</span>.<span class="ruby-identifier">day</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">second</span>)
+131:         <span class="ruby-keyword kw">when</span> <span class="ruby-operator">::</span><span class="ruby-constant">ODBC</span><span class="ruby-operator">::</span><span class="ruby-constant">Date</span>
+132:           <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">day</span>)
+133:         <span class="ruby-keyword kw">else</span>
+134:           <span class="ruby-identifier">v</span>
+135:         <span class="ruby-keyword kw">end</span>
+136:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000585" class="method-detail">
+        <a name="M000585"></a>
+
+        <div class="method-heading">
+          <a href="#M000585" class="method-signature">
+          <span class="method-name">delete</span><span class="method-args">(opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000585-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000585-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 184</span>
+184:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">opts</span> = <span class="ruby-keyword kw">nil</span>)
+185:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">delete_sql</span>(<span class="ruby-identifier">opts</span>)
+186:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000578" class="method-detail">
+        <a name="M000578"></a>
+
+        <div class="method-heading">
+          <a href="#M000578" class="method-signature">
+          <span class="method-name">fetch_rows</span><span class="method-args">(sql) {|hash_row(row)}| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000578-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000578-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 76</span>
+76:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_rows</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+77:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+78:           <span class="ruby-identifier">s</span> = <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">sql</span>
+79:           <span class="ruby-keyword kw">begin</span>
+80:             <span class="ruby-identifier">untitled_count</span> = <span class="ruby-value">0</span>
+81:             <span class="ruby-ivar">@columns</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-keyword kw">true</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+82:               <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">n</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">empty?</span>
+83:                 <span class="ruby-identifier">n</span> = <span class="ruby-constant">UNTITLED_COLUMN</span> <span class="ruby-operator">%</span> (<span class="ruby-identifier">untitled_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>)
+84:               <span class="ruby-keyword kw">end</span>
+85:               <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_sym</span>
+86:             <span class="ruby-keyword kw">end</span>
+87:             <span class="ruby-identifier">rows</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">fetch_all</span>
+88:             <span class="ruby-identifier">rows</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">hash_row</span>(<span class="ruby-identifier">row</span>)} <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rows</span>
+89:           <span class="ruby-keyword kw">ensure</span>
+90:             <span class="ruby-identifier">s</span>.<span class="ruby-identifier">drop</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+91:           <span class="ruby-keyword kw">end</span>
+92:         <span class="ruby-keyword kw">end</span>
+93:         <span class="ruby-keyword kw">self</span>
+94:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000579" class="method-detail">
+        <a name="M000579"></a>
+
+        <div class="method-heading">
+          <a href="#M000579" class="method-signature">
+          <span class="method-name">hash_row</span><span class="method-args">(row)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+def <a href="Dataset.html#M000578">fetch_rows</a>(sql, &amp;block)
+</p>
+<pre>
+  @db.synchronize do
+    s = @db.execute sql
+    begin
+      @columns = s.columns(true).map {|c| c.name.to_sym}
+      rows = s.fetch_all
+      rows.each {|row| yield hash_row(row)}
+    ensure
+      s.drop unless s.nil? rescue nil
+    end
+  end
+  self
+</pre>
+<p>
+end
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000579-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000579-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 110</span>
+110:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hash_row</span>(<span class="ruby-identifier">row</span>)
+111:         <span class="ruby-identifier">hash</span> = {}
+112:         <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+113:           <span class="ruby-identifier">hash</span>[<span class="ruby-ivar">@columns</span>[<span class="ruby-identifier">idx</span>]] = <span class="ruby-identifier">convert_odbc_value</span>(<span class="ruby-identifier">v</span>)
+114:         <span class="ruby-keyword kw">end</span>
+115:         <span class="ruby-identifier">hash</span>
+116:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000583" class="method-detail">
+        <a name="M000583"></a>
+
+        <div class="method-heading">
+          <a href="#M000583" class="method-signature">
+          <span class="method-name">insert</span><span class="method-args">(*values)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000583-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000583-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 175</span>
+175:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+176:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">insert_sql</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+177:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000577" class="method-detail">
+        <a name="M000577"></a>
+
+        <div class="method-heading">
+          <a href="#M000577" class="method-signature">
+          <span class="method-name">literal</span><span class="method-args">(v)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000577-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000577-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 63</span>
+63:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">literal</span>(<span class="ruby-identifier">v</span>)
+64:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
+65:         <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>
+66:           <span class="ruby-constant">BOOL_TRUE</span>
+67:         <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">false</span>
+68:           <span class="ruby-constant">BOOL_FALSE</span>
+69:         <span class="ruby-keyword kw">else</span>
+70:           <span class="ruby-keyword kw">super</span>
+71:         <span class="ruby-keyword kw">end</span>
+72:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000584" class="method-detail">
+        <a name="M000584"></a>
+
+        <div class="method-heading">
+          <a href="#M000584" class="method-signature">
+          <span class="method-name">update</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000584-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000584-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/odbc.rb, line 179</span>
+179:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+180:         <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">do</span> <span class="ruby-identifier">update_sql</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+181:         <span class="ruby-keyword kw">self</span>
+182:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

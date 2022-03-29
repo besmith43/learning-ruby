@@ -1,0 +1,69 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RELATION_QUERY
+  value: "{:from => [:pg_class], :select => [:relname]}.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RELATION_FILTER
+  value: "\"(relkind = 'r') AND (relname !~ '^pg|sql')\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_TABLE_REGEXP
+  value: /^pg|sql/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RE_CURRVAL_ERROR
+  value: /currval of sequence "(.*)" is not yet defined in this session/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SQL_BEGIN
+  value: "'BEGIN'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SQL_COMMIT
+  value: "'COMMIT'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SQL_ROLLBACK
+  value: "'ROLLBACK'.freeze"
+full_name: Sequel::Postgres::Database
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: connect
+- !ruby/object:RI::MethodSummary 
+  name: dataset
+- !ruby/object:RI::MethodSummary 
+  name: disconnect
+- !ruby/object:RI::MethodSummary 
+  name: drop_table_sql
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: execute_insert
+- !ruby/object:RI::MethodSummary 
+  name: index_definition_sql
+- !ruby/object:RI::MethodSummary 
+  name: insert_result
+- !ruby/object:RI::MethodSummary 
+  name: locks
+- !ruby/object:RI::MethodSummary 
+  name: primary_key_for_table
+- !ruby/object:RI::MethodSummary 
+  name: serial_primary_key_options
+- !ruby/object:RI::MethodSummary 
+  name: server_version
+- !ruby/object:RI::MethodSummary 
+  name: tables
+- !ruby/object:RI::MethodSummary 
+  name: transaction
+name: Database
+superclass: Sequel::Database

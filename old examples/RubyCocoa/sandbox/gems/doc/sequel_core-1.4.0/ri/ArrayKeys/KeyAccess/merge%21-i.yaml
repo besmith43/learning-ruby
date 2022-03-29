@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: update
+- !ruby/object:RI::AliasName 
+  name: update!
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Merges the given array with self, optionally passing the values from self through the given block:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  row.merge!(new_values) {|k, old, new| (k == :name) ? old : new}\n"
+full_name: ArrayKeys::KeyAccess#merge!
+is_singleton: false
+name: merge!
+params: (values, &block)
+visibility: public

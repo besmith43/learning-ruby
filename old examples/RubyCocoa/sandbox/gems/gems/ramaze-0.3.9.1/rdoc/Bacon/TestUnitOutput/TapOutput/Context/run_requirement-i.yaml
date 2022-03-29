@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Bacon::TestUnitOutput::TapOutput::Context#run_requirement
+is_singleton: false
+name: run_requirement
+params: (description, spec)
+visibility: public

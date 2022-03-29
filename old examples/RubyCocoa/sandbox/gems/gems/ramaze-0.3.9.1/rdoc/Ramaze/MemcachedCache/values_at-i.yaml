@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: same as get_multi, but returns only the values (in order)
+full_name: Ramaze::MemcachedCache#values_at
+is_singleton: false
+name: values_at
+params: (*keys)
+visibility: public

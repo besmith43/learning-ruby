@@ -1,0 +1,171 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Dataset SQL module implements all the dataset methods concerned with generating SQL statements for retrieving and manipulating records.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ALIASED_REGEXP
+  value: /^(.*)\s(.*)$/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: QUALIFIED_REGEXP
+  value: /^(.*)\.(.*)$/.freeze
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WILDCARD
+  value: "'*'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMA_SEPARATOR
+  value: "\", \".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "NULL"
+  value: "\"NULL\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TIMESTAMP_FORMAT
+  value: "\"TIMESTAMP '%Y-%m-%d %H:%M:%S'\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DATE_FORMAT
+  value: "\"DATE '%Y-%m-%d'\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "TRUE"
+  value: "\"'t'\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "FALSE"
+  value: "\"'f'\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AND_SEPARATOR
+  value: "\" AND \".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: QUESTION_MARK
+  value: "'?'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JOIN_TYPES
+  value: "{         :left_outer => 'LEFT OUTER JOIN'.freeze,         :right_outer => 'RIGHT OUTER JOIN'.freeze,         :full_outer => 'FULL OUTER JOIN'.freeze,         :inner => 'INNER JOIN'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STOCK_COUNT_OPTS
+  value: "{:select => [\"COUNT(*)\".lit], :order => nil}.freeze"
+full_name: Sequel::Dataset::SQL
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: and
+- !ruby/object:RI::MethodSummary 
+  name: column_list
+- !ruby/object:RI::MethodSummary 
+  name: count
+- !ruby/object:RI::MethodSummary 
+  name: delete_sql
+- !ruby/object:RI::MethodSummary 
+  name: distinct
+- !ruby/object:RI::MethodSummary 
+  name: except
+- !ruby/object:RI::MethodSummary 
+  name: exclude
+- !ruby/object:RI::MethodSummary 
+  name: exists
+- !ruby/object:RI::MethodSummary 
+  name: expression_list
+- !ruby/object:RI::MethodSummary 
+  name: filter
+- !ruby/object:RI::MethodSummary 
+  name: first_source
+- !ruby/object:RI::MethodSummary 
+  name: from
+- !ruby/object:RI::MethodSummary 
+  name: from_self
+- !ruby/object:RI::MethodSummary 
+  name: full_outer_join
+- !ruby/object:RI::MethodSummary 
+  name: grep
+- !ruby/object:RI::MethodSummary 
+  name: group
+- !ruby/object:RI::MethodSummary 
+  name: group_by
+- !ruby/object:RI::MethodSummary 
+  name: having
+- !ruby/object:RI::MethodSummary 
+  name: inner_join
+- !ruby/object:RI::MethodSummary 
+  name: insert_multiple
+- !ruby/object:RI::MethodSummary 
+  name: insert_sql
+- !ruby/object:RI::MethodSummary 
+  name: intersect
+- !ruby/object:RI::MethodSummary 
+  name: invert_order
+- !ruby/object:RI::MethodSummary 
+  name: join
+- !ruby/object:RI::MethodSummary 
+  name: join_expr
+- !ruby/object:RI::MethodSummary 
+  name: join_table
+- !ruby/object:RI::MethodSummary 
+  name: left_outer_join
+- !ruby/object:RI::MethodSummary 
+  name: limit
+- !ruby/object:RI::MethodSummary 
+  name: literal
+- !ruby/object:RI::MethodSummary 
+  name: multi_insert_sql
+- !ruby/object:RI::MethodSummary 
+  name: or
+- !ruby/object:RI::MethodSummary 
+  name: order
+- !ruby/object:RI::MethodSummary 
+  name: order_by
+- !ruby/object:RI::MethodSummary 
+  name: order_more
+- !ruby/object:RI::MethodSummary 
+  name: qualified_column_name
+- !ruby/object:RI::MethodSummary 
+  name: quote_column_ref
+- !ruby/object:RI::MethodSummary 
+  name: reverse
+- !ruby/object:RI::MethodSummary 
+  name: reverse_order
+- !ruby/object:RI::MethodSummary 
+  name: right_outer_join
+- !ruby/object:RI::MethodSummary 
+  name: select
+- !ruby/object:RI::MethodSummary 
+  name: select_all
+- !ruby/object:RI::MethodSummary 
+  name: select_more
+- !ruby/object:RI::MethodSummary 
+  name: select_sql
+- !ruby/object:RI::MethodSummary 
+  name: source_list
+- !ruby/object:RI::MethodSummary 
+  name: sql
+- !ruby/object:RI::MethodSummary 
+  name: table_ref
+- !ruby/object:RI::MethodSummary 
+  name: to_table_reference
+- !ruby/object:RI::MethodSummary 
+  name: union
+- !ruby/object:RI::MethodSummary 
+  name: uniq
+- !ruby/object:RI::MethodSummary 
+  name: unordered
+- !ruby/object:RI::MethodSummary 
+  name: update_sql
+- !ruby/object:RI::MethodSummary 
+  name: where
+name: SQL
+superclass: 

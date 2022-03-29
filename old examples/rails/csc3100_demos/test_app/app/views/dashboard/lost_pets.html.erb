@@ -1,0 +1,109 @@
+<h1>Lost Pets</h1>
+
+<% if current_user.try(:admin?) %>
+<table>
+  <thead>
+    <tr>
+      <th>Current date</th>
+      <th>Lost date</th>
+      <th>Phone</th>
+      <th>Owner name</th>
+      <th>Pet name</th>
+      <th>Collar</th>
+      <th>Tags</th>
+      <th>Color</th>
+      <th>Species</th>
+      <th>Breed</th>
+      <th>Gender</th>
+      <th>Size</th>
+      <th>Spayed/neutered</th>
+      <th>Found</th>
+      <th>Comments</th>
+      <% if current_user.try(:admin?) %>
+      <th>Pending</th>
+      <% end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lost_forms.each do |lost_form| %>
+      <tr>
+        <td><%= lost_form.current_date %></td>
+        <td><%= lost_form.lost_date %></td>
+        <td><%= lost_form.phone %></td>
+        <td><%= lost_form.owner_name %></td>
+        <td><%= lost_form.pet_name %></td>
+        <td><%= lost_form.collar %></td>
+        <td><%= lost_form.tags %></td>
+        <td><%= lost_form.color %></td>
+        <td><%= lost_form.species %></td>
+        <td><%= lost_form.breed %></td>
+        <td><%= lost_form.gender %></td>
+        <td><%= lost_form.size %></td>
+        <td><%= lost_form.spayed_neutered %></td>
+        <td><%= lost_form.found %></td>
+        <td><%= lost_form.comments %></td>
+        <% if current_user.try(:admin?) %>
+        <td><%= lost_form.pending %></td>
+        <td><%= link_to 'Show', lost_form %></td>
+        <td><%= link_to 'Edit', edit_lost_form_path(lost_form) %></td>
+        <td><%= link_to 'Destroy', lost_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Current date</th>
+      <th>Lost date</th>
+      <th>Phone</th>
+      <th>Owner name</th>
+      <th>Pet name</th>
+      <th>Collar</th>
+      <th>Tags</th>
+      <th>Color</th>
+      <th>Species</th>
+      <th>Breed</th>
+      <th>Gender</th>
+      <th>Size</th>
+      <th>Spayed/neutered</th>
+      <th>Found</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lost_forms.each do |lost_form| %>
+      <% if @lost_form.try(:pending?) %>
+      <tr>
+        <td><%= lost_form.current_date %></td>
+        <td><%= lost_form.lost_date %></td>
+        <td><%= lost_form.phone %></td>
+        <td><%= lost_form.owner_name %></td>
+        <td><%= lost_form.pet_name %></td>
+        <td><%= lost_form.collar %></td>
+        <td><%= lost_form.tags %></td>
+        <td><%= lost_form.color %></td>
+        <td><%= lost_form.species %></td>
+        <td><%= lost_form.breed %></td>
+        <td><%= lost_form.gender %></td>
+        <td><%= lost_form.size %></td>
+        <td><%= lost_form.spayed_neutered %></td>
+        <td><%= lost_form.found %></td>
+        <td><%= lost_form.comments %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>

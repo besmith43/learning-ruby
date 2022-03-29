@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: included
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Validations module provides validation capabilities as a mixin. When included into a class, it enhances the class with class and instance methods for defining validations and validating class instances.
+- !ruby/struct:SM::Flow::P 
+  body: The Validation emulates the validation capabilities of ActiveRecord, and provides methods for validating acceptance, confirmation, presence, format, length and numericality of attributes.
+- !ruby/struct:SM::Flow::P 
+  body: "To use validations, you need to include the Validation module in your class:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class MyClass\n    include Validation\n    validates_length_of :password, :minimum =&gt; 6\n  end\n"
+constants: []
+
+full_name: Validation
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: errors
+- !ruby/object:RI::MethodSummary 
+  name: valid?
+- !ruby/object:RI::MethodSummary 
+  name: validate
+name: Validation
+superclass: 

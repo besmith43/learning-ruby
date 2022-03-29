@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: start_adapter
+- !ruby/object:RI::MethodSummary 
+  name: start_adapter
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: test_connection
+- !ruby/object:RI::MethodSummary 
+  name: test_connection
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This module holds all classes and methods related to the adapters like webrick or mongrel. It's responsible for starting and stopping them.
+constants: []
+
+full_name: Ramaze::Adapter
+includes: []
+
+instance_methods: []
+
+name: Adapter
+superclass: 

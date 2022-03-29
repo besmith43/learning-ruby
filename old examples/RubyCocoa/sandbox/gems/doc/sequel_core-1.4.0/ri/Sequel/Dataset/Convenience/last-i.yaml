@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the last records in the dataset by inverting the order. If no order is given, an exception is raised. If num is not given, the last record is returned. Otherwise an array is returned with the last <em>num</em> records.
+full_name: Sequel::Dataset::Convenience#last
+is_singleton: false
+name: last
+params: (*args)
+visibility: public

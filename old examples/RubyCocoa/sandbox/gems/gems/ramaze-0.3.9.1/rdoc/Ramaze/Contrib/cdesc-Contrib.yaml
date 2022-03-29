@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: startup
+- !ruby/object:RI::MethodSummary 
+  name: startup
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A module used for loading contrib modules.
+constants: []
+
+full_name: Ramaze::Contrib
+includes: []
+
+instance_methods: []
+
+name: Contrib
+superclass: 

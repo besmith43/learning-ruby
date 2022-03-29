@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: All ye who seek magic, look elsewhere, this method is ASAP (as simple as possible)
+- !ruby/struct:SM::Flow::P 
+  body: There are some simple gsubs that build a final template which is evaluated
+- !ruby/struct:SM::Flow::P 
+  body: "The rules are following: &lt;?r rubycode ?&gt;"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  evaluate the code inside the tag, this is considered XHTML-valid and so is the\n  preferred method for executing code inside your templates.\n  The return-value is ignored\n"
+- !ruby/struct:SM::Flow::P 
+  body: "&lt;% rubycode %&gt;"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  The same as &lt;?r ?&gt;, ERB-style and not valid XHTML, but should give someone who\n  is already familiar with ERB some common ground\n"
+- !ruby/struct:SM::Flow::P 
+  body: "#{ rubycode }"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  You know this from normal ruby already and it's actually nothing else.\n  Interpolation at the position in the template, isn't any special taggy format\n  and therefor safe to use.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "&lt;%= rubycode %&gt;"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  The result of this will be interpolated at the position in the template.\n  Not valid XHTML either.\n"
+- !ruby/struct:SM::Flow::P 
+  body: TODO
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - provide C version or maybe use erbuis\n"
+full_name: Ezamar::Template#compile
+is_singleton: false
+name: compile
+params: ()
+visibility: public

@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Cache based on the memcache library which utilizes the memcache-daemon to store key/value pairs in namespaces.
+constants: []
+
+full_name: Ramaze::MemcachedCache
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: get_multi
+- !ruby/object:RI::MethodSummary 
+  name: get_multi
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: values_at
+- !ruby/object:RI::MethodSummary 
+  name: values_at
+name: MemcachedCache
+superclass: Object

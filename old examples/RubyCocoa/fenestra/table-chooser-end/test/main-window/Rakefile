@@ -1,0 +1,24 @@
+require 'rubygems'
+require 'rake'
+require 'rake/testtask'
+
+def dir_in_which(start=Dir.getwd, &block)
+  return File.expand_path(start) if block.call(start)
+  dir_in_which(File.join(start, '..'), &block)
+end
+
+def dir_containing(file_basename)
+  dir_in_which { | dirname | 
+    File.exist?(File.join(dirname, file_basename)) 
+  }
+end
+
+
+require File.expand_path("#{dir_containing('path-setting.rb')}/path-setting")
+
+task :default => [:test]
+desc "Run tests."
+Rake::TestTask.new do | t |
+  t.test_files = FileList['**/*tests.rb'] + FileList['**/*test.rb']
+end
+

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Object#meta_eval
+is_singleton: false
+name: meta_eval
+params: (&blk;)
+visibility: public

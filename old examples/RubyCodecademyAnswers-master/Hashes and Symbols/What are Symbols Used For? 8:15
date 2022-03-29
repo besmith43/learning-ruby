@@ -1,0 +1,3 @@
+symbol_hash = { :name => "example",
+:age => 27,
+:hair => "brown" }

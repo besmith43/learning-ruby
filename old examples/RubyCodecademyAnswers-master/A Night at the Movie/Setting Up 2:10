@@ -1,0 +1,4 @@
+movies = { titanic: 4 }
+puts "say something"
+choice = gets.chomp
+

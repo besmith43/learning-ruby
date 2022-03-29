@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: check if the stack has something inside.
+full_name: Ramaze::Helper::Stack#inside_stack?
+is_singleton: false
+name: inside_stack?
+params: ()
+visibility: public

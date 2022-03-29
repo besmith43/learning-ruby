@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: builder
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extends the Module class to have an inline method. The default language/builder used is C, but can be specified with the <tt>lang</tt> parameter.
+full_name: Module#inline
+is_singleton: false
+name: inline
+params: (lang = :C, options={}) {|builder| ...}
+visibility: public

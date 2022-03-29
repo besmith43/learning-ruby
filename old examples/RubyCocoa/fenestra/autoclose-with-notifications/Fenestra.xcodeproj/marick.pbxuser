@@ -1,0 +1,118 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Release;
+		activeExecutable = 78DA11740DD5DC6D00955BBE /* Fenestra */;
+		activeTarget = 4DDCA7030ACC9A6100E082CE /* Fenestra */;
+		addToTargets = (
+			4DDCA7030ACC9A6100E082CE /* Fenestra */,
+		);
+		codeSenseManager = 78DA11830DD5DC7200955BBE /* Code sense */;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 232216682;
+			PBXWorkspaceStateSaveDate = 232216682;
+		};
+		perUserProjectItems = {
+			783F46DB0DD7588800F41FD2 /* PBXTextBookmark */ = 783F46DB0DD7588800F41FD2 /* PBXTextBookmark */;
+			7842AD430DD6687A000A11EB /* PBXTextBookmark */ = 7842AD430DD6687A000A11EB /* PBXTextBookmark */;
+		};
+		sourceControlManager = 78DA11820DD5DC7200955BBE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4DDCA7030ACC9A6100E082CE /* Fenestra */ = {
+		activeExec = 0;
+		executables = (
+			78DA11740DD5DC6D00955BBE /* Fenestra */,
+		);
+	};
+	783F46DB0DD7588800F41FD2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78E1E4D90DD61BA3005A0E63 /* Controller.rb */;
+		name = "Controller.rb: 18";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 21;
+	};
+	7842AD430DD6687A000A11EB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 78E1E4D90DD61BA3005A0E63 /* Controller.rb */;
+		name = "Controller.rb: 18";
+		rLen = 0;
+		rLoc = 458;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 21;
+	};
+	78DA11740DD5DC6D00955BBE /* Fenestra */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Fenestra;
+		sourceDirectories = (
+		);
+	};
+	78DA11820DD5DC7200955BBE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	78DA11830DD5DC7200955BBE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	78E1E4D90DD61BA3005A0E63 /* Controller.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {662, 518}}";
+			sepNavSelRange = "{458, 0}";
+			sepNavVisRange = "{21, 862}";
+			sepNavWindowFrame = "{{496, 106}, {721, 566}}";
+		};
+	};
+}

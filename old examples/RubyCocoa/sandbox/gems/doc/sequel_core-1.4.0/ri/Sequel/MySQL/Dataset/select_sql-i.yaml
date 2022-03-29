@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: sql
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: MySQL expects the having clause before the order by clause.
+full_name: Sequel::MySQL::Dataset#select_sql
+is_singleton: false
+name: select_sql
+params: (opts = nil)
+visibility: public

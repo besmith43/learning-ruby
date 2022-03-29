@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::AlterTableGenerator#set_column_default
+is_singleton: false
+name: set_column_default
+params: (name, default)
+visibility: public

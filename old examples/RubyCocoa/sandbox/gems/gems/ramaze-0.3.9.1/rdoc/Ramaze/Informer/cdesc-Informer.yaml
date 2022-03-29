@@ -1,0 +1,76 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: colorize
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: colorize
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: log_levels
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: log_levels
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: out
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: out
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A minimal logger for Ramaze, supports files, CLI, colors and some customization.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Which tag should be in what color
+  name: COLORS
+  value: "{       :dev   => :blue,       :debug => :yellow,       :info  => :green,       :warn  => :red,       :error => :red,     }"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Which tag should be in what color
+  name: COLORS
+  value: "{       :dev   => :blue,       :debug => :yellow,       :info  => :green,       :warn  => :red,       :error => :red,     }"
+full_name: Ramaze::Informer
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: closed?
+- !ruby/object:RI::MethodSummary 
+  name: closed?
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log_interpolate
+- !ruby/object:RI::MethodSummary 
+  name: log_interpolate
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: shutdown
+- !ruby/object:RI::MethodSummary 
+  name: timestamp
+- !ruby/object:RI::MethodSummary 
+  name: timestamp
+name: Informer
+superclass: Object

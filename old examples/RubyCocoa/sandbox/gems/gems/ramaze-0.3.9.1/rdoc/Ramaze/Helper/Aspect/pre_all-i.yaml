@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #before_all"
+full_name: Ramaze::Helper::Aspect#pre_all
+is_singleton: false
+name: pre_all
+params: (&block)
+visibility: private

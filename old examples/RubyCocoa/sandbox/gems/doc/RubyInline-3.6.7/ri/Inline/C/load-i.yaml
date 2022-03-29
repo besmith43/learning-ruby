@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Loads the generated code back into ruby
+full_name: Inline::C#load
+is_singleton: false
+name: load
+params: ()
+visibility: public

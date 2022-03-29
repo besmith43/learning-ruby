@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: at
+- !ruby/object:RI::AliasName 
+  name: at
+block_params: 
+comment: 
+full_name: Rack::MockResponse#first
+is_singleton: false
+name: first
+params: (xpath = '*')
+visibility: public

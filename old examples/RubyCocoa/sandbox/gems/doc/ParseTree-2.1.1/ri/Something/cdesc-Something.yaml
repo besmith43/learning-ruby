@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: classmethod
+comment: 
+constants: []
+
+full_name: Something
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: bbegin
+- !ruby/object:RI::MethodSummary 
+  name: bbegin_no_exception
+- !ruby/object:RI::MethodSummary 
+  name: determine_args
+- !ruby/object:RI::MethodSummary 
+  name: multi_args
+- !ruby/object:RI::MethodSummary 
+  name: opt_args
+- !ruby/object:RI::MethodSummary 
+  name: unknown_args
+name: Something
+superclass: Object

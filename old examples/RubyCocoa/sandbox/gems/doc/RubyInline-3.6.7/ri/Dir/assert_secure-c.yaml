@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: <tt>assert_secure</tt> checks that if a <tt>path</tt> exists it has minimally writable permissions. If not, it prints an error and exits. It only works on <tt>POSIX</tt> systems. Patches for other systems are welcome.
+full_name: Dir::assert_secure
+is_singleton: true
+name: assert_secure
+params: (path)
+visibility: public

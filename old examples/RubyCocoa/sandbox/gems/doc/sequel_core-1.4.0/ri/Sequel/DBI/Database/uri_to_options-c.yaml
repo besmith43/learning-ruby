@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts a uri to an options hash. These options are then passed to a newly created database object.
+full_name: Sequel::DBI::Database::uri_to_options
+is_singleton: true
+name: uri_to_options
+params: (uri)
+visibility: public

@@ -1,0 +1,68 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A helper that provides the means to wrap actions of the controller with other methods.
+- !ruby/struct:SM::Flow::P 
+  body: For examples please look at the spec/ramaze/helper/aspect.rb
+- !ruby/struct:SM::Flow::P 
+  body: This is not a default helper due to the possible performance-issues. However, it should be only an overhead of about 6-8 calls, so if you want this feature it shouldn't have too large impact ;)
+- !ruby/struct:SM::Flow::P 
+  body: "Like every other helper, you can use it in your controller with:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  helper :aspect\n"
+constants: []
+
+full_name: Ramaze::Helper::Aspect
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: after
+- !ruby/object:RI::MethodSummary 
+  name: after
+- !ruby/object:RI::MethodSummary 
+  name: after_all
+- !ruby/object:RI::MethodSummary 
+  name: after_all
+- !ruby/object:RI::MethodSummary 
+  name: aspects
+- !ruby/object:RI::MethodSummary 
+  name: aspects
+- !ruby/object:RI::MethodSummary 
+  name: before
+- !ruby/object:RI::MethodSummary 
+  name: before
+- !ruby/object:RI::MethodSummary 
+  name: before_all
+- !ruby/object:RI::MethodSummary 
+  name: before_all
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post_all
+- !ruby/object:RI::MethodSummary 
+  name: post_all
+- !ruby/object:RI::MethodSummary 
+  name: pre
+- !ruby/object:RI::MethodSummary 
+  name: pre
+- !ruby/object:RI::MethodSummary 
+  name: pre_all
+- !ruby/object:RI::MethodSummary 
+  name: pre_all
+- !ruby/object:RI::MethodSummary 
+  name: wrap
+- !ruby/object:RI::MethodSummary 
+  name: wrap
+- !ruby/object:RI::MethodSummary 
+  name: wrap_all
+- !ruby/object:RI::MethodSummary 
+  name: wrap_all
+name: Aspect
+superclass: 

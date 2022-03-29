@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: ignored_tags
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: ignored_tags
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: loggers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: loggers
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Bundles different informer instances and sends incoming messages to each. This is the default with Informer as only member.
+constants: []
+
+full_name: Ramaze::LogHub
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+- !ruby/object:RI::IncludedModule 
+  name: Logging
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log
+name: LogHub
+superclass: Object

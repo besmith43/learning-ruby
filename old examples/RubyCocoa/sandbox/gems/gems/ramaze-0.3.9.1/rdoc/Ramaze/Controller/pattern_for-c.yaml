@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generate all possible permutations for given path.
+full_name: Ramaze::Controller::pattern_for
+is_singleton: true
+name: pattern_for
+params: (path)
+visibility: public

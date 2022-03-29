@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: hour
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts self from hours to seconds
+full_name: Assistance::TimeCalculations#hours
+is_singleton: false
+name: hours
+params: ()
+visibility: public

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>post_news (RubyForge)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rubyforge.rb, line 198</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post_news</span>(<span class="ruby-identifier">group_id</span>, <span class="ruby-identifier">subject</span>, <span class="ruby-identifier">body</span>)
+    <span class="ruby-identifier">page</span> = <span class="ruby-value str">&quot;/news/submit.php&quot;</span>
+    <span class="ruby-identifier">group_id</span> = <span class="ruby-identifier">lookup</span> <span class="ruby-value str">&quot;group&quot;</span>, <span class="ruby-identifier">group_id</span>
+
+    <span class="ruby-identifier">form</span> = {
+      <span class="ruby-value str">&quot;group_id&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group_id</span>,
+      <span class="ruby-value str">&quot;post_changes&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;y&quot;</span>,
+      <span class="ruby-value str">&quot;summary&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject</span>,
+      <span class="ruby-value str">&quot;details&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">body</span>,
+      <span class="ruby-value str">&quot;submit&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Submit&quot;</span>,
+    }
+
+    <span class="ruby-identifier">run</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">form</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

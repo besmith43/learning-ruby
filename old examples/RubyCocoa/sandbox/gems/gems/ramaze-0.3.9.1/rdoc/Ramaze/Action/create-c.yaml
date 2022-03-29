@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Instantiate with given Hash, takes both string/symbol keys. Only keys that match members of the Action-Struct are used.
+full_name: Ramaze::Action::create
+is_singleton: true
+name: create
+params: (hash = {})
+visibility: public

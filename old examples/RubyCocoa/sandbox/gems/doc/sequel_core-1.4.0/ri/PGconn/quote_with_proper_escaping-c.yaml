@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The postgres gem's string quoting doesn't render string literals properly, which this fixes.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &quot;a basic string&quot; #=&gt; 'a basic string'\n  &quot;this\\or that&quot;   #=&gt; E'this\\or that'\n"
+- !ruby/struct:SM::Flow::P 
+  body: See &lt;http://www.postgresql.org/docs/8.2/static/sql-syntax-lexical.html&gt; for details.
+full_name: PGconn::quote_with_proper_escaping
+is_singleton: true
+name: quote_with_proper_escaping
+params: (s)
+visibility: public

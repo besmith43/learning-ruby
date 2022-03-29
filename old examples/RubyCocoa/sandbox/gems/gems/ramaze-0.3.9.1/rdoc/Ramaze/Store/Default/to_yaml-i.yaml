@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: the actual content of the store in YAML format
+full_name: Ramaze::Store::Default#to_yaml
+is_singleton: false
+name: to_yaml
+params: ()
+visibility: public

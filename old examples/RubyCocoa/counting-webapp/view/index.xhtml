@@ -1,0 +1,9 @@
+<?r @names.each do | name | ?>
+  <a href="/show/#{name}">#{name}</a> <br />
+<?r end ?>
+
+<hr /> 
+
+<form id="new_user" action="/create" method="POST">
+   Create: <input type="text" name="name"/>
+</form>

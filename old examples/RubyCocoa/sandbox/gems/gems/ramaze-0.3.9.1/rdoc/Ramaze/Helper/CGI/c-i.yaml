@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: h
+- !ruby/object:RI::AliasName 
+  name: h
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: safely escape all HTML and code
+full_name: Ramaze::Helper::CGI#c
+is_singleton: false
+name: c
+params: (string)
+visibility: public

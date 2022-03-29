@@ -1,0 +1,21 @@
+require 'rubygems'
+require 'rake'
+require 'rake/testtask'
+
+task :default => [:build, :test]
+
+desc "Run tests."
+Rake::TestTask.new do | t |
+  t.test_files = FileList['*test.rb'] + FileList['*tests.rb']
+end
+
+task :build do
+  make_bundle('CallByReference')
+  make_bundle('Bridged')
+end
+
+def make_bundle(basename)
+  unless uptodate?("#{basename}.bundle", "#{basename}.m")
+    `cc -o #{basename}.bundle -bundle -framework Foundation #{basename}.m`
+  end
+end	

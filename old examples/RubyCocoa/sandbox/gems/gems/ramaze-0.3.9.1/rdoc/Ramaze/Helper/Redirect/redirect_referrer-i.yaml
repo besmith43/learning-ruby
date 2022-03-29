@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #redirect_referer"
+full_name: Ramaze::Helper::Redirect#redirect_referrer
+is_singleton: false
+name: redirect_referrer
+params: ()
+visibility: public

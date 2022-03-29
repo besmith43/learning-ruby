@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: String#escape is an extensible escaping mechanism for string. currently it suports
+- !ruby/struct:SM::Flow::VERB 
+  body: "  '&lt;div&gt;foo bar&lt;/div&gt;'.esc(:html)\n  'foo bar'.esc(:uri)\n  'foo bar'.esc(:cgi)\n  &quot;foo 'bar'&quot;.esc(:sql)\n"
+full_name: String#escape
+is_singleton: false
+name: escape
+params: (which = :html)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Updates the each method according to whether @row_proc and @transform are set or not.
+full_name: Sequel::Dataset#update_each_method
+is_singleton: false
+name: update_each_method
+params: ()
+visibility: public

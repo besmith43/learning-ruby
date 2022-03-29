@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Load given locales from disk and save it into the dictionary.
+full_name: Ramaze::Tool::Localize::load
+is_singleton: true
+name: load
+params: (*locales)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: For the specified host and for all given ports call run_server and add the returned thread to the Global.adapters ThreadGroup. Afterwards adds a trap for the value of Global.shutdown_trap which calls Ramaze.shutdown when triggered (usually by SIGINT).
+full_name: Ramaze::Adapter::Base::start
+is_singleton: true
+name: start
+params: (host, port)
+visibility: public

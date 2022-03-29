@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::ThreadAccessor#thread_accessor
+is_singleton: false
+name: thread_accessor
+params: (*names, &initializer)
+visibility: public

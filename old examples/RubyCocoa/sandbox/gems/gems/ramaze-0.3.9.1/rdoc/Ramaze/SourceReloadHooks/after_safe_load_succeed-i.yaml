@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overwrite to add actions after a file is Kernel::load-ed successfully, by default we clean the Cache for compiled templates and resolved actions.
+full_name: Ramaze::SourceReloadHooks#after_safe_load_succeed
+is_singleton: false
+name: after_safe_load_succeed
+params: (file)
+visibility: public

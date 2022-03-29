@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: PGconn::quote
+is_singleton: true
+name: quote
+params: (obj)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Object#is_one_of?
+is_singleton: false
+name: is_one_of?
+params: (*classes)
+visibility: public

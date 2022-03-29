@@ -1,0 +1,71 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: content
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: content
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: demunge_passed_variables
+- !ruby/object:RI::MethodSummary 
+  name: demunge_passed_variables
+- !ruby/object:RI::MethodSummary 
+  name: finish_transform
+- !ruby/object:RI::MethodSummary 
+  name: finish_transform
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform_with_content
+- !ruby/object:RI::MethodSummary 
+  name: transform_with_content
+- !ruby/object:RI::MethodSummary 
+  name: transform_without_content
+- !ruby/object:RI::MethodSummary 
+  name: transform_without_content
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: an Element is almost like an Controller, however, instead of connecting actions to templates it is only used in Ramaze::Template::Ezamar and can be used inside the templates of the Controller as a simple wrapper.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::P 
+  body: "Your Element called Page:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Page &lt; Ezamar::Element\n    def render\n      %{\n       &lt;html&gt;\n         &lt;h1&gt;\n           #@title\n         &lt;/h1&gt;\n         #{content}\n       &lt;/html&gt;\n       }\n    end\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: and one called SideBar
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class SideBar &lt; Ezamar::Element\n    def render\n      %{\n        &lt;a href=&quot;http://something.com&quot;&gt;something&lt;/a&gt;\n       }\n     end\n   end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "and your template (any template for any action):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;Page title=&quot;Test&quot;&gt;\n    &lt;SideBar /&gt;\n    &lt;p&gt;\n      Hello, World!\n    &lt;/p&gt;\n  &lt;/Page&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "would result in:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;html&gt;\n    &lt;h1&gt;\n      Test\n    &lt;/h1&gt;\n    &lt;p&gt;\n      Hello, World!\n    &lt;/p&gt;\n  &lt;/html&gt;\n"
+constants: []
+
+full_name: Ezamar::Element
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Methods
+- !ruby/object:RI::IncludedModule 
+  name: Ramaze::Helper::Methods
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: render
+- !ruby/object:RI::MethodSummary 
+  name: render
+name: Element
+superclass: Object

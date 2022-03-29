@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Inline::C#parse_signature
+is_singleton: false
+name: parse_signature
+params: (src, raw=false)
+visibility: protected

@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: pre_all
+- !ruby/object:RI::AliasName 
+  name: pre_all
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run block before all actions.
+full_name: Ramaze::Helper::Aspect#before_all
+is_singleton: false
+name: before_all
+params: (&block)
+visibility: private

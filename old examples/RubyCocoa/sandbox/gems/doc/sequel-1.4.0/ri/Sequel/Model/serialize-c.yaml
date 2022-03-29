@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Serializes column with YAML or through marshalling.
+full_name: Sequel::Model::serialize
+is_singleton: true
+name: serialize
+params: (*columns)
+visibility: public

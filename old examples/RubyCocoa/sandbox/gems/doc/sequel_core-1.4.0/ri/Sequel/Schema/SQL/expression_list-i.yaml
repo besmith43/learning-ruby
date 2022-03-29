@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::SQL#expression_list
+is_singleton: false
+name: expression_list
+params: (*args, &block)
+visibility: public

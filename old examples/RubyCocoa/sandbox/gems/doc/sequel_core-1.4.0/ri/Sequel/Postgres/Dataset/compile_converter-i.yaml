@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Dataset#compile_converter
+is_singleton: false
+name: compile_converter
+params: (columns, translators)
+visibility: public

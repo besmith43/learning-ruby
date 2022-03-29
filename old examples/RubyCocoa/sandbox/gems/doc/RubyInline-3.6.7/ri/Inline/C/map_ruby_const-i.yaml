@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Maps a ruby constant to C (with the same name)
+full_name: Inline::C#map_ruby_const
+is_singleton: false
+name: map_ruby_const
+params: (*names)
+visibility: public

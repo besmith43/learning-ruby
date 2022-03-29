@@ -1,0 +1,168 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: follow_num_redirects
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: follow_num_redirects
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_host
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_host
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_port
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_port
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_pwd
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_pwd
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_user
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: proxy_user
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: request_headers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: request_headers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: response_handlers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: response_handlers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: response_headers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: response_headers
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: uri
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: uri
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wrapper around ruby's standard net/http classes. Currently, only GET and POST https methods are supported. `SimpleHttp` provides class methods `get` and `post` to handle basic functionality. In case more complicated requests need to be made or default settings need to be overriden, it's possible to instantiate `SimpleHttp` and use instance methods `get` and `put`.
+- !ruby/struct:SM::Flow::P 
+  body: "Features:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Handles Redirects automatically
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Proxy used transparently if http_proxy environment variable is set.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: SSL handled automatically
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "fault tolerant uri, e.g. all of these would work:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "    &quot;www.example.com&quot;, &quot;www.example.com/&quot;, &quot;http://www.example.com&quot;\n"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "Some usage examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "              # plain GET (using class methods)\n              SimpleHttp.get &quot;www.example.com&quot;\n\n              # POST using the instance methods\n              uri = URI.parse &quot;https://www.example.com/index.html&quot;\n              sh = SimpleHttp uri\n              sh.set_proxy &quot;my.proxy&quot;, &quot;8080&quot;\n              sh.post {&quot;query&quot; =&gt; &quot;query_data&quot;}\n\n              # POST using class methods.\n              binaryData = getImage\n              SimpleData.post binaryData, &quot;image/png&quot;\n\n              # GET requst with a custom request_header\n              sh = SimpleHttp.new &quot;http://www.example.com&quot;\n              sh.request_headers= {'X-Special-Http-Header'=&gt;'my-value'}\n              sh.get\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'0.1.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RESPONSE_HANDLERS
+  value: "{                 Net::HTTPResponse => lambda { |request, response, http|                         response.each_header {|key, value|                                 http.response_headers[key]=value"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'0.1.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RESPONSE_HANDLERS
+  value: "{                 Net::HTTPResponse => lambda { |request, response, http|                         response.each_header {|key, value|                                 http.response_headers[key]=value"
+full_name: SimpleHttp
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: basic_authentication
+- !ruby/object:RI::MethodSummary 
+  name: basic_authentication
+- !ruby/object:RI::MethodSummary 
+  name: do_http
+- !ruby/object:RI::MethodSummary 
+  name: do_http
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: handle_response
+- !ruby/object:RI::MethodSummary 
+  name: handle_response
+- !ruby/object:RI::MethodSummary 
+  name: make_query
+- !ruby/object:RI::MethodSummary 
+  name: make_query
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: register_response_handler
+- !ruby/object:RI::MethodSummary 
+  name: register_response_handler
+- !ruby/object:RI::MethodSummary 
+  name: set_proxy
+- !ruby/object:RI::MethodSummary 
+  name: set_proxy
+name: SimpleHttp
+superclass: Object

@@ -1,0 +1,48 @@
+class GameWon < Chingu::GameState
+  trait :timer
+
+  def setup
+    @text = Text.new("Game Won", size: 150, color: Gosu::Color::BLACK)
+    @time = Text.new("You survived for: #{GameInfo::Config.game_time_processed.strftime('%H hours, %M minutes, %S seconds.')}", size: 28, color: Gosu::Color::BLACK)
+
+    @text.x = $window.width/2-@text.width/2
+    @text.y = $window.height/2
+
+    @time.x = $window.width/2-@time.width/2
+    @time.y = $window.height/2+220
+    @color= 0
+    @up = true
+    self.input = {[:escape] => :skip}
+
+    GameMethods.end_cleanup
+  end
+
+  def draw
+    @text.draw
+    @time.draw
+  end
+
+  def update
+    fade_out_music
+    @text.color = Gosu::Color.rgb(0, @color, 0)
+    @time.color = Gosu::Color.argb(@color, 255, 255, 255)
+    @color+=2 if @up
+    @color-=1 unless @up
+    @up = false if @color >= 200
+
+    if @up == false && @color <= 0
+      close
+      $music_manager.song.stop
+      push_game_state(MainMenu)
+    end
+  end
+
+  def skip
+    close
+    push_game_state(MainMenu)
+  end
+
+  def fade_out_music
+    $music_manager.song.volume=($music_manager.song.volume-0.0035)
+  end
+end

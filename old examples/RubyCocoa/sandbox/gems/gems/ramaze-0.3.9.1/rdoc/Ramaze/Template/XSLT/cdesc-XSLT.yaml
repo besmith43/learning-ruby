@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: do_transform
+- !ruby/object:RI::MethodSummary 
+  name: do_transform
+- !ruby/object:RI::MethodSummary 
+  name: ext_functions_synchronize
+- !ruby/object:RI::MethodSummary 
+  name: ext_functions_synchronize
+- !ruby/object:RI::MethodSummary 
+  name: make_functor
+- !ruby/object:RI::MethodSummary 
+  name: make_functor
+- !ruby/object:RI::MethodSummary 
+  name: register_ext_functions
+- !ruby/object:RI::MethodSummary 
+  name: register_ext_functions
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: XSLT_EXT_FUNCTIONS_LOCK
+  value: Mutex.new
+- !ruby/object:RI::Constant 
+  comment: 
+  name: XSLT_EXT_FUNCTIONS_LOCK
+  value: Mutex.new
+full_name: Ramaze::Template::XSLT
+includes: []
+
+instance_methods: []
+
+name: XSLT
+superclass: Template

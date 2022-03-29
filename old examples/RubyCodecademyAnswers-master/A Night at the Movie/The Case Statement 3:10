@@ -1,0 +1,13 @@
+case setting
+when "add"
+    puts "Added!"
+when "update"
+    puts "updated!"
+when "display"
+    puts "Movies!"
+when "delete"
+    puts "Deleted!"
+else
+    puts "Error!"
+end
+ 

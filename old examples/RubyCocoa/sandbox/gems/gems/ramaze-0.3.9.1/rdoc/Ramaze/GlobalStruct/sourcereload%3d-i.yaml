@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: reassigns the interval in the instance of SourceReload that is running or just waiting.
+full_name: Ramaze::GlobalStruct#sourcereload=
+is_singleton: false
+name: sourcereload=
+params: (interval)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets @hash to an empty Hash
+full_name: Ramaze::Session::Hash::new
+is_singleton: true
+name: new
+params: ()
+visibility: public

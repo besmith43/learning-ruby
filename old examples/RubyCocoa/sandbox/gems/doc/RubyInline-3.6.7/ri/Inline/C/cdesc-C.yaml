@@ -1,0 +1,79 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: mod
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: rb_file
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Inline::C is the default builder used and the only one provided by Inline. It can be used as a template to write builders for other languages. It understands type-conversions for the basic types and can be extended as needed.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_ARITY_THRESHOLD
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAGIC_ARITY
+  value: "-1"
+full_name: Inline::C
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_compile_flags
+- !ruby/object:RI::MethodSummary 
+  name: add_link_flags
+- !ruby/object:RI::MethodSummary 
+  name: add_to_init
+- !ruby/object:RI::MethodSummary 
+  name: add_type_converter
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: c
+- !ruby/object:RI::MethodSummary 
+  name: c2ruby
+- !ruby/object:RI::MethodSummary 
+  name: c_raw
+- !ruby/object:RI::MethodSummary 
+  name: c_raw_singleton
+- !ruby/object:RI::MethodSummary 
+  name: c_singleton
+- !ruby/object:RI::MethodSummary 
+  name: crap_for_windoze
+- !ruby/object:RI::MethodSummary 
+  name: generate
+- !ruby/object:RI::MethodSummary 
+  name: include
+- !ruby/object:RI::MethodSummary 
+  name: include_ruby_last
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: load_cache
+- !ruby/object:RI::MethodSummary 
+  name: map_c_const
+- !ruby/object:RI::MethodSummary 
+  name: map_ruby_const
+- !ruby/object:RI::MethodSummary 
+  name: module_name
+- !ruby/object:RI::MethodSummary 
+  name: parse_signature
+- !ruby/object:RI::MethodSummary 
+  name: prefix
+- !ruby/object:RI::MethodSummary 
+  name: ruby2c
+- !ruby/object:RI::MethodSummary 
+  name: so_name
+- !ruby/object:RI::MethodSummary 
+  name: strip_comments
+name: C
+superclass: Object

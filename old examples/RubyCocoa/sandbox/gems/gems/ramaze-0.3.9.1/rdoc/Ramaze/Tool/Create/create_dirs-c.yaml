@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: create the directories recursivly
+full_name: Ramaze::Tool::Create::create_dirs
+is_singleton: true
+name: create_dirs
+params: (*dirs)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Postgres::Database#drop_table_sql
+is_singleton: false
+name: drop_table_sql
+params: (name)
+visibility: public

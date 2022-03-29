@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Use in your template to display all flash messages that may be stored. For example, given you stored:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  flash # =&gt; { :error =&gt; 'Pleae enter your name'\n               :info =&gt; 'Do you see the fnords?' }\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Then a flashbox would display:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;div class='flash' id='flash_error'&gt;Please enter your name&lt;/div&gt;\n  &lt;div class='flash' id='flash_info'&gt;Do you see the fnords?&lt;/div&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "This is designed to be customized permanently or per usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  flashbox(&quot;&lt;div class='flash_%key'&gt;%value&lt;/div&gt;&quot;)\n"
+- !ruby/struct:SM::Flow::P 
+  body: Where any occurrence of %key and %value will be replaced by the actual contents of each element of flash
+full_name: Ramaze::Helper::Flash#flashbox
+is_singleton: false
+name: flashbox
+params: (tag = Helper::Flash.trait[:tag])
+visibility: public

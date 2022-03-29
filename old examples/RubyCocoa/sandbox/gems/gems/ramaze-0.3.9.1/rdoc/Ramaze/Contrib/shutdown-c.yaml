@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "# Will call .shutdown on all contrib modules which support it. +"
+full_name: Ramaze::Contrib::shutdown
+is_singleton: true
+name: shutdown
+params: ()
+visibility: public

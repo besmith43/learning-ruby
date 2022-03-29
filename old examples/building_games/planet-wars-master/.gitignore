@@ -1,0 +1,12 @@
+.redcar
+._redcar
+pkg
+*.exe
+*.html
+.project
+.bundle
+*.ep
+inkscape/*
+assets/scal/*
+assets/pencil/*
+lib/planet-wars/logs/*

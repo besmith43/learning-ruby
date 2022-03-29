@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: find the element, create an instance, pass it the content check if it responds to :render and sets instance-variables that are named after the keys and hold the values of the parameters you passed to the Element
+- !ruby/struct:SM::Flow::P 
+  body: "Parameters look like:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;Page foo=&quot;true&quot;&gt; bar &lt;/Page&gt;\n  &lt;Page foo=&quot;true&quot; /&gt;\n"
+full_name: Ezamar::Element::finish_transform
+is_singleton: true
+name: finish_transform
+params: (klass, params, content)
+visibility: public

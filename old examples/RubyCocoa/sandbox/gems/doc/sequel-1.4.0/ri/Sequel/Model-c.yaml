@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Lets you create a Model class with its table name already set or reopen an existing Model.
+- !ruby/struct:SM::Flow::P 
+  body: Makes given dataset inherited.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Comment &lt; Sequel::Model(:something)\n    table_name # =&gt; :something\n\n    # ...\n\n  end\n"
+full_name: Sequel::Model
+is_singleton: true
+name: Model
+params: (source)
+visibility: public

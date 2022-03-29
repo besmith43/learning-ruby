@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Schema::Generator#constraint
+is_singleton: false
+name: constraint
+params: (name, *args, &block)
+visibility: public

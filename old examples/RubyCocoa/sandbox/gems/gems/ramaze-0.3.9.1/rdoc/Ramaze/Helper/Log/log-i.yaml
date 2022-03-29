@@ -1,0 +1,21 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: inform
+- !ruby/object:RI::AliasName 
+  name: inform
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The various (default) tags you can use are:"
+- !ruby/struct:SM::Flow::P 
+  body: ":info - just outputs whatever you give to it without modification. :debug - applies #inspect to everything you pass :error - can take normal strings or exception-objects"
+- !ruby/struct:SM::Flow::P 
+  body: "Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  inform :info, 'proceeding as planned'\n  # [2007-04-04 23:38:39] INFO   proceeding as planned\n\n  inform :debug, [1,2,3]\n  # [2007-04-04 23:38:39] DEBUG  [1, 2, 3]\n\n  inform :error, 'something bad happened'\n  # [2007-04-04 23:38:39] ERROR  something bad happened\n\n  inform :error, exception\n  # [2007-04-04 23:40:59] ERROR  #&lt;RuntimeError: Some exception&gt;\n  # [2007-04-04 23:40:59] ERROR  hello.rb:23:in `index'\n  # ... rest of backtrace ...\n"
+full_name: Ramaze::Helper::Log#log
+is_singleton: false
+name: log
+params: (tag, *args)
+visibility: public

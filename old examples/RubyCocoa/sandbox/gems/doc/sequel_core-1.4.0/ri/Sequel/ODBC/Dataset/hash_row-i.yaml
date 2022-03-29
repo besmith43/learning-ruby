@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: def fetch_rows(sql, &amp;block)
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @db.synchronize do\n    s = @db.execute sql\n    begin\n      @columns = s.columns(true).map {|c| c.name.to_sym}\n      rows = s.fetch_all\n      rows.each {|row| yield hash_row(row)}\n    ensure\n      s.drop unless s.nil? rescue nil\n    end\n  end\n  self\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+full_name: Sequel::ODBC::Dataset#hash_row
+is_singleton: false
+name: hash_row
+params: (row)
+visibility: public

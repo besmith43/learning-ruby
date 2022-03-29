@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: HTTP::Message::escape_query
+is_singleton: true
+name: escape_query
+params: (query)
+visibility: public

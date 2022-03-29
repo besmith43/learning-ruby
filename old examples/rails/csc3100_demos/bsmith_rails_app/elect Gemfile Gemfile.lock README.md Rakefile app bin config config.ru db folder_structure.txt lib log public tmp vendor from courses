@@ -1,0 +1,19 @@
+                      List of relations
+ Schema |            Name             |   Type   |   Owner   
+--------+-----------------------------+----------+-----------
+ public | ar_internal_metadata        | table    | rails_app
+ public | courses                     | table    | rails_app
+ public | courses_id_seq              | sequence | rails_app
+ public | honors_and_awards           | table    | rails_app
+ public | honors_and_awards_id_seq    | sequence | rails_app
+ public | references                  | table    | rails_app
+ public | references_id_seq           | sequence | rails_app
+ public | schema_migrations           | table    | rails_app
+ public | skills_and_interests        | table    | rails_app
+ public | skills_and_interests_id_seq | sequence | rails_app
+ public | users                       | table    | rails_app
+ public | users_id_seq                | sequence | rails_app
+ public | work_experiences            | table    | rails_app
+ public | work_experiences_id_seq     | sequence | rails_app
+(14 rows)
+

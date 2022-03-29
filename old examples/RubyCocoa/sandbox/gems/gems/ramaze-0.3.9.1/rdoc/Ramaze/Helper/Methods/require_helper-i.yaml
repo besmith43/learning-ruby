@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Helper::Methods#require_helper
+is_singleton: false
+name: require_helper
+params: (name)
+visibility: private

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: clone_merge
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a new clone of the dataset with with the given options merged.
+full_name: Sequel::Dataset#clone
+is_singleton: false
+name: clone
+params: (opts = {})
+visibility: public

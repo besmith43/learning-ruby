@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: SexpMatchSpecials#ANY
+is_singleton: false
+name: ANY
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Is the last page displayed?
+full_name: Ramaze::Pager#last_page?
+is_singleton: false
+name: last_page?
+params: ()
+visibility: public

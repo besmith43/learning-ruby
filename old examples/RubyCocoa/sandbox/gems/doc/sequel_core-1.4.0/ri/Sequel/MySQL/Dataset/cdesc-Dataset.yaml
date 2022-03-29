@@ -1,0 +1,67 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "TRUE"
+  value: "'1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "FALSE"
+  value: "'0'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Join processing changed after MySQL v5.0.12. NATURAL joins are SQL:2003 consistent.
+  name: JOIN_TYPES
+  value: "{ :cross => 'INNER JOIN'.freeze,         :straight => 'STRAIGHT_JOIN'.freeze,         :natural_left => 'NATURAL LEFT JOIN'.freeze,         :natural_right => 'NATURAL RIGHT JOIN'.freeze,         :natural_left_outer => 'NATURAL LEFT OUTER JOIN'.freeze,         :natural_right_outer => 'NATURAL RIGHT OUTER JOIN'.freeze,         :left => 'LEFT JOIN'.freeze,         :right => 'RIGHT JOIN'.freeze,         :left_outer => 'LEFT OUTER JOIN'.freeze,         :right_outer => 'RIGHT OUTER JOIN'.freeze,         :natural_inner => 'NATURAL LEFT JOIN'.freeze,         # :full_outer => 'FULL OUTER JOIN'.freeze,         #         # A full outer join, nor a workaround implementation of         # :full_outer, is not yet possible in Sequel. See issue         # #195 which probably depends on issue #113 being         # resolved.         :inner => 'INNER JOIN'.freeze"
+full_name: Sequel::MySQL::Dataset
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_transform_load
+- !ruby/object:RI::MethodSummary 
+  name: array_tuples_transform_save
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: delete_sql
+- !ruby/object:RI::MethodSummary 
+  name: fetch_rows
+- !ruby/object:RI::MethodSummary 
+  name: full_text_search
+- !ruby/object:RI::MethodSummary 
+  name: having
+- !ruby/object:RI::MethodSummary 
+  name: insert
+- !ruby/object:RI::MethodSummary 
+  name: join_expr
+- !ruby/object:RI::MethodSummary 
+  name: literal
+- !ruby/object:RI::MethodSummary 
+  name: match_expr
+- !ruby/object:RI::MethodSummary 
+  name: multi_insert_sql
+- !ruby/object:RI::MethodSummary 
+  name: quote_column_ref
+- !ruby/object:RI::MethodSummary 
+  name: replace
+- !ruby/object:RI::MethodSummary 
+  name: replace_sql
+- !ruby/object:RI::MethodSummary 
+  name: select_sql
+- !ruby/object:RI::MethodSummary 
+  name: sql
+- !ruby/object:RI::MethodSummary 
+  name: update
+- !ruby/object:RI::MethodSummary 
+  name: update_sql
+name: Dataset
+superclass: Sequel::Dataset

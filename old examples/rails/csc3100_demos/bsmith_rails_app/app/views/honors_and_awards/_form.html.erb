@@ -1,0 +1,36 @@
+<%= form_for(honors_and_award) do |f| %>
+  <% if honors_and_award.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(honors_and_award.errors.count, "error") %> prohibited this honors_and_award from being saved:</h2>
+
+      <ul>
+      <% honors_and_award.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :owner, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :honor_date %>
+    <%= f.text_field :honor_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :honor_name %>
+    <%= f.text_field :honor_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :honor_description %>
+    <%= f.text_field :honor_description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

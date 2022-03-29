@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes Global.adapter and starts if test_connections is positive that a connection can be made to the specified host and port. If you set Global.adapter to false it won't start any but deploy a dummy which is useful for testing purposes where you just send fake requests to Dispatcher.
+full_name: Ramaze::Adapter::start_adapter
+is_singleton: true
+name: start_adapter
+params: ()
+visibility: public

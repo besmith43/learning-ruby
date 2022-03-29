@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Rewriters:"
+full_name: Ruby2Ruby#rewrite_rescue
+is_singleton: false
+name: rewrite_rescue
+params: (exp)
+visibility: public

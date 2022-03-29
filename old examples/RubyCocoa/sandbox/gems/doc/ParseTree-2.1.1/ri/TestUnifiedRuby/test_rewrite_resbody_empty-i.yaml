@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestUnifiedRuby#test_rewrite_resbody_empty
+is_singleton: false
+name: test_rewrite_resbody_empty
+params: ()
+visibility: public

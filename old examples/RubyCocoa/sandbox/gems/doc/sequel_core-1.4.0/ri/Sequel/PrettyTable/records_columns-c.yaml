@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::PrettyTable::records_columns
+is_singleton: true
+name: records_columns
+params: (records)
+visibility: public

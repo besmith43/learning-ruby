@@ -1,0 +1,13 @@
+require 'rubygems'
+require 'rake'
+require 'rake/testtask'
+
+task :default => [:test]
+
+desc "Run tests."
+Rake::TestTask.new do | t |
+  files = FileList['*tests.rb'] + FileList['*test.rb']
+  files << FileList['*examples.rb'] + FileList['*example.rb']
+  t.test_files = files
+end
+

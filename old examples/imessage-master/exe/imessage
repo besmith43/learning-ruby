@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/imessage'
+
+ARGV << '--help' if ARGV.empty?
+
+options = Imessage::Parser.parse(ARGV)
+
+sender = Imessage::Sender.new
+sender.deliver({
+  text: options.text,
+  attachment: options.attachment,
+  contacts: options.contacts
+})

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The method that takes the block containing the DSL, used like in lib/ramaze/global.rb
+full_name: Ramaze::GlobalDSL::option_dsl
+is_singleton: true
+name: option_dsl
+params: (&block)
+visibility: public

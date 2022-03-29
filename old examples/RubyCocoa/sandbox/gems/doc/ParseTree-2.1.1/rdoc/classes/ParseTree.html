@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ParseTree</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ParseTree</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/parse_tree_rb.html">
+                lib/parse_tree.rb
+                </a>
+        <br />
+                <a href="../files/test/test_parse_tree_rb.html">
+                test/test_parse_tree.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="ParseTree.html">ParseTree</a> is a RubyInline-style extension that
+accesses and traverses the internal parse tree created by ruby.
+</p>
+<pre>
+  class Example
+    def blah
+      return 1 + 1
+    end
+  end
+
+  ParseTree.new.parse_tree(Example)
+  =&gt; [[:class, :Example, :Object,
+         [:defn,
+           &quot;blah&quot;,
+           [:scope,
+             [:block,
+               [:args],
+               [:return, [:call, [:lit, 1], &quot;+&quot;, [:array, [:lit, 1]]]]]]]]]
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000332">has_alloca</a>&nbsp;&nbsp;
+      <a href="#M000328">new</a>&nbsp;&nbsp;
+      <a href="#M000329">parse_tree</a>&nbsp;&nbsp;
+      <a href="#M000330">parse_tree_for_method</a>&nbsp;&nbsp;
+      <a href="#M000331">parse_tree_for_string</a>&nbsp;&nbsp;
+      <a href="#M000333">process</a>&nbsp;&nbsp;
+      <a href="#M000327">translate</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'2.1.1'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NODE_NAMES</td>
+          <td>=</td>
+          <td class="context-item-value">[                 #  00                 :method, :fbody, :cfunc, :scope, :block,                 :if, :case, :when, :opt_n, :while,                 #  10                 :until, :iter, :for, :break, :next,                 :redo, :retry, :begin, :rescue, :resbody,                 #  20                 :ensure, :and, :or, :not, :masgn,                 :lasgn, :dasgn, :dasgn_curr, :gasgn, :iasgn,                 #  30                 :cdecl, :cvasgn, :cvdecl, :op_asgn1, :op_asgn2,                 :op_asgn_and, :op_asgn_or, :call, :fcall, :vcall,                 #  40                 :super, :zsuper, :array, :zarray, :hash,                 :return, :yield, :lvar, :dvar, :gvar,                 #  50                 :ivar, :const, :cvar, :nth_ref, :back_ref,                 :match, :match2, :match3, :lit, :str,                 #  60                 :dstr, :xstr, :dxstr, :evstr, :dregx,                 :dregx_once, :args, :argscat, :argspush, :splat,                 #  70                 :to_ary, :svalue, :block_arg, :block_pass, :defn,                 :defs, :alias, :valias, :undef, :class,                 #  80                 :module, :sclass, :colon2, :colon3, :cref,                 :dot2, :dot3, :flip2, :flip3, :attrset,                 #  90                 :self, :nil, :true, :false, :defined,                 #  95                 :newline, :postexe, :alloca, :dmethod, :bmethod,                 # 100                 :memo, :ifunc, :dsym, :attrasgn,                 :last</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000332" class="method-detail">
+        <a name="M000332"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000332.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000332.html');return false;">
+          <span class="method-name">has_alloca</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000328" class="method-detail">
+        <a name="M000328"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000328.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000328.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(include_newlines=$DEBUG)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Initializes a <a href="ParseTree.html">ParseTree</a> instance. Includes
+newline nodes if <tt>include_newlines</tt> which defaults to +$DEBUG+.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000327" class="method-detail">
+        <a name="M000327"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000327.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000327.html');return false;">
+          <span class="method-name">translate</span><span class="method-args">(klass_or_str, method=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Front end translation method.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000329" class="method-detail">
+        <a name="M000329"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000329.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000329.html');return false;">
+          <span class="method-name">parse_tree</span><span class="method-args">(*klasses)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Main driver for <a href="ParseTree.html">ParseTree</a>. Returns an array of
+arrays containing the parse tree for <tt>klasses</tt>.
+</p>
+<p>
+Structure:
+</p>
+<pre>
+  [[:class, classname, superclassname, [:defn :method1, ...], ...], ...]
+</pre>
+<p>
+NOTE: v1.0 - v1.1 had the signature (klass, meth=nil). This wasn&#8216;t
+used much at all and since <a
+href="ParseTree.html#M000330">parse_tree_for_method</a> already existed, it
+was deemed more useful to expand this method to do multiple classes.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000330" class="method-detail">
+        <a name="M000330"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000330.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000330.html');return false;">
+          <span class="method-name">parse_tree_for_method</span><span class="method-args">(klass, method, is_cls_meth=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the parse tree for just one <tt>method</tt> of a class
+<tt>klass</tt>.
+</p>
+<p>
+Format:
+</p>
+<pre>
+  [:defn, :name, :body]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000331" class="method-detail">
+        <a name="M000331"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000331.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000331.html');return false;">
+          <span class="method-name">parse_tree_for_string</span><span class="method-args">(source, filename = '(string)', line = 1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the parse tree for a string <tt>source</tt>.
+</p>
+<p>
+Format:
+</p>
+<pre>
+  [[sexps] ... ]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000333" class="method-detail">
+        <a name="M000333"></a>
+
+        <div class="method-heading">
+          <a href="ParseTree.src/M000333.html" target="Code" class="method-signature"
+            onclick="popupCode('ParseTree.src/M000333.html');return false;">
+          <span class="method-name">process</span><span class="method-args">(input)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

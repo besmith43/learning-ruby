@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: numeric extensions
+constants: []
+
+full_name: Numeric
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Assistance::TimeCalculations
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: blank?
+name: Numeric
+superclass: Object

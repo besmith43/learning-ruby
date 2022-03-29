@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Simple form for use or overwriting. Has to provide the same functionality when overwritten or directly embedded into a page.
+full_name: Ramaze::Helper::Identity#openid_login_form
+is_singleton: false
+name: openid_login_form
+params: (caption="login")
+visibility: public

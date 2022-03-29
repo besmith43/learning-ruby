@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: with parameterization, params may include
+- !ruby/struct:SM::Flow::VERB 
+  body: "  arrays: /num?n=1&amp;n=2 becomes [['1','2']] for def num(n) end\n  nil: /calc?w=10&amp;d=2 becomes ['10', nil, '2'] for def calc(w, h, d) end\n"
+full_name: Ramaze::Action#params=
+is_singleton: false
+name: params=
+params: (*par)
+visibility: public

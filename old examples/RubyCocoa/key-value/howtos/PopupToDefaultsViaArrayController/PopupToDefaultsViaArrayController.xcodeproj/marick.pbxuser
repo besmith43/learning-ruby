@@ -1,0 +1,96 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecture = i386;
+		activeBuildConfigurationName = Release;
+		activeExecutable = 78CB4A140E3BB4B900BF0AAF /* PopupToDefaultsViaArrayController */;
+		activeTarget = 4DDCA7030ACC9A6100E082CE /* PopupToDefaultsViaArrayController */;
+		addToTargets = (
+			4DDCA7030ACC9A6100E082CE /* PopupToDefaultsViaArrayController */,
+		);
+		codeSenseManager = 78CB4A240E3BB4CE00BF0AAF /* Code sense */;
+		executables = (
+			78CB4A140E3BB4B900BF0AAF /* PopupToDefaultsViaArrayController */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					243,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 241913137;
+			PBXWorkspaceStateSaveDate = 241913137;
+		};
+		sourceControlManager = 78CB4A230E3BB4CE00BF0AAF /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4DDCA7030ACC9A6100E082CE /* PopupToDefaultsViaArrayController */ = {
+		activeExec = 0;
+		executables = (
+			78CB4A140E3BB4B900BF0AAF /* PopupToDefaultsViaArrayController */,
+		);
+	};
+	78CB4A140E3BB4B900BF0AAF /* PopupToDefaultsViaArrayController */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = PopupToDefaultsViaArrayController;
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	78CB4A230E3BB4CE00BF0AAF /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	78CB4A240E3BB4CE00BF0AAF /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	78CB4A260E3BB81F00BF0AAF /* AppController.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {701, 616}}";
+			sepNavSelRange = "{223, 0}";
+			sepNavVisRange = "{0, 848}";
+			sepNavWindowFrame = "{{19, 159}, {760, 614}}";
+		};
+	};
+}

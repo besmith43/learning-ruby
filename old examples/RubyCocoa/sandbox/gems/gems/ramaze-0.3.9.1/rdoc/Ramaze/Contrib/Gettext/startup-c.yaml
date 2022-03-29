@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Called by Ramaze::Contrib.load, adds Gettext to Action::Filter
+full_name: Ramaze::Contrib::Gettext::startup
+is_singleton: true
+name: startup
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Saves only changed columns or does nothing if no columns are marked as chanaged.
+full_name: Sequel::Model#save_changes
+is_singleton: false
+name: save_changes
+params: ()
+visibility: public

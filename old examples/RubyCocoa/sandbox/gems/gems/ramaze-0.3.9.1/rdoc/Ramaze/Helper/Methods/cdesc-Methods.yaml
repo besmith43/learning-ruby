@@ -1,0 +1,37 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: extend_object
+- !ruby/object:RI::MethodSummary 
+  name: extend_object
+- !ruby/object:RI::MethodSummary 
+  name: included
+- !ruby/object:RI::MethodSummary 
+  name: included
+comment: 
+constants: []
+
+full_name: Ramaze::Helper::Methods
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: find_helper
+- !ruby/object:RI::MethodSummary 
+  name: find_helper
+- !ruby/object:RI::MethodSummary 
+  name: helper
+- !ruby/object:RI::MethodSummary 
+  name: helper
+- !ruby/object:RI::MethodSummary 
+  name: require_helper
+- !ruby/object:RI::MethodSummary 
+  name: require_helper
+- !ruby/object:RI::MethodSummary 
+  name: use_helper
+- !ruby/object:RI::MethodSummary 
+  name: use_helper
+name: Methods
+superclass: 

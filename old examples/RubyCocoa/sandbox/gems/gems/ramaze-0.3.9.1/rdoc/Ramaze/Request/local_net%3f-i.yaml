@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: -- Mongrel somehow puts together multiple IPs when proxy is involved. ++
+full_name: Ramaze::Request#local_net?
+is_singleton: false
+name: local_net?
+params: (address = ip)
+visibility: public

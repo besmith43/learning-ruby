@@ -1,0 +1,8 @@
+print "say something" 
+user_input = gets.chomp
+
+if user_input.gsub!(/s/, "th")
+    puts "#{user_input}"
+else
+    puts "there is no s"
+end

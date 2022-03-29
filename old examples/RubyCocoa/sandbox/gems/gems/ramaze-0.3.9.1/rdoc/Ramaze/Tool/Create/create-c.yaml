@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: a method to create a new project by copying the contents of lib/proto to the position you specify (project)
+- !ruby/struct:SM::Flow::P 
+  body: It is just a nice wrapper showing you what files/directories are put in place.
+full_name: Ramaze::Tool::Create::create
+is_singleton: true
+name: create
+params: (project)
+visibility: public

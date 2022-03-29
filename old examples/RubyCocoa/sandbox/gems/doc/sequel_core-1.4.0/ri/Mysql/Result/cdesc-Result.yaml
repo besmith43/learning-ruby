@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Monkey patch Mysql::Result to yield hashes with symbol keys
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MYSQL_TYPES
+  value: "{     0   => :to_d,     # MYSQL_TYPE_DECIMAL     1   => :to_i,     # MYSQL_TYPE_TINY     2   => :to_i,     # MYSQL_TYPE_SHORT     3   => :to_i,     # MYSQL_TYPE_LONG     4   => :to_f,     # MYSQL_TYPE_FLOAT     5   => :to_f,     # MYSQL_TYPE_DOUBLE     # 6   => ??,        # MYSQL_TYPE_NULL     7   => :to_time,  # MYSQL_TYPE_TIMESTAMP     8   => :to_i,     # MYSQL_TYPE_LONGLONG     9   => :to_i,     # MYSQL_TYPE_INT24     10  => :to_date,  # MYSQL_TYPE_DATE     11  => :to_time,  # MYSQL_TYPE_TIME     12  => :to_time,  # MYSQL_TYPE_DATETIME     13  => :to_i,     # MYSQL_TYPE_YEAR     14  => :to_date,  # MYSQL_TYPE_NEWDATE     # 15  => :to_s      # MYSQL_TYPE_VARCHAR     # 16  => :to_s,     # MYSQL_TYPE_BIT     246 => :to_d,     # MYSQL_TYPE_NEWDECIMAL     247 => :to_i,     # MYSQL_TYPE_ENUM     248 => :to_i"
+full_name: Mysql::Result
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: columns
+- !ruby/object:RI::MethodSummary 
+  name: convert_type
+- !ruby/object:RI::MethodSummary 
+  name: each_array
+- !ruby/object:RI::MethodSummary 
+  name: each_hash
+name: Result
+superclass: Object

@@ -1,0 +1,2 @@
+ puts "example".upcase
+ puts "example".downcase

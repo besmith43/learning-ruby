@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: TestParseTree
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: test_class_initialize
+- !ruby/object:RI::MethodSummary 
+  name: test_class_translate_string
+- !ruby/object:RI::MethodSummary 
+  name: test_class_translate_string_method
+- !ruby/object:RI::MethodSummary 
+  name: test_missing
+- !ruby/object:RI::MethodSummary 
+  name: test_parse_tree_for_str
+- !ruby/object:RI::MethodSummary 
+  name: test_parse_tree_for_string
+- !ruby/object:RI::MethodSummary 
+  name: test_parse_tree_for_string_with_newlines
+- !ruby/object:RI::MethodSummary 
+  name: test_whole_class
+name: TestParseTree
+superclass: ParseTreeTestCase

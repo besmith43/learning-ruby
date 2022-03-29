@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Requester#url2uri
+is_singleton: false
+name: url2uri
+params: (url)
+visibility: public

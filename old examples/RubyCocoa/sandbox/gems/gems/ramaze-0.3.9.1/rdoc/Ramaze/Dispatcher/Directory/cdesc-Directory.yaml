@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build_listing
+- !ruby/object:RI::MethodSummary 
+  name: build_listing
+- !ruby/object:RI::MethodSummary 
+  name: list_for
+- !ruby/object:RI::MethodSummary 
+  name: list_for
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Generates a directory listing, see Ramaze::Controller::Directory for more information and how to create your own directory listing page
+constants: []
+
+full_name: Ramaze::Dispatcher::Directory
+includes: []
+
+instance_methods: []
+
+name: Directory
+superclass: Object

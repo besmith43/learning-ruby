@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Call the <tt>get</tt> method as an instance method if you need to modify the default behaviour of the library, or set special headers:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     http = SimpleHttp.new &quot;www.example.com&quot;\n     http.request_headers[&quot;X-Special&quot;]=&quot;whatever&quot;\n     str = http.get\n"
+full_name: SimpleHttp#get
+is_singleton: false
+name: get
+params: (query = nil)
+visibility: public

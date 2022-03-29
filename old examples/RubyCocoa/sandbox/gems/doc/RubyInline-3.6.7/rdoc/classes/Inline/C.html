@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Inline::C</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Inline::C</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/inline_rb.html">
+                lib/inline.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="C.html">Inline::C</a> is the default builder used and the only one
+provided by <a href="../Inline.html">Inline</a>. It can be used as a
+template to write builders for other languages. It understands
+type-conversions for the basic types and can be extended as needed.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000209">add_compile_flags</a>&nbsp;&nbsp;
+      <a href="#M000210">add_link_flags</a>&nbsp;&nbsp;
+      <a href="#M000211">add_to_init</a>&nbsp;&nbsp;
+      <a href="#M000212">add_type_converter</a>&nbsp;&nbsp;
+      <a href="#M000207">build</a>&nbsp;&nbsp;
+      <a href="#M000218">c</a>&nbsp;&nbsp;
+      <a href="#M000198">c2ruby</a>&nbsp;&nbsp;
+      <a href="#M000220">c_raw</a>&nbsp;&nbsp;
+      <a href="#M000221">c_raw_singleton</a>&nbsp;&nbsp;
+      <a href="#M000219">c_singleton</a>&nbsp;&nbsp;
+      <a href="#M000208">crap_for_windoze</a>&nbsp;&nbsp;
+      <a href="#M000201">generate</a>&nbsp;&nbsp;
+      <a href="#M000215">include</a>&nbsp;&nbsp;
+      <a href="#M000216">include_ruby_last</a>&nbsp;&nbsp;
+      <a href="#M000206">load</a>&nbsp;&nbsp;
+      <a href="#M000205">load_cache</a>&nbsp;&nbsp;
+      <a href="#M000214">map_c_const</a>&nbsp;&nbsp;
+      <a href="#M000213">map_ruby_const</a>&nbsp;&nbsp;
+      <a href="#M000202">module_name</a>&nbsp;&nbsp;
+      <a href="#M000204">new</a>&nbsp;&nbsp;
+      <a href="#M000200">parse_signature</a>&nbsp;&nbsp;
+      <a href="#M000217">prefix</a>&nbsp;&nbsp;
+      <a href="#M000197">ruby2c</a>&nbsp;&nbsp;
+      <a href="#M000203">so_name</a>&nbsp;&nbsp;
+      <a href="#M000199">strip_comments</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MAGIC_ARITY_THRESHOLD</td>
+          <td>=</td>
+          <td class="context-item-value">15</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MAGIC_ARITY</td>
+          <td>=</td>
+          <td class="context-item-value">-1</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">mod</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">rb_file</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000204" class="method-detail">
+        <a name="M000204"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000204.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000204.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(mod)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000209.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000209.html');return false;">
+          <span class="method-name">add_compile_flags</span><span class="method-args">(*flags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds compiler options to the compiler command line. No preprocessing is
+done, so you must have all your dashes and everything.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000210" class="method-detail">
+        <a name="M000210"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000210.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000210.html');return false;">
+          <span class="method-name">add_link_flags</span><span class="method-args">(*flags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds linker flags to the link command line. No preprocessing is done, so
+you must have all your dashes and everything.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000211" class="method-detail">
+        <a name="M000211"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000211.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000211.html');return false;">
+          <span class="method-name">add_to_init</span><span class="method-args">(*src)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds custom content to the end of the init function.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000212" class="method-detail">
+        <a name="M000212"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000212.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000212.html');return false;">
+          <span class="method-name">add_type_converter</span><span class="method-args">(type, r2c, c2r)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Registers <a href="C.html">C</a> type-casts +r2c+ and +c2r+ for
+<tt>type</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000207" class="method-detail">
+        <a name="M000207"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000207.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000207.html');return false;">
+          <span class="method-name">build</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Builds the source file, if needed, and attempts to compile it.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000218" class="method-detail">
+        <a name="M000218"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000218.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000218.html');return false;">
+          <span class="method-name">c</span><span class="method-args">(src, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a <a href="C.html">C</a> function to the source, including performing
+automatic type conversion to arguments and the return value. The Ruby
+method name can be overridden by providing method_name. Unknown type
+conversions can be extended by using <tt><a
+href="C.html#M000212">add_type_converter</a></tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000220.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000220.html');return false;">
+          <span class="method-name">c_raw</span><span class="method-args">(src, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a raw <a href="C.html">C</a> function to the source. This version does
+not perform any type conversion and must conform to the ruby/C coding
+conventions. The Ruby method name can be overridden by providing
+method_name.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000221.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000221.html');return false;">
+          <span class="method-name">c_raw_singleton</span><span class="method-args">(src, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Same as <tt><a href="C.html#M000220">c_raw</a></tt>, but adds a class
+function.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000219" class="method-detail">
+        <a name="M000219"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000219.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000219.html');return false;">
+          <span class="method-name">c_singleton</span><span class="method-args">(src, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Same as <tt><a href="C.html#M000218">c</a></tt>, but adds a class function.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000208" class="method-detail">
+        <a name="M000208"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000208.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000208.html');return false;">
+          <span class="method-name">crap_for_windoze</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns extra compilation flags for windoze platforms. Ugh.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000215" class="method-detail">
+        <a name="M000215"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000215.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000215.html');return false;">
+          <span class="method-name">include</span><span class="method-args">(header)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds an <a href="C.html#M000215">include</a> to the top of the file.
+Don&#8216;t forget to use quotes or angle brackets.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000216" class="method-detail">
+        <a name="M000216"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000216.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000216.html');return false;">
+          <span class="method-name">include_ruby_last</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Specifies that the the ruby.h header should be included <b>after</b> custom
+header(s) instead of before them.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000206" class="method-detail">
+        <a name="M000206"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000206.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000206.html');return false;">
+          <span class="method-name">load</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Loads the generated code back into ruby
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000205" class="method-detail">
+        <a name="M000205"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000205.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000205.html');return false;">
+          <span class="method-name">load_cache</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Attempts to <a href="C.html#M000206">load</a> pre-generated code returning
+true if it succeeds.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000214" class="method-detail">
+        <a name="M000214"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000214.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000214.html');return false;">
+          <span class="method-name">map_c_const</span><span class="method-args">(names_and_types)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Maps a <a href="C.html">C</a> constant to ruby (with the same name).
+<tt>names_and_types</tt> is a hash that maps the name of the constant to
+its <a href="C.html">C</a> type.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000213" class="method-detail">
+        <a name="M000213"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000213.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000213.html');return false;">
+          <span class="method-name">map_ruby_const</span><span class="method-args">(*names)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Maps a ruby constant to <a href="C.html">C</a> (with the same name)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000217" class="method-detail">
+        <a name="M000217"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000217.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000217.html');return false;">
+          <span class="method-name">prefix</span><span class="method-args">(code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds any amount of text/code to the source
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000198" class="method-detail">
+        <a name="M000198"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000198.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000198.html');return false;">
+          <span class="method-name">c2ruby</span><span class="method-args">(type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000201.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000201.html');return false;">
+          <span class="method-name">generate</span><span class="method-args">(src, options={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000202.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000202.html');return false;">
+          <span class="method-name">module_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000200" class="method-detail">
+        <a name="M000200"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000200.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000200.html');return false;">
+          <span class="method-name">parse_signature</span><span class="method-args">(src, raw=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000197.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000197.html');return false;">
+          <span class="method-name">ruby2c</span><span class="method-args">(type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000203.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000203.html');return false;">
+          <span class="method-name">so_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
+
+        <div class="method-heading">
+          <a href="C.src/M000199.html" target="Code" class="method-signature"
+            onclick="popupCode('C.src/M000199.html');return false;">
+          <span class="method-name">strip_comments</span><span class="method-args">(src)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

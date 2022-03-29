@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Raised by SexpProcessor if it is in strict mode and sees a node for which there is no processor available.
+constants: []
+
+full_name: UnknownNodeError
+includes: []
+
+instance_methods: []
+
+name: UnknownNodeError
+superclass: SexpProcessorError

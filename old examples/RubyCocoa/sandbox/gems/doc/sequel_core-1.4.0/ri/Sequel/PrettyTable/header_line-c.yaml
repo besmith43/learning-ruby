@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::PrettyTable::header_line
+is_singleton: true
+name: header_line
+params: (columns, sizes)
+visibility: public

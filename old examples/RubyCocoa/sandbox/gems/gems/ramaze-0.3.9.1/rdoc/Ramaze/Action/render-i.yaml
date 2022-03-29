@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Render this instance of Action, this will (eventually) pass itself to Action#engine.transform Usage, given that Foo is a Controller and has the method/template for index:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " &gt; Action(:controller =&gt; Foo).render\n #&gt; 'bar'\n"
+full_name: Ramaze::Action#render
+is_singleton: false
+name: render
+params: ()
+visibility: public

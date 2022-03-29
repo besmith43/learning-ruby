@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Takes the tag (:warn|:debug|:error|:info) and the name of a method to be called upon elements of msgs that don't respond to :to_str Goes on and sends the tag and transformed messages each to the #log method. If you include this module you have to define #log or it will raise."
+full_name: Ramaze::Logging#tag_log
+is_singleton: false
+name: tag_log
+params: (tag, meth, *msgs)
+visibility: public

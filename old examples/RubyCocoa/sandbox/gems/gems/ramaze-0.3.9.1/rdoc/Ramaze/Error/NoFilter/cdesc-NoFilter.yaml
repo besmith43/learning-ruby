@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: No Controller found for request
+constants: []
+
+full_name: Ramaze::Error::NoFilter
+includes: []
+
+instance_methods: []
+
+name: NoFilter
+superclass: Error

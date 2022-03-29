@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: http_date
+- !ruby/object:RI::MethodSummary 
+  name: keep_alive_enabled?
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ProtocolVersionRegexp
+  value: Regexp.new('^(?:HTTP/|)(\d+)\.(\d+)$')
+full_name: HTTP
+includes: []
+
+instance_methods: []
+
+name: HTTP
+superclass: 

@@ -1,0 +1,25 @@
+>Begin
+>Message Start
+Reaper, stay alert, a group of soldiers have stablished an output at this region, and many patrols are around the area.
+We have to be quick, get rid of as many soldiers as we can, and then, repel the enemy reinforcements.
+>Message Ready
+Take all of my energy, and use the corpses i've been preparing at your will.
+Start attacking the lone soldiers, and then, proceed to defeat the groups.
+
+I'll need a moment to to show you something i've been preparing, don't worry, i'll come back soon.
+>Message Spell
+I'm back again, reaper, and this time, to show you how to cast spells.
+
+Spells cost energy, but they are really useful in battle.
+I've only been able to research one spell, but it will be more than enough for now. Finger of death &
+is able to instantly kill a simple living unit, however, you won't gain energy nor corpses.
+
+(To cast spells enter the casting mode ('C' key)) (Spells can be casted anywhere, but the cost is reduced to half if casted &
+on your territory)
+>Message Waves
+The enemy patrols are incoming, both from the east and north, prepare yourself for the fight.
+
+(Finding the right combination of units and spells is the key to victory)
+>Message Victory
+The ground is now filed with dead bodies. Congratulations.
+>End

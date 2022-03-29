@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: protects against recursive dispatch and reassigns the path_info in the request, the rest of the request is kept intact.
+full_name: Ramaze::Dispatcher::dispatch_to
+is_singleton: true
+name: dispatch_to
+params: (path)
+visibility: public

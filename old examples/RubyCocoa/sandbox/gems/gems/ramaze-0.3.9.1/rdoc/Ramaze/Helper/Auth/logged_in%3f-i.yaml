@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: checks if the user is already logged in.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  session[:logged_in] is not nil/false\n"
+full_name: Ramaze::Helper::Auth#logged_in?
+is_singleton: false
+name: logged_in?
+params: ()
+visibility: private

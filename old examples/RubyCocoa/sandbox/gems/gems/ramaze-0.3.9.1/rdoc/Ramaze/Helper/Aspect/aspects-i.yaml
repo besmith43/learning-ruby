@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: lazily and smartly inherit copy of aspects trait from parent, or bootstrap our own
+full_name: Ramaze::Helper::Aspect#aspects
+is_singleton: false
+name: aspects
+params: ()
+visibility: private

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@keys[i], v"
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Iterates over each key-value pair in the array.
+full_name: ArrayKeys::KeyAccess#each_pair
+is_singleton: false
+name: each_pair
+params: () {|@keys[i], v| ...}
+visibility: public

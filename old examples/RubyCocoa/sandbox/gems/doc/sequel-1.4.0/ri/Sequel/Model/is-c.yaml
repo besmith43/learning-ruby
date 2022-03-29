@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Loads a plugin for use with the model class, passing optional arguments to the plugin.
+full_name: Sequel::Model::is
+is_singleton: true
+name: is
+params: (plugin, *args)
+visibility: public

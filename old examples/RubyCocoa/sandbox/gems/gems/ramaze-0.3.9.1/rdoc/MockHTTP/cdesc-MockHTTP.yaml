@@ -1,0 +1,81 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULTS
+  value: "{     'REMOTE_ADDR' => '127.0.0.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MOCK_URI
+  value: URI::HTTP.build(     :host => 'localhost',     :port => 80
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FISHING
+  value: "{     :input => :input,     :referrer => 'HTTP_REFERER',     :referer => 'HTTP_REFERER',     :cookie => 'HTTP_COOKIE',     :if_none_match=> 'HTTP_IF_NONE_MATCH',     :if_modified_since=> 'HTTP_IF_MODIFIED_SINCE',   }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MOCK_REQUEST
+  value: "::Rack::MockRequest.new(Ramaze::Adapter::Fake)"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DEFAULTS
+  value: "{     'REMOTE_ADDR' => '127.0.0.1'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MOCK_URI
+  value: URI::HTTP.build(     :host => 'localhost',     :port => 80
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FISHING
+  value: "{     :input => :input,     :referrer => 'HTTP_REFERER',     :referer => 'HTTP_REFERER',     :cookie => 'HTTP_COOKIE',     :if_none_match=> 'HTTP_IF_NONE_MATCH',     :if_modified_since=> 'HTTP_IF_MODIFIED_SINCE',   }"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MOCK_REQUEST
+  value: "::Rack::MockRequest.new(Ramaze::Adapter::Fake)"
+full_name: MockHTTP
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: create_url
+- !ruby/object:RI::MethodSummary 
+  name: create_url
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: delete
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: make_query
+- !ruby/object:RI::MethodSummary 
+  name: make_query
+- !ruby/object:RI::MethodSummary 
+  name: mock_request
+- !ruby/object:RI::MethodSummary 
+  name: mock_request
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: post
+- !ruby/object:RI::MethodSummary 
+  name: process_request
+- !ruby/object:RI::MethodSummary 
+  name: process_request
+- !ruby/object:RI::MethodSummary 
+  name: put
+- !ruby/object:RI::MethodSummary 
+  name: put
+- !ruby/object:RI::MethodSummary 
+  name: raw_mock_request
+- !ruby/object:RI::MethodSummary 
+  name: raw_mock_request
+name: MockHTTP
+superclass: 

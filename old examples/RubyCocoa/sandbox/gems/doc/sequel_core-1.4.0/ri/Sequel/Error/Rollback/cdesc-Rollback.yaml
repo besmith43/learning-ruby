@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rollback is a special error used to rollback a transactions. A transaction block will catch this error and wont pass further up the stack.
+constants: []
+
+full_name: Sequel::Error::Rollback
+includes: []
+
+instance_methods: []
+
+name: Rollback
+superclass: Error

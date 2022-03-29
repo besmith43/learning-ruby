@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Formats a where clause. If parenthesize is true, then the whole generated clause will be enclosed in a set of parentheses.
+full_name: Sequel::Dataset::SQL#expression_list
+is_singleton: false
+name: expression_list
+params: (expr, parenthesize = false)
+visibility: public

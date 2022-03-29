@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Compile a template, applying all transformations from the pipeline and returning an instance of ::Nagoro::Template
+full_name: Ramaze::Template::Nagoro::compile
+is_singleton: true
+name: compile
+params: (action, template)
+visibility: public

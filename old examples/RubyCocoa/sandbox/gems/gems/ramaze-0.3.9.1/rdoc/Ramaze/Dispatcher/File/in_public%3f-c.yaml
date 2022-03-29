@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Dispatcher::File::in_public?
+is_singleton: true
+name: in_public?
+params: (path)
+visibility: public

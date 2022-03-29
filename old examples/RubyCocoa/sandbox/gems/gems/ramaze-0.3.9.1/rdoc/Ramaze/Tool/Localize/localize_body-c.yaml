@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Localizes a response body. It reacts to a regular expression as given in trait[:regex]. Every 'entity' in it will be translated, see `localize` for more information.
+full_name: Ramaze::Tool::Localize::localize_body
+is_singleton: true
+name: localize_body
+params: (body, options)
+visibility: public

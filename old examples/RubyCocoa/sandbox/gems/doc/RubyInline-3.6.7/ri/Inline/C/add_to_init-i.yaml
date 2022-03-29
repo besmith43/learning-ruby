@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds custom content to the end of the init function.
+full_name: Inline::C#add_to_init
+is_singleton: false
+name: add_to_init
+params: (*src)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns file-handle with the open file on success, setting the Content-Type as found in Tool::MIME
+full_name: Ramaze::Dispatcher::File::open_file
+is_singleton: true
+name: open_file
+params: (path)
+visibility: public

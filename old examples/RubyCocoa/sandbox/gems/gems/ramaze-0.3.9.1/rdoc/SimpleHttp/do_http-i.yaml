@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: internal
+full_name: SimpleHttp#do_http
+is_singleton: false
+name: do_http
+params: (request)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (e)
+comment: 
+full_name: Ramaze::SpecLogger#each
+is_singleton: false
+name: each
+params: () {|e| ...}
+visibility: public

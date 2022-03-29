@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+
+<div class="container text-center" id="mycolumn">
+	<div class="row">
+		<div class="col-md-6">
+			<h3>
+			<address> 
+				 <!-- Phone encryption at http://thenetweb.co.uk/obfuscate-hide-and-obscure-e-mail-addresses-telephone-numbers-and-text-->
+				 <strong>Cookeville Putnam County Animal Shelter</strong><br /> 2650 Gainesboro Grade<br /> Cookeville, TN 38501<br /> <abbr title="Phone">P: </abbr>&#40;&#57;&#51;&#49;&#41;&#32;&#53;&#50;&#54;&#32;&#45;&#32;&#51;&#54;&#52;&#55;
+			</address>
+			</h3> 
+		</div>
+		<div class="col-md-6">
+			<!-- <img alt="Animal Shelter Picture" src="https://lh3.googleusercontent.com/-aZawp6qimtA/VmiO8v-3YtI/AAAAAAAAAAk/cxy-rdXEOOMU-o5LDkfBlN2lHLdpX00CQCL0B/w692-h389-n-no/cpcas.jpg" style="width:auto;height:300px;" /> -->
+			<!-- Changed image so that it is using the image in "images" folder instead of using the url. -->
+				<%=  image_tag 'cpcas.jpg', style: "width:auto;height:300px;" %>
+		</div>
+	</div>
+ </div>
+	
+	<div class="container text-center">
+		<div class="row " id="indexBody">
+	    	<div class="col-md-2" id="mycolumn">
+				<div id="googleMap" style="width:auto;height:300px;"></div>
+
+            		<script>
+            			function myMap() {
+            			var mapProp= {
+                			center:new google.maps.LatLng(36.201942, -85.534520),
+                			zoom:15,
+            				};
+           				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            			}
+            		</script>
+            
+            <script defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAYwGnMGsji6ZIa8mMHsz6nsE4_BXqA-Ow &callback=myMap" type="text/javascript"></script>
+  			</div>
+  			
+			<div class="col-md-2" id="mycolumn">
+			    <div class="fb-page" data-href="https://www.facebook.com/cpcas/" data-tabs="timeline" data-width="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/cpcas/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cpcas/">Cookeville / Putnam County Animal Shelter</a></blockquote></div>
+			<p class = borderexample>
+				
+			</p>
+			</div>
+		</div>
+	</div>
+<br><br><br><br><br><br>
+

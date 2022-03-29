@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::MySQL::Dataset#array_tuples_transform_load
+is_singleton: false
+name: array_tuples_transform_load
+params: (r)
+visibility: public

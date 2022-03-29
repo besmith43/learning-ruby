@@ -1,0 +1,7 @@
+class Person
+    def initialize(name)
+        @name = name
+    end
+end
+
+new_student = Person.new("bugra")

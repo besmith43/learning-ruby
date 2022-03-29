@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the dictionary used for translation.
+full_name: Ramaze::Tool::Localize::dictionary
+is_singleton: true
+name: dictionary
+params: ()
+visibility: public

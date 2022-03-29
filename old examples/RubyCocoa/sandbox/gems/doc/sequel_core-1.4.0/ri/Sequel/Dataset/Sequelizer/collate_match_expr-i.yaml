@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Formats a string matching expression with support for multiple choices. For more information see #match_expr."
+full_name: Sequel::Dataset::Sequelizer#collate_match_expr
+is_singleton: false
+name: collate_match_expr
+params: (l, r)
+visibility: public

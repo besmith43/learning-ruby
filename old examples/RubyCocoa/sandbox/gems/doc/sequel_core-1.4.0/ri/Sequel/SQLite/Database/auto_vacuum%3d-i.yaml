@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQLite::Database#auto_vacuum=
+is_singleton: false
+name: auto_vacuum=
+params: (value)
+visibility: public

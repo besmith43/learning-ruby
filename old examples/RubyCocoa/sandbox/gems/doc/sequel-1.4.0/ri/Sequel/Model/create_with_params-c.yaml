@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Model::create_with_params
+is_singleton: true
+name: create_with_params
+params: (params)
+visibility: public

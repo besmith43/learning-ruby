@@ -1,0 +1,17 @@
+ChinguRoids - License
+
+Some sounds and/or images require Attribution/Non-commerical.
+
+Some sounds and/or images may be subject to Copyright protections.
+
+Gosu and Chingu are subject to the MIT LICENSE, and the 
+GNU LESSER GENERAL PUBLIC LICENCE (Version 2.1), respectively.
+
+Other than that...
+
+                       ____                                  
+                      / __ \                         
+                     / /  \ \                        
+                     \ \  / /                        
+                      \/  \/                         
+                    opensource                       

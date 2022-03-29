@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Controller::raise_no_filter
+is_singleton: true
+name: raise_no_filter
+params: (path)
+visibility: public

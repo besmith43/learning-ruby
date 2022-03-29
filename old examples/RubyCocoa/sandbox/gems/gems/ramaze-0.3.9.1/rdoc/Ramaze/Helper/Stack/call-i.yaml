@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: redirect to another location and pushing the current location on the session[:STACK]
+full_name: Ramaze::Helper::Stack#call
+is_singleton: false
+name: call
+params: (this)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Marshal a session hash into safe cookie data. Include an integrity hash.
+full_name: Ramaze::Session::Hash#marshal
+is_singleton: false
+name: marshal
+params: (session)
+visibility: private

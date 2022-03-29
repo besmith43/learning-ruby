@@ -1,0 +1,7 @@
+<% if params[:controller] == 'posts' || params[:controller] == 'categories' %>
+	<div class="list-group">
+		<% @categories.each do |category| %>
+			<%= link_to category.name, category_path(category.id), class:'list-group-item' %>
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: check the authentication (username and password) against the auth_table.
+- !ruby/struct:SM::Flow::P 
+  body: "auth_table is a trait, it may be the name of a method, a Proc or a simple Hash. If it is neither of the above it has at least to respond to #[] which will pass it the username as key and it should answer with the password as a Digest::SHA1.hexdigest."
+- !ruby/struct:SM::Flow::P 
+  body: The method and Proc are both called on demand.
+- !ruby/struct:SM::Flow::P 
+  body: If you want to change the way the password is hashed, change
+- !ruby/struct:SM::Flow::VERB 
+  body: "  trait[:auth_hashify]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The default looks like:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  lambda{ |pass| Digest::SHA1.hexdigest(pass.to_s) }\n"
+- !ruby/struct:SM::Flow::P 
+  body: "As with the auth_table, this has to be an object that responds to #[]"
+- !ruby/struct:SM::Flow::P 
+  body: "If you want all your controllers to use the same mechanism set the trait on one of the ancestors, the traits are looked up by #ancestral_trait"
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  # The method to be called.\n  trait :auth_table =&gt; :auth_table\n  trait :auth_table =&gt; 'auth_table'\n\n  # Lambda that will be called upon demand\n  trait :auth_table =&gt; lambda{ {'manveru' =&gt; Digest::SHA1.hexdigest 'password'} }\n\n  # Hash holding the data.\n  trait :auth_table =&gt; {'manveru' =&gt; Digest::SHA1.hexdigest('password')}\n"
+full_name: Ramaze::Helper::Auth#check_auth
+is_singleton: false
+name: check_auth
+params: (user, pass)
+visibility: private

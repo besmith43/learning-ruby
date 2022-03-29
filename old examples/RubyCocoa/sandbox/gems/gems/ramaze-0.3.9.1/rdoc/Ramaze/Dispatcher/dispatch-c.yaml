@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: filters the path until a response or redirect is thrown or a filter is successful, builds a response from the returned hash in case of throws.
+full_name: Ramaze::Dispatcher::dispatch
+is_singleton: true
+name: dispatch
+params: (path)
+visibility: public

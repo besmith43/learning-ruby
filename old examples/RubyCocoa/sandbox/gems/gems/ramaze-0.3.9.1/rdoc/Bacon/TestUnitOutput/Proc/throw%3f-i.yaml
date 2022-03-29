@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Bacon::TestUnitOutput::Proc#throw?
+is_singleton: false
+name: throw?
+params: (sym)
+visibility: public

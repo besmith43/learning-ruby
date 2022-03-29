@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_inspect (TestSexp)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/test_sexp.rb, line 202</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_inspect</span>
+    <span class="ruby-identifier">k</span> = <span class="ruby-ivar">@sexp_class</span>
+    <span class="ruby-identifier">n</span> = <span class="ruby-identifier">k</span>.<span class="ruby-identifier">name</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chr</span>.<span class="ruby-identifier">downcase</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}()&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>().<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:a</span>).<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, :b)&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:a</span>, <span class="ruby-identifier">:b</span>).<span class="ruby-identifier">inspect</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">&quot;#{n}(:a, #{n}(:b))&quot;</span>,
+                 <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:a</span>, <span class="ruby-identifier">k</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:b</span>)).<span class="ruby-identifier">inspect</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

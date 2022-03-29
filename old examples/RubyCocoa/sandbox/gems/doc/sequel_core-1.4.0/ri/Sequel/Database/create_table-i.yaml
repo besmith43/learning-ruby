@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Creates a table. The easiest way to use this method is to provide a block:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB.create_table :posts do\n    primary_key :id, :serial\n    column :title, :text\n    column :content, :text\n    index :title\n  end\n"
+full_name: Sequel::Database#create_table
+is_singleton: false
+name: create_table
+params: (name, &block)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns nil if no method is on the action, otherwise it will send the action and optional parameters to the controller via <em>send</em> and return the unaltered result
+full_name: Ramaze::Template::Template::render_method
+is_singleton: true
+name: render_method
+params: (action)
+visibility: public

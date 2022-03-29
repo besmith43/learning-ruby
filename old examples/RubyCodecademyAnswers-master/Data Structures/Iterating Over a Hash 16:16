@@ -1,0 +1,9 @@
+lunch_order = { "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
+
+puts lunch_order.each { |a, b| puts "#{b}"}
+puts "#{b}"

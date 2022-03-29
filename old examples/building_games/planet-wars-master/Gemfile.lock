@@ -1,0 +1,53 @@
+PATH
+  remote: ../gameoverseer-client
+  specs:
+    gameoverseer-client (0.0.1)
+      multi_json
+      renet
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    ashton (0.1.6)
+      gosu
+      opengl
+    chingu (0.9rc9)
+      gosu (>= 0.7.45)
+    chroma (0.1.0)
+    excon (0.55.0)
+    gosu (0.11.3.1-x86-mingw32)
+    humanize (1.3.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    msgpack (1.1.0-x86-mingw32)
+    multi_json (1.12.1)
+    oj (2.18.5)
+    opengl (0.10.0.pre1-x86-mingw32)
+    public_suffix (2.0.5)
+    rake (12.0.0)
+    renet (0.2.2)
+    texplay (0.4.4.pre)
+      gosu (>= 0.7.25)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  ashton
+  chingu (= 0.9rc9)
+  chroma
+  excon
+  gameoverseer-client!
+  gosu
+  humanize
+  launchy
+  msgpack
+  oj
+  opengl (= 0.10.0.pre1)
+  rake
+  texplay (~> 0.4.4.pre)
+
+BUNDLED WITH
+   1.14.6

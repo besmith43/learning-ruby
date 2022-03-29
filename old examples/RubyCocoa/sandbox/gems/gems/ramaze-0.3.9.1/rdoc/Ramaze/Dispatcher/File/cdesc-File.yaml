@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: expand
+- !ruby/object:RI::MethodSummary 
+  name: expand
+- !ruby/object:RI::MethodSummary 
+  name: in_public?
+- !ruby/object:RI::MethodSummary 
+  name: in_public?
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: open_file
+- !ruby/object:RI::MethodSummary 
+  name: open_file
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: process
+- !ruby/object:RI::MethodSummary 
+  name: resolve_path
+- !ruby/object:RI::MethodSummary 
+  name: resolve_path
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: First of the dispatchers, looks up the public path and serves the file if found.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These names are checked for serving from public directory. They take priority over Actions which comes later in the FILTER
+  name: INDICES
+  value: "%w[index.htm index.xhtml index.html index]"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These names are checked for serving from public directory. They take priority over Actions which comes later in the FILTER
+  name: INDICES
+  value: "%w[index.htm index.xhtml index.html index]"
+full_name: Ramaze::Dispatcher::File
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+- !ruby/object:RI::IncludedModule 
+  name: Trinity
+instance_methods: []
+
+name: File
+superclass: Object

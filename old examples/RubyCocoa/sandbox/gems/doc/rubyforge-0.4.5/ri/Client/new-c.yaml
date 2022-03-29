@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: SYNOPSIS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Client.new(proxy = nil, agent_name = nil, from = nil)\n"
+- !ruby/struct:SM::Flow::P 
+  body: ARGS
+- !ruby/struct:SM::Flow::VERB 
+  body: "  proxy             A String of HTTP proxy URL. ex. &quot;http://proxy:8080&quot;.\n  agent_name        A String for &quot;User-Agent&quot; HTTP request header.\n  from              A String for &quot;From&quot; HTTP request header.\n"
+- !ruby/struct:SM::Flow::P 
+  body: DESCRIPTION
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Create an instance.\n  SSLConfig cannot be re-initialized.  Create new client.\n"
+full_name: Client::new
+is_singleton: true
+name: new
+params: (proxy = nil, agent_name = nil, from = nil)
+visibility: public

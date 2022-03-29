@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*start Header style*/
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+/*
+.navbar{
+    background-color: white;
+    border: none;
+}
+*/
+
+.nav, .navbar-nav{
+    margin-top: 50px;
+    font-size: 16pt;
+}
+/*end Header style*/
+
+
+/*start Footer style*/
+#footerCol {
+    min-width: 50%;
+}
+
+.footerCag {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.footerCag2 {
+    font-size: 12pt;
+}
+
+
+
+
+/*end Footer style*/
+
+
+
+/*start Index style*/
+
+#mycolumn {
+    min-width: 46%;
+    margin: 20px;
+}
+
+/*Note for Austin: Hey I just noticed that you were trying to
+    play with and figure out the columns for the home page. I took
+    a look at it, and I changed the col-md both to -2 and i changed
+    the min-width to 46%(to account the other 4% as margin for spacing)
+    that way they will always either be side by side or stacked.
+    I hope this is what you were going for :)
+*/
+
+
+
+
+
+
+/*end Index style*/
+
+
+
+/*start Resources style*/
+
+.resourcesCategory {
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+.resourcesName, .resourcesPhone {
+    font-size: 12pt;
+}
+
+#resourcesGroup{
+    min-width: 25%;
+}
+/*end Resources style*/
+
+/* start Support Style */
+
+.support_ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+
+/* stop Support Style */
+

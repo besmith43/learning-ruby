@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "transforms elements like:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &lt;Page /&gt;\n"
+full_name: Ezamar::Element::transform_without_content
+is_singleton: true
+name: transform_without_content
+params: (template, klass)
+visibility: public

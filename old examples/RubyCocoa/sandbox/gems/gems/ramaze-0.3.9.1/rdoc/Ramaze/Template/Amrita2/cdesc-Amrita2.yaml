@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: compile
+- !ruby/object:RI::MethodSummary 
+  name: compile
+- !ruby/object:RI::MethodSummary 
+  name: transform
+- !ruby/object:RI::MethodSummary 
+  name: transform
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Is responsible for compiling a template using the Amrita2 templating engine. Can be found at: http://rubyforge.org/projects/amrita2"
+constants: []
+
+full_name: Ramaze::Template::Amrita2
+includes: []
+
+instance_methods: []
+
+name: Amrita2
+superclass: Template

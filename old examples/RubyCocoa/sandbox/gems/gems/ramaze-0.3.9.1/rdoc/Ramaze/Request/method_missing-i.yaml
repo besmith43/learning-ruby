@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: you can access the original @request via this method_missing, first it tries to match your method with any of the HTTP parameters then, in case that fails, it will relay to @request
+full_name: Ramaze::Request#method_missing
+is_singleton: false
+name: method_missing
+params: (meth, *args)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overwrite to add custom hook in addition to default Cache cleaning
+full_name: Ramaze::SourceReloadHooks#after_safe_load
+is_singleton: false
+name: after_safe_load
+params: (file)
+visibility: public

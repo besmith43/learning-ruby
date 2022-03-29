@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes a binding and evals it with the previously set options.
+full_name: Ezamar::Template#result
+is_singleton: false
+name: result
+params: (binding)
+visibility: public

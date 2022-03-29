@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: DebugSocket::create_socket
+is_singleton: true
+name: create_socket
+params: (host, port, debug_dev)
+visibility: public

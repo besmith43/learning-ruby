@@ -1,0 +1,70 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: create_query_multipart_str
+- !ruby/object:RI::MethodSummary 
+  name: create_query_part_str
+- !ruby/object:RI::MethodSummary 
+  name: escape
+- !ruby/object:RI::MethodSummary 
+  name: escape_query
+- !ruby/object:RI::MethodSummary 
+  name: mime_type
+- !ruby/object:RI::MethodSummary 
+  name: multiparam_query?
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new_request
+- !ruby/object:RI::MethodSummary 
+  name: new_response
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTP::Message -- HTTP message.
+- !ruby/struct:SM::Flow::P 
+  body: DESCRIPTION
+- !ruby/struct:SM::Flow::VERB 
+  body: "  A class that describes 1 HTTP request / response message.\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CRLF
+  value: "\"\\r\\n\""
+full_name: HTTP::Message
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: body
+- !ruby/object:RI::MethodSummary 
+  name: body=
+- !ruby/object:RI::MethodSummary 
+  name: content
+- !ruby/object:RI::MethodSummary 
+  name: contenttype
+- !ruby/object:RI::MethodSummary 
+  name: contenttype=
+- !ruby/object:RI::MethodSummary 
+  name: dump
+- !ruby/object:RI::MethodSummary 
+  name: header
+- !ruby/object:RI::MethodSummary 
+  name: header=
+- !ruby/object:RI::MethodSummary 
+  name: load
+- !ruby/object:RI::MethodSummary 
+  name: reason
+- !ruby/object:RI::MethodSummary 
+  name: reason=
+- !ruby/object:RI::MethodSummary 
+  name: status
+- !ruby/object:RI::MethodSummary 
+  name: status=
+- !ruby/object:RI::MethodSummary 
+  name: version
+- !ruby/object:RI::MethodSummary 
+  name: version=
+name: Message
+superclass: Object

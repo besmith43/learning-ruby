@@ -1,0 +1,105 @@
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/Validation/Errors.html#M000047">[] (Validation::Errors)</a><br />
+    <a href="classes/Validation/Errors.html#M000048">add (Validation::Errors)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000023">ago (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000024">before (Assistance::TimeCalculations)</a><br />
+    <a href="classes/FalseClass.html#M000002">blank? (FalseClass)</a><br />
+    <a href="classes/TrueClass.html#M000014">blank? (TrueClass)</a><br />
+    <a href="classes/String.html#M000013">blank? (String)</a><br />
+    <a href="classes/Numeric.html#M000010">blank? (Numeric)</a><br />
+    <a href="classes/NilClass.html#M000011">blank? (NilClass)</a><br />
+    <a href="classes/Object.html#M000012">blank? (Object)</a><br />
+    <a href="classes/Inflector.html#M000055">camelize (Inflector)</a><br />
+    <a href="classes/Inflector.html#M000062">classify (Inflector)</a><br />
+    <a href="classes/Validation/Errors.html#M000045">clear (Validation::Errors)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000071">clear (Inflector::Inflections)</a><br />
+    <a href="classes/Inflector.html#M000064">constantize (Inflector)</a><br />
+    <a href="classes/Inflector.html#M000058">dasherize (Inflector)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000020">day (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000019">days (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Inflector.html#M000060">demodulize (Inflector)</a><br />
+    <a href="classes/ConnectionPool.html#M000006">disconnect (ConnectionPool)</a><br />
+    <a href="classes/SingleThreadedPool.html#M000009">disconnect (SingleThreadedPool)</a><br />
+    <a href="classes/Validation/Errors.html#M000044">empty? (Validation::Errors)</a><br />
+    <a href="classes/Validation.html#M000028">errors (Validation)</a><br />
+    <a href="classes/Array.html#M000001">extract_options! (Array)</a><br />
+    <a href="classes/Inflector.html#M000063">foreign_key (Inflector)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000025">from_now (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Validation/Errors.html#M000049">full_messages (Validation::Errors)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000033">has_validations? (Validation::ClassMethods)</a><br />
+    <a href="classes/ConnectionPool.html#M000005">hold (ConnectionPool)</a><br />
+    <a href="classes/SingleThreadedPool.html#M000008">hold (SingleThreadedPool)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000018">hour (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000017">hours (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Inflector.html#M000059">humanize (Inflector)</a><br />
+    <a href="classes/Validation.html#M000027">included (Validation)</a><br />
+    <a href="classes/Inflector.html#M000052">inflections (Inflector)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000069">irregular (Inflector::Inflections)</a><br />
+    <a href="classes/Validation/Generator.html#M000051">method_missing (Validation::Generator)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000016">minute (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000015">minutes (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Validation/Generator.html#M000050">new (Validation::Generator)</a><br />
+    <a href="classes/SingleThreadedPool.html#M000007">new (SingleThreadedPool)</a><br />
+    <a href="classes/ConnectionPool.html#M000003">new (ConnectionPool)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000066">new (Inflector::Inflections)</a><br />
+    <a href="classes/Validation/Errors.html#M000043">new (Validation::Errors)</a><br />
+    <a href="classes/Validation/Errors.html#M000046">on (Validation::Errors)</a><br />
+    <a href="classes/Inflector.html#M000065">ordinalize (Inflector)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000067">plural (Inflector::Inflections)</a><br />
+    <a href="classes/Inflector.html#M000053">pluralize (Inflector)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000026">since (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000068">singular (Inflector::Inflections)</a><br />
+    <a href="classes/Inflector.html#M000054">singularize (Inflector)</a><br />
+    <a href="classes/ConnectionPool.html#M000004">size (ConnectionPool)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000035">skip_superclass_validations (Validation::ClassMethods)</a><br />
+    <a href="classes/Inflector.html#M000061">tableize (Inflector)</a><br />
+    <a href="classes/Inflector.html#M000056">titleize (Inflector)</a><br />
+    <a href="classes/Inflector/Inflections.html#M000070">uncountable (Inflector::Inflections)</a><br />
+    <a href="classes/Inflector.html#M000057">underscore (Inflector)</a><br />
+    <a href="classes/Validation.html#M000030">valid? (Validation)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000034">validate (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation.html#M000029">validate (Validation)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000031">validates (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000037">validates_acceptance_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000038">validates_confirmation_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000036">validates_each (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000039">validates_format_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000040">validates_length_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000041">validates_numericality_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000042">validates_presence_of (Validation::ClassMethods)</a><br />
+    <a href="classes/Validation/ClassMethods.html#M000032">validations (Validation::ClassMethods)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000022">week (Assistance::TimeCalculations)</a><br />
+    <a href="classes/Assistance/TimeCalculations.html#M000021">weeks (Assistance::TimeCalculations)</a><br />
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: "<<"
+- !ruby/object:RI::AliasName 
+  name: "<<"
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: inspects objects if they are no strings. Tag is :debug
+full_name: Ramaze::Logging#debug
+is_singleton: false
+name: debug
+params: (*objects)
+visibility: public

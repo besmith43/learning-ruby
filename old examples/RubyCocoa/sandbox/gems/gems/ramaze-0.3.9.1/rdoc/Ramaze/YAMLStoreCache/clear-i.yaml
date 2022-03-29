@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: clears the YAML::Store based cache, by emptying the YAML file.
+full_name: Ramaze::YAMLStoreCache#clear
+is_singleton: false
+name: clear
+params: ()
+visibility: public

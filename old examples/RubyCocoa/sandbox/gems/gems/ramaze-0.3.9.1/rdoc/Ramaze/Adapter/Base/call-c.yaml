@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is called by Rack with the usual env, subsequently calls ::respond with it.
+- !ruby/struct:SM::Flow::P 
+  body: The method itself acts just as a wrapper for benchmarking and then calls .finish on the current response after ::respond has finished.
+full_name: Ramaze::Adapter::Base::call
+is_singleton: true
+name: call
+params: (env)
+visibility: public

@@ -1,0 +1,45 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Session::Hash acts as the wrapper for a simple Hash
+- !ruby/struct:SM::Flow::P 
+  body: Its purpose is to notify the underlying cache, in which the sessions are stored, about updates.
+constants: []
+
+full_name: Ramaze::Session::Hash
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: client
+- !ruby/object:RI::MethodSummary 
+  name: client
+- !ruby/object:RI::MethodSummary 
+  name: generate_digest
+- !ruby/object:RI::MethodSummary 
+  name: generate_digest
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: marshal
+- !ruby/object:RI::MethodSummary 
+  name: marshal
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: unmarshal
+- !ruby/object:RI::MethodSummary 
+  name: unmarshal
+name: Hash
+superclass: Object

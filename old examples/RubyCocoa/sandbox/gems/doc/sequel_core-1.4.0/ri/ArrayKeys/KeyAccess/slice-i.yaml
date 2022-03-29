@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Slices the array, and returns an array with its keys sliced accordingly.
+full_name: ArrayKeys::KeyAccess#slice
+is_singleton: false
+name: slice
+params: (*args)
+visibility: public

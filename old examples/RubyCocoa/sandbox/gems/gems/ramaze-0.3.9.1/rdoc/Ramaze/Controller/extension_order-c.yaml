@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Uses custom defined engines and all available engines and throws it against the extensions for the template to find the most likely templating-engine to use ordered by priority and likelyhood.
+full_name: Ramaze::Controller::extension_order
+is_singleton: true
+name: extension_order
+params: ()
+visibility: public

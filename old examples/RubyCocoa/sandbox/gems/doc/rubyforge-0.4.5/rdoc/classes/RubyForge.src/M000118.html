@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>login (RubyForge)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/rubyforge.rb, line 148</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">login</span>
+    <span class="ruby-identifier">page</span> = <span class="ruby-ivar">@uri</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/account/login.php&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">scheme</span> = <span class="ruby-value str">'https'</span>
+    <span class="ruby-identifier">page</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment cmt"># set SSL port correctly</span>
+
+    <span class="ruby-identifier">username</span> = <span class="ruby-ivar">@userconfig</span>[<span class="ruby-value str">&quot;username&quot;</span>]
+    <span class="ruby-identifier">password</span> = <span class="ruby-ivar">@userconfig</span>[<span class="ruby-value str">&quot;password&quot;</span>]
+
+    <span class="ruby-identifier">form</span> = {
+      <span class="ruby-value str">&quot;return_to&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&quot;</span>,
+      <span class="ruby-value str">&quot;form_loginname&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">username</span>,
+      <span class="ruby-value str">&quot;form_pw&quot;</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">password</span>,
+      <span class="ruby-value str">&quot;login&quot;</span>          =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Login&quot;</span>
+    }
+
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">run</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">form</span>
+
+    <span class="ruby-identifier">re</span> = <span class="ruby-node">%r/personal\s+page\s+for:\s+#{ Regexp.escape username }/i</span><span class="ruby-identifier">om</span>
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">response</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">re</span>
+      <span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;%s:%d: warning: potentially failed login using %s:%s&quot;</span> <span class="ruby-operator">%</span>
+        [<span class="ruby-keyword kw">__FILE__</span>,<span class="ruby-keyword kw">__LINE__</span>,<span class="ruby-identifier">username</span>,<span class="ruby-identifier">password</span>]) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$TESTING</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">response</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

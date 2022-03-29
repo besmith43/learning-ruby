@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Render the template file in template_root of the current controller.
+full_name: Ramaze::Helper::Partial#render_template
+is_singleton: false
+name: render_template
+params: (file, vars = {})
+visibility: public

@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Sequel::SQLite::Database</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Sequel::SQLite::Database</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/sequel_core/adapters/sqlite_rb.html">
+                lib/sequel_core/adapters/sqlite.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Database.html">
+                Sequel::Database
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000753">alter_table_sql</a>&nbsp;&nbsp;
+      <a href="#M000747">auto_vacuum</a>&nbsp;&nbsp;
+      <a href="#M000748">auto_vacuum=</a>&nbsp;&nbsp;
+      <a href="#M000737">connect</a>&nbsp;&nbsp;
+      <a href="#M000739">dataset</a>&nbsp;&nbsp;
+      <a href="#M000738">disconnect</a>&nbsp;&nbsp;
+      <a href="#M000741">execute</a>&nbsp;&nbsp;
+      <a href="#M000742">execute_insert</a>&nbsp;&nbsp;
+      <a href="#M000744">execute_select</a>&nbsp;&nbsp;
+      <a href="#M000745">pragma_get</a>&nbsp;&nbsp;
+      <a href="#M000746">pragma_set</a>&nbsp;&nbsp;
+      <a href="#M000736">serial_primary_key_options</a>&nbsp;&nbsp;
+      <a href="#M000743">single_value</a>&nbsp;&nbsp;
+      <a href="#M000749">synchronous</a>&nbsp;&nbsp;
+      <a href="#M000750">synchronous=</a>&nbsp;&nbsp;
+      <a href="#M000740">tables</a>&nbsp;&nbsp;
+      <a href="#M000751">temp_store</a>&nbsp;&nbsp;
+      <a href="#M000752">temp_store=</a>&nbsp;&nbsp;
+      <a href="#M000754">transaction</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TABLES_FILTER</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;type = 'table' AND NOT name = 'sqlite_sequence'&quot;</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">AUTO_VACUUM</td>
+          <td>=</td>
+          <td class="context-item-value">{'0' =&gt; :none, '1' =&gt; :full, '2' =&gt; :incremental}.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SYNCHRONOUS</td>
+          <td>=</td>
+          <td class="context-item-value">{'0' =&gt; :off, '1' =&gt; :normal, '2' =&gt; :full}.freeze</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TEMP_STORE</td>
+          <td>=</td>
+          <td class="context-item-value">{'0' =&gt; :default, '1' =&gt; :file, '2' =&gt; :memory}.freeze</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000753" class="method-detail">
+        <a name="M000753"></a>
+
+        <div class="method-heading">
+          <a href="#M000753" class="method-signature">
+          <span class="method-name">alter_table_sql</span><span class="method-args">(table, op)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000753-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000753-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 108</span>
+108:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">alter_table_sql</span>(<span class="ruby-identifier">table</span>, <span class="ruby-identifier">op</span>)
+109:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">op</span>[<span class="ruby-identifier">:op</span>]
+110:         <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:add_column</span>
+111:           <span class="ruby-node">&quot;ALTER TABLE #{table} ADD #{column_definition_sql(op)}&quot;</span>
+112:         <span class="ruby-keyword kw">else</span>
+113:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-value str">&quot;Unsupported ALTER TABLE operation&quot;</span>
+114:         <span class="ruby-keyword kw">end</span>
+115:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000747" class="method-detail">
+        <a name="M000747"></a>
+
+        <div class="method-heading">
+          <a href="#M000747" class="method-signature">
+          <span class="method-name">auto_vacuum</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000747-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000747-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 77</span>
+77:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_vacuum</span>
+78:         <span class="ruby-constant">AUTO_VACUUM</span>[<span class="ruby-identifier">pragma_get</span>(<span class="ruby-identifier">:auto_vacuum</span>)]
+79:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000748" class="method-detail">
+        <a name="M000748"></a>
+
+        <div class="method-heading">
+          <a href="#M000748" class="method-signature">
+          <span class="method-name">auto_vacuum=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000748-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000748-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 81</span>
+81:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auto_vacuum=</span>(<span class="ruby-identifier">value</span>)
+82:         <span class="ruby-identifier">value</span> = <span class="ruby-constant">AUTO_VACUUM</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-value str">&quot;Invalid value for auto_vacuum option. Please specify one of :none, :full, :incremental.&quot;</span>)
+83:         <span class="ruby-identifier">pragma_set</span>(<span class="ruby-identifier">:auto_vacuum</span>, <span class="ruby-identifier">value</span>)
+84:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000737" class="method-detail">
+        <a name="M000737"></a>
+
+        <div class="method-heading">
+          <a href="#M000737" class="method-signature">
+          <span class="method-name">connect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000737-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000737-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 12</span>
+12:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connect</span>
+13:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@opts</span>[<span class="ruby-identifier">:database</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@opts</span>[<span class="ruby-identifier">:database</span>].<span class="ruby-identifier">empty?</span>
+14:           <span class="ruby-ivar">@opts</span>[<span class="ruby-identifier">:database</span>] = <span class="ruby-value str">':memory:'</span>
+15:         <span class="ruby-keyword kw">end</span>
+16:         <span class="ruby-identifier">db</span> = <span class="ruby-operator">::</span><span class="ruby-constant">SQLite3</span><span class="ruby-operator">::</span><span class="ruby-constant">Database</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@opts</span>[<span class="ruby-identifier">:database</span>])
+17:         <span class="ruby-identifier">db</span>.<span class="ruby-identifier">type_translation</span> = <span class="ruby-keyword kw">true</span>
+18:         <span class="ruby-comment cmt"># fix for timestamp translation</span>
+19:         <span class="ruby-identifier">db</span>.<span class="ruby-identifier">translator</span>.<span class="ruby-identifier">add_translator</span>(<span class="ruby-value str">&quot;timestamp&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+20:           <span class="ruby-identifier">v</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\d+$/</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">v</span>) 
+21:         <span class="ruby-keyword kw">end</span> 
+22:         <span class="ruby-identifier">db</span>
+23:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000739" class="method-detail">
+        <a name="M000739"></a>
+
+        <div class="method-heading">
+          <a href="#M000739" class="method-signature">
+          <span class="method-name">dataset</span><span class="method-args">(opts = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000739-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000739-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 29</span>
+29:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dataset</span>(<span class="ruby-identifier">opts</span> = <span class="ruby-keyword kw">nil</span>)
+30:         <span class="ruby-constant">SQLite</span><span class="ruby-operator">::</span><span class="ruby-constant">Dataset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">opts</span>)
+31:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000738" class="method-detail">
+        <a name="M000738"></a>
+
+        <div class="method-heading">
+          <a href="#M000738" class="method-signature">
+          <span class="method-name">disconnect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000738-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000738-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 25</span>
+25:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">disconnect</span>
+26:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">disconnect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">close</span>}
+27:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000741" class="method-detail">
+        <a name="M000741"></a>
+
+        <div class="method-heading">
+          <a href="#M000741" class="method-signature">
+          <span class="method-name">execute</span><span class="method-args">(sql)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000741-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000741-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 39</span>
+39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>)
+40:         <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logger</span>
+41:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">hold</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">execute_batch</span>(<span class="ruby-identifier">sql</span>); <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">changes</span>}
+42:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+43:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidStatement</span>, <span class="ruby-node">&quot;#{sql}\r\n#{e.message}&quot;</span>
+44:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000742" class="method-detail">
+        <a name="M000742"></a>
+
+        <div class="method-heading">
+          <a href="#M000742" class="method-signature">
+          <span class="method-name">execute_insert</span><span class="method-args">(sql)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000742-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000742-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 46</span>
+46:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute_insert</span>(<span class="ruby-identifier">sql</span>)
+47:         <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logger</span>
+48:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">hold</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>); <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">last_insert_row_id</span>}
+49:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+50:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidStatement</span>, <span class="ruby-node">&quot;#{sql}\r\n#{e.message}&quot;</span>
+51:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000744" class="method-detail">
+        <a name="M000744"></a>
+
+        <div class="method-heading">
+          <a href="#M000744" class="method-signature">
+          <span class="method-name">execute_select</span><span class="method-args">(sql, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000744-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000744-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 60</span>
+60:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute_select</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+61:         <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logger</span>
+62:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">hold</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">query</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)}
+63:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+64:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidStatement</span>, <span class="ruby-node">&quot;#{sql}\r\n#{e.message}&quot;</span>
+65:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000745" class="method-detail">
+        <a name="M000745"></a>
+
+        <div class="method-heading">
+          <a href="#M000745" class="method-signature">
+          <span class="method-name">pragma_get</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000745-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000745-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 67</span>
+67:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pragma_get</span>(<span class="ruby-identifier">name</span>)
+68:         <span class="ruby-identifier">single_value</span>(<span class="ruby-node">&quot;PRAGMA #{name}&quot;</span>)
+69:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000746" class="method-detail">
+        <a name="M000746"></a>
+
+        <div class="method-heading">
+          <a href="#M000746" class="method-signature">
+          <span class="method-name">pragma_set</span><span class="method-args">(name, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000746-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000746-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 71</span>
+71:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pragma_set</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+72:         <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;PRAGMA #{name} = #{value}&quot;</span>)
+73:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000736" class="method-detail">
+        <a name="M000736"></a>
+
+        <div class="method-heading">
+          <a href="#M000736" class="method-signature">
+          <span class="method-name">serial_primary_key_options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000736-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000736-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 8</span>
+ 8:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">serial_primary_key_options</span>
+ 9:         {<span class="ruby-identifier">:primary_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:integer</span>, <span class="ruby-identifier">:auto_increment</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>}
+10:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000743" class="method-detail">
+        <a name="M000743"></a>
+
+        <div class="method-heading">
+          <a href="#M000743" class="method-signature">
+          <span class="method-name">single_value</span><span class="method-args">(sql)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000743-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000743-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 53</span>
+53:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">single_value</span>(<span class="ruby-identifier">sql</span>)
+54:         <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logger</span>
+55:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">hold</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">get_first_value</span>(<span class="ruby-identifier">sql</span>)}
+56:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+57:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidStatement</span>, <span class="ruby-node">&quot;#{sql}\r\n#{e.message}&quot;</span>
+58:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000749" class="method-detail">
+        <a name="M000749"></a>
+
+        <div class="method-heading">
+          <a href="#M000749" class="method-signature">
+          <span class="method-name">synchronous</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000749-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000749-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 88</span>
+88:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">synchronous</span>
+89:         <span class="ruby-constant">SYNCHRONOUS</span>[<span class="ruby-identifier">pragma_get</span>(<span class="ruby-identifier">:synchronous</span>)]
+90:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000750" class="method-detail">
+        <a name="M000750"></a>
+
+        <div class="method-heading">
+          <a href="#M000750" class="method-signature">
+          <span class="method-name">synchronous=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000750-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000750-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 92</span>
+92:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">synchronous=</span>(<span class="ruby-identifier">value</span>)
+93:         <span class="ruby-identifier">value</span> = <span class="ruby-constant">SYNCHRONOUS</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-value str">&quot;Invalid value for synchronous option. Please specify one of :off, :normal, :full.&quot;</span>)
+94:         <span class="ruby-identifier">pragma_set</span>(<span class="ruby-identifier">:synchronous</span>, <span class="ruby-identifier">value</span>)
+95:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000740" class="method-detail">
+        <a name="M000740"></a>
+
+        <div class="method-heading">
+          <a href="#M000740" class="method-signature">
+          <span class="method-name">tables</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000740-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000740-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 35</span>
+35:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tables</span>
+36:         <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:sqlite_master</span>].<span class="ruby-identifier">filter</span>(<span class="ruby-constant">TABLES_FILTER</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>[<span class="ruby-identifier">:name</span>].<span class="ruby-identifier">to_sym</span>}
+37:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000751" class="method-detail">
+        <a name="M000751"></a>
+
+        <div class="method-heading">
+          <a href="#M000751" class="method-signature">
+          <span class="method-name">temp_store</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000751-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000751-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 99</span>
+ 99:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">temp_store</span>
+100:         <span class="ruby-constant">TEMP_STORE</span>[<span class="ruby-identifier">pragma_get</span>(<span class="ruby-identifier">:temp_store</span>)]
+101:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000752" class="method-detail">
+        <a name="M000752"></a>
+
+        <div class="method-heading">
+          <a href="#M000752" class="method-signature">
+          <span class="method-name">temp_store=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000752-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000752-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 103</span>
+103:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">temp_store=</span>(<span class="ruby-identifier">value</span>)
+104:         <span class="ruby-identifier">value</span> = <span class="ruby-constant">TEMP_STORE</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">||</span> (<span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-value str">&quot;Invalid value for temp_store option. Please specify one of :default, :file, :memory.&quot;</span>)
+105:         <span class="ruby-identifier">pragma_set</span>(<span class="ruby-identifier">:temp_store</span>, <span class="ruby-identifier">value</span>)
+106:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000754" class="method-detail">
+        <a name="M000754"></a>
+
+        <div class="method-heading">
+          <a href="#M000754" class="method-signature">
+          <span class="method-name">transaction</span><span class="method-args">() {|conn| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000754-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000754-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sequel_core/adapters/sqlite.rb, line 117</span>
+117:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">transaction</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+118:         <span class="ruby-ivar">@pool</span>.<span class="ruby-identifier">hold</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">conn</span><span class="ruby-operator">|</span>
+119:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">transaction_active?</span>
+120:             <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">conn</span>)
+121:           <span class="ruby-keyword kw">end</span>
+122:           <span class="ruby-keyword kw">begin</span>
+123:             <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>
+124:             <span class="ruby-identifier">conn</span>.<span class="ruby-identifier">transaction</span> {<span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">conn</span>)}
+125:             <span class="ruby-identifier">result</span>
+126:           <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+127:             <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">Rollback</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">e</span>
+128:           <span class="ruby-keyword kw">end</span>
+129:         <span class="ruby-keyword kw">end</span>
+130:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

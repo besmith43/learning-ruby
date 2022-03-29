@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Something#bbegin_no_exception
+is_singleton: false
+name: bbegin_no_exception
+params: ()
+visibility: public

@@ -1,0 +1,18 @@
+<div id='container'>
+  <%= render "shared/nav" %>
+  <div id='chat-container'>
+    <header><%= current_room.name %></header>
+    <div id='chat-box' data-channel='rooms' data-room-id=<%= current_room.id %>>
+      <% @messages.each do |msg| %>
+        <%= render partial: "shared/message", locals: { msg: msg } %>
+      <% end %>
+    </div>
+
+    <div id='form-box'>
+      <%= form_for :message, url: messages_path do |f| %>
+        <%= f.text_field :content, id: 'message_input' %>
+        <%= f.submit 'Send Message' %>
+      <% end %>
+    </div>
+  </div>
+</div>

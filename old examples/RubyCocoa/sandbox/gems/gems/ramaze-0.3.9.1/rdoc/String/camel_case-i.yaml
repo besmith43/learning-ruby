@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: simple transformation to CamelCase from snake_case
+- !ruby/struct:SM::Flow::VERB 
+  body: "  'foo_bar'.camel_case # =&gt; 'FooBar'\n"
+full_name: String#camel_case
+is_singleton: false
+name: camel_case
+params: ()
+visibility: public

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: add
+- !ruby/object:RI::AliasName 
+  name: "<<"
+block_params: 
+comment: 
+full_name: Sequel::Worker#async
+is_singleton: false
+name: async
+params: (proc = nil, &block)
+visibility: public

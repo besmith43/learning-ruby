@@ -1,0 +1,6 @@
+a = 2
+if a < 6
+    print "small"
+else
+    print "big"
+end

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Proc
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: to_method
+- !ruby/object:RI::MethodSummary 
+  name: to_ruby
+- !ruby/object:RI::MethodSummary 
+  name: to_sexp
+name: Proc
+superclass: Object

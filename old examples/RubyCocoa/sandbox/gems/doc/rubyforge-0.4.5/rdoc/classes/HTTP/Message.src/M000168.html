@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>create_query_multipart_str (HTTP::Message)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/http-access2/http.rb, line 462</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_query_multipart_str</span>(<span class="ruby-identifier">query</span>, <span class="ruby-identifier">boundary</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">multiparam_query?</span>(<span class="ruby-identifier">query</span>)
+        <span class="ruby-identifier">query</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">attr</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">value</span> <span class="ruby-operator">||=</span> <span class="ruby-value str">''</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">File</span>
+            <span class="ruby-identifier">params</span> = {
+              <span class="ruby-value str">'filename'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">path</span>,
+              <span class="ruby-comment cmt"># Creation time is not available from File::Stat</span>
+              <span class="ruby-comment cmt"># 'creation-date' =&gt; value.ctime.rfc822,</span>
+              <span class="ruby-value str">'modification-date'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">mtime</span>.<span class="ruby-identifier">rfc822</span>,
+              <span class="ruby-value str">'read-date'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">atime</span>.<span class="ruby-identifier">rfc822</span>,
+            }
+            <span class="ruby-identifier">param_str</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+              <span class="ruby-node">&quot;#{k}=\&quot;#{v}\&quot;&quot;</span>
+            }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;; &quot;</span>)
+            <span class="ruby-node">&quot;--#{boundary}\n&quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-node">%{Content-Disposition: form-data; name=&quot;#{attr.to_s}&quot;; #{param_str}\n}</span> <span class="ruby-operator">+</span>
+              <span class="ruby-node">&quot;Content-Type: #{mime_type(value.path)}\n\n#{value.read}\n&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-node">&quot;--#{boundary}\n&quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-node">%{Content-Disposition: form-data; name=&quot;#{attr.to_s}&quot;\n}</span> <span class="ruby-operator">+</span>
+              <span class="ruby-node">&quot;\n#{value.to_s}\n&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">''</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;--#{boundary}--\n&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">query</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

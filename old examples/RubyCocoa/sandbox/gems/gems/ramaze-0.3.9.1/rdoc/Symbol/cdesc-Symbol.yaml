@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extensions for Symbol
+constants: []
+
+full_name: Symbol
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: /
+- !ruby/object:RI::MethodSummary 
+  name: /
+- !ruby/object:RI::MethodSummary 
+  name: to_proc
+- !ruby/object:RI::MethodSummary 
+  name: to_proc
+name: Symbol
+superclass: Object

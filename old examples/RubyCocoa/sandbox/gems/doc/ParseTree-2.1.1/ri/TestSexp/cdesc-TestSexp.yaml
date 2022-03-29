@@ -1,0 +1,74 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: TestSexp
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: test_array_type_eh
+- !ruby/object:RI::MethodSummary 
+  name: test_class_for
+- !ruby/object:RI::MethodSummary 
+  name: test_class_from_array
+- !ruby/object:RI::MethodSummary 
+  name: test_class_index
+- !ruby/object:RI::MethodSummary 
+  name: test_each_of_type
+- !ruby/object:RI::MethodSummary 
+  name: test_equals2_array
+- !ruby/object:RI::MethodSummary 
+  name: test_equals2_not_body
+- !ruby/object:RI::MethodSummary 
+  name: test_equals2_sexp
+- !ruby/object:RI::MethodSummary 
+  name: test_equals3_any
+- !ruby/object:RI::MethodSummary 
+  name: test_equals3_full_match
+- !ruby/object:RI::MethodSummary 
+  name: test_equals3_mismatch
+- !ruby/object:RI::MethodSummary 
+  name: test_equals3_subset_match
+- !ruby/object:RI::MethodSummary 
+  name: test_equalstilde_fancy
+- !ruby/object:RI::MethodSummary 
+  name: test_equalstilde_plain
+- !ruby/object:RI::MethodSummary 
+  name: test_find_and_replace_all
+- !ruby/object:RI::MethodSummary 
+  name: test_gsub
+- !ruby/object:RI::MethodSummary 
+  name: test_inspect
+- !ruby/object:RI::MethodSummary 
+  name: test_method_missing
+- !ruby/object:RI::MethodSummary 
+  name: test_method_missing_ambigious
+- !ruby/object:RI::MethodSummary 
+  name: test_method_missing_deep
+- !ruby/object:RI::MethodSummary 
+  name: test_method_missing_delete
+- !ruby/object:RI::MethodSummary 
+  name: test_pretty_print
+- !ruby/object:RI::MethodSummary 
+  name: test_sexp_body
+- !ruby/object:RI::MethodSummary 
+  name: test_shift
+- !ruby/object:RI::MethodSummary 
+  name: test_structure
+- !ruby/object:RI::MethodSummary 
+  name: test_sub
+- !ruby/object:RI::MethodSummary 
+  name: test_to_a
+- !ruby/object:RI::MethodSummary 
+  name: test_to_s
+- !ruby/object:RI::MethodSummary 
+  name: util_pretty_print
+name: TestSexp
+superclass: SexpTestCase

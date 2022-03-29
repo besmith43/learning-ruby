@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Facilitates time calculations by providing methods to convert from larger time units to seconds, and to convert relative time intervals to absolute ones. This module duplicates some of the functionality provided by Rails' ActiveSupport::CoreExtensions::Numeric::Time module.
+constants: []
+
+full_name: Assistance
+includes: []
+
+instance_methods: []
+
+name: Assistance
+superclass: 

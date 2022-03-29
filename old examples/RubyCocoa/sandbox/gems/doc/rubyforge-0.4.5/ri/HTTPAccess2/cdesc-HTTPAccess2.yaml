@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'2.0.6'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RUBY_VERSION_STRING
+  value: "\"ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RCS_REVISION
+  value: s[1][/.*(?=,v$)/], s[2]
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SSLEnabled
+  value: begin       require 'openssl'
+full_name: HTTPAccess2
+includes: []
+
+instance_methods: []
+
+name: HTTPAccess2
+superclass: 

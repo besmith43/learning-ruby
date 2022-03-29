@@ -1,0 +1,10 @@
+..
+.
+experimental
+edit_distance
+fixtures
+spell_checking
+core_ext
+spell_checker_test.rb
+test_helper.rb
+verbose_formatter_test.rb

@@ -1,0 +1,5 @@
+def double(b)
+    yield b
+end
+
+double(2) {|a| a * 2 }

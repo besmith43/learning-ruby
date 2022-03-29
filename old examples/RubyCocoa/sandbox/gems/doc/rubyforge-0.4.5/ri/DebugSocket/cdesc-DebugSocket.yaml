@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: debug_dev
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: create_socket
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HTTPAccess2::DebugSocket -- debugging support
+constants: []
+
+full_name: DebugSocket
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: gets
+- !ruby/object:RI::MethodSummary 
+  name: log_connect
+- !ruby/object:RI::MethodSummary 
+  name: read
+name: DebugSocket
+superclass: TCPSocket

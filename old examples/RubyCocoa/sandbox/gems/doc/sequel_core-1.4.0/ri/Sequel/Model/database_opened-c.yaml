@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::Model::database_opened
+is_singleton: true
+name: database_opened
+params: (db)
+visibility: public

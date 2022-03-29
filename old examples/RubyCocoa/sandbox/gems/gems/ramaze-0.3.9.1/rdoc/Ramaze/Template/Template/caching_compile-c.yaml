@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Template::Template::caching_compile
+is_singleton: true
+name: caching_compile
+params: (action, template)
+visibility: public

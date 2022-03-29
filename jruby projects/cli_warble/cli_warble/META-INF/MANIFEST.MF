@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Created-By: Warbler 2.0.5
+Main-Class: JarMain

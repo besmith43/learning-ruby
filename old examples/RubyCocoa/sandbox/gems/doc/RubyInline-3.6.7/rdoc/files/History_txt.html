@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ ! Excerpted from "RubyCocoa",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/bmrc for more book information.
+-->
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: History.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>History.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>History.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Apr 15 12:30:45 -0500 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h3>3.6.7 / 2008-03-20</h3>
+<ul>
+<li>3 minor enhancements:
+
+<ul>
+<li>Added ability to work entirely without .ruby_inline dir. Thanks Kevin
+Clark!
+
+</li>
+<li>Updated history, readme, and rakefile for new hoe abilities.
+
+</li>
+<li>Cleaned up some really ugly schlock. Man, compiling sucks!
+
+</li>
+</ul>
+</li>
+<li>2 bug fixes:
+
+<ul>
+<li>Fixes for 1.9.
+
+</li>
+<li>Add -I for platform-specific header dir (for ruby/config.h).
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>3.6.6 / 2007-12-27</h3>
+<ul>
+<li>1 minor enhancement:
+
+<ul>
+<li>Enhanced windows support thanks to Luis Lavena.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>3.6.5 / 2007-11-08</h3>
+<ul>
+<li>1 minor enhancement:
+
+<ul>
+<li>Quick fix for OSX 10.5 native ruby (should be fixed in 10.5.2).
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>3.6.4 / 2007-08-20</h3>
+<ul>
+<li>1 minor enhancement:
+
+<ul>
+<li>Added ability to include ruby.h last. Thanks to Luc Heinrich.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>3.6.3 / 2007-04-27</h3>
+<ul>
+<li>7 minor enhancements:
+
+<ul>
+<li>Added map_ruby_const and map_c_const to C builder.
+
+</li>
+<li>Converted example.rb to a real benchmark setup.
+
+</li>
+<li>Improved error messages.
+
+</li>
+<li>Added options hash for all C builder methods.
+
+</li>
+<li>Options hash can take optional :method_name param to have ruby name diff
+from c.
+
+</li>
+<li>Converted to a more traditional setup. Now I can heckle!
+
+</li>
+<li>Cleaned up ruby.h search.
+
+</li>
+</ul>
+</li>
+<li>2 bug fixes:
+
+<ul>
+<li>Added CCDLFLAGS. <em>Should</em> pick up -fPIC on misconfigured 64 bit
+machines.
+
+</li>
+<li>Broke up all warnings so progress report was cleaner.
+
+</li>
+</ul>
+</li>
+</ul>
+<h3>3.6.2 / 2006-10-12</h3>
+<ul>
+<li>2 bug fixes:
+
+<pre>
+      * comment stripper much more sane to fix problems on certain linux distros
+      * fixed a nit with older C compilers.
+</pre>
+</li>
+</ul>
+<h3>3.6.1 / 2006-10-11</h3>
+<ul>
+<li>1 minor enhancement
+
+<pre>
+      * Hoe'd the Rakefile. :P
+</pre>
+</li>
+<li>2 bug fixes
+
+<pre>
+      * Removed VALUE from @types because it is now in @@type_map.
+      * Tweak added for mingw32.
+</pre>
+</li>
+</ul>
+<h3>3.6.0 / 2005-11-30 (omg I suck: actual release: 2006-09-15)</h3>
+<ul>
+<li>6 minor enhancements
+
+<pre>
+      * C builder can now be used directly for other foreign language glue.
+      * Pretty much all (c) functions are plain argument style, not argc/argv.
+      * Added Nathaniel and Dan's patches for windows support.
+      * Added VALUE as a default known type.
+      * Improved testing under $DEBUG.
+      * Deprecated $INLINE_FLAGS and $INLINE_LIBS are dead.
+</pre>
+</li>
+<li>3 bug fixes
+
+<pre>
+      * Fixed a number of issues wrt testing.
+      * Cleaned up and cached certain calculations.
+      * Some windows compiler fixes went in, but MS compiler is a PITA still.
+</pre>
+</li>
+</ul>
+<h3>3.5.0 / 2005-10-15</h3>
+<ul>
+<li>4 minor enhancements
+
+<pre>
+      * Switched to install for Makefile.
+      * Lots of minor cleanup.
+      * Added add_to_init to extend init methods. Great hack!
+      * Added 2 demo files used in the rubyconf 2005 presentation.
+</pre>
+</li>
+<li>1 bug fix
+
+<pre>
+      * Fixed example in README.txt. OOPS!
+</pre>
+</li>
+</ul>
+<h3>3.4.0 / 2005-07-13</h3>
+<ul>
+<li>2 minor enhancement
+
+<pre>
+      * Changed inline to take the language and a hash of options.
+              * Still backwards compatible, for now, and emits a warning.
+      * Options are available via the builder passed to your block.
+</pre>
+</li>
+<li>2 bug fixes
+
+<pre>
+      * Modified caller discovery, yet again, due to changes in ruby 1.8.3.
+      * More compatible and clean with non-gems systems.
+</pre>
+</li>
+</ul>
+<h3>3.3.2 / 2005-05-19</h3>
+<ul>
+<li>4 bug fixes
+
+<pre>
+      * Fixed a line number issue when using c_raw w/ multi-line signatures.
+      * Inline can now be invoked multiple times per class.
+      * Filled out rdoc.
+      * Fixed some old tests.
+</pre>
+</li>
+</ul>
+<h3>3.3.1 / 2005-05-03</h3>
+<ul>
+<li>3 bug fixes
+
+<pre>
+      * Fixed a bug w/ unit tests involving caching of rootdir.
+      * Added a minor tweak to the file discovery when called through eval.
+      * Moved the packaging code into inline.rb in order to get rubygems wrapped scripts to work again (wrapper was breaking due to __FILE__ != $0).
+</pre>
+</li>
+</ul>
+<h3>3.3.0 / 2005-04-22</h3>
+<ul>
+<li>2 minor enhancement
+
+<pre>
+      * Added inline_package, which helps you package inlined code into gems.
+      * inline_package also generates a Rakefile for you if you need it.
+      * inline.rb now (only) loads packaged code when present.
+</pre>
+</li>
+</ul>
+<h3>3.2.1 / 2005-04-19</h3>
+<ul>
+<li>2 bug fixes
+
+<pre>
+      * Added double to typemap. Thanks Phil Tomson!
+      * Added a minor hack to get cygwin to work right--lemme know pls.
+</pre>
+</li>
+</ul>
+<h3>3.2.0 / 2004-11-27</h3>
+<ul>
+<li>8 minor enhancements
+
+<pre>
+      * Gemified
+      * Added #line preprocessor directives to make debugging inside your ruby file practical.
+      * Added uninstall rule to Makefile
+      * Inline::C now generates classes directly instead of included modules.
+      * Better execeptions are thrown on error.
+      * Incorporated a bunch of changes from Jonathan Paisley:
+              * Generation of inline'd class methods. (c_singleton and c_raw_singleton)
+              * Fixed problems with nested module/classes.
+              * Inline can now extend the same class multiple times.
+</pre>
+</li>
+<li>2 bug fixes
+
+<pre>
+      * Smarter require/instantiation to accomodate other languages better.
+      * Fixed a logic error where running good code, then bad, then bad again ran the original good code.
+</pre>
+</li>
+</ul>
+<h3>3.1.0 / 2004-09-24</h3>
+<ul>
+<li>2 minor enhancement
+
+<pre>
+      * Extended API of Inline::C with prefix(code).
+      * Documented all public API.
+</pre>
+</li>
+<li>2 bug fixes
+
+<pre>
+      * Cleaned a lot of code and tests.
+      * Removed nearly all tags.
+</pre>
+</li>
+</ul>
+<h3>3.0.1 / 2004-02-24</h3>
+<ul>
+<li>2 bug fixes
+
+<pre>
+      * I let references to ZenTestUnit slip through the release. Removed.
+      * Converted History.txt to ZenWeb format.
+</pre>
+</li>
+</ul>
+<h3>3.0.0 / 2003-12-23</h3>
+<ul>
+<li>3 major enhancements
+
+<pre>
+      * Complete rewrite with new design.
+      * Multiple language support, works with C/C++ out of the box.
+      * Multiple functions per compilation unit, now allowing entire classes to be defined and linked in one unit.
+</pre>
+</li>
+<li>Notes:
+
+<pre>
+      * I still need to write much better/complete documentation.
+</pre>
+</li>
+</ul>
+<h3>2.2.0 / 2003-01-25</h3>
+<ul>
+<li>1 minor enhancements
+
+<pre>
+      * Touch all generated files to avoid unnecessary diffs.
+</pre>
+</li>
+<li>1 bug fixes
+
+<pre>
+      * Added good profiling example in tutorial/*.
+      * Added profiling strategy in README.txt.
+</pre>
+</li>
+<li>Notes:
+
+<pre>
+      * Paired with Doug Beaver &lt;snarly@beaver.net&gt;
+</pre>
+</li>
+</ul>
+<h3>2.1.1 / 2002-12-27</h3>
+<ul>
+<li>2 bug fixes
+
+<pre>
+      * Fixed a bug in inline.rb where it was comparing against inline.rb, not the caller.
+      * Tweaked example.rb to take the number of iterations as an option.
+</pre>
+</li>
+</ul>
+<h3>2.1.0 / 2002-12-17</h3>
+<ul>
+<li>2 minor enhancements
+
+<pre>
+      * Added inline_c_raw to replace Inline.inline.
+      * Removed module Inline as a whole. This gets rid of some
+      * major version incompatibilities, tons of duplicate code, and
+      * just seems to make things happier.
+</pre>
+</li>
+<li>4 bug fixes
+
+<pre>
+      * Added a fix from Michael Scholz to fix the use of $0 for file test.
+      * Added private and public declarations since we are invading
+      * class Module.
+      * Fixed tests... oops!
+      * Lots of clean up...
+</pre>
+</li>
+<li>Notes:
+
+<pre>
+      * Reviewed by Doug Beaver &lt;snarly@beaver.net&gt;
+</pre>
+</li>
+</ul>
+<h3>2.0.0 / 2002-12-12</h3>
+<ul>
+<li>2 bug fixes
+
+<pre>
+      * Minor fix to get working on MacOS X (.so vs .bundle).
+      * Downgraded typemap to be compatible with 1.6.x.
+</pre>
+</li>
+<li>Notes:
+
+<pre>
+      * Paired w/ Doug Beaver &lt;snarly@beaver.net&gt;
+</pre>
+</li>
+</ul>
+<h3>2.0.0 beta / 2002-11-22</h3>
+<ul>
+<li>1 major enhancements
+
+<pre>
+      * Added inline_c, a &quot;compile-time&quot; version of inline. Massively enhanced, this version has a limited form of C function parsing.
+</pre>
+</li>
+<li>2 minor enhancements
+
+<pre>
+      * Deprecated Inline#inline for Module#inline_c. To be removed by 2.1.0.
+      * Extended example.rb to include a fully written inlined C function.
+</pre>
+</li>
+<li>3 bug fixes
+
+<pre>
+      * Updated README.txt and improved some of the documentation.
+      * Added test and clean rules to Makefile.
+      * Removed the copious warnings if running ruby &lt; 1.7.2.
+</pre>
+</li>
+<li>Notes:
+
+<pre>
+      * Paired w/ Doug Beaver &lt;snarly@beaver.net&gt;
+</pre>
+</li>
+</ul>
+<h3>1.1.0 / 2002-11-01</h3>
+<ul>
+<li>2 minor enhancements
+
+<pre>
+      * Aliased methods are now inlined as well. 250x faster.
+      * ONLY on ruby 1.7*. Warns on ruby &lt; 1.7.
+      * Added a makefile to automate running of all different benchmarks.
+</pre>
+</li>
+<li>1 bug fixes
+
+<pre>
+      * Improved example to include an aliased method testcase.
+</pre>
+</li>
+</ul>
+<h3>1.0.7 / 2002-09-22</h3>
+<ul>
+<li>1 minor enhancements
+
+<pre>
+      * Only compiles the generated code if it was different from the previous version.
+</pre>
+</li>
+<li>1 bug fixes
+
+<pre>
+      * Improved security: Checks group and global write on home directory.
+</pre>
+</li>
+</ul>
+<h3>1.0.6 / 2002-09-18</h3>
+<ul>
+<li>1 minor enhancements
+
+<pre>
+      * Added a prelude argument for header and datatype declarations.
+</pre>
+</li>
+<li>3 bug fixes
+
+<pre>
+      * Only output stuff if invoked verbose (ie 'ruby -v ./example.rb').
+      * Added some compatibility code for windows.
+      * Declared requirement on POSIX system.
+</pre>
+</li>
+</ul>
+<h3>1.0.5 / 2002-09-11</h3>
+<ul>
+<li>2 bug fixes
+
+<pre>
+      * Improved security model for UNIX. Still not sure about windoze.
+      * Fixed History.txt to be accurate, gave example in README.
+</pre>
+</li>
+</ul>
+<h3>1.0.4 / 2002-09-10</h3>
+<ul>
+<li>1 major enhancements
+
+<pre>
+      * Released to sourceforge!
+</pre>
+</li>
+<li>1 bug fixes
+
+<pre>
+      * A number of very minor bug fixes from IRC sessions w/ others.
+</pre>
+</li>
+</ul>
+<h3>1.0.0 / 2002-09-05</h3>
+<ul>
+<li>1 major enhancements
+
+<pre>
+      * Birthday!
+</pre>
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: After having authenticated at the OpenID server browsers are redirected back here and on success we set the session[:openid_identity] and a little default flash message. Then we redirect to wherever session[:openid_entry] points us to, which was set on openid_begin to the referrer
+- !ruby/struct:SM::Flow::P 
+  body: "TODO:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - maybe using StackHelper, but this is a really minimal overlap?\n"
+full_name: Ramaze::Helper::Identity#openid_complete
+is_singleton: false
+name: openid_complete
+params: ()
+visibility: public

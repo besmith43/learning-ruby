@@ -1,0 +1,41 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: auto_shift_type
+  rw: RW
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Fake test classes:"
+constants: []
+
+full_name: TestProcessor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: process_acc1
+- !ruby/object:RI::MethodSummary 
+  name: process_acc2
+- !ruby/object:RI::MethodSummary 
+  name: process_broken
+- !ruby/object:RI::MethodSummary 
+  name: process_expected
+- !ruby/object:RI::MethodSummary 
+  name: process_nonempty
+- !ruby/object:RI::MethodSummary 
+  name: process_rewritable
+- !ruby/object:RI::MethodSummary 
+  name: process_specific
+- !ruby/object:RI::MethodSummary 
+  name: process_string
+- !ruby/object:RI::MethodSummary 
+  name: process_strip
+- !ruby/object:RI::MethodSummary 
+  name: rewrite_major_rewrite
+- !ruby/object:RI::MethodSummary 
+  name: rewrite_rewritable
+name: TestProcessor
+superclass: SexpProcessor

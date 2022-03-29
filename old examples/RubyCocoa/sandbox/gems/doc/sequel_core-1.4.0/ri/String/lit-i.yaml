@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: expr
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Converts a string into an LiteralString, in order to override string literalization, e.g.:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  DB[:items].filter(:abc =&gt; 'def').sql #=&gt;\n    &quot;SELECT * FROM items WHERE (abc = 'def')&quot;\n\n  DB[:items].filter(:abc =&gt; 'def'.lit).sql #=&gt;\n    &quot;SELECT * FROM items WHERE (abc = def)&quot;\n"
+full_name: String#lit
+is_singleton: false
+name: lit
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Enables being plugged into Dispatcher::Action::FILTER
+full_name: Ramaze::Tool::Localize::call
+is_singleton: true
+name: call
+params: (response, options = {})
+visibility: public

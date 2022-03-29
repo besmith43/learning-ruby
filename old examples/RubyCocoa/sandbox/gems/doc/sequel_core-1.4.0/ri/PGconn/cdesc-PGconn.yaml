@@ -1,0 +1,61 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: transaction_in_progress
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: quote
+- !ruby/object:RI::MethodSummary 
+  name: quote_with_proper_escaping
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: the pure-ruby postgres adapter does not have a quote method.
+  name: "TRUE"
+  value: "'true'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "FALSE"
+  value: "'false'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: "NULL"
+  value: "'NULL'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SELECT_CURRVAL
+  value: "\"SELECT currval('%s')\".freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Shamelessly appropriated from ActiveRecord's Postgresql adapter.
+  name: SELECT_PK_AND_SERIAL_SEQUENCE
+  value: <<-end_sql     SELECT attr.attname, name.nspname, seq.relname     FROM pg_class seq, pg_attribute attr, pg_depend dep,       pg_namespace name, pg_constraint cons     WHERE seq.oid = dep.objid       AND seq.relnamespace  = name.oid       AND seq.relkind = 'S'       AND attr.attrelid = dep.refobjid       AND attr.attnum = dep.refobjsubid       AND attr.attrelid = cons.conrelid       AND attr.attnum = cons.conkey[1]       AND cons.contype = 'p'       AND dep.refobjid = '%s'::regclass   end_sql
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SELECT_PK_AND_CUSTOM_SEQUENCE
+  value: <<-end_sql     SELECT attr.attname, name.nspname, split_part(def.adsrc, '''', 2)     FROM pg_class t     JOIN pg_namespace  name ON (t.relnamespace = name.oid)     JOIN pg_attribute  attr ON (t.oid = attrelid)     JOIN pg_attrdef    def  ON (adrelid = attrelid AND adnum = attnum)     JOIN pg_constraint cons ON (conrelid = adrelid AND adnum = conkey[1])     WHERE t.oid = '%s'::regclass       AND cons.contype = 'p'       AND def.adsrc ~* 'nextval'   end_sql
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SELECT_PK
+  value: <<-end_sql     SELECT pg_attribute.attname     FROM pg_class, pg_attribute, pg_index     WHERE pg_class.oid = pg_attribute.attrelid AND       pg_class.oid = pg_index.indrelid AND       pg_index.indkey[0] = pg_attribute.attnum AND       pg_index.indisprimary = 't' AND       pg_class.relname = '%s'   end_sql
+full_name: PGconn
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: connected?
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: last_insert_id
+- !ruby/object:RI::MethodSummary 
+  name: pkey_and_sequence
+- !ruby/object:RI::MethodSummary 
+  name: primary_key
+name: PGconn
+superclass: Object

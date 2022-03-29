@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new instance, parameters default to the traits.
+full_name: Ramaze::Analogger::new
+is_singleton: true
+name: new
+params: (name = class_trait[:name], host = class_trait[:host], port = class_trait[:port])
+visibility: public

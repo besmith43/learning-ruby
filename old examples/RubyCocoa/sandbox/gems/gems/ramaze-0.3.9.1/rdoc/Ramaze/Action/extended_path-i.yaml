@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: combined path to current action, from path and params
+full_name: Ramaze::Action#extended_path
+is_singleton: false
+name: extended_path
+params: ()
+visibility: public

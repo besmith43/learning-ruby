@@ -1,0 +1,21 @@
+// Run this once the DOM is loaded.
+// ( from http://www.kryogenix.org/days/2007/09/26/shortloaded )
+(function(i) {u = navigator.userAgent; e = /*@cc_on!@*/false; st = setTimeout;
+if(/webkit/i.test(u)){st(function(){dr = document.readyState;if(dr=="loaded"||
+dr=="complete"){i();}else{st(arguments.callee,10);}},10);}else if((/mozilla/i.
+test(u)&&!/(compati)/.test(u))||(/opera/i.test(u))){document.addEventListener(
+"DOMContentLoaded",i,false);} else if(e){(function(){t=document.createElement(
+'doc:ready');try{t.doScroll('left');i();t= null;}catch(e){st(arguments.callee,
+0);}})();}else{window.onload = i;}})(function() {
+
+	advert+='<a href="http://<%= env["HTTP_HOST"] %>/click/<%= @ad.id %>">';
+	advert+='<img class="ad" alt="<%= @ad.title %>" src="http://<%= env["HTTP_HOST"] %>/ads/<%= @ad.filename %>" border="0" height="<%= @ad.height %>" width="<%= @ad.width %>" />';
+	advert+='</a>';
+	advert+='<p class="ads">';
+	advert+='<%= @ad.content.gsub(/"/, '\"').gsub(/\//, '\/').gsub(/\n/, '\n') %>';
+	advert+='</p>';
+
+	badge = document.getElementById("ad");
+	if (badge) badge.innerHTML = advert;
+
+});

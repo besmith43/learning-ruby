@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Try to produce an Action from the given path and paremters with the appropiate template if one exists.
+full_name: Ramaze::Controller::resolve_action
+is_singleton: true
+name: resolve_action
+params: (path, *parameter)
+visibility: public

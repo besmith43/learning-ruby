@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the cached output of the action if it exists, otherwise do a normal Action#uncached_render and store the output in the Cache.actions. Action#cached_render is only called if Action#should_cache? returns true.
+full_name: Ramaze::Action#cached_render
+is_singleton: false
+name: cached_render
+params: ()
+visibility: private

@@ -1,0 +1,4 @@
+print "say something"
+input = gets.chomp
+
+print input

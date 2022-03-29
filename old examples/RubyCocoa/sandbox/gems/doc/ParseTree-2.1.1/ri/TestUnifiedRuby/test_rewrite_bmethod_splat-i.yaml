@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestUnifiedRuby#test_rewrite_bmethod_splat
+is_singleton: false
+name: test_rewrite_bmethod_splat
+params: ()
+visibility: public

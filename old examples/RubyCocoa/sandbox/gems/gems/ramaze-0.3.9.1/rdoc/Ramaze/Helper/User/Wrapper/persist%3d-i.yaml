@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Ramaze::Helper::User::Wrapper#persist=
+is_singleton: false
+name: persist=
+params: (hash)
+visibility: public

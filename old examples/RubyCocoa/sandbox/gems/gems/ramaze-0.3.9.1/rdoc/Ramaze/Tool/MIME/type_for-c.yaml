@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get MIME-type for the given filename based on extension. Answers with an empty string if none is found.
+full_name: Ramaze::Tool::MIME::type_for
+is_singleton: true
+name: type_for
+params: (file)
+visibility: public

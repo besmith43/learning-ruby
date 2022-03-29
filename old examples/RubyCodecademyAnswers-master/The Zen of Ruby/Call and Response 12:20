@@ -1,0 +1,4 @@
+age = 26
+
+age.respond_to?(:next)
+

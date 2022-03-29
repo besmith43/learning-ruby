@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Determine whether or not we have a layout to process and sets it up correctly to be rendered in the same context as current action. Will return false if the layout is the same as current action to avoid infinite recursion and also if no layout on this controller or its ancestors was found.
+full_name: Ramaze::Action#layout
+is_singleton: false
+name: layout
+params: ()
+visibility: private

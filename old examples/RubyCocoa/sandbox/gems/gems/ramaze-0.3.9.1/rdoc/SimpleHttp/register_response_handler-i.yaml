@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "this method can be used to register response handlers for specific http responses in case you need to override the default behaviour. Defaults are:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     HTTPSuccess : return the body of the response\n     HTTPRedirection : follow the redirection until success\n     Others : raise an exception\n"
+- !ruby/struct:SM::Flow::P 
+  body: `clazz` is the subclass of HTTPResponse (or HTTPResponse in case you want to define &quot;default&quot; behaviour) that you are registering the handler for.
+- !ruby/struct:SM::Flow::P 
+  body: "`block` is the handler itself, if a response of the appropriate class is received, `block` is called with three parameters: the the Net::HTTPRequest, the actual HTTPResponse object that was received and a reference to the instance of `SimpleHttp` that is executing the call."
+- !ruby/struct:SM::Flow::P 
+  body: "example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "     # to override the default action of following a HTTP\n     # redirect, you could register the folllowing handler:\n\n     sh = SimpleHttp &quot;www.example.com&quot;\n     sh.register_response_handler Net::HTTPRedirection {|request, response, shttp|\n             response['location']\n     }\n"
+full_name: SimpleHttp#register_response_handler
+is_singleton: false
+name: register_response_handler
+params: (clazz, &block)
+visibility: public

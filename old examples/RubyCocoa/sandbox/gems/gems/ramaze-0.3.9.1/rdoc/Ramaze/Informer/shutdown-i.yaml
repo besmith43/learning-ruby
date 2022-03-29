@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Close the file we log to if it isn't closed already.
+full_name: Ramaze::Informer#shutdown
+is_singleton: false
+name: shutdown
+params: ()
+visibility: public

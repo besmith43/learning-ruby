@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Evaluates a parse-tree into an SQL expression.
+full_name: Sequel::Dataset::Sequelizer#eval_expr
+is_singleton: false
+name: eval_expr
+params: (e, b, opts)
+visibility: public

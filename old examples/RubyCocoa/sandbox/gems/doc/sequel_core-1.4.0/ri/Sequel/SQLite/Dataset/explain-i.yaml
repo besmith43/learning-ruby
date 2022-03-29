@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Sequel::SQLite::Dataset#explain
+is_singleton: false
+name: explain
+params: ()
+visibility: public

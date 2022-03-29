@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a raw C function to the source. This version does not perform any type conversion and must conform to the ruby/C coding conventions. The Ruby method name can be overridden by providing method_name.
+full_name: Inline::C#c_raw
+is_singleton: false
+name: c_raw
+params: (src, options = {})
+visibility: public

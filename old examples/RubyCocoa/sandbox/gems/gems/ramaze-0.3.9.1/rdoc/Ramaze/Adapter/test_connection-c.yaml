@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Opens a TCPServer temporarily and returns true if a connection is possible and false if none can be made
+full_name: Ramaze::Adapter::test_connection
+is_singleton: true
+name: test_connection
+params: (host, port)
+visibility: public

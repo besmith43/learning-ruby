@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: an_alias
+block_params: 
+comment: 
+full_name: Examples#a_method
+is_singleton: false
+name: a_method
+params: (x)
+visibility: public

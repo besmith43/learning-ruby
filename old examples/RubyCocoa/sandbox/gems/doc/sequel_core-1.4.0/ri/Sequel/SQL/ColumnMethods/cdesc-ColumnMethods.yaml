@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AS
+  value: "'AS'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DESC
+  value: "'DESC'.freeze"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ASC
+  value: "'ASC'.freeze"
+full_name: Sequel::SQL::ColumnMethods
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ALL
+- !ruby/object:RI::MethodSummary 
+  name: AS
+- !ruby/object:RI::MethodSummary 
+  name: ASC
+- !ruby/object:RI::MethodSummary 
+  name: DESC
+- !ruby/object:RI::MethodSummary 
+  name: all
+- !ruby/object:RI::MethodSummary 
+  name: as
+- !ruby/object:RI::MethodSummary 
+  name: asc
+- !ruby/object:RI::MethodSummary 
+  name: cast_as
+- !ruby/object:RI::MethodSummary 
+  name: desc
+name: ColumnMethods
+superclass: 

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extending on HTTPServlet
+constants: []
+
+full_name: WEBrick::HTTPServlet
+includes: []
+
+instance_methods: []
+
+name: HTTPServlet
+superclass: 
